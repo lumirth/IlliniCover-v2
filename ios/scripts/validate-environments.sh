@@ -26,6 +26,7 @@ require_line "$preview_config" '^IC_API_BASE_URL = https:/\$\(\)/illinicover-pre
 require_line "$preview_config" '^IC_REVENUECAT_API_KEY = test_[A-Za-z0-9]+$' "Preview must use RevenueCat Test Store"
 require_line "$production_config" '^PRODUCT_BUNDLE_IDENTIFIER = com\.illinicover\.app$' "Production must use the production bundle"
 require_line "$production_config" '^IC_API_BASE_URL = https:/\$\(\)/illinicover-api-1068900473446\.us-east5\.run\.app$' "Production origin must match the immutable allowlist"
+require_line "$production_config" '^#include[?] "Production\.xcconfig\.local"$' "Production must retain the ignored local injection seam"
 require_line "$production_config" '^IC_REVENUECAT_API_KEY = \$\(ILLINICOVER_REVENUECAT_APPLE_KEY\)$' "Production RevenueCat key must be injected"
 require_line "$production_config" '^IC_CODE_REVISION = \$\(ILLINICOVER_CODE_REVISION\)$' "Production source revision must be injected"
 require_line "$production_config" '^IC_SENTRY_DSN = \$\(ILLINICOVER_SENTRY_DSN\)$' "Production Sentry DSN must retain an injection seam"
