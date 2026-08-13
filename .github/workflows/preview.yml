@@ -210,7 +210,7 @@ jobs:
       - name: Build immutable preview image
         if: steps.identity.outputs.cleanup != 'true'
         env:
-          ARTIFACT_FREE_BYTES: "500000000"
+          ARTIFACT_BUDGET_BYTES: "1000000000"
           IMAGE_TAG: ${{ steps.source.outputs.sha }}
           NEW_IMAGE_RESERVE_BYTES: "268435456"
         run: |
@@ -222,8 +222,8 @@ jobs:
               --project "$GCP_PROJECT_ID" --location "$GCP_REGION" \
               --repository "$ARTIFACT_REPOSITORY")"
             [[ "$before" =~ ^[0-9]+$ ]] || exit 3
-            if (( before > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
-              echo "Artifact Registry lacks the conservative 256 MiB preview-build headroom." >&2
+            if (( before > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
+              echo "Artifact Registry lacks the budgeted 256 MiB preview-build headroom." >&2
               exit 3
             fi
             gcloud builds submit \
@@ -238,8 +238,8 @@ jobs:
             after="$(python3 scripts/release/artifact_repository_size.py \
               --project "$GCP_PROJECT_ID" --location "$GCP_REGION" \
               --repository "$ARTIFACT_REPOSITORY")"
-            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_FREE_BYTES )); then
-              echo "Preview image crossed the conservative 0.5 GB storage ceiling; removing its exact unserved digest." >&2
+            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_BUDGET_BYTES )); then
+              echo "Preview image crossed the 1 GB storage budget; removing its exact unserved digest." >&2
               python3 scripts/release/artifact_image_cleanup.py \
                 --project "$GCP_PROJECT_ID" \
                 --location "$GCP_REGION" \

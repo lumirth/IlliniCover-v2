@@ -150,7 +150,7 @@ jobs:
       - id: image
         name: Reuse or build the commit-SHA image within the storage ceiling
         env:
-          ARTIFACT_FREE_BYTES: "500000000"
+          ARTIFACT_BUDGET_BYTES: "1000000000"
           NEW_IMAGE_RESERVE_BYTES: "268435456"
         run: |
           set -euo pipefail
@@ -168,8 +168,8 @@ jobs:
               echo "Artifact Registry did not return a numeric billed-size receipt." >&2
               exit 3
             }
-            if (( before > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
-              echo "Artifact Registry lacks the conservative 256 MiB headroom required before a build." >&2
+            if (( before > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
+              echo "Artifact Registry lacks the budgeted 256 MiB headroom required before a build." >&2
               echo "Current billed bytes: $before; no image was built." >&2
               exit 3
             fi
@@ -191,8 +191,8 @@ jobs:
               --project "$GCP_PROJECT_ID" \
               --location "$GCP_REGION" \
               --repository "$ARTIFACT_REPOSITORY")"
-            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_FREE_BYTES )); then
-              echo "New image would leave Artifact Registry above the 0.5 GB ceiling; deleting that exact unserved digest." >&2
+            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_BUDGET_BYTES )); then
+              echo "New image would leave Artifact Registry above the 1 GB budget; deleting that exact unserved digest." >&2
               python3 scripts/release/artifact_image_cleanup.py \
                 --project "$GCP_PROJECT_ID" \
                 --location "$GCP_REGION" \

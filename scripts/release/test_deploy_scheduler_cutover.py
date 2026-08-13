@@ -116,6 +116,10 @@ class SchedulerCutoverOrderTests(unittest.TestCase):
 
 
 class ArtifactCostGuardTests(unittest.TestCase):
+    def test_budgeted_ceiling_allows_one_observed_build(self) -> None:
+        self.assertIn("ARTIFACT_BUDGET_BYTES=1000000000", SCRIPT)
+        self.assertNotIn("ARTIFACT_FREE_BYTES", SCRIPT)
+
     def test_reserve_covers_the_observed_image_and_attestation_envelope(self) -> None:
         self.assertIn("NEW_IMAGE_RESERVE_BYTES=268435456", SCRIPT)
         self.assertNotIn("167772160", SCRIPT)
@@ -123,7 +127,7 @@ class ArtifactCostGuardTests(unittest.TestCase):
 
     def test_manual_build_requires_headroom_before_cloud_build(self) -> None:
         headroom = position(
-            "REPOSITORY_SIZE_BYTES > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES"
+            "REPOSITORY_SIZE_BYTES > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES"
         )
         build = position("gcloud builds submit", after=headroom)
         first_runtime_mutation = position("gcloud run jobs deploy illinicover-migrate")

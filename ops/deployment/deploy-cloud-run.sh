@@ -44,7 +44,7 @@ fi
 IMAGE_TAG="${IMAGE_TAG:-$CODE_REVISION}"
 IMAGE_REPOSITORY="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${REPOSITORY}/backend"
 IMAGE_TAG_REFERENCE="${IMAGE_REPOSITORY}:${IMAGE_TAG}"
-ARTIFACT_FREE_BYTES=500000000
+ARTIFACT_BUDGET_BYTES=1000000000
 NEW_IMAGE_RESERVE_BYTES=268435456
 IMAGE_BUILT_THIS_RELEASE="$RELEASE_IMAGE_BUILT"
 IMAGE=""
@@ -598,8 +598,8 @@ if [[ ! "$REPOSITORY_SIZE_BYTES" =~ ^[0-9]+$ ]]; then
   echo "Artifact Registry did not report a numeric repository size." >&2
   exit 3
 fi
-if (( REPOSITORY_SIZE_BYTES > ARTIFACT_FREE_BYTES )); then
-  echo "Artifact Registry is ${REPOSITORY_SIZE_BYTES} bytes, above its 0.5 GB release ceiling." >&2
+if (( REPOSITORY_SIZE_BYTES > ARTIFACT_BUDGET_BYTES )); then
+  echo "Artifact Registry is ${REPOSITORY_SIZE_BYTES} bytes, above its 1 GB release budget." >&2
   echo "Inspect exact image versions before cleanup; the deploy script never deletes images." >&2
   exit 3
 fi
@@ -618,8 +618,8 @@ elif IMAGE_DIGEST="$(gcloud artifacts docker images describe "$IMAGE_TAG_REFEREN
   && [[ -n "$IMAGE_DIGEST" ]]; then
   echo "Reusing the existing immutable image tag ${IMAGE_TAG_REFERENCE}."
 else
-  if (( REPOSITORY_SIZE_BYTES > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
-    echo "Artifact Registry lacks the conservative 256 MiB headroom required before a build." >&2
+  if (( REPOSITORY_SIZE_BYTES > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
+    echo "Artifact Registry lacks the budgeted 256 MiB headroom required before a build." >&2
     echo "Current billed bytes: ${REPOSITORY_SIZE_BYTES}; no image was built." >&2
     exit 3
   fi
@@ -660,13 +660,13 @@ if [[ ! "$REPOSITORY_SIZE_BYTES_AFTER" =~ ^[0-9]+$ ]]; then
   delete_unserved_release_build "$IMAGE"
   exit 3
 fi
-if (( REPOSITORY_SIZE_BYTES_AFTER > ARTIFACT_FREE_BYTES )); then
-  echo "Artifact Registry is ${REPOSITORY_SIZE_BYTES_AFTER} bytes, above its 0.5 GB release ceiling." >&2
+if (( REPOSITORY_SIZE_BYTES_AFTER > ARTIFACT_BUDGET_BYTES )); then
+  echo "Artifact Registry is ${REPOSITORY_SIZE_BYTES_AFTER} bytes, above its 1 GB release budget." >&2
   echo "No Cloud Run resource has been changed." >&2
   delete_unserved_release_build "$IMAGE"
   exit 3
 fi
-echo "Artifact Registry post-build size: ${REPOSITORY_SIZE_BYTES_AFTER} bytes (0.5 GB ceiling)."
+echo "Artifact Registry post-build size: ${REPOSITORY_SIZE_BYTES_AFTER} bytes (1 GB budget)."
 
 SERVICE_PREVIOUS_STATE="$(gcloud run services list \
   --project "$GCP_PROJECT_ID" \

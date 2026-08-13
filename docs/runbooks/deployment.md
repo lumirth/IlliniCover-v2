@@ -48,17 +48,18 @@ service exceeds an allowance. At release time, check billing-account usage as
 well as the project budget alerts.
 
 Artifact Registry's free storage allowance is 0.5 GiB-month per billing account,
-not per project. The workflows and manual helper read this repository's
-provider-reported cost size before and after a build and refuse to touch Cloud
-Run above a conservative 500,000,000-byte ceiling. A new build requires 256 MiB
-of headroom; an image that nevertheless crosses the ceiling is deleted by its
-exact newly built, still-unserved digest and verified no longer addressable.
+not per project. The owner explicitly accepts modest storage charges during
+release work, so the workflows and manual helper enforce a finite
+1,000,000,000-byte repository budget rather than treating the free allowance as
+a hard release boundary. A new build still requires 256 MiB of headroom; an
+image that nevertheless crosses the budget is deleted by its exact newly built,
+still-unserved digest and verified no longer addressable.
 The provider's billed-size counter may lag while unreferenced layers are
 collected asynchronously. Existing
 commit/source tags are reused, and both base images are digest-pinned, so a
 repeat release cannot manufacture another digest. The repository receipt does
-not see other projects on the billing account, so zero-cost acceptance also
-requires a billing-account-wide usage check.
+not see other projects on the billing account, so billing-account-wide usage
+still belongs in cost review even though zero cost is no longer a release gate.
 
 ## Secrets
 

@@ -142,11 +142,12 @@ def validate_workflows() -> None:
         "production billing-account secret inventory receipt is required",
     )
     require(
-        'NEW_IMAGE_RESERVE_BYTES: "268435456"' in deploy_source
-        and "256 MiB headroom" in deploy_source
+        'ARTIFACT_BUDGET_BYTES: "1000000000"' in deploy_source
+        and 'NEW_IMAGE_RESERVE_BYTES: "268435456"' in deploy_source
+        and "budgeted 256 MiB headroom" in deploy_source
         and "167772160" not in deploy_source
         and "160 MiB" not in deploy_source,
-        "production build preflight must reserve the observed-safe 256 MiB envelope",
+        "production build preflight must enforce the accepted 1 GB budget and 256 MiB envelope",
     )
     require(
         deploy_source.count("artifact_image_cleanup.py") >= 1
@@ -185,12 +186,13 @@ def validate_workflows() -> None:
         "preview Cloud Run resources must pin numeric Secret Manager versions",
     )
     require(
-        'NEW_IMAGE_RESERVE_BYTES: "268435456"' in preview_source
-        and "before > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES" in preview_source
-        and "256 MiB preview-build headroom" in preview_source
+        'ARTIFACT_BUDGET_BYTES: "1000000000"' in preview_source
+        and 'NEW_IMAGE_RESERVE_BYTES: "268435456"' in preview_source
+        and "before > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES" in preview_source
+        and "budgeted 256 MiB preview-build headroom" in preview_source
         and "332227840" not in preview_source
         and "160 MiB" not in preview_source,
-        "preview build preflight must reserve the observed-safe 256 MiB envelope",
+        "preview build preflight must enforce the accepted 1 GB budget and 256 MiB envelope",
     )
     require(
         "artifact_image_cleanup.py" in preview_source

@@ -135,10 +135,11 @@ candidate identity from a retired historical artifact without reviving prior
 authority. Close the model-recovery row only after that candidate earns a new
 receipt against the current incumbent, is promoted in an isolated drill, and
 preserves both prior authority intervals.
-The final row remains open. Artifact Registry's provider size counter is still
-above the repository's 500,000,000-byte build ceiling after deletion of the
-unserved image, so Cloud Build/deploy remains stopped and the stale Scheduler
-remains paused. Completion also requires a Git-SHA-correlated Cloud Run
+The final row remains open. Artifact Registry still retains unreferenced image
+layers pending provider garbage collection, but the owner accepts the modest
+temporary storage charge and the release guard now enforces a bounded 1 GB
+budget with 256 MiB build headroom. Completion still requires a
+Git-SHA-correlated Cloud Run
 rollout/readback, real SMTP, RevenueCat end-to-end delivery, monitoring
 ingestion, distribution signing/TestFlight, complete App Store product
 metadata, physical-device location, and a human VoiceOver pass.
