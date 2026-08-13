@@ -1,0 +1,203 @@
+{
+  "generatedAt": "2026-08-12T21:15:00-05:00",
+  "serverRevision": "fixture-canonical-v1",
+  "serviceDate": "2026-08-12",
+  "venues": [
+    {
+      "cover": {
+        "decisionId": "c7563704-b616-5f91-9ccb-cc047416111b",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1000,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "102 E Green St, Champaign, IL",
+        "id": "f2be9824-5f53-5719-abda-6c05c9ff1bd7",
+        "name": "KAMS",
+        "openedYear": 1933,
+        "slug": "live"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "f9ad09de-3d54-5935-9a6a-773d28e61ab4",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1000,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "706 S 5th St, Champaign, IL",
+        "id": "e93dff81-6c11-5448-8315-584d24aa2f40",
+        "name": "Joe's",
+        "openedYear": 1991,
+        "slug": "mixed"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "27f27462-8f7b-5535-8f6b-5a8e8589f752",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1000,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "211 E Green St, Champaign, IL",
+        "id": "201b43be-fb69-5b42-9eb5-896383d40781",
+        "name": "Red Lion",
+        "openedYear": 2010,
+        "slug": "unconfirmed"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "4773f549-b41d-534d-850b-bdae56e012d2",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 500,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "613 E Green St, Champaign, IL",
+        "id": "6ca63875-c9fe-5d8d-9619-2c47acc272dd",
+        "name": "Brothers",
+        "openedYear": 2023,
+        "slug": "advertised"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "c5fb56cf-ddae-5dcb-836a-103d18e069d7",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1000,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "522 East Green Street",
+        "id": "02ac2465-1958-5a66-b2da-d633184085c2",
+        "name": "Legends",
+        "openedYear": 1998,
+        "slug": "advertised-range"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "a801cd47-b439-54b4-a9cc-8ed916710fc2",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1000,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "604 East Green Street",
+        "id": "368c4703-a8fb-51ec-baf2-12ef4274af75",
+        "name": "Murphy's Pub",
+        "openedYear": 1969,
+        "slug": "unavailable"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    },
+    {
+      "cover": {
+        "decisionId": "11dba7d9-5cdf-5a89-8cfc-554ce9f6ce79",
+        "freshnessSeconds": 0,
+        "price": {
+          "amountCents": 1200,
+          "highCents": null,
+          "kind": "single",
+          "lowCents": null
+        },
+        "source": "historical",
+        "status": "historical"
+      },
+      "latestActivityAt": "2026-08-12T02:15:00Z",
+      "recentReportCount": 0,
+      "venue": {
+        "address": "123 A Very Long Address Used Only for Local Visual Acceptance",
+        "id": "77e88303-d5c5-500f-9178-774f1fa3a116",
+        "name": "A Deliberately Very Long Venue Name for Layout Verification",
+        "openedYear": 2026,
+        "slug": "overflow"
+      },
+      "vibes": {
+        "crowdLevel": null,
+        "lineLength": null,
+        "lineSpeed": null
+      }
+    }
+  ]
+}

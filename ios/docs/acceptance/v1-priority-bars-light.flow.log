@@ -1,0 +1,8 @@
+Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
+ > Flow settings-theme-light
+Launch app "com.illinicover.app"... COMPLETED
+Tap on "Settings"... COMPLETED
+Tap on "System"... COMPLETED
+Tap on "Light"... COMPLETED
+Tap on "Bars"... COMPLETED
+Assert that "Bars" is visible... COMPLETED

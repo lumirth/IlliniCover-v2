@@ -1,0 +1,13 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.illinicover.app.dev
+PRODUCT_NAME = IlliniCover
+INFOPLIST_FILE = Config/Info-Preview.plist
+IC_DISPLAY_NAME = IlliniCover Preview
+IC_URL_SCHEME = illinicover-dev
+IC_API_BASE_URL = https:/$()/illinicover-preview-1068900473446.us-east5.run.app
+IC_REVENUECAT_API_KEY = test_iNDNDGHzWoIeKSjnCzimZCaymqr
+IC_ENVIRONMENT = preview
+IC_CODE_REVISION = preview
+IC_SENTRY_DSN =
+IC_SUPPORT_EMAIL =
+IC_PRIVACY_POLICY_URL =
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEBUG PREVIEW

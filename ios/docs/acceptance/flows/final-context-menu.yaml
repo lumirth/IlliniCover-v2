@@ -1,0 +1,12 @@
+appId: com.illinicover.app.v2
+---
+- launchApp:
+    arguments:
+      "-uiTesting": true
+      "-skipOnboarding": true
+      "-signedIn": true
+- longPressOn:
+    id: bar-card-kams
+- assertVisible: "Open details"
+- assertVisible: "Report right price"
+- assertVisible: "Report wrong price"

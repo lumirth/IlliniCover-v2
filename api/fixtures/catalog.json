@@ -1,0 +1,44 @@
+{
+  "fixedNow": "2026-08-12T21:15:00-05:00",
+  "scenarios": {
+    "conflicting": {
+      "cover": "cover-board-rich.json",
+      "venueSlug": "mixed"
+    },
+    "empty": {
+      "cover": "cover-board-empty.json",
+      "deals": "deals-empty.json"
+    },
+    "error": {
+      "response": "venue-not-found-error.json",
+      "status": 404
+    },
+    "normal": {
+      "cover": "cover-board-rich.json",
+      "deals": "deals-rich.json"
+    },
+    "offlineSubmission": {
+      "expectedDisposition": "queued",
+      "prime": [
+        "cover-board-rich.json",
+        "deals-rich.json"
+      ],
+      "transport": "offline"
+    },
+    "premium": {
+      "timeMachine": "time-machine-premium.json"
+    },
+    "sparse": {
+      "cover": "cover-board-historical.json"
+    },
+    "stale": {
+      "advanceClockSeconds": 3601,
+      "prime": [
+        "cover-board-rich.json",
+        "deals-rich.json"
+      ],
+      "transport": "offline"
+    }
+  },
+  "schemaVersion": 1
+}

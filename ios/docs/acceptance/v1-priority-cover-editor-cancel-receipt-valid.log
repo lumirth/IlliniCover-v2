@@ -1,0 +1,813 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc058] [com.apple.dt.xctest:Default] Received request to fetch matches for query: ↪︎ Descendants matching type Keyboard (First Match)
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Evaluating query:
+ ↪︎ Descendants matching type Keyboard (First Match)
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Returning faulting root node. Data source will be attached when needed on MT.
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Decomposed transformers into first match sequences:
+↪︎ Descendants matching type Keyboard (First Match)
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:31:54.025 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTElementQuery: set data source for rootElementSnapshot to <XCTAutomationSession: 0x10a0a69a0>
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Beginning first match sequence for input App element pid: 23836 with transformers 
+↪︎ Descendants matching type Keyboard (First Match)
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Current tree:
+0x126d42440 <App element pid: 23836>
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for App element pid: 23836
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] App element pid: 23836 (App element pid: 23836) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4464935936.4",
+        "AX element pid: 23836, elementOrHash.elementID: 4464958976.13",
+        "AX element pid: 23836, elementOrHash.elementID: 4912014080.313"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] [First Match] iteration with input App element pid: 23836 and transformer `Descendants matching type Keyboard`
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4464935936.4
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4464935936.4 (AX element pid: 23836, elementOrHash.elementID: 4464935936.4) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 2;
+    "XC_kAXXCAttributeElementBaseType" = UIWindow;
+    "XC_kAXXCAttributeElementType" = UIWindow;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Window.
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4464958976.13
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4464958976.13 (AX element pid: 23836, elementOrHash.elementID: 4464958976.13) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 2;
+    "XC_kAXXCAttributeElementBaseType" = UITextEffectsWindow;
+    "XC_kAXXCAttributeElementType" = UITextEffectsWindow;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Window.
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4912014080.313
+2026-08-12 15:31:54.026 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4912014080.313 (AX element pid: 23836, elementOrHash.elementID: 4912014080.313) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 2;
+    "XC_kAXXCAttributeElementBaseType" = UIRemoteKeyboardWindow;
+    "XC_kAXXCAttributeElementType" = UIRemoteKeyboardWindow;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Window.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4464935936.4
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Window (AX element pid: 23836, elementOrHash.elementID: 4464935936.4) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517990912.5",
+        "AX element pid: 23836, elementOrHash.elementID: 4932378112.255"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517990912.5
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517990912.5 (AX element pid: 23836, elementOrHash.elementID: 4517990912.5) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UITransitionView;
+    "XC_kAXXCAttributeElementType" = UITransitionView;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4932378112.255
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4932378112.255 (AX element pid: 23836, elementOrHash.elementID: 4932378112.255) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UITransitionView;
+    "XC_kAXXCAttributeElementType" = UITransitionView;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4464958976.13
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Window (AX element pid: 23836, elementOrHash.elementID: 4464958976.13) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517355392.14"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517355392.14
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517355392.14 (AX element pid: 23836, elementOrHash.elementID: 4517355392.14) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UITrackingWindowView;
+    "XC_kAXXCAttributeElementType" = UITrackingWindowView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.027 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4912014080.313
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Window (AX element pid: 23836, elementOrHash.elementID: 4912014080.313) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4948030464.314"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4948030464.314
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4948030464.314 (AX element pid: 23836, elementOrHash.elementID: 4948030464.314) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIInputSetContainerView;
+    "XC_kAXXCAttributeElementType" = UIInputSetContainerView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517990912.5
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517990912.5) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4518694016.6"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4518694016.6
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4518694016.6 (AX element pid: 23836, elementOrHash.elementID: 4518694016.6) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIDropShadowView;
+    "XC_kAXXCAttributeElementType" = UIDropShadowView;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4932378112.255
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4932378112.255) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4854778368.256",
+        "AX element pid: 23836, elementOrHash.elementID: 4854779648.257"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4854778368.256
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4854778368.256 (AX element pid: 23836, elementOrHash.elementID: 4854778368.256) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIDimmingView;
+    "XC_kAXXCAttributeElementType" = UIDimmingView;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4854779648.257
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4854779648.257 (AX element pid: 23836, elementOrHash.elementID: 4854779648.257) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIDropShadowView;
+    "XC_kAXXCAttributeElementType" = UIDropShadowView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517355392.14
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517355392.14) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517357184.15",
+        "AX element pid: 23836, elementOrHash.elementID: 4517355840.315"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517357184.15
+2026-08-12 15:31:54.028 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517357184.15 (AX element pid: 23836, elementOrHash.elementID: 4517357184.15) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIEditingOverlayGestureView;
+    "XC_kAXXCAttributeElementType" = UIEditingOverlayGestureView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517355840.315
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517355840.315 (AX element pid: 23836, elementOrHash.elementID: 4517355840.315) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIKeyboardItemContainerView;
+    "XC_kAXXCAttributeElementType" = UIKeyboardItemContainerView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4948030464.314
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4948030464.314) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517714496.316"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517714496.316
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517714496.316 (AX element pid: 23836, elementOrHash.elementID: 4517714496.316) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIInputSetHostView;
+    "XC_kAXXCAttributeElementType" = UIInputSetHostView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4518694016.6
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4518694016.6) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4854779008.258",
+        "AX element pid: 23836, elementOrHash.elementID: 4518690816.7"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4854779008.258
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4854779008.258 (AX element pid: 23836, elementOrHash.elementID: 4854779008.258) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIDimmingView;
+    "XC_kAXXCAttributeElementType" = UIDimmingView;
+    "XC_kAXXCAttributeTraits" = 0;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4518690816.7
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4518690816.7 (AX element pid: 23836, elementOrHash.elementID: 4518690816.7) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIView;
+    "XC_kAXXCAttributeElementType" = RCTSurfaceHostingProxyRootView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4854778368.256
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4854778368.256) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.029 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4854779648.257
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4854779648.257) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4932379648.259",
+        "AX element pid: 23836, elementOrHash.elementID: 4517672960.260"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4932379648.259
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4932379648.259 (AX element pid: 23836, elementOrHash.elementID: 4932379648.259) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 9;
+    "XC_kAXXCAttributeElementBaseType" = "_UIGrabber";
+    "XC_kAXXCAttributeElementType" = "_UIGrabber";
+    "XC_kAXXCAttributeTraits" = 8589934593;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Button.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517672960.260
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517672960.260 (AX element pid: 23836, elementOrHash.elementID: 4517672960.260) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIView;
+    "XC_kAXXCAttributeElementType" = UIView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517357184.15
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517357184.15) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517355840.315
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517355840.315) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4854710912.317",
+        "AX element pid: 23836, elementOrHash.elementID: 4948033024.318"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4854710912.317
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4854710912.317 (AX element pid: 23836, elementOrHash.elementID: 4854710912.317) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 24;
+    "XC_kAXXCAttributeElementBaseType" = UIToolbar;
+    "XC_kAXXCAttributeElementType" = UIToolbar;
+    "XC_kAXXCAttributeTraits" = 146028888064;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Toolbar.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4948033024.318
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4948033024.318 (AX element pid: 23836, elementOrHash.elementID: 4948033024.318) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = "_UIRemoteKeyboardPlaceholderView";
+    "XC_kAXXCAttributeElementType" = "_UIRemoteKeyboardPlaceholderView";
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517714496.316
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517714496.316) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4932372992.319",
+        "AX element pid: 23836, elementOrHash.elementID: 4517920768.320",
+        "AX element pid: 23836, elementOrHash.elementID: 4517353600.321",
+        "AX element pid: 23836, elementOrHash.elementID: 4517715392.322"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.030 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4932372992.319
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4932372992.319 (AX element pid: 23836, elementOrHash.elementID: 4932372992.319) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = "_UIRemoteKeyboardPlaceholderView";
+    "XC_kAXXCAttributeElementType" = "_UIRemoteKeyboardPlaceholderView";
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517920768.320
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517920768.320 (AX element pid: 23836, elementOrHash.elementID: 4517920768.320) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIView;
+    "XC_kAXXCAttributeElementType" = UIView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517353600.321
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517353600.321 (AX element pid: 23836, elementOrHash.elementID: 4517353600.321) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = "_UIKBCompatInputView";
+    "XC_kAXXCAttributeElementType" = "_UIKBCompatInputView";
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517715392.322
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517715392.322 (AX element pid: 23836, elementOrHash.elementID: 4517715392.322) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIKeyboardDockView;
+    "XC_kAXXCAttributeElementType" = UIKeyboardDockView;
+    "XC_kAXXCAttributeTraits" = 25769803776;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4854779008.258
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4854779008.258) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4518690816.7
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4518690816.7) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4466166400.10"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4466166400.10
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4466166400.10 (AX element pid: 23836, elementOrHash.elementID: 4466166400.10) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIView;
+    "XC_kAXXCAttributeElementType" = RCTSurfaceView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4932379648.259
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Button (AX element pid: 23836, elementOrHash.elementID: 4932379648.259) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517672960.260
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517672960.260) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517673408.262"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517673408.262
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517673408.262 (AX element pid: 23836, elementOrHash.elementID: 4517673408.262) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIView;
+    "XC_kAXXCAttributeElementType" = UIView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4854710912.317
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Toolbar (AX element pid: 23836, elementOrHash.elementID: 4854710912.317) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4517793728.323"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.031 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4517793728.323
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4517793728.323 (AX element pid: 23836, elementOrHash.elementID: 4517793728.323) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = "_TtGC5UIKit17UICoreHostingViewVCS_21ToolbarVisualProvider8RootView_";
+    "XC_kAXXCAttributeElementType" = "_TtGC5UIKit17UICoreHostingViewVCS_21ToolbarVisualProvider8RootView_";
+    "XC_kAXXCAttributeTraits" = 146028888064;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4948033024.318
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4948033024.318) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4932372992.319
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4932372992.319) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517920768.320
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517920768.320) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4946253824.324"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4946253824.324
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4946253824.324 (AX element pid: 23836, elementOrHash.elementID: 4946253824.324) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 0;
+    "XC_kAXXCAttributeElementBaseType" = UIKBInputBackdropView;
+    "XC_kAXXCAttributeElementType" = UIKBInputBackdropView;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Other.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeChildren for AX element pid: 23836, elementOrHash.elementID: 4517353600.321
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Other (AX element pid: 23836, elementOrHash.elementID: 4517353600.321) faulted in {
+    "XC_kAXXCAttributeChildren" =     (
+        "AX element pid: 23836, elementOrHash.elementID: 4854820736.325"
+    );
+}: (no error) for children using XC_kAXXCAttributeChildren
+2026-08-12 15:31:54.032 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Fetching AX attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType for AX element pid: 23836, elementOrHash.elementID: 4854820736.325
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got attributes, transferring to dictionary for return.
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] AX element pid: 23836, elementOrHash.elementID: 4854820736.325 (AX element pid: 23836, elementOrHash.elementID: 4854820736.325) faulted in {
+    "XC_kAXXCAttributeAutomationType" = 19;
+    "XC_kAXXCAttributeElementBaseType" = UIKeyboardAutomatic;
+    "XC_kAXXCAttributeElementType" = UIKeyboardAutomatic;
+    "XC_kAXXCAttributeTraits" = 8589934592;
+}: (no error) for elementType using XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeTraits, XC_kAXXCAttributeAutomationType
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Computed elementType Keyboard.
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] [First Match] match found and no more transformers in the current sequence - done, returning Keyboard
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] [First Match] unioned related elements {(
+)} from {(
+)}
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Current tree:
+0x126d42440 <App element pid: 23836>
+  Window, 0x126d43700 <AX element pid: 23836, elementOrHash.elementID: 4464935936.4>
+    Other, 0x126d41cc0 <AX element pid: 23836, elementOrHash.elementID: 4517990912.5>
+      Other, 0x126dc03c0 <AX element pid: 23836, elementOrHash.elementID: 4518694016.6>
+        Other, 0x125c4a440 <AX element pid: 23836, elementOrHash.elementID: 4854779008.258>
+        Other, 0x125c4a080 <AX element pid: 23836, elementOrHash.elementID: 4518690816.7>
+          Other, 0x122c0ea80 <AX element pid: 23836, elementOrHash.elementID: 4466166400.10>
+    Other, 0x126d41180 <AX element pid: 23836, elementOrHash.elementID: 4932378112.255>
+      Other, 0x126dc0140 <AX element pid: 23836, elementOrHash.elementID: 4854778368.256>
+      Other, 0x126dc0500 <AX element pid: 23836, elementOrHash.elementID: 4854779648.257>
+        Button, 0x125c4a6c0 <AX element pid: 23836, elementOrHash.elementID: 4932379648.259>
+        Other, 0x125c492c0 <AX element pid: 23836, elementOrHash.elementID: 4517672<…>
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Query ↪︎ Descendants matching type Keyboard (First Match) found matching snapshots: {(
+    Keyboard
+)} (error: (null))
+2026-08-12 15:31:54.033 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Replying to query ↪︎ Descendants matching type Keyboard (First Match) with results: <XCTElementQueryResults: 0x1213aa400> (error: (null))
+2026-08-12 15:31:54.055 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard receives keyEvent type: 4; subtype: 0
+2026-08-12 15:31:54.055 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard adds a string
+2026-08-12 15:31:54.057 A  IlliniCover[23836:3cc046] (UIKitCore) send control actions
+2026-08-12 15:31:54.057 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard inserts text
+2026-08-12 15:31:54.058 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x126d40c80; type: 4; subtype: 0; backing type: 30; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:54.771 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard receives keyEvent type: 4; subtype: 0
+2026-08-12 15:31:54.772 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard adds a string
+2026-08-12 15:31:54.773 A  IlliniCover[23836:3cc046] (UIKitCore) send control actions
+2026-08-12 15:31:54.776 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardUI] Keyboard inserts text
+2026-08-12 15:31:54.777 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x126d40c80; type: 4; subtype: 0; backing type: 30; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.260 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 23836 for query
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x12143db90> {pid=23836} {uid=[ID:4 hash:0x10a218400]}
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:31:55.261 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:31:55.341 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x125da55f0> {pid=23836} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:31:55.341 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:31:55.341 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:31:55.341 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:31:55.341 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:31:55.342 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.342 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.342 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.343 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:55.344 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:31:55.344 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:31:55.344 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UIRemoteKeyboardWindow window Window is not main window
+2026-08-12 15:31:55.344 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:31:55.345 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 23836
+)} (error: (null))
+2026-08-12 15:31:55.345 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1213a9d10> (error: (null))
+2026-08-12 15:31:55.706 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.706 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:31:55.706 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a218400>; contextId: 0xD463590
+2026-08-12 15:31:55.707 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.738 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.755 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.788 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.788 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-08-12 15:31:55.788 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.805 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.822 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.822 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10a1a0d00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:31:55.822 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:31:55.822 Df IlliniCover[23836:3cc046] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x10a218400>; contextId: 0xD463590
+2026-08-12 15:31:55.822 A  IlliniCover[23836:3cc046] (UIKitCore) send gesture actions
+2026-08-12 15:31:55.822 A  IlliniCover[23836:3cc046] (UIKitCore) send gesture actions
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] Reloading input views for key-window scene responder: <(null): 0x0; > force:N
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _reloadInputViewsForKeyWindowSceneResponder: 0 force: 0, fromBecomeFirstResponder: 1 (automaticKeyboard: 0, reloadIdentifier: 09D82B5E-9723-4B38-9C2D-53A7C25A7832)
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder: <(null): 0x0; >, automaticKeyboard: 0, force: 0
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found custom inputView: <(null): 0x0>, customInputViewController: <(null): 0x0>
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found inputAccessoryView: <(null): 0x0>
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, responderRequiresKeyboard 0 (automaticKeyboardEnabled: 0, activeInstance: <UIKeyboardAutomatic: 0x1215eaf80; frame = {{0, 0}, {390, 233}}; alpha = 1.000000; isHidden = 0; tAMIC = 0>, self.isOnScreen: 1, requiresKBWhenFirstResponder: 0)
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, useKeyboard 0 (allowsSystemInputView: 1, !inputView <(null): 0x0>, responderRequiresKeyboard 0)
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, configuring _responderWithoutAutomaticAppearanceEnabled: <(null): 0x0> (_automaticAppearEnabled: 1)
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder returning: <<UIInputViewSet: 0x126e72100>; (empty)>
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.BackBoard:Keyboard] currently observing: YES
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.BackBoard:Keyboard] currently observing: NO
+2026-08-12 15:31:55.830 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputSessionChange] -_teardownExistingDelegate:<RCTUITextField: 0x124c75900> forSetDelegate:(nil) force:NO delayEndInputSession:YES
+2026-08-12 15:31:55.831 Df IlliniCover[23836:3cc058] [com.apple.network:path] nw_path_evaluator_cancel [D4DD568B-6120-4335-83FE-7F9174FE9572] cancel
+2026-08-12 15:31:55.832 Df IlliniCover[23836:3cc046] [com.apple.RemoteTextInput:RTILog] -[RTIInputSystemClient remoteTextInputSessionWithID:textSuggestionsChanged:]  Text input session suggestions changed. sessionID = AF0C926E-CF24-49D3-9DF8-38D87388FE8D
+2026-08-12 15:31:55.833 Df IlliniCover[23836:3cc046] [com.apple.UIKit:SmartReply] Handling responseContextDidChange - existing: (null), new: (null)
+2026-08-12 15:31:55.834 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIKeyboardExtended] Requesting scene for autofill UI
+2026-08-12 15:31:55.834 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e72100>; (empty)> windowScene: <UIWindowScene: 0x10d49fe00; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.834 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {0, 0}} visible: 0; notifyRemote: 1; isMinimized: NO
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:N
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x128058d80>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x126d892f0 -> <CAFenceHandle:0x10d51c150 name=a fence=7560000010d usable=YES>>; position {{0, 0}, {0, 0}}; animated YES; on screen NO; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x126d892f0 -> <CAFenceHandle:0x10d51c150 name=a fence=7560000010d usable=YES>>; position {{0, 0}, {0, 0}} (with IAV same); floating 0; on screen NO;  intersectable YES; snapshot YES>
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardVisualMode] Show keyboard with visual mode windowed (0)
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] Setting input views: <<UIInputViewSet: 0x126e715c0>; (empty)>
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.835 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e715c0>; (empty)> windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.836 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] Moving from placement: <UIInputViewSetPlacementOnScreenWithAccessory> to placement: <UIInputViewSetPlacementOffScreenDown> (currentPlacement: <UIInputViewSetPlacementOnScreenWithAccessory>)
+2026-08-12 15:31:55.837 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:31:55.837 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.837 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.837 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.837 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.838 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.838 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.838 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x1216d6f80; role: _UIScreenBasedSceneSession; persistentIdentifier: 533247B7-BF97-4895-B3ED-E26588D0B17F; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.838 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreenWithAccessory>
+2026-08-12 15:31:55.838 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] Tracking provider: moveFromPlacement: <UIInputViewSetPlacementOnScreenWithAccessory> toPlacement: <UIInputViewSetPlacementOffScreenDown> update to: {{0, 892}, {390, 308}}
+2026-08-12 15:31:55.839 Df IlliniCover[23836:3cc046] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x10d5ffac0 state=<TUIKeyboardState: 0x128088200 State: offscreen; is docked>; frame={{0, 892}, {390, 308}}; animation=<TUIKeyboardAnimationInfo: 0x125dc63c0, duration: 0.38, from local keyboard, is not rotating, should animate, type: 0, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 356}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 666}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 1022}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 488}, {390, 356}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 356}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:31:55.839 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 0} [previous size: {390, 356}]
+2026-08-12 15:31:55.841 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 0} [previous size: {390, 308}]
+2026-08-12 15:31:55.842 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 48} [previous size: {390, 0}]
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] Setting tracking element input views: <<UIInputViewSet: 0x126e721c0>; (empty)>
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboardPlaceholderView refreshPlaceholder]  refreshPlaceholder: size={390, 0} [previous size={390, 0}]
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] Placeholder height changed from 308.0 to 0.0
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e721c0>; (empty)> windowScene: <UIWindowScene: 0x10d49fe00; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] Moving from placement: <UIInputViewSetPlacementOnScreenWithAccessory> to placement: <UIInputViewSetPlacementOffScreenDown> (currentPlacement: <UIInputViewSetPlacementOnScreenWithAccessory>)
+2026-08-12 15:31:55.845 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:31:55.856 Df IlliniCover[23836:3cc046] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification willHide with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 356}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 666}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 1022}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 488}, {390, 356}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 356}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:31:55.894 A  IlliniCover[23836:3cc046] (UIKitCore) send control actions
+2026-08-12 15:31:55.899 Df IlliniCover[23836:3cc046] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient endRemoteTextInputSessionWithID:options:completion:]  Ending text input session. sessionID = AF0C926E-CF24-49D3-9DF8-38D87388FE8D, options = <RTISessionOptions: 0x121723c60; shouldResign = YES; animated = YES; offscreenDirection = 0; enhancedWindowingModeEnabled = NO
+2026-08-12 15:31:55.899 Df IlliniCover[23836:3cc046] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _endSessionWithID:forServices:options:completion:]  End input session: AF0C926E-CF24-49D3-9DF8-38D87388FE8D
+2026-08-12 15:31:55.900 Df IlliniCover[23836:3cc046] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient endAllowingRemoteTextInput:completion:]  End allowing remote text input: AF0C926E-CF24-49D3-9DF8-38D87388FE8D
+2026-08-12 15:31:55.900 Df IlliniCover[23836:3cc046] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _modifyTextEditingAllowedForReason:notify:animated:modifyAllowancesBlock:completion:]  Text editing allowed did change (editingAllowedAfter = NO)
+2026-08-12 15:31:55.906 Df IlliniCover[23836:3cc046] [com.apple.xpc:connection] [0x124e883c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:31:56.292 Df IlliniCover[23836:3cc046] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:547253211 windowState:Disabled level:5.0
+    focusContext:<contextID:222705040 sceneID:com.illinicover.app-default>
+2026-08-12 15:31:56.295 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] Change from input view set: <<UIInputViewSet: 0x126e718c0>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; accessory = <UIToolbar: 0x1215d0280; frame = (0 0; 390 48); >; usesKeyClicks = NO;  >
+2026-08-12 15:31:56.295 Df IlliniCover[23836:3cc046] [com.apple.UIKit:TrackingElementWindowController] Change to input view set: <<UIInputViewSet: 0x126e721c0>; (empty)>
+2026-08-12 15:31:56.297 Df IlliniCover[23836:3cc046] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x126e721c0>; (empty)> windowScene: <UIWindowScene: 0x10d49fe00; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:31:56.299 Df IlliniCover[23836:3cc050] [com.apple.network:path] nw_path_evaluator_start [B9634542-4FF4-43E1-BDBC-950C98879EFC <NULL> generic, multipath service: handover, attribution: developer]
+	path: satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown
+2026-08-12 15:31:56.300 Df IlliniCover[23836:3cc046] [com.apple.UIKit:Dictation] -[UIDictationController setIgnoreFinalizePhrases:] Setting ignoreFinalizePhrases flag 1
+2026-08-12 15:31:56.301 Df IlliniCover[23836:3cc046] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification didHide with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 356}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 666}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 1022}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 488}, {390, 356}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 356}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:31:56.301 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] Change from input view set: <<UIInputViewSet: 0x126e71800>; keyboard = <UIKeyboardAutomatic: 0x1215eaf80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x121582850>>%; assistant = <TUISystemInputAssistantView: 0x10d5f0600; frame = (0 48; 390 0); hidden = YES; >; accessory = <_UIRemoteKeyboardPlaceholderView: 0x125fe0a00; frame = (0 0; 390 48); >; usesKeyClicks = NO;  >
+2026-08-12 15:31:56.301 Df IlliniCover[23836:3cc046] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x126e715c0>; (empty)>
+2026-08-12 15:31:56.401 A  IlliniCover[23836:3cc059] (RunningBoardServices) didChangeInheritances
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 23836 for query
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:31:56.623 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:31:56.624 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x120b61d70> {pid=23836} {uid=[ID:4 hash:0x10a218400]}
+2026-08-12 15:31:56.624 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:31:56.624 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:31:56.624 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:31:56.703 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x120a8e7c0> {pid=23836} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:31:56.703 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:31:56.703 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.704 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 23836
+)} (error: (null))
+2026-08-12 15:31:56.705 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1213ab300> (error: (null))
+2026-08-12 15:31:57.528 Df IlliniCover[23836:3cc059] [com.apple.xpc:connection] [0x10a178600] invalidated because the client process (pid 23802) either cancelled the connection or exited
+2026-08-12 15:31:57.528 Df IlliniCover[23836:3cc059] [com.apple.dt.xctest:Default] Connection from client with pid 23802 was invalidated.
+2026-08-12 15:31:57.532 Df IlliniCover[23836:3cc050] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:31:57.532 Df IlliniCover[23836:3cc050] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:31:57.532 Df IlliniCover[23836:3cc050] [com.apple.xpc:connection] [0x125c4a800] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:31:57.538 Df IlliniCover[23836:3cc050] [com.apple.xpc:connection] [0x125c4a800] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:31:57.538 Df IlliniCover[23836:3cc050] [com.apple.dt.automationmode:Default] Comparing previous enabled state (1) to current enabled state (0)
+2026-08-12 15:31:57.538 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Automation Mode has been disabled, existing connections will be invalidated.
+2026-08-12 15:31:58.496 Df IlliniCover[23836:3cc054] [com.apple.launchservices:db] NotifyToken::RegisterDispatch(com.apple.LaunchServices.database) fired for session key LSSessionKey(system: 0 uid: 501)
+2026-08-12 15:32:07.251 Df IlliniCover[23836:3cc05a] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:32:07.251 Df IlliniCover[23836:3cc05a] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:32:07.251 Df IlliniCover[23836:3cc05a] [com.apple.xpc:connection] [0x125c4a800] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:32:07.253 Df IlliniCover[23836:3cc05a] [com.apple.xpc:connection] [0x125c4a800] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:32:07.253 Df IlliniCover[23836:3cc05a] [com.apple.dt.automationmode:Default] Comparing previous enabled state (0) to current enabled state (1)
+2026-08-12 15:32:10.382 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Received request for endpoint.
+2026-08-12 15:32:10.383 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Sending anonymous endpoint.
+2026-08-12 15:32:10.383 Df IlliniCover[23836:3cc05a] [com.apple.xpc:connection] [0x10a205180] Connection returned listener port: 0x770b
+2026-08-12 15:32:10.384 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Received client to target connection.
+2026-08-12 15:32:10.384 Df IlliniCover[23836:3cc05a] [com.apple.dt.automationmode:Default] Returning 1 for enabled state
+2026-08-12 15:32:10.385 Df IlliniCover[23836:3cc05a] [com.apple.xpc:connection] [0x122d46b80] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x10a205180.peer[24121].0x122d46b80
+2026-08-12 15:32:10.385 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Received request to exchange capabilities, remote interface capabilities are: <XCTCapabilities: 0x126d8a030>: {
+    "query runtime issue reporting" = 1;
+    "query runtime issue reporting/automation type mismatch" = 1;
+}
+2026-08-12 15:32:10.392 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:32:10.392 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:32:10.392 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 23836 for query
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:32:10.393 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:32:10.395 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x125e0ca20> {pid=23836} {uid=[ID:4 hash:0x10a218400]}
+2026-08-12 15:32:10.396 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:32:10.396 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:32:10.396 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:32:10.549 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x120ba0f60> {pid=23836} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:32:10.549 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:32:10.549 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.16s
+2026-08-12 15:32:10.549 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.550 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.551 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.551 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.552 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.552 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.552 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.553 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:10.554 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:32:10.554 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:32:10.555 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 23836
+)} (error: (null))
+2026-08-12 15:32:10.556 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1213a8120> (error: (null))
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc050] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 23836 for query
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:32:10.978 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:32:10.979 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x120b7e670> {pid=23836} {uid=[ID:4 hash:0x10a218400]}
+2026-08-12 15:32:10.979 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:32:10.979 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:32:10.979 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:32:11.069 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x125e0d380> {pid=23836} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:32:11.069 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:32:11.069 Df IlliniCover[23836:3cc046] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.09s
+2026-08-12 15:32:11.069 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:32:11.069 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.070 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:32:11.071 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:32:11.071 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:32:11.071 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 23836
+)} (error: (null))
+2026-08-12 15:32:11.071 Df IlliniCover[23836:3cc05a] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1213ab330> (error: (null))

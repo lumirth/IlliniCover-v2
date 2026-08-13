@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices"],
+  "timezone": "America/Chicago",
+  "schedule": ["before 7am on Monday"],
+  "minimumReleaseAge": "3 days",
+  "prConcurrentLimit": 6,
+  "prHourlyLimit": 2,
+  "automerge": false,
+  "rangeStrategy": "pin",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"],
+    "automerge": false,
+    "schedule": [],
+    "minimumReleaseAge": null
+  },
+  "packageRules": [
+    {
+      "description": "Keep major upgrades isolated",
+      "matchUpdateTypes": ["major"],
+      "groupName": null
+    },
+    {
+      "description": "Group Python runtime dependencies",
+      "matchManagers": ["pep621", "mise"],
+      "matchPackageNames": ["python", "/^django/", "/^psycopg/", "gunicorn", "whitenoise"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Python runtime"
+    },
+    {
+      "description": "Group development and repository tooling",
+      "matchManagers": ["pep621", "mise", "dockerfile"],
+      "matchDepTypes": ["dev", "devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Development tooling"
+    },
+    {
+      "description": "Group GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "groupName": "GitHub Actions"
+    },
+    {
+      "description": "Group Swift package updates",
+      "matchManagers": ["swift"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "Swift packages"
+    },
+    {
+      "description": "Review production, database, billing, and deployment seams individually",
+      "matchPackageNames": [
+        "/^django/",
+        "/^psycopg/",
+        "/revenuecat/i",
+        "/openapi/i",
+        "google-github-actions/auth",
+        "google-github-actions/setup-gcloud"
+      ],
+      "groupName": null,
+      "automerge": false
+    }
+  ]
+}

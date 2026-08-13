@@ -1,0 +1,11 @@
+appId: com.illinicover.app.v2
+---
+- launchApp:
+    arguments:
+      "-uiTesting": true
+      "-skipOnboarding": true
+      "-signedIn": true
+- tapOn: "Settings"
+- tapOn: "Privacy & Data"
+- assertVisible: "Optional location"
+- assertVisible: "Minimal error monitoring"

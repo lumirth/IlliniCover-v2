@@ -1,0 +1,332 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 39595 for query
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x1232d5140> {pid=39595} {uid=[ID:4 hash:0x107e10400]}
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 16:01:09.942 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 16:01:09.978 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x120b183c0> {pid=39595} {uid=[ID:1 hash:0x0]}
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.04s
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Button is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Button is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Switch is not actually a child of Switch, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.979 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] CollectionView is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 75 instead of legacy element type OTHER derived from class/trait: _UIContextMenuCell:_UIContextMenuCell 146028888064
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 75 instead of legacy element type OTHER derived from class/trait: _UIContextMenuCell:_UIContextMenuCell 146028888064
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 75 instead of legacy element type OTHER derived from class/trait: _UIContextMenuCell:_UIContextMenuCell 146028888064
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 39595
+)} (error: (null))
+2026-08-12 16:01:09.980 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11f37de00> (error: (null))
+2026-08-12 16:01:10.492 Df IlliniCover[39595:3e7ed9] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.illinicover.app-default
+2026-08-12 16:01:10.492 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.492 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 16:01:10.492 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e10400>; contextId: 0xB8DD8164
+2026-08-12 16:01:10.493 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:10.494 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.508 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.525 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.541 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.558 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.575 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-08-12 16:01:10.575 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.591 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.608 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.608 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:10.608 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 16:01:10.608 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e10400>; contextId: 0xB8DD8164
+2026-08-12 16:01:10.609 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:10.609 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:10.609 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:10.614 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:10.616 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:UIFocusSystemSceneComponent] Override focusSystemState: (DISABLED) for reason(s): <_UIVariableGestureContextMenuInteraction: 0x10b2a1100>
+2026-08-12 16:01:10.616 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:InterfaceStyle] Not push traits update to screen for new style 2, <UIWindowScene: 0x10b06b800> (2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388)
+2026-08-12 16:01:10.627 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:UICMILifecycle] performAllAnimations for animator: <_UIContextMenuAnimator: 0x1251a4480>
+2026-08-12 16:01:10.637 Df IlliniCover[39595:3e7ed9] [com.apple.coreanimation:API] <CATransformLayer: 0x1251a5e00> - changing property presentationModifiers in transform-only layer, will have no effect
+2026-08-12 16:01:10.637 Df IlliniCover[39595:3e7ed9] [com.apple.coreanimation:API] <CATransformLayer: 0x1251a6550> - changing property presentationModifiers in transform-only layer, will have no effect
+2026-08-12 16:01:10.694 E  IlliniCover[39595:3e7ed9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 16:01:10.694 E  IlliniCover[39595:3e7ed9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 16:01:11.482 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:UICMILifecycle] _animateUsingFluidSpringWithType 1 completion: finished 1, retargeted 1, count: 0
+2026-08-12 16:01:11.849 Df IlliniCover[39595:3e7ed9] [com.apple.coreanimation:API] <CATransformLayer: 0x1251a6550> - changing property presentationModifiers in transform-only layer, will have no effect
+2026-08-12 16:01:11.899 Df IlliniCover[39595:3e7ed9] [com.apple.coreanimation:API] <CATransformLayer: 0x1251a5e00> - changing property presentationModifiers in transform-only layer, will have no effect
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 39595 for query
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 16:01:12.076 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 16:01:12.077 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11ebe5d40> {pid=39595} {uid=[ID:4 hash:0x107e10400]}
+2026-08-12 16:01:12.077 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 16:01:12.077 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 16:01:12.077 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 16:01:12.113 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11f404a80> {pid=39595} {uid=[ID:1 hash:0x0]}
+2026-08-12 16:01:12.113 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 16:01:12.113 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.04s
+2026-08-12 16:01:12.113 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Button is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Button is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Switch is not actually a child of Switch, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] CollectionView is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 16:01:12.114 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 16:01:12.115 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 39595
+)} (error: (null))
+2026-08-12 16:01:12.115 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11f37c4b0> (error: (null))
+2026-08-12 16:01:12.217 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:UICMILifecycle] performAllCompletions for animator: <_UIContextMenuAnimator: 0x1251a4480>
+2026-08-12 16:01:12.842 Df IlliniCover[39595:3e7ed9] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.illinicover.app-default
+2026-08-12 16:01:12.842 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.842 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 16:01:12.842 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e10400>; contextId: 0xB8DD8164
+2026-08-12 16:01:12.842 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:12.847 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:12.848 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.858 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.875 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.891 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.908 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.925 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.941 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.958 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.958 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 16:01:12.958 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 16:01:12.958 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107e10400>; contextId: 0xB8DD8164
+2026-08-12 16:01:12.959 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:12.959 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:12.959 A  IlliniCover[39595:3e7ed9] (UIKitCore) send control actions
+2026-08-12 16:01:12.968 E  IlliniCover[39595:3e7ed9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 16:01:12.968 E  IlliniCover[39595:3e7ed9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 16:01:13.025 Df IlliniCover[39595:3e7ed9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107d9d600; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-08-12 16:01:13.026 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:13.026 A  IlliniCover[39595:3e7ed9] (UIKitCore) send gesture actions
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 39595 for query
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11f284d20> {pid=39595} {uid=[ID:4 hash:0x107e10400]}
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 16:01:14.672 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x1232b8600> {pid=39595} {uid=[ID:1 hash:0x0]}
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.06s
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.736 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.737 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.737 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.737 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.737 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.738 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.738 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.738 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 39595
+)} (error: (null))
+2026-08-12 16:01:14.739 Df IlliniCover[39595:3e7ee9] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11f37ebe0> (error: (null))
+2026-08-12 16:01:15.904 Df IlliniCover[39595:3e7eed] [com.apple.xpc:connection] [0x107d74900] invalidated because the client process (pid 39547) either cancelled the connection or exited
+2026-08-12 16:01:15.904 Df IlliniCover[39595:3e7eed] [com.apple.dt.xctest:Default] Connection from client with pid 39547 was invalidated.
+2026-08-12 16:01:15.909 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 16:01:15.909 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 16:01:15.909 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x125142e40] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 16:01:15.914 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x125142e40] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 16:01:15.914 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] Comparing previous enabled state (1) to current enabled state (0)
+2026-08-12 16:01:15.914 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Automation Mode has been disabled, existing connections will be invalidated.
+2026-08-12 16:01:16.973 Df IlliniCover[39595:3e7ee6] [com.apple.launchservices:db] NotifyToken::RegisterDispatch(com.apple.LaunchServices.database) fired for session key LSSessionKey(system: 0 uid: 501)
+2026-08-12 16:01:25.902 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 16:01:25.902 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 16:01:25.903 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x125142e40] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 16:01:25.905 A  IlliniCover[39595:3e7eef] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-08-12 16:01:25.906 A  IlliniCover[39595:3e7eef] (CoreFoundation) Loading Preferences From User Session CFPrefsD
+2026-08-12 16:01:25.908 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x125142e40] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 16:01:25.908 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] Comparing previous enabled state (0) to current enabled state (1)
+2026-08-12 16:01:27.159 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request for endpoint.
+2026-08-12 16:01:27.159 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Sending anonymous endpoint.
+2026-08-12 16:01:27.159 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x107e09400] Connection returned listener port: 0x7a0b
+2026-08-12 16:01:27.160 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received client to target connection.
+2026-08-12 16:01:27.160 Df IlliniCover[39595:3e7ee6] [com.apple.dt.automationmode:Default] Returning 1 for enabled state
+2026-08-12 16:01:27.160 Df IlliniCover[39595:3e7ee6] [com.apple.xpc:connection] [0x12091ba80] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x107e09400.peer[39729].0x12091ba80
+2026-08-12 16:01:27.160 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request to exchange capabilities, remote interface capabilities are: <XCTCapabilities: 0x125146b70>: {
+    "query runtime issue reporting" = 1;
+    "query runtime issue reporting/automation type mismatch" = 1;
+}
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 39595 for query
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 16:01:27.162 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 16:01:27.163 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x1250d4ba0> {pid=39595} {uid=[ID:4 hash:0x107e10400]}
+2026-08-12 16:01:27.163 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 16:01:27.163 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 16:01:27.163 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 16:01:27.226 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x122eac510> {pid=39595} {uid=[ID:1 hash:0x0]}
+2026-08-12 16:01:27.226 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 16:01:27.226 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.06s
+2026-08-12 16:01:27.226 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 16:01:27.226 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 16:01:27.227 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 16:01:27.228 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 39595
+)} (error: (null))
+2026-08-12 16:01:27.228 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11f37efa0> (error: (null))
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7ee6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 39595 for query
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 16:01:27.421 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 16:01:27.422 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x1232a6f40> {pid=39595} {uid=[ID:4 hash:0x107e10400]}
+2026-08-12 16:01:27.422 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 16:01:27.422 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 16:01:27.422 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11e9decd0> {pid=39595} {uid=[ID:1 hash:0x0]}
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7ed9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.05s
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.472 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 16:01:27.473 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 39595
+)} (error: (null))
+2026-08-12 16:01:27.474 Df IlliniCover[39595:3e7eef] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11f37f240> (error: (null))

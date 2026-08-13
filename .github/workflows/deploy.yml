@@ -1,0 +1,239 @@
+name: Deploy production
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  classify:
+    name: Production / classify runtime change
+    runs-on: ubuntu-24.04
+    outputs:
+      deploy: ${{ steps.runtime.outputs.deploy }}
+      reason: ${{ steps.runtime.outputs.reason }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+      - id: runtime
+        name: Classify exact production runtime inputs
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          python3 scripts/release/classify_runtime_changes.py \
+            --repository . \
+            --before "$BEFORE_SHA" \
+            --after "$GITHUB_SHA" \
+            --github-output "$GITHUB_OUTPUT" \
+            --github-summary "$GITHUB_STEP_SUMMARY"
+      - name: Record non-runtime no-op
+        if: steps.runtime.outputs.deploy == 'false'
+        run: |
+          echo "Production deploy recorded as no-op (${RUNTIME_REASON}); no provider step ran."
+        env:
+          RUNTIME_REASON: ${{ steps.runtime.outputs.reason }}
+
+  deploy:
+    name: Production / immutable release
+    needs: classify
+    if: needs.classify.outputs.deploy == 'true'
+    runs-on: ubuntu-24.04
+    environment: production
+    permissions:
+      actions: read
+      contents: read
+      id-token: write
+      pull-requests: read
+    env:
+      ARTIFACT_REPOSITORY: ${{ vars.GCP_ARTIFACT_REPOSITORY }}
+      BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS: ${{ vars.GCP_OTHER_PROJECT_ACTIVE_SECRET_VERSIONS }}
+      GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+      GCP_REGION: ${{ vars.GCP_REGION }}
+      PUBLIC_API_ORIGIN: ${{ vars.PRODUCTION_API_ORIGIN }}
+      WIF_DEPLOY_SERVICE_ACCOUNT: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+      WIF_PROVIDER: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+      - id: migration-evidence
+        name: Re-evaluate exceptional migrations before any provider mutation
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          [[ "$BEFORE_SHA" =~ ^[0-9a-f]{40}$ ]] || {
+            echo "Push event did not provide a valid previous main SHA." >&2
+            exit 10
+          }
+          mapfile -t migration_paths < <(
+            git diff --name-only --diff-filter=ACDMRT "$BEFORE_SHA" "$GITHUB_SHA" \
+              -- 'server/**/migrations/*.py'
+          )
+          if (( ${#migration_paths[@]} == 0 )); then
+            echo "No migration changed in this production release."
+            exit 0
+          fi
+          set +e
+          python3 scripts/ci/classify_migrations.py \
+            --repository . \
+            --base "$BEFORE_SHA" \
+            "${migration_paths[@]}"
+          risk_status=$?
+          set -e
+          if (( risk_status == 0 )); then
+            echo "Changed migrations are additive; normal automatic migration remains enabled."
+            exit 0
+          fi
+          if (( risk_status != 10 )); then
+            exit "$risk_status"
+          fi
+          pulls="$RUNNER_TEMP/destructive-migration-pulls.json"
+          runs="$RUNNER_TEMP/destructive-migration-preview-runs.json"
+          gh api "/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/pulls" > "$pulls"
+          gh api --method GET \
+            "/repos/${GITHUB_REPOSITORY}/actions/workflows/preview.yml/runs" \
+            -f event=pull_request -f status=success -f per_page=100 > "$runs"
+          python3 scripts/ci/migration_evidence.py release \
+            --pulls "$pulls" \
+            --runs "$runs" \
+            --github-output "$GITHUB_OUTPUT" \
+            --github-summary "$GITHUB_STEP_SUMMARY"
+      - name: Validate immutable source and required repository variables
+        run: |
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA" || {
+            echo "Checkout does not match github.sha." >&2
+            exit 2
+          }
+          for name in GCP_PROJECT_ID GCP_REGION ARTIFACT_REPOSITORY PUBLIC_API_ORIGIN WIF_PROVIDER WIF_DEPLOY_SERVICE_ACCOUNT BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS; do
+            value="${!name:-}"
+            if [[ -z "$value" || "$value" == *REQUIRED* ]]; then
+              echo "Required GitHub Actions variable $name is unset or still a placeholder." >&2
+              exit 2
+            fi
+          done
+          if [[ "$GCP_PROJECT_ID" == "lukashermes" ]]; then
+            echo "Refusing to deploy IlliniCover into the unrelated lukashermes project." >&2
+            exit 2
+          fi
+          [[ "$BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS" =~ ^[0-9]+$ ]] || {
+            echo "GCP_OTHER_PROJECT_ACTIVE_SECRET_VERSIONS must be a current numeric receipt." >&2
+            exit 2
+          }
+      - id: auth
+        name: Authenticate with repository-and-main-scoped WIF
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: ${{ env.WIF_DEPLOY_SERVICE_ACCOUNT }}
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+        with:
+          version: 580.0.0
+      - name: Bound billable Secret Manager inventory before a build
+        run: |
+          python3 scripts/release/secret_version_guard.py check \
+            --project "$GCP_PROJECT_ID" \
+            --pending 0 \
+            --settled-ceiling 6 \
+            --rotation-ceiling 8 \
+            --external-active "$BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS" \
+            --allow-candidates
+      - id: image
+        name: Reuse or build the commit-SHA image within the storage ceiling
+        env:
+          ARTIFACT_BUDGET_BYTES: "1000000000"
+          NEW_IMAGE_RESERVE_BYTES: "268435456"
+        run: |
+          set -euo pipefail
+          built=false
+          image_repository="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REPOSITORY}/backend"
+          image_tag_reference="${image_repository}:${GITHUB_SHA}"
+          digest="$(gcloud artifacts docker images describe "$image_tag_reference" \
+            --project "$GCP_PROJECT_ID" --format='value(image_summary.digest)' 2>/dev/null || true)"
+          if [[ -z "$digest" ]]; then
+            before="$(python3 scripts/release/artifact_repository_size.py \
+              --project "$GCP_PROJECT_ID" \
+              --location "$GCP_REGION" \
+              --repository "$ARTIFACT_REPOSITORY")"
+            [[ "$before" =~ ^[0-9]+$ ]] || {
+              echo "Artifact Registry did not return a numeric billed-size receipt." >&2
+              exit 3
+            }
+            if (( before > ARTIFACT_BUDGET_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
+              echo "Artifact Registry lacks the budgeted 256 MiB headroom required before a build." >&2
+              echo "Current billed bytes: $before; no image was built." >&2
+              exit 3
+            fi
+            gcloud builds submit \
+              --project "$GCP_PROJECT_ID" \
+              --region "$GCP_REGION" \
+              --config ops/container/cloudbuild.yaml \
+              --substitutions "_IMAGE=${image_tag_reference},_CODE_REVISION=${GITHUB_SHA}" \
+              --quiet \
+              .
+            built=true
+            digest="$(gcloud artifacts docker images describe "$image_tag_reference" \
+              --project "$GCP_PROJECT_ID" --format='value(image_summary.digest)')"
+            [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]] || {
+              echo "Cloud Build did not produce one verifiable image digest." >&2
+              exit 3
+            }
+            after="$(python3 scripts/release/artifact_repository_size.py \
+              --project "$GCP_PROJECT_ID" \
+              --location "$GCP_REGION" \
+              --repository "$ARTIFACT_REPOSITORY")"
+            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_BUDGET_BYTES )); then
+              echo "New image would leave Artifact Registry above the 1 GB budget; deleting that exact unserved digest." >&2
+              python3 scripts/release/artifact_image_cleanup.py \
+                --project "$GCP_PROJECT_ID" \
+                --location "$GCP_REGION" \
+                --repository "$ARTIFACT_REPOSITORY" \
+                --package backend \
+                --digest "$digest" \
+                --execute
+              exit 3
+            fi
+            echo "Built commit image; repository billed bytes after build: $after."
+          else
+            echo "Reusing existing immutable commit-SHA image."
+          fi
+          [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]] || {
+            echo "Artifact Registry did not resolve the commit tag to a digest." >&2
+            exit 3
+          }
+          {
+            echo "built=$built"
+            echo "digest=$digest"
+            echo "image=${image_repository}@${digest}"
+          } >> "$GITHUB_OUTPUT"
+      - name: Migrate, deploy candidate, probe, and promote or roll back
+        env:
+          CODE_REVISION: ${{ github.sha }}
+          IMAGE_TAG: ${{ github.sha }}
+          RELEASE_COMMIT_SHA: ${{ github.sha }}
+          RELEASE_IMAGE_BUILT: ${{ steps.image.outputs.built }}
+          RELEASE_IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
+          RUN_BOOTSTRAP_ON_RELEASE: "false"
+          BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS: ${{ vars.GCP_OTHER_PROJECT_ACTIVE_SECRET_VERSIONS }}
+        run: ops/deployment/deploy-cloud-run.sh
+      - name: Record immutable release receipt
+        env:
+          IMAGE: ${{ steps.image.outputs.image }}
+        run: |
+          {
+            echo '### Production release'
+            echo
+            echo "- Commit: \`$GITHUB_SHA\`"
+            echo "- Image: \`$IMAGE\`"
+            echo "- Origin: \`$PUBLIC_API_ORIGIN\`"
+            echo '- Migration ran before candidate traffic; stable readiness passed after promotion.'
+          } >> "$GITHUB_STEP_SUMMARY"

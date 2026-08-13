@@ -1,0 +1,6 @@
+Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
+ > Flow bars-right-menu
+Launch app "com.illinicover.app"... COMPLETED
+Tap on "Bars"... COMPLETED
+Long press on "Confirm 10 dollar cover at KAMS"... COMPLETED
+Assert that "Quick confirm" is visible... COMPLETED

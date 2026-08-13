@@ -1,0 +1,549 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 15:40:08.753 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x123a9e3d0> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:08.754 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:08.830 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x122984450> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:08.830 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:08.830 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:40:08.830 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:08.830 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:08.831 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:08.831 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:08.832 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:08.832 Df IlliniCover[28464:3d5733] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f82a00> (error: (null))
+2026-08-12 15:40:09.756 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.illinicover.app-default
+2026-08-12 15:40:09.756 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.756 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:40:09.756 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107a0c400>; contextId: 0x6E1DF2FF
+2026-08-12 15:40:09.757 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.788 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.805 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.838 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.855 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-08-12 15:40:09.855 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.855 A  IlliniCover[28464:3d570c] (UIKitCore) send gesture actions
+2026-08-12 15:40:09.872 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.888 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x107994d00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:40:09.888 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:40:09.888 Df IlliniCover[28464:3d570c] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x107a0c400>; contextId: 0x6E1DF2FF
+2026-08-12 15:40:09.889 A  IlliniCover[28464:3d570c] (UIKitCore) send gesture actions
+2026-08-12 15:40:09.890 Df IlliniCover[28464:3d570c] [com.apple.UIKit:Feedback] generator <UISelectionFeedbackGenerator: 0x122872340> cannot play feedback <nil: 0x0> (enabled=0)
+2026-08-12 15:40:09.955 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:40:09.955 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:40:09.956 Df IlliniCover[28464:3d5732] [com.apple.network:connection] [C2] event: client:connection_reused @5.431s
+2026-08-12 15:40:09.957 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> now using Connection 2
+2026-08-12 15:40:09.958 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> now using Connection 2
+2026-08-12 15:40:09.958 Df IlliniCover[28464:3d5732] [com.apple.cfnetwork:h3stream] 0x124a581d8 ID=4 Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> sent request, body N 0
+2026-08-12 15:40:09.958 Df IlliniCover[28464:3d5732] [com.apple.cfnetwork:h3stream] 0x124a58a98 ID=8 Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> sent request, body N 0
+2026-08-12 15:40:09.969 E  IlliniCover[28464:3d570c] [com.apple.UIKit:UIFocus] RCTScrollViewComponentView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-08-12 15:40:09.984 E  IlliniCover[28464:3d570c] [com.apple.UIKit:UIFocus] RCTScrollViewComponentView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-08-12 15:40:10.035 E  IlliniCover[28464:3d570c] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:40:10.035 E  IlliniCover[28464:3d570c] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:40:10.060 E  IlliniCover[28464:3d570c] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:40:10.060 E  IlliniCover[28464:3d570c] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11ea5cff0> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:10.361 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:10.362 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:10.500 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11eaceaf0> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:10.501 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:10.501 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.14s
+2026-08-12 15:40:10.501 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:10.501 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:10.503 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:10.503 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.503 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.504 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:10.504 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:10.504 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:10.504 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f82760> (error: (null))
+2026-08-12 15:40:10.577 Df IlliniCover[28464:3d5732] [com.apple.cfnetwork:h3stream] 0x124a58a98 ID=8 Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> received response, status 200 content K
+2026-08-12 15:40:10.578 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> response ended
+2026-08-12 15:40:10.578 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> done using Connection 2
+2026-08-12 15:40:10.578 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Summary] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> summary for task success {transaction_duration_ms=622, response_status=200, connection=2, reused=1, reused_after_ms=0, request_start_ms=2, request_duration_ms=0, response_start_ms=621, response_duration_ms=1, request_bytes=417, request_throughput_kbps=18326, response_bytes=1460, response_throughput_kbps=9254, cache_hit=true}
+2026-08-12 15:40:10.579 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <9F6BF996-0AD8-4AEF-B4EE-B194F31FB574>.<4> finished successfully
+2026-08-12 15:40:10.585 Df IlliniCover[28464:3d5905] [com.apple.cfnetwork:h3stream] 0x124a581d8 ID=4 Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> received response, status 200 content K
+2026-08-12 15:40:10.585 Df IlliniCover[28464:3d5905] [com.apple.CFNetwork:Default] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> response ended
+2026-08-12 15:40:10.585 Df IlliniCover[28464:3d5905] [com.apple.network:connection] [C2] event: client:connection_idle @6.060s
+2026-08-12 15:40:10.586 Df IlliniCover[28464:3d5905] [com.apple.CFNetwork:Default] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> done using Connection 2
+2026-08-12 15:40:10.586 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Summary] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> summary for task success {transaction_duration_ms=630, response_status=200, connection=2, reused=1, reused_after_ms=4853, request_start_ms=1, request_duration_ms=1, response_start_ms=629, response_duration_ms=1, request_bytes=423, request_throughput_kbps=2613, response_bytes=1495, response_throughput_kbps=10852, cache_hit=true}
+2026-08-12 15:40:10.586 Df IlliniCover[28464:3d5732] [com.apple.CFNetwork:Default] Task <1D9C9200-BA65-4232-ADA0-68A262131A49>.<3> finished successfully
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:10.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x123a9f270> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:10.734 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:10.734 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:10.734 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:10.822 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11f023de0> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:10.822 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:10.822 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.09s
+2026-08-12 15:40:10.822 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:10.822 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:10.824 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:10.824 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:10.824 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:10.825 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f82940> (error: (null))
+2026-08-12 15:40:10.876 A  IlliniCover[28464:3d570c] (UIKitCore) send control actions
+2026-08-12 15:40:10.887 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] Reloading input views for key-window scene responder: <RCTUITextField: 0x12283e300; baseClass = UITextField; frame = (0 0; 268 44); opaque = NO; > force:N
+2026-08-12 15:40:10.887 Df IlliniCover[28464:3d570c] [com.apple.BackBoard:Keyboard] currently observing: YES
+2026-08-12 15:40:10.888 Df IlliniCover[28464:3d570c] [com.apple.BackBoard:Keyboard] currently observing: NO
+2026-08-12 15:40:10.888 E  IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:RTILog] -[RTIInputSystemClient remoteTextInputSessionWithID:performInputOperation:]  perform input operation requires a valid sessionID. inputModality = Keyboard, inputOperation = <null selector>, customInfoType = UIEmojiSearchOperations
+2026-08-12 15:40:10.888 Df IlliniCover[28464:3d570c] [com.apple.xpc:connection] [0x124bcd7c0] activating connection: mach=true listener=false peer=false name=com.apple.TextInput
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _reloadInputViewsForKeyWindowSceneResponder: 1 force: 0, fromBecomeFirstResponder: 1 (automaticKeyboard: 1, reloadIdentifier: 584F2D5E-91CC-40F5-9ABA-D28AD50868DA)
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder: <RCTUITextField: 0x12283e300; baseClass = UITextField; frame = (0 0; 268 44); opaque = NO; >, automaticKeyboard: 1, force: 0
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found custom inputView: <(null): 0x0>, customInputViewController: <(null): 0x0>
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found inputAccessoryView: <(null): 0x0>
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, responderRequiresKeyboard 1 (automaticKeyboardEnabled: 1, activeInstance: <UIKeyboardAutomatic: 0x11f1a6a80; frame = {{0, 0}, {390, 233}}; alpha = 1.000000; isHidden = 0; tAMIC = 0>, self.isOnScreen: 0, requiresKBWhenFirstResponder: 1)
+2026-08-12 15:40:10.889 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, useKeyboard 1 (allowsSystemInputView: 1, !inputView <(null): 0x0>, responderRequiresKeyboard 1)
+2026-08-12 15:40:10.894 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found assistantVC: <UISystemInputAssistantViewController: 0x107a1d400; frame = {{0, 0}, {390, 0}}> (should suppress: 0, _dontNeed: 0)
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, configuring _responderWithoutAutomaticAppearanceEnabled: <(null): 0x0> (_automaticAppearEnabled: 1)
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, useKeyboard ivs: <UIInputViewSet: 0x124b56f40>
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder returning: <<UIInputViewSet: 0x124b56f40>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  >
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.BackBoard:Keyboard] currently observing: YES
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.BackBoard:Keyboard] currently observing: NO
+2026-08-12 15:40:10.895 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputSessionChange] -_teardownExistingDelegate:(nil) forSetDelegate:<RCTUITextField: 0x12283e300> force:NO delayEndInputSession:YES
+2026-08-12 15:40:10.896 Df IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:RTILog] -[RTIInputSystemClient remoteTextInputSessionWithID:textSuggestionsChanged:]  Text input session suggestions changed. sessionID = (null)
+2026-08-12 15:40:10.897 Df IlliniCover[28464:3d570c] [com.apple.UIKit:SmartReply] Handling responseContextDidChange - existing: (null), new: (null)
+2026-08-12 15:40:10.954 Df IlliniCover[28464:3d570c] [com.apple.TextInputUI:DynamicKeyplaneView] Setting dynamic keyplane: Dynamic-QWERTY-British-Small_Capital-Letters
+2026-08-12 15:40:10.970 Df IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient beginAllowingRemoteTextInput:]  Begin allowing remote text input: 569014A5-92D5-473A-B692-84ADC7CE772D
+2026-08-12 15:40:10.970 Df IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _modifyTextEditingAllowedForReason:notify:animated:modifyAllowancesBlock:completion:]  Text editing allowed did change (editingAllowedAfter = YES)
+2026-08-12 15:40:10.975 Df IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient beginRemoteTextInputSessionWithID:options:documentTraits:initialDocumentState:]_block_invoke  Connection to service with mach name com.apple.rti-screencontinuity was invalidated. Attempting to create a new connection.
+2026-08-12 15:40:10.976 Df IlliniCover[28464:3d570c] [com.apple.xpc:connection] [0x11f2e7980] activating connection: mach=true listener=false peer=false name=com.apple.rti-screencontinuity
+2026-08-12 15:40:10.976 Df IlliniCover[28464:3d570c] [com.apple.xpc:connection] [0x11f2e7980] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-08-12 15:40:10.976 Df IlliniCover[28464:3d570c] [com.apple.xpc:connection] [0x11f2e7980] invalidated after a failed init
+2026-08-12 15:40:10.976 Df IlliniCover[28464:3d5738] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _configureConnection:withMachName:]_block_invoke_2  Client connection to service was invalidated: <NSXPCConnection: 0x122109ea0> connection to service named com.apple.rti-screencontinuity
+2026-08-12 15:40:10.976 Df IlliniCover[28464:3d570c] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _beginSessionWithID:forServices:force:]  Begin text input session. sessionID = 569014A5-92D5-473A-B692-84ADC7CE772D, options = <RTISessionOptions: 0x123b5f820; shouldResign = NO; animated = YES; offscreenDirection = 0; enhancedWindowingModeEnabled = NO
+2026-08-12 15:40:11.018 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:0 windowState:Disabled level:5.0
+    focusContext:<contextID:1847456511 sceneID:com.illinicover.app-default>
+2026-08-12 15:40:11.019 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x124b56f40>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10ac7d200; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.019 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.019 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {390, 308}} visible: 1; notifyRemote: 1; isMinimized: NO
+2026-08-12 15:40:11.021 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change from input view set: (null)
+2026-08-12 15:40:11.021 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change to input view set: (null)
+2026-08-12 15:40:11.022 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change from input view set: (null)
+2026-08-12 15:40:11.022 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x124b579c0>; (empty)>
+2026-08-12 15:40:11.029 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:40:11.030 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:Y
+2026-08-12 15:40:11.030 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:40:11.030 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x120925680>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x124bcae90 -> <CAFenceHandle:0x124bf1ab0 name=7 fence=75600000125 usable=YES>>; position {{0, 536}, {390, 308}}; animated YES; on screen YES; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x124bcae90 -> <CAFenceHandle:0x124bf1ab0 name=7 fence=75600000125 usable=YES>>; position {{0, 536}, {390, 308}} (with IAV same); floating 0; on screen YES;  intersectable YES; snapshot YES>
+2026-08-12 15:40:11.030 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:283718009 windowState:Enabled level:5.0
+    focusContext:<contextID:1847456511 sceneID:com.illinicover.app-default>
+2026-08-12 15:40:11.030 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIKeyboardExtended] Requesting scene for autofill UI
+2026-08-12 15:40:11.031 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardVisualMode] Show keyboard with visual mode windowed (0)
+2026-08-12 15:40:11.031 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Setting input views: <<UIInputViewSet: 0x107a52280>; keyboard = [uninitialized]; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  >
+2026-08-12 15:40:11.035 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.035 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.035 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Moving from placement: <UIInputViewSetPlacementOffScreenDown> to placement: <UIInputViewSetPlacementOnScreen> (currentPlacement: <UIInputViewSetPlacementOffScreenDown>)
+2026-08-12 15:40:11.035 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change from input view set: <<UIInputViewSet: 0x124b579c0>; (empty)>
+2026-08-12 15:40:11.035 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  >
+2026-08-12 15:40:11.036 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: -[_UIKBFeedbackGenerator activateWithCompletionBlock:]
+2026-08-12 15:40:11.036 Df IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Releasing engine and players.
+2026-08-12 15:40:11.036 Df IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Recreating engine with reason -[_UIKBFeedbackGenerator activateWithCompletionBlock:]_block_invoke.
+2026-08-12 15:40:11.036 Df IlliniCover[28464:3d5732] (libMobileGestalt.dylib) MGIsDeviceOfType is not supported on this platform.
+2026-08-12 15:40:11.038 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.038 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.038 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.039 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82580 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81f50 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82730 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.040 E  IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82730 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.045 Df IlliniCover[28464:3d5732] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=1
+2026-08-12 15:40:11.045 Df IlliniCover[28464:3d5732] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=2
+2026-08-12 15:40:11.045 Df IlliniCover[28464:3d5732] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=3
+2026-08-12 15:40:11.045 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.045 Df IlliniCover[28464:3d5732] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Preheating CoreHaptics.
+2026-08-12 15:40:11.046 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.046 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.046 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.046 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.047 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.047 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.047 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.051 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.051 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.052 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.052 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.053 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.053 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.053 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 0); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.053 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.068 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.068 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 44); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.068 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.068 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 44); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.068 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.069 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 44); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.069 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.069 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a52280>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; assistant = <TUISystemInputAssistantView: 0x10adf0600; frame = (0 0; 390 44); >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11f2aa800; role: _UIScreenBasedSceneSession; persistentIdentifier: B0595E3E-146E-4D21-93E1-3F1B8E2F371D; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.070 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.071 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {390, 335}} visible: 1; notifyRemote: 1; isMinimized: NO
+2026-08-12 15:40:11.071 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:Y
+2026-08-12 15:40:11.072 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:40:11.072 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x107972880>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x124bcb500 -> <CAFenceHandle:0x124bf31e0 name=9 fence=75600000125 usable=YES>>; position {{0, 509}, {390, 335}}; animated YES; on screen YES; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x124bcb500 -> <CAFenceHandle:0x124bf31e0 name=9 fence=75600000125 usable=YES>>; position {{0, 509}, {390, 335}} (with IAV same); floating 0; on screen YES;  intersectable YES; snapshot YES>
+2026-08-12 15:40:11.073 Df IlliniCover[28464:3d570c] [com.apple.UIKit:InputWindowController] Tracking provider: moveFromPlacement: <UIInputViewSetPlacementOffScreenDown> toPlacement: <UIInputViewSetPlacementOnScreen> update to: {{0, 509}, {390, 335}}
+2026-08-12 15:40:11.073 Df IlliniCover[28464:3d570c] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x11f213700 state=<TUIKeyboardState: 0x10aefea00 State: onscreen with input view; is docked>; frame={{0, 509}, {390, 335}}; animation=<TUIKeyboardAnimationInfo: 0x120834bc0, duration: 0.40, from local keyboard, is not rotating, should animate, type: 1, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.4";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 335}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 676.5}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 509}, {390, 335}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:40:11.073 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 335} [previous size: {390, 0}]
+2026-08-12 15:40:11.074 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 335} [previous size: {390, 0}]
+2026-08-12 15:40:11.074 Df IlliniCover[28464:3d570c] [com.apple.UIKit:TrackingElementWindowController] Setting tracking element input views: <<UIInputViewSet: 0x107a51200>; keyboard = [uninitialized]; usesKeyClicks = NO;  >
+2026-08-12 15:40:11.074 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a51200>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10ac7d200; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.074 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.074 Df IlliniCover[28464:3d570c] [com.apple.UIKit:TrackingElementWindowController] Moving from placement: <UIInputViewSetPlacementOffScreenDown> to placement: <UIInputViewSetPlacementOnScreen> (currentPlacement: <UIInputViewSetPlacementOffScreenDown>)
+2026-08-12 15:40:11.075 Df IlliniCover[28464:3d570c] [com.apple.UIKit:TrackingElementWindowController] Change from input view set: <<UIInputViewSet: 0x11f2e1bc0>; (empty)>
+2026-08-12 15:40:11.075 Df IlliniCover[28464:3d570c] [com.apple.UIKit:TrackingElementWindowController] Change to input view set: <<UIInputViewSet: 0x107a51200>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; usesKeyClicks = NO;  >
+2026-08-12 15:40:11.075 Df IlliniCover[28464:3d570c] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboardPlaceholderView refreshPlaceholder]  refreshPlaceholder: size={390, 335} [previous size={390, 0}]
+2026-08-12 15:40:11.076 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x107a51200>; keyboard = <UIKeyboardAutomatic: 0x11f1a6a80; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11f1d0270>>%; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10ac7d200; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:40:11.076 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.081 Df IlliniCover[28464:3d570c] [com.apple.UIKit:TrackingElementWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:40:11.094 Df IlliniCover[28464:3d570c] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification willShow with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.4";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 335}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 676.5}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 509}, {390, 335}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:40:11.104 A  IlliniCover[28464:3d5732] (RunningBoardServices) didChangeInheritances
+2026-08-12 15:40:11.170 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] RX keyboardArbiterClientHandle:Y
+2026-08-12 15:40:11.171 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] RX keyboardArbiterClientHandle:Y
+2026-08-12 15:40:11.173 Df IlliniCover[28464:3d570c] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: -[_UIKBFeedbackGenerator activateWithCompletionBlock:]
+2026-08-12 15:40:11.174 Df IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Releasing engine and players.
+2026-08-12 15:40:11.174 Df IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Recreating engine with reason -[_UIKBFeedbackGenerator activateWithCompletionBlock:]_block_invoke.
+2026-08-12 15:40:11.174 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.174 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.175 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.175 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.175 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.175 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.175 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.176 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.176 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.176 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.176 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.176 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.177 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.177 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f82160 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.177 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.178 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f823a0 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.178 E  IlliniCover[28464:3d5905] (CoreHaptics)        CHHapticPattern.mm:487   +[CHHapticPattern patternForKey:error:]: Failed to read pattern library data: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81830 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.178 E  IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Error creating CHHapticPattern: Error Domain=NSCocoaErrorDomain Code=260 "The file “hapticpatternlibrary.plist” couldn’t be opened because there is no such file." UserInfo={NSFilePath=/Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSURL=file:///Library/Audio/Tunings/Generic/Haptics/Library/hapticpatternlibrary.plist, NSUnderlyingError=0x121f81830 {Error Domain=NSPOSIXErrorDomain Code=2 "No such file or directory"}}
+2026-08-12 15:40:11.178 Df IlliniCover[28464:3d5905] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=1
+2026-08-12 15:40:11.178 Df IlliniCover[28464:3d5905] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=2
+2026-08-12 15:40:11.178 Df IlliniCover[28464:3d5905] [com.apple.coremedia:] -AVSystemController- +[AVSystemController sharedInstance]: Failed to allocate AVSystemController, numberOfAttempts=3
+2026-08-12 15:40:11.179 Df IlliniCover[28464:3d5905] [com.apple.UIKit:UIKBFeedbackGenerator] <_UIKBFeedbackGenerator: 0x107a52f40>: Preheating CoreHaptics.
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5905] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11f07c0c0> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:11.424 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:11.425 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:11.425 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:11.561 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11ebc4a50> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:11.562 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:11.562 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.14s
+2026-08-12 15:40:11.562 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:11.562 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:11.565 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:11.565 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.565 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:11.566 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:11.566 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:11.567 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UIRemoteKeyboardWindow window Window is not main window
+2026-08-12 15:40:11.567 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:11.567 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934649
+2026-08-12 15:40:11.567 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934649, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:11.567 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934641
+2026-08-12 15:40:11.567 E  IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934641, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:11.568 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:11.568 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f81470> (error: (null))
+2026-08-12 15:40:11.658 Df IlliniCover[28464:3d570c] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:283718009 windowState:Enabled level:5.0
+    focusContext:<contextID:1847456511 sceneID:com.illinicover.app-default>
+2026-08-12 15:40:11.660 Df IlliniCover[28464:3d570c] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification didShow with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.4";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 335}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 676.5}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 509}, {390, 335}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:40:13.033 Df IlliniCover[28464:3d5732] [com.apple.xpc:connection] [0x107970600] invalidated because the client process (pid 28404) either cancelled the connection or exited
+2026-08-12 15:40:13.033 Df IlliniCover[28464:3d5732] [com.apple.dt.xctest:Default] Connection from client with pid 28404 was invalidated.
+2026-08-12 15:40:13.036 Df IlliniCover[28464:3d5732] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:40:13.036 Df IlliniCover[28464:3d5732] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:40:13.036 Df IlliniCover[28464:3d5732] [com.apple.xpc:connection] [0x12386b0c0] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:40:13.038 Df IlliniCover[28464:3d5732] [com.apple.xpc:connection] [0x12386b0c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:40:13.038 Df IlliniCover[28464:3d5732] [com.apple.dt.automationmode:Default] Comparing previous enabled state (1) to current enabled state (0)
+2026-08-12 15:40:13.038 Df IlliniCover[28464:3d5905] [com.apple.dt.xctest:Default] Automation Mode has been disabled, existing connections will be invalidated.
+2026-08-12 15:40:14.086 Df IlliniCover[28464:3d5738] [com.apple.launchservices:db] NotifyToken::RegisterDispatch(com.apple.LaunchServices.database) fired for session key LSSessionKey(system: 0 uid: 501)
+2026-08-12 15:40:22.146 Df IlliniCover[28464:3d5738] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:40:22.146 Df IlliniCover[28464:3d5738] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:40:22.146 Df IlliniCover[28464:3d5738] [com.apple.xpc:connection] [0x12386b0c0] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:40:22.154 Df IlliniCover[28464:3d5738] [com.apple.xpc:connection] [0x12386b0c0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:40:22.155 Df IlliniCover[28464:3d5738] [com.apple.dt.automationmode:Default] Comparing previous enabled state (0) to current enabled state (1)
+2026-08-12 15:40:24.599 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Received request for endpoint.
+2026-08-12 15:40:24.599 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Sending anonymous endpoint.
+2026-08-12 15:40:24.599 Df IlliniCover[28464:3d5731] [com.apple.xpc:connection] [0x1079e1540] Connection returned listener port: 0x760b
+2026-08-12 15:40:24.600 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Received client to target connection.
+2026-08-12 15:40:24.600 Df IlliniCover[28464:3d5731] [com.apple.dt.automationmode:Default] Returning 1 for enabled state
+2026-08-12 15:40:24.600 Df IlliniCover[28464:3d5731] [com.apple.xpc:connection] [0x120925500] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x1079e1540.peer[28657].0x120925500
+2026-08-12 15:40:24.600 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Received request to exchange capabilities, remote interface capabilities are: <XCTCapabilities: 0x11f340de0>: {
+    "query runtime issue reporting" = 1;
+    "query runtime issue reporting/automation type mismatch" = 1;
+}
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:24.602 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:24.603 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11eb83540> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:24.603 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:24.603 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:24.603 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:24.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x12088d680> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:24.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:24.733 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.13s
+2026-08-12 15:40:24.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:24.733 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:24.734 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:24.734 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:24.734 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:24.735 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UIRemoteKeyboardWindow window Window is not main window
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934649
+2026-08-12 15:40:24.735 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934649, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:24.735 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934641
+2026-08-12 15:40:24.735 E  IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934641, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:24.736 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:24.736 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f82100> (error: (null))
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5738] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 28464 for query
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:40:24.885 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:40:24.886 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x122ab5aa0> {pid=28464} {uid=[ID:4 hash:0x107a0c400]}
+2026-08-12 15:40:24.886 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:40:24.886 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:40:24.886 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:40:24.975 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x10aedd8f0> {pid=28464} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:40:24.975 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:40:24.975 Df IlliniCover[28464:3d570c] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.09s
+2026-08-12 15:40:24.975 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:40:24.975 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:24.976 E  IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:40:24.976 E  IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.976 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UIRemoteKeyboardWindow window Window is not main window
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934649
+2026-08-12 15:40:24.977 E  IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934649, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Preferring automation type 20 instead of legacy element type OTHER derived from class/trait: UIAccessibilityElementKBKey:UIAccessibilityElement 8589934641
+2026-08-12 15:40:24.977 E  IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class UIAccessibilityElementKBKey:UIAccessibilityElement, traits 8589934641, but AXAutomationType returned 20 which maps to 20
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 28464
+)} (error: (null))
+2026-08-12 15:40:24.977 Df IlliniCover[28464:3d5731] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x121f820a0> (error: (null))

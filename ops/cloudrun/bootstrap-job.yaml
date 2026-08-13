@@ -1,0 +1,36 @@
+apiVersion: run.googleapis.com/v1
+kind: Job
+metadata:
+  name: illinicover-bootstrap
+spec:
+  template:
+    spec:
+      template:
+        spec:
+          serviceAccountName: illinicover-jobs@PROJECT_ID_REQUIRED.iam.gserviceaccount.com
+          maxRetries: 1
+          timeoutSeconds: "900"
+          containers:
+            - image: REGION_REQUIRED-docker.pkg.dev/PROJECT_ID_REQUIRED/REPOSITORY_REQUIRED/backend@sha256:IMAGE_DIGEST_REQUIRED
+              command: [python]
+              args: [server/manage.py, bootstrap_beta, --settings=config.settings.production]
+              env:
+                - name: DJANGO_SETTINGS_MODULE
+                  value: config.settings.production
+                - name: DEPLOYMENT_ENVIRONMENT
+                  value: production
+                - name: DATABASE_MODE
+                  value: pooled
+                - name: CODE_REVISION
+                  value: COMMIT_SHA_REQUIRED
+                - name: PUBLIC_API_ORIGIN
+                  value: PRODUCTION_API_ORIGIN_REQUIRED
+                - name: ILLINICOVER_SECRETS_JSON
+                  valueFrom:
+                    secretKeyRef:
+                      name: illinicover-jobs
+                      key: SECRET_VERSION_REQUIRED
+              resources:
+                limits:
+                  cpu: "1"
+                  memory: 512Mi

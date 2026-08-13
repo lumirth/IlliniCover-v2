@@ -1,0 +1,224 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 15:35:28.576 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:35:28.585 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-08-12 15:35:28.599 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Connection 4: enabling TLS
+2026-08-12 15:35:28.599 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Connection 4: starting, TC(0x0)
+2026-08-12 15:35:28.600 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4 0CB95560-9296-4689-80D5-291E9C2E2E66 Hostname#93c255ee:443 quic-connection, url: https://us.i.posthog.com/batch/, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{6C9ABDA0-E449-4591-A21C-9E268137B76B}{(null)}{Y}{2}{0x0} (private), proc: D65E3B26-71A5-3DAD-A8B4-60173E19864C, delegated upid: 0] start
+2026-08-12 15:35:28.602 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4 Hostname#93c255ee:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-08-12 15:35:28.604 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4 Hostname#93c255ee:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.004s, uuid: CFD5473D-9A5D-49DB-8075-8AC70A35798E
+2026-08-12 15:35:28.605 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4 Hostname#93c255ee:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.004s
+2026-08-12 15:35:28.605 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C4] reporting state preparing
+2026-08-12 15:35:28.606 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4 Hostname#93c255ee:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_child @0.006s
+2026-08-12 15:35:28.606 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1 Hostname#93c255ee:443 initial path ((null))] event: path:start @0.006s
+2026-08-12 15:35:28.606 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1 Hostname#93c255ee:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.006s, uuid: CFD5473D-9A5D-49DB-8075-8AC70A35798E
+2026-08-12 15:35:28.607 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1 Hostname#93c255ee:443 in_progress transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: transform:start @0.006s
+2026-08-12 15:35:28.607 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1 Hostname#93c255ee:443 initial path ((null))] event: path:start @0.007s
+2026-08-12 15:35:28.608 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1 Hostname#93c255ee:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.007s, uuid: 6AE01F9C-F6A3-480D-8A80-A5311A2011EA
+2026-08-12 15:35:28.608 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:start_dns @0.008s
+2026-08-12 15:35:28.609 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> setting up Connection 4
+2026-08-12 15:35:28.611 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#210fa39a.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#d74eae00.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#da3993e0:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#7b379a09.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#1716aacd.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#a50027ca.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#ec7e2d09.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#d93bfabf.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv6#d6c3fb73.443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#94fd2237:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#bf424a19:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#32116cf7:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#aff40dc1:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#1bbfda85:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#75fc4435:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_endpoint_resolver_update [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#750de04a:443
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1 Hostname#93c255ee:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:receive_dns @0.011s
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1.1 IPv6#210fa39a.443 initial path ((null))] event: path:start @0.011s
+2026-08-12 15:35:28.612 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1.1 IPv6#210fa39a.443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.012s, uuid: D2B901A7-F7B5-4271-B39F-E6F88463420F
+2026-08-12 15:35:28.615 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1.1 IPv6#210fa39a.443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.015s
+2026-08-12 15:35:28.644 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_socket_handle_socket_event [C4.1.1.1:3] Socket received CONNECTED event
+2026-08-12 15:35:28.645 Df IlliniCover[25579:3d037f] [com.apple.network:connection] nw_flow_connected [C4.1.1.1 IPv6#210fa39a.443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Transport protocol connected (socket)
+2026-08-12 15:35:28.645 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C4.1.1.1 IPv6#210fa39a.443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_transport @0.044s
+2026-08-12 15:35:28.646 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2367) [C4.1.1.1:2][0x126083c60] TLS configured [server(0) min_version(0x0303) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) cc_mode_enforced(false) ech(false) pqtls(true), pake(false) skip_ats_trust(false)]
+2026-08-12 15:35:28.646 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2806) [C4.1.1.1:2][0x126083c60] Client handshake started
+2026-08-12 15:35:28.647 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS client enter_early_data
+2026-08-12 15:35:28.648 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS client read_server_hello
+2026-08-12 15:35:28.677 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-08-12 15:35:28.677 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_server_hello
+2026-08-12 15:35:28.677 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-08-12 15:35:28.677 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_certificate_request
+2026-08-12 15:35:28.679 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_server_certificate
+2026-08-12 15:35:28.679 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-08-12 15:35:28.680 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(2249) [C4.1.1.1:2][0x126083c60] Performing external trust evaluation
+2026-08-12 15:35:28.681 A  IlliniCover[25579:3d037f] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:35:28.681 Df IlliniCover[25579:3d037f] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(2234) [C4.1.1.1:2][0x126083c60] Asyncing for external verify block
+2026-08-12 15:35:28.681 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Connection 4: asked to evaluate TLS Trust
+2026-08-12 15:35:28.682 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> auth completion disp=1 cred=0x0
+2026-08-12 15:35:28.682 Df IlliniCover[25579:3cf804] [com.apple.securityd:trust] (Trust 0x1240c9380) No pending evals, starting
+2026-08-12 15:35:28.682 A  IlliniCover[25579:3cf804] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-08-12 15:35:28.682 Df IlliniCover[25579:3cf804] [com.apple.xpc:connection] [0x1251c8c80] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-08-12 15:35:28.683 Df IlliniCover[25579:3cf804] [com.apple.securityd:trust] (Trust 0x1240c9380) Completed async eval kickoff
+2026-08-12 15:35:29.043 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:35:29.050 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C2] event: client:connection_reused @30.601s
+2026-08-12 15:35:29.054 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> now using Connection 2
+2026-08-12 15:35:29.062 Df IlliniCover[25579:3d037f] [com.apple.cfnetwork:h3stream] 0x1263c1198 ID=12 Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> sent request, body N 0
+2026-08-12 15:35:29.304 E  IlliniCover[25579:3cf7ca] [com.apple.UIKit:RefreshControl] A UIRefreshControl received offscreen beginRefreshing. Ignored. Break on UIRefreshControlReceivedOffscreenBeginRefreshing to debug. <UIRefreshControl: 0x120a56800; frame = (0 0; 390 60); autoresize = W; layer = <CALayer: 0x120ab9a40>>
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.securityd:trust] (Trust 0x1240c9380) trustd returned 4
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] System Trust Evaluation yielded status(0)
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.securityd:trust] (Trust 0x1236ca700) No pending evals, starting
+2026-08-12 15:35:29.366 A  IlliniCover[25579:3d037f] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.xpc:connection] [0x1251cb980] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.securityd:trust] (Trust 0x1236ca700) Completed async eval kickoff
+2026-08-12 15:35:29.366 Df IlliniCover[25579:3d037f] [com.apple.xpc:connection] [0x1251c8c80] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:35:29.368 Df IlliniCover[25579:3d0378] [com.apple.securityd:trust] (Trust 0x1236ca700) trustd returned 4
+2026-08-12 15:35:29.368 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Connection 4: TLS Trust result 0
+2026-08-12 15:35:29.368 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(2148) [C4.1.1.1:2][0x126083c60] Returning from external verify block with result: true
+2026-08-12 15:35:29.368 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2430) [C4.1.1.1:2][0x126083c60] Certificate verification result: OK
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client read_server_finished
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client send_client_certificate
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client complete_second_flight
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS 1.3 client done
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS client finish_client_handshake
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C4.1.1.1:2][0x126083c60] Client handshake state: TLS client done
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] boringssl_context_info_handler(2812) [C4.1.1.1:2][0x126083c60] Client handshake done
+2026-08-12 15:35:29.369 A  IlliniCover[25579:3d0378] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C4.1.1.1:2][0x126083c60] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_128_GCM_SHA256) group(0x001d) signature_alg(0x0804) alpn(h2) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(0) sct_received(0) connect_time(723ms) flight_time(30ms) rtt(30ms) write_stalls(0) read_stalls(3) pake(0x0000)]
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:connection] nw_flow_connected [C4.1.1.1 IPv6#210fa39a.443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (CFNetworkConnection-1218705747)
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C4.1.1.1 IPv6#210fa39a.443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.769s
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C4.1.1 Hostname#93c255ee:443 ready resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.769s
+2026-08-12 15:35:29.369 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C4.1 Hostname#93c255ee:443 ready transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.769s
+2026-08-12 15:35:29.370 Df IlliniCover[25579:3d0378] [com.apple.network:connection] nw_flow_connected [C4 IPv6#210fa39a.443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (endpoint_flow)
+2026-08-12 15:35:29.371 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C4 IPv6#210fa39a.443 ready parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_connect @0.770s
+2026-08-12 15:35:29.372 Df IlliniCover[25579:3d0378] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C4] reporting state ready
+2026-08-12 15:35:29.372 Df IlliniCover[25579:3d0378] [com.apple.xpc:connection] [0x1251cb980] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:35:29.372 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Connection 4: connected successfully
+2026-08-12 15:35:29.372 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Connection 4: TLS handshake complete
+2026-08-12 15:35:29.372 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Connection 4: ready C(N) E(N)
+2026-08-12 15:35:29.374 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C4] event: client:connection_reused @0.773s
+2026-08-12 15:35:29.374 Df IlliniCover[25579:3d0378] [com.apple.network:connection] nw_protocol_socket_notify [C4.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-08-12 15:35:29.377 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> now using Connection 4
+2026-08-12 15:35:29.377 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> sent request, body S 2637
+2026-08-12 15:35:29.397 A  IlliniCover[25579:3d0378] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:35:29.408 Df IlliniCover[25579:3d0378] [com.apple.cfnetwork:h3stream] 0x1263c1198 ID=12 Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> received response, status 200 content K
+2026-08-12 15:35:29.408 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> response ended
+2026-08-12 15:35:29.409 Df IlliniCover[25579:3d0378] [com.apple.network:connection] [C2] event: client:connection_idle @30.959s
+2026-08-12 15:35:29.409 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> done using Connection 2
+2026-08-12 15:35:29.409 Df IlliniCover[25579:3d03ee] [com.apple.CFNetwork:Summary] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> summary for task success {transaction_duration_ms=365, response_status=200, connection=2, reused=1, reused_after_ms=25753, request_start_ms=11, request_duration_ms=7, response_start_ms=363, response_duration_ms=2, request_bytes=366, request_throughput_kbps=366, response_bytes=2622, response_throughput_kbps=7918, cache_hit=true}
+2026-08-12 15:35:29.412 Df IlliniCover[25579:3d03ee] [com.apple.CFNetwork:Default] Task <4A0E33DE-076B-4B29-906E-D23A6BE20B24>.<6> finished successfully
+2026-08-12 15:35:29.428 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> received response, status 200 content K
+2026-08-12 15:35:29.428 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> done using Connection 4
+2026-08-12 15:35:29.429 Df IlliniCover[25579:3cf804] [com.apple.network:connection] [C4] event: client:connection_idle @0.828s
+2026-08-12 15:35:29.429 Df IlliniCover[25579:3cf804] [com.apple.network:connection] nw_protocol_socket_notify [C4.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-08-12 15:35:29.429 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> response ended
+2026-08-12 15:35:29.429 Df IlliniCover[25579:3d03ee] [com.apple.CFNetwork:Summary] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> summary for task success {transaction_duration_ms=850, response_status=200, connection=4, protocol="h2", domain_lookup_duration_ms=3, connect_duration_ms=755, secure_connection_duration_ms=723, private_relay=false, request_start_ms=798, request_duration_ms=0, response_start_ms=849, response_duration_ms=1, request_bytes=2969, request_throughput_kbps=64376, response_bytes=251, response_throughput_kbps=1756, cache_hit=true}
+2026-08-12 15:35:29.429 Df IlliniCover[25579:3d03ee] [com.apple.CFNetwork:Default] Task <818557E8-6E00-4EED-9A5F-B0328125A978>.<5> finished successfully
+2026-08-12 15:35:29.434 E  IlliniCover[25579:3d0378] [dev.expo.modules:expo] 🟠 Invalid state - currentState[3] validStates[4]
+2026-08-12 15:35:30.003 Df IlliniCover[25579:3d0378] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:35:30.003 Df IlliniCover[25579:3d0378] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:35:30.003 Df IlliniCover[25579:3d0378] [com.apple.xpc:connection] [0x1251cb980] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:35:30.006 Df IlliniCover[25579:3d0378] [com.apple.xpc:connection] [0x1251cb980] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:35:30.006 Df IlliniCover[25579:3d0378] [com.apple.dt.automationmode:Default] Comparing previous enabled state (0) to current enabled state (1)
+2026-08-12 15:35:32.858 Df IlliniCover[25579:3d0378] [com.apple.CFNetwork:Default] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:35:32.860 Df IlliniCover[25579:3d03ee] [com.apple.network:connection] [C2] event: client:connection_reused @34.410s
+2026-08-12 15:35:32.860 Df IlliniCover[25579:3d03ee] [com.apple.CFNetwork:Default] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> now using Connection 2
+2026-08-12 15:35:32.861 Df IlliniCover[25579:3d03ee] [com.apple.cfnetwork:h3stream] 0x1263c0e18 ID=16 Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> sent request, body N 0
+2026-08-12 15:35:33.514 Df IlliniCover[25579:3d0378] [com.apple.dt.xctest:Default] Received request for endpoint.
+2026-08-12 15:35:33.515 Df IlliniCover[25579:3d0378] [com.apple.dt.xctest:Default] Sending anonymous endpoint.
+2026-08-12 15:35:33.515 Df IlliniCover[25579:3d0378] [com.apple.xpc:connection] [0x1095dd400] Connection returned listener port: 0x7a1b
+2026-08-12 15:35:33.516 Df IlliniCover[25579:3d0378] [com.apple.dt.xctest:Default] Received client to target connection.
+2026-08-12 15:35:33.516 Df IlliniCover[25579:3d0378] [com.apple.dt.automationmode:Default] Returning 1 for enabled state
+2026-08-12 15:35:33.516 Df IlliniCover[25579:3d0378] [com.apple.xpc:connection] [0x1262acd80] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x1095dd400.peer[25944].0x1262acd80
+2026-08-12 15:35:33.517 Df IlliniCover[25579:3d0378] [com.apple.dt.xctest:Default] Received request to exchange capabilities, remote interface capabilities are: <XCTCapabilities: 0x1262c9270>: {
+    "query runtime issue reporting" = 1;
+    "query runtime issue reporting/automation type mismatch" = 1;
+}
+2026-08-12 15:35:33.518 Df IlliniCover[25579:3d0378] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:35:33.518 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:35:33.518 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:35:33.518 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 25579 for query
+2026-08-12 15:35:33.518 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:35:33.519 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:35:33.519 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:35:33.519 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:35:33.519 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:35:33.519 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:35:33.520 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x1264b41b0> {pid=25579} {uid=[ID:4 hash:0x10960c400]}
+2026-08-12 15:35:33.522 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:35:33.522 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:35:33.522 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x120be6370> {pid=25579} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:35:33.599 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:35:33.600 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] CollectionView is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:35:33.600 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:35:33.600 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:35:33.600 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 25579
+)} (error: (null))
+2026-08-12 15:35:33.600 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1242156e0> (error: (null))
+2026-08-12 15:35:33.768 Df IlliniCover[25579:3d037f] [com.apple.cfnetwork:h3stream] 0x1263c0e18 ID=16 Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> received response, status 200 content K
+2026-08-12 15:35:33.769 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> response ended
+2026-08-12 15:35:33.769 Df IlliniCover[25579:3d037f] [com.apple.network:connection] [C2] event: client:connection_idle @35.320s
+2026-08-12 15:35:33.770 Df IlliniCover[25579:3d037f] [com.apple.CFNetwork:Default] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> done using Connection 2
+2026-08-12 15:35:33.770 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Summary] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> summary for task success {transaction_duration_ms=911, response_status=200, connection=2, reused=1, reused_after_ms=3451, request_start_ms=1, request_duration_ms=0, response_start_ms=909, response_duration_ms=1, request_bytes=402, request_throughput_kbps=9746, response_bytes=1883, response_throughput_kbps=9030, cache_hit=true}
+2026-08-12 15:35:33.770 Df IlliniCover[25579:3cf804] [com.apple.CFNetwork:Default] Task <9550A1C4-DDE1-4C1C-9B46-D0A0CD14E00A>.<7> finished successfully
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3d037f] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 25579 for query
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:35:33.978 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x12539b5d0> {pid=25579} {uid=[ID:4 hash:0x10960c400]}
+2026-08-12 15:35:33.979 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:35:33.979 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:35:33.979 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:35:34.003 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x1264b7f60> {pid=25579} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:35:34.003 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:35:34.003 Df IlliniCover[25579:3cf7ca] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.03s
+2026-08-12 15:35:34.003 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Other is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] CollectionView is not actually a child of Other, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 25579
+)} (error: (null))
+2026-08-12 15:35:34.004 Df IlliniCover[25579:3cf804] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x125175110> (error: (null))
