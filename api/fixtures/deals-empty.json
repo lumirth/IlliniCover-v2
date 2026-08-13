@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-08-12T21:15:00-05:00",
+  "serviceDate": "2026-08-12",
+  "venues": [
+    {
+      "deals": [],
+      "venue": {
+        "address": "102 E Green St, Champaign, IL",
+        "id": "f2be9824-5f53-5719-abda-6c05c9ff1bd7",
+        "name": "KAMS",
+        "openedYear": 1933,
+        "slug": "live"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "706 S 5th St, Champaign, IL",
+        "id": "e93dff81-6c11-5448-8315-584d24aa2f40",
+        "name": "Joe's",
+        "openedYear": 1991,
+        "slug": "mixed"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "211 E Green St, Champaign, IL",
+        "id": "201b43be-fb69-5b42-9eb5-896383d40781",
+        "name": "Red Lion",
+        "openedYear": 2010,
+        "slug": "unconfirmed"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "613 E Green St, Champaign, IL",
+        "id": "6ca63875-c9fe-5d8d-9619-2c47acc272dd",
+        "name": "Brothers",
+        "openedYear": 2023,
+        "slug": "advertised"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "522 East Green Street",
+        "id": "02ac2465-1958-5a66-b2da-d633184085c2",
+        "name": "Legends",
+        "openedYear": 1998,
+        "slug": "advertised-range"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "604 East Green Street",
+        "id": "368c4703-a8fb-51ec-baf2-12ef4274af75",
+        "name": "Murphy's Pub",
+        "openedYear": 1969,
+        "slug": "unavailable"
+      }
+    },
+    {
+      "deals": [],
+      "venue": {
+        "address": "123 A Very Long Address Used Only for Local Visual Acceptance",
+        "id": "77e88303-d5c5-500f-9178-774f1fa3a116",
+        "name": "A Deliberately Very Long Venue Name for Layout Verification",
+        "openedYear": 2026,
+        "slug": "overflow"
+      }
+    }
+  ]
+}

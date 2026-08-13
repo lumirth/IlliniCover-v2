@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "F036E395-F055-4769-9FE1-4E46A154FE83",
+      "name" : "Local full stack",
+      "options" : {
+        "environmentVariableEntries" : [
+          {
+            "key" : "ILLINICOVER_INTEGRATION",
+            "value" : "1"
+          }
+        ]
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IlliniCover.xcodeproj",
+      "identifier" : "5AA465DCD0C4BDE04A8C18BF",
+      "name" : "IlliniCover"
+    },
+    "uiTestingScreenshotsLifetime" : "keepAlways"
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "IlliniCoverUITests/testLiveAcceptanceGeneratedClientSmoke"
+      ],
+      "target" : {
+        "containerPath" : "container:IlliniCover.xcodeproj",
+        "identifier" : "559F9598625176BFC5EC335A",
+        "name" : "IlliniCoverUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

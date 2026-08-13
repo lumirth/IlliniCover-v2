@@ -1,0 +1,8 @@
+2026-08-12 14:48:54.964 CoreSimulatorBridge [installcoordination] Executable for com.illinicover.app at the isolated Apple Development-signed repair copy had no entitlements.
+2026-08-12 14:53:22.067 launchd_sim [UIKitApplication:com.illinicover.app] xpcproxy exited due to OS_REASON_EXEC (namespace 9, code 0x8).
+2026-08-12 14:53:22.067 launchd_sim [UIKitApplication:com.illinicover.app] internal event INIT, code 163; job state spawn failed.
+2026-08-12 14:53:22.068 runningboardd [OSLaunchdJob] submitAndStart completed, info=spawn failed, error=163: Security policy issue.
+2026-08-12 14:53:22.071 SpringBoard [FrontBoard] Bootstrapping failed for app<com.illinicover.app>: RBSRequestErrorDomain 5, Launch failed; underlying NSPOSIXErrorDomain 163, Launchd job spawn failed.
+2026-08-12 14:53:22.200 SpringBoard [FrontBoard] Open request for com.illinicover.app failed: FBSOpenApplicationServiceErrorDomain 1 RequestDenied.
+
+Bounded assessment: no IlliniCover application process started, so no SecureStore bootstrap or banner state was reached. The installed executable lacks the Simulator-required Mach-O __TEXT,__entitlements and __TEXT,__ents_der sections. This is a failed diagnostic artifact, not a clean Bars capture and not acceptance.

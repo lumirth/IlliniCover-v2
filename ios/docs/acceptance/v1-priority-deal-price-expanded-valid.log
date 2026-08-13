@@ -1,0 +1,122 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 15:54:28.010 Df IlliniCover[36128:3e172f] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:54:28.010 Df IlliniCover[36128:3e172f] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:54:28.010 Df IlliniCover[36128:3e172f] [com.apple.xpc:connection] [0x1258f1400] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:54:28.013 Df IlliniCover[36128:3e172f] [com.apple.xpc:connection] [0x1258f1400] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:54:28.013 Df IlliniCover[36128:3e172f] [com.apple.dt.automationmode:Default] Comparing previous enabled state (0) to current enabled state (1)
+2026-08-12 15:54:29.032 Df IlliniCover[36128:3e172f] [com.apple.dt.xctest:Default] Received request for endpoint.
+2026-08-12 15:54:29.033 Df IlliniCover[36128:3e172f] [com.apple.dt.xctest:Default] Sending anonymous endpoint.
+2026-08-12 15:54:29.033 Df IlliniCover[36128:3e172f] [com.apple.xpc:connection] [0x109de5680] Connection returned listener port: 0x7807
+2026-08-12 15:54:29.034 Df IlliniCover[36128:3e172f] [com.apple.dt.xctest:Default] Received client to target connection.
+2026-08-12 15:54:29.034 Df IlliniCover[36128:3e172f] [com.apple.dt.automationmode:Default] Returning 1 for enabled state
+2026-08-12 15:54:29.034 Df IlliniCover[36128:3e172f] [com.apple.xpc:connection] [0x122536880] activating connection: mach=false listener=false peer=true name=com.apple.xpc.anonymous.0x109de5680.peer[36333].0x122536880
+2026-08-12 15:54:29.034 Df IlliniCover[36128:3e172f] [com.apple.dt.xctest:Default] Received request to exchange capabilities, remote interface capabilities are: <XCTCapabilities: 0x125fb2020>: {
+    "query runtime issue reporting" = 1;
+    "query runtime issue reporting/automation type mismatch" = 1;
+}
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e172f] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 36128 for query
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x125bef690> {pid=36128} {uid=[ID:4 hash:0x109e0c400]}
+2026-08-12 15:54:29.039 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:54:29.040 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:54:29.040 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:54:29.122 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x126de7e10> {pid=36128} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:54:29.122 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:54:29.122 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:54:29.122 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:54:29.122 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:54:29.123 E  IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:54:29.123 E  IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:54:29.123 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:54:29.124 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 36128
+)} (error: (null))
+2026-08-12 15:54:29.124 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x126cdfde0> (error: (null))
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 36128 for query
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x125bb91d0> {pid=36128} {uid=[ID:4 hash:0x109e0c400]}
+2026-08-12 15:54:29.280 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:54:29.281 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:54:29.281 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:54:29.358 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x10d003f00> {pid=36128} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:54:29.358 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:54:29.358 Df IlliniCover[36128:3e171d] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.08s
+2026-08-12 15:54:29.358 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:54:29.359 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:54:29.360 E  IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-timing-kind-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Preferring automation type 14 instead of legacy element type OTHER derived from class/trait: SwiftUI.AccessibilityNode:UIResponder 1108101562369
+2026-08-12 15:54:29.360 E  IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Automation type mismatch; legacy system derived element type 9 from class SwiftUI.AccessibilityNode:UIResponder, traits 1108101562369, but AXAutomationType returned 14 which maps to 14
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] StaticText is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Image, identifier: 'chevron.down' is not actually a child of Button, including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Button is not actually a child of Button, identifier: 'deal-serving-picker', including at this point anyway (rdar://problem/20738636)
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 36128
+)} (error: (null))
+2026-08-12 15:54:29.360 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x126cdf0f0> (error: (null))
+2026-08-12 15:54:30.544 Df IlliniCover[36128:3e1eeb] [com.apple.xpc:connection] [0x122536880] invalidated because the client process (pid 36333) either cancelled the connection or exited
+2026-08-12 15:54:30.544 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Connection from client with pid 36333 was invalidated.
+2026-08-12 15:54:30.551 Df IlliniCover[36128:3e1eeb] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:54:30.551 Df IlliniCover[36128:3e1eeb] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:54:30.551 Df IlliniCover[36128:3e1eeb] [com.apple.xpc:connection] [0x1258f3d40] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:54:30.556 Df IlliniCover[36128:3e1eeb] [com.apple.xpc:connection] [0x1258f3d40] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:54:30.556 Df IlliniCover[36128:3e1eeb] [com.apple.dt.automationmode:Default] Comparing previous enabled state (1) to current enabled state (0)
+2026-08-12 15:54:30.556 Df IlliniCover[36128:3e1eeb] [com.apple.dt.xctest:Default] Automation Mode has been disabled, existing connections will be invalidated.

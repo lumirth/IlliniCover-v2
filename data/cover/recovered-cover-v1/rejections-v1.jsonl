@@ -1,0 +1,1 @@
+{"reason":"negative_cover_price","reason_detail":"cover price is below zero","schema_version":1,"source_collection":"Brothers","source_dataset":"recovered-cover-v1","source_index":10,"source_price":{"integerValue":"-5"},"source_record_key":"projects/icover-41a28/databases/(default)/documents/Brothers Logs/0G88djMz5U3zVnFiTWFL","source_timestamp":{"doubleValue":1759049728}}

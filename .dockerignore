@@ -1,0 +1,12 @@
+.git
+.venv
+.local
+.env
+.env.*
+!.env.example
+gha-creds-*.json
+**/__pycache__
+**/*.py[cod]
+ios
+data/**/source
+tests

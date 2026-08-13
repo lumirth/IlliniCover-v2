@@ -1,0 +1,15 @@
+PRODUCT_BUNDLE_IDENTIFIER = com.illinicover.app.dev
+PRODUCT_NAME = IlliniCover
+INFOPLIST_FILE = Config/Info-Local.plist
+IC_DISPLAY_NAME = IlliniCover Local
+IC_URL_SCHEME = illinicover-dev
+// `$()` interrupts xcconfig's `//` comment token while expanding to an empty
+// string, so the build setting receives the complete URL.
+IC_API_BASE_URL = http:/$()/127.0.0.1:8000
+IC_REVENUECAT_API_KEY = test_iNDNDGHzWoIeKSjnCzimZCaymqr
+IC_ENVIRONMENT = local
+IC_CODE_REVISION = local
+IC_SENTRY_DSN =
+IC_SUPPORT_EMAIL =
+IC_PRIVACY_POLICY_URL =
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = $(inherited) DEBUG LOCAL

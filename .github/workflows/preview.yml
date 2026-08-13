@@ -1,0 +1,401 @@
+name: Shared preview
+run-name: Shared preview / ${{ github.event.action || 'manual' }} / ${{ github.event.pull_request.number || inputs.ref }}
+
+on:
+  pull_request:
+    branches: [main]
+    types: [labeled, synchronize, reopened, unlabeled, closed]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Branch, tag, or commit to preview
+        required: true
+        type: string
+      cleanup:
+        description: Delete preview state instead of deploying
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  id-token: write
+  issues: write
+
+concurrency:
+  group: shared-preview
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    name: Preview / shared environment
+    if: >-
+      (github.event_name == 'workflow_dispatch') ||
+      (github.event.pull_request.head.repo.full_name == github.repository &&
+       (github.event.action == 'closed' ||
+        (github.event.action == 'unlabeled' && github.event.label.name == 'preview') ||
+        contains(github.event.pull_request.labels.*.name, 'preview')))
+    runs-on: ubuntu-24.04
+    environment: preview
+    env:
+      ARTIFACT_REPOSITORY: ${{ vars.GCP_ARTIFACT_REPOSITORY }}
+      BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS: ${{ vars.GCP_OTHER_PROJECT_ACTIVE_SECRET_VERSIONS }}
+      GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
+      GCP_REGION: ${{ vars.GCP_REGION }}
+      NEON_DATABASE: ${{ vars.NEON_PREVIEW_DATABASE }}
+      NEON_PARENT_BRANCH: ${{ vars.NEON_PREVIEW_PARENT_BRANCH }}
+      NEON_PROJECT_ID: ${{ vars.NEON_DEV_PROJECT_ID }}
+      NEON_ROLE: ${{ vars.NEON_PREVIEW_ROLE }}
+      PREVIEW_API_ORIGIN: ${{ vars.PREVIEW_API_ORIGIN }}
+      WIF_PREVIEW_SERVICE_ACCOUNT: ${{ vars.GCP_PREVIEW_DEPLOY_SERVICE_ACCOUNT }}
+      WIF_PROVIDER: ${{ vars.GCP_PREVIEW_WORKLOAD_IDENTITY_PROVIDER }}
+    steps:
+      - id: identity
+        name: Resolve isolated preview identity
+        env:
+          DISPATCH_CLEANUP: ${{ inputs.cleanup }}
+          DISPATCH_REF: ${{ inputs.ref }}
+          PR_ACTION: ${{ github.event.action }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            resolved_ref="$PR_SHA"
+            resolved_branch="preview-pr-${PR_NUMBER}"
+            if [[ "$PR_ACTION" == "closed" || "$PR_ACTION" == "unlabeled" ]]; then
+              cleanup=true
+            else
+              cleanup=false
+            fi
+          else
+            ref_hash="$(printf '%s' "$DISPATCH_REF" | sha256sum | cut -c1-12)"
+            resolved_ref="$DISPATCH_REF"
+            resolved_branch="preview-manual-${ref_hash}"
+            cleanup="${DISPATCH_CLEANUP:-false}"
+          fi
+          {
+            echo "ref=$resolved_ref"
+            echo "branch=$resolved_branch"
+            echo "cleanup=$cleanup"
+            echo "expires_at=$(date -u -d '+24 hours' '+%Y-%m-%dT%H:%M:%SZ')"
+          } >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ steps.identity.outputs.ref }}
+      - id: source
+        name: Resolve the exact checked-out commit
+        run: |
+          sha="$(git rev-parse HEAD)"
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || exit 2
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+      - name: Validate required preview variables
+        run: |
+          for name in GCP_PROJECT_ID GCP_REGION ARTIFACT_REPOSITORY PREVIEW_API_ORIGIN WIF_PROVIDER WIF_PREVIEW_SERVICE_ACCOUNT NEON_PROJECT_ID NEON_PARENT_BRANCH NEON_DATABASE NEON_ROLE BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS; do
+            value="${!name:-}"
+            if [[ -z "$value" || "$value" == *REQUIRED* ]]; then
+              echo "Required preview variable $name is unset or still a placeholder." >&2
+              exit 2
+            fi
+          done
+          [[ "$BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS" =~ ^[0-9]+$ ]] || {
+            echo "GCP_OTHER_PROJECT_ACTIVE_SECRET_VERSIONS must be a current numeric receipt." >&2
+            exit 2
+          }
+      - id: auth
+        uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v3.0.0
+        with:
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: ${{ env.WIF_PREVIEW_SERVICE_ACCOUNT }}
+      - uses: google-github-actions/setup-gcloud@aa5489c8933f4cc7a4f7d45035b3b1440c9c10db # v3.0.1
+        with:
+          version: 580.0.0
+      - name: Bound billable Secret Manager rotation before provider data changes
+        if: steps.identity.outputs.cleanup != 'true'
+        run: |
+          python3 scripts/release/secret_version_guard.py check \
+            --project "$GCP_PROJECT_ID" \
+            --pending 2 \
+            --settled-ceiling 6 \
+            --rotation-ceiling 8 \
+            --external-active "$BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS"
+      - id: neon-key
+        name: Read only the preview-infrastructure Neon credential
+        env:
+          NEON_API_SECRET: ${{ vars.NEON_PREVIEW_API_SECRET }}
+        run: |
+          [[ -n "$NEON_API_SECRET" ]] || {
+            echo "NEON_PREVIEW_API_SECRET is not configured." >&2
+            exit 2
+          }
+          temporary="$(mktemp)"
+          gcloud secrets versions access latest \
+            --project "$GCP_PROJECT_ID" \
+            --secret "$NEON_API_SECRET" > "$temporary"
+          echo "api-key-file=$temporary" >> "$GITHUB_OUTPUT"
+      - name: Load Neon credential without writing it to GitHub storage
+        env:
+          API_KEY_FILE: ${{ steps.neon-key.outputs.api-key-file }}
+        run: |
+          api_key="$(<"$API_KEY_FILE")"
+          [[ -n "$api_key" ]] || {
+            echo "Neon API key secret is empty." >&2
+            exit 2
+          }
+          echo "::add-mask::$api_key"
+          echo "NEON_API_KEY=$api_key" >> "$GITHUB_ENV"
+      - name: Delete isolated preview branch
+        if: steps.identity.outputs.cleanup == 'true'
+        env:
+          BRANCH: ${{ steps.identity.outputs.branch }}
+        run: |
+          branch_id="$(python3 scripts/release/neon_preview.py find \
+            --project "$NEON_PROJECT_ID" --branch "$BRANCH")"
+          if [[ -n "$branch_id" ]]; then
+            python3 scripts/release/neon_preview.py delete \
+              --project "$NEON_PROJECT_ID" --branch-id "$branch_id"
+          else
+            echo "Preview branch was already absent."
+          fi
+      - id: existing
+        name: Discover reusable isolated preview branch
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          BRANCH: ${{ steps.identity.outputs.branch }}
+        run: |
+          branch_id="$(python3 scripts/release/neon_preview.py find \
+            --project "$NEON_PROJECT_ID" --branch "$BRANCH")"
+          echo "branch-id=$branch_id" >> "$GITHUB_OUTPUT"
+      - id: neon-create
+        name: Create an automatically expiring Neon branch
+        if: steps.identity.outputs.cleanup != 'true' && steps.existing.outputs.branch-id == ''
+        uses: neondatabase/create-branch-action@fb620d43d4c565abaf088b848a4e28e5c4ea4d9c # v6
+        with:
+          project_id: ${{ env.NEON_PROJECT_ID }}
+          branch_name: ${{ steps.identity.outputs.branch }}
+          parent_branch: ${{ env.NEON_PARENT_BRANCH }}
+          database: ${{ env.NEON_DATABASE }}
+          role: ${{ env.NEON_ROLE }}
+          expires_at: ${{ steps.identity.outputs.expires_at }}
+          ssl: require
+          api_key: ${{ env.NEON_API_KEY }}
+      - id: neon-reset
+        name: Reset a reusable Neon branch to its synthetic baseline
+        if: steps.identity.outputs.cleanup != 'true' && steps.existing.outputs.branch-id != ''
+        uses: neondatabase/reset-branch-action@470ab8101095ea33737c294d17364a72fd80761b # v1.3.2
+        with:
+          project_id: ${{ env.NEON_PROJECT_ID }}
+          branch: ${{ steps.existing.outputs.branch-id }}
+          parent: true
+          cs_database: ${{ env.NEON_DATABASE }}
+          cs_role_name: ${{ env.NEON_ROLE }}
+          cs_ssl: require
+          api_key: ${{ env.NEON_API_KEY }}
+      - name: Enforce and verify the 24-hour expiration
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          BRANCH_ID_CREATED: ${{ steps.neon-create.outputs.branch_id }}
+          BRANCH_ID_RESET: ${{ steps.neon-reset.outputs.branch_id }}
+          EXPIRES_AT: ${{ steps.identity.outputs.expires_at }}
+        run: |
+          branch_id="${BRANCH_ID_CREATED:-${BRANCH_ID_RESET:-}}"
+          [[ -n "$branch_id" ]] || {
+            echo "Neon did not return the created or reset branch ID." >&2
+            exit 3
+          }
+          python3 scripts/release/neon_preview.py expire \
+            --project "$NEON_PROJECT_ID" --branch-id "$branch_id" --expires-at "$EXPIRES_AT"
+      - name: Stop after explicit cleanup
+        if: steps.identity.outputs.cleanup == 'true'
+        run: echo "Deleted isolated preview branch; Neon expiry remains the cleanup failsafe."
+      - name: Build immutable preview image
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          ARTIFACT_FREE_BYTES: "500000000"
+          IMAGE_TAG: ${{ steps.source.outputs.sha }}
+          NEW_IMAGE_RESERVE_BYTES: "268435456"
+        run: |
+          image="${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REPOSITORY}/backend-preview:${IMAGE_TAG}"
+          digest="$(gcloud artifacts docker images describe "$image" \
+            --project "$GCP_PROJECT_ID" --format='value(image_summary.digest)' 2>/dev/null || true)"
+          if [[ -z "$digest" ]]; then
+            before="$(python3 scripts/release/artifact_repository_size.py \
+              --project "$GCP_PROJECT_ID" --location "$GCP_REGION" \
+              --repository "$ARTIFACT_REPOSITORY")"
+            [[ "$before" =~ ^[0-9]+$ ]] || exit 3
+            if (( before > ARTIFACT_FREE_BYTES - NEW_IMAGE_RESERVE_BYTES )); then
+              echo "Artifact Registry lacks the conservative 256 MiB preview-build headroom." >&2
+              exit 3
+            fi
+            gcloud builds submit \
+              --project "$GCP_PROJECT_ID" \
+              --region "$GCP_REGION" \
+              --config ops/container/cloudbuild.yaml \
+              --substitutions "_IMAGE=${image},_CODE_REVISION=${IMAGE_TAG}" \
+              --quiet \
+              .
+            digest="$(gcloud artifacts docker images describe "$image" \
+              --project "$GCP_PROJECT_ID" --format='value(image_summary.digest)')"
+            after="$(python3 scripts/release/artifact_repository_size.py \
+              --project "$GCP_PROJECT_ID" --location "$GCP_REGION" \
+              --repository "$ARTIFACT_REPOSITORY")"
+            if [[ ! "$after" =~ ^[0-9]+$ ]] || (( after > ARTIFACT_FREE_BYTES )); then
+              echo "Preview image crossed the conservative 0.5 GB storage ceiling; removing its exact unserved digest." >&2
+              python3 scripts/release/artifact_image_cleanup.py \
+                --project "$GCP_PROJECT_ID" \
+                --location "$GCP_REGION" \
+                --repository "$ARTIFACT_REPOSITORY" \
+                --package backend-preview \
+                --digest "$digest" \
+                --execute
+              exit 3
+            fi
+          fi
+          [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]] || exit 3
+          echo "PREVIEW_IMAGE=${image%:*}@${digest}" >> "$GITHUB_ENV"
+      - id: preview-secrets
+        name: Create candidate preview database secret versions
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          DIRECT_URL_CREATED: ${{ steps.neon-create.outputs.db_url }}
+          DIRECT_URL_RESET: ${{ steps.neon-reset.outputs.db_url }}
+          POOLED_URL_CREATED: ${{ steps.neon-create.outputs.db_url_pooled }}
+          POOLED_URL_RESET: ${{ steps.neon-reset.outputs.db_url_with_pooler }}
+        run: |
+          set +x
+          direct_url="${DIRECT_URL_CREATED:-${DIRECT_URL_RESET:-}}"
+          pooled_url="${POOLED_URL_CREATED:-${POOLED_URL_RESET:-}}"
+          [[ -n "$direct_url" && -n "$pooled_url" ]] || {
+            echo "Neon did not return both direct and pooled preview URLs." >&2
+            exit 3
+          }
+          umask 077
+          temporary="$(mktemp -d)"
+          trap 'rm -rf "$temporary"' EXIT
+          gcloud secrets versions access latest --project "$GCP_PROJECT_ID" \
+            --secret illinicover-preview-web > "$temporary/web-input.json"
+          PREVIEW_DATABASE_URL="$pooled_url" python3 scripts/release/update_preview_bundle.py \
+            --input "$temporary/web-input.json" --output "$temporary/web-output.json" --mode pooled
+          gcloud secrets versions access latest --project "$GCP_PROJECT_ID" \
+            --secret illinicover-preview-migrate > "$temporary/migrate-input.json"
+          PREVIEW_DATABASE_URL="$direct_url" python3 scripts/release/update_preview_bundle.py \
+            --input "$temporary/migrate-input.json" --output "$temporary/migrate-output.json" --mode direct
+          add_candidate_secret_version() {
+            local secret_name="$1"
+            local secret_file="$2"
+            local version
+            version="$(gcloud secrets versions add "$secret_name" \
+              --project "$GCP_PROJECT_ID" --data-file="$secret_file" --format='value(name)')"
+            version="${version##*/}"
+            [[ "$version" =~ ^[0-9]+$ ]] || return 3
+            printf '%s\n' "$version"
+          }
+          web_version="$(add_candidate_secret_version \
+            illinicover-preview-web "$temporary/web-output.json")"
+          migrate_version="$(add_candidate_secret_version \
+            illinicover-preview-migrate "$temporary/migrate-output.json")"
+          {
+            echo "web-version=$web_version"
+            echo "migrate-version=$migrate_version"
+          } >> "$GITHUB_OUTPUT"
+      - name: Migrate and seed isolated preview data
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          MIGRATE_SECRET_VERSION: ${{ steps.preview-secrets.outputs.migrate-version }}
+          WEB_SECRET_VERSION: ${{ steps.preview-secrets.outputs.web-version }}
+        run: |
+          [[ "$MIGRATE_SECRET_VERSION" =~ ^[0-9]+$ && "$WEB_SECRET_VERSION" =~ ^[0-9]+$ ]] || exit 3
+          gcloud run jobs deploy illinicover-preview-migrate \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" \
+            --image "$PREVIEW_IMAGE" \
+            --service-account "illinicover-preview-migrate@${GCP_PROJECT_ID}.iam.gserviceaccount.com" \
+            --set-env-vars "DJANGO_SETTINGS_MODULE=config.settings.production,DEPLOYMENT_ENVIRONMENT=preview,DATABASE_MODE=direct,CODE_REVISION=${{ steps.source.outputs.sha }},PUBLIC_API_ORIGIN=${PREVIEW_API_ORIGIN}" \
+            --set-secrets "ILLINICOVER_SECRETS_JSON=illinicover-preview-migrate:${MIGRATE_SECRET_VERSION}" \
+            --command python \
+            --args server/manage.py,migrate,--noinput,--settings=config.settings.production \
+            --task-timeout 10m --max-retries 1 --tasks 1 --cpu 1 --memory 512Mi --quiet
+          gcloud run jobs describe illinicover-preview-migrate \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --format=json \
+            | python3 scripts/release/verify_release_resource.py \
+                --name illinicover-preview-migrate \
+                --expected-image "$PREVIEW_IMAGE" \
+                --expected-revision "${{ steps.source.outputs.sha }}" \
+                --expected-env "DATABASE_MODE=direct" \
+                --expected-env "DEPLOYMENT_ENVIRONMENT=preview" \
+                --expected-secret "ILLINICOVER_SECRETS_JSON=illinicover-preview-migrate:${MIGRATE_SECRET_VERSION}"
+          gcloud run jobs execute illinicover-preview-migrate \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --wait --quiet
+          gcloud run jobs deploy illinicover-preview-bootstrap \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" \
+            --image "$PREVIEW_IMAGE" \
+            --service-account "illinicover-preview-web@${GCP_PROJECT_ID}.iam.gserviceaccount.com" \
+            --set-env-vars "DJANGO_SETTINGS_MODULE=config.settings.production,DEPLOYMENT_ENVIRONMENT=preview,DATABASE_MODE=pooled,CODE_REVISION=${{ steps.source.outputs.sha }},PUBLIC_API_ORIGIN=${PREVIEW_API_ORIGIN}" \
+            --set-secrets "ILLINICOVER_SECRETS_JSON=illinicover-preview-web:${WEB_SECRET_VERSION}" \
+            --command python \
+            --args server/manage.py,bootstrap_beta,--settings=config.settings.production \
+            --task-timeout 15m --max-retries 1 --tasks 1 --cpu 1 --memory 512Mi --quiet
+          gcloud run jobs describe illinicover-preview-bootstrap \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --format=json \
+            | python3 scripts/release/verify_release_resource.py \
+                --name illinicover-preview-bootstrap \
+                --expected-image "$PREVIEW_IMAGE" \
+                --expected-revision "${{ steps.source.outputs.sha }}" \
+                --expected-env "DATABASE_MODE=pooled" \
+                --expected-env "DEPLOYMENT_ENVIRONMENT=preview" \
+                --expected-secret "ILLINICOVER_SECRETS_JSON=illinicover-preview-web:${WEB_SECRET_VERSION}"
+          gcloud run jobs execute illinicover-preview-bootstrap \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --wait --quiet
+      - name: Deploy the single shared preview service
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          WEB_SECRET_VERSION: ${{ steps.preview-secrets.outputs.web-version }}
+        run: |
+          [[ "$WEB_SECRET_VERSION" =~ ^[0-9]+$ ]] || exit 3
+          gcloud run deploy illinicover-preview \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" \
+            --image "$PREVIEW_IMAGE" \
+            --service-account "illinicover-preview-web@${GCP_PROJECT_ID}.iam.gserviceaccount.com" \
+            --allow-unauthenticated \
+            --set-env-vars "DJANGO_SETTINGS_MODULE=config.settings.production,DEPLOYMENT_ENVIRONMENT=preview,DATABASE_MODE=pooled,TRUSTED_XFF_PROXY_HOPS=0,CODE_REVISION=${{ steps.source.outputs.sha }},PUBLIC_API_ORIGIN=${PREVIEW_API_ORIGIN}" \
+            --set-secrets "ILLINICOVER_SECRETS_JSON=illinicover-preview-web:${WEB_SECRET_VERSION}" \
+            --min 0 --max 1 --cpu 1 --memory 512Mi --concurrency 20 --timeout 30 \
+            --startup-probe 'httpGet.path=/health/live,httpGet.port=8080,periodSeconds=2,timeoutSeconds=1,failureThreshold=15' \
+            --deploy-health-check --cpu-throttling --no-cpu-boost --quiet
+          gcloud run services describe illinicover-preview \
+            --project "$GCP_PROJECT_ID" --region "$GCP_REGION" --format=json \
+            | python3 scripts/release/verify_release_resource.py \
+                --name illinicover-preview \
+                --expected-image "$PREVIEW_IMAGE" \
+                --expected-revision "${{ steps.source.outputs.sha }}" \
+                --expected-env "DATABASE_MODE=pooled" \
+                --expected-env "DEPLOYMENT_ENVIRONMENT=preview" \
+                --expected-secret "ILLINICOVER_SECRETS_JSON=illinicover-preview-web:${WEB_SECRET_VERSION}"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors \
+            --max-time 30 "${PREVIEW_API_ORIGIN}/health/ready" >/dev/null
+          gcloud artifacts docker tags add "$PREVIEW_IMAGE" \
+            "${GCP_REGION}-docker.pkg.dev/${GCP_PROJECT_ID}/${ARTIFACT_REPOSITORY}/backend-preview:preview-serving" \
+            --project "$GCP_PROJECT_ID" --quiet
+      - name: Retire only superseded preview versions after accepted readback
+        if: steps.identity.outputs.cleanup != 'true'
+        env:
+          MIGRATE_SECRET_VERSION: ${{ steps.preview-secrets.outputs.migrate-version }}
+          WEB_SECRET_VERSION: ${{ steps.preview-secrets.outputs.web-version }}
+        run: |
+          python3 scripts/release/secret_version_guard.py retire \
+            --project "$GCP_PROJECT_ID" \
+            --keep "illinicover-preview-web=${WEB_SECRET_VERSION}" \
+            --keep "illinicover-preview-migrate=${MIGRATE_SECRET_VERSION}" \
+            --execute
+          python3 scripts/release/secret_version_guard.py check \
+            --project "$GCP_PROJECT_ID" \
+            --pending 0 \
+            --settled-ceiling 6 \
+            --rotation-ceiling 8 \
+            --external-active "$BILLING_ACCOUNT_OTHER_ACTIVE_SECRET_VERSIONS"
+      - name: Report preview identity
+        if: steps.identity.outputs.cleanup != 'true' && github.event_name == 'pull_request'
+        env:
+          BRANCH: ${{ steps.identity.outputs.branch }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --body "Shared preview: ${PREVIEW_API_ORIGIN}  ·  Neon branch: \`${BRANCH}\` (automatic 24-hour expiry)."

@@ -1,0 +1,3 @@
+For input string: "23-valhalla"
+/opt/homebrew/bin/maestro: line 251: [: : integer expression expected
+Multiple devices connected. Please specify a device using --device <id>. You can also narrow by platform using --platform <android|ios>.

@@ -1,0 +1,19 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg
+      - CODE_REVISION=${_CODE_REVISION}
+      - --tag
+      - ${_IMAGE}
+      - --file
+      - ops/container/Dockerfile
+      - .
+images:
+  - ${_IMAGE}
+options:
+  machineType: E2_STANDARD_2
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _IMAGE: us-east5-docker.pkg.dev/illinicover/illinicover/backend:IMMUTABLE_REVISION_REQUIRED
+  _CODE_REVISION: IMMUTABLE_REVISION_REQUIRED

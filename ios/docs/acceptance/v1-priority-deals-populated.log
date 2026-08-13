@@ -1,0 +1,682 @@
+Timestamp               Ty Process[PID:TID]
+2026-08-12 15:18:58.495 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:DynamicKeyplaneView] <TUIKeyplaneView: 0x11da24800> changed keyplane size to {390, 216}; docked
+2026-08-12 15:18:58.497 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:DynamicKeyplaneView] Setting dynamic keyplane: Dynamic-QWERTY-British-Small_Capital-Letters
+2026-08-12 15:18:58.504 Df IlliniCover[18492:3c0ff3] [com.apple.calls.callkit:Default] Call host has no calls
+2026-08-12 15:18:58.546 Df IlliniCover[18492:3c0ff3] [com.apple.TextInputUI:CandidateGeneration] -[TUIKeyboardCandidateMultiplexer installGeneratorForSource:]_block_invoke: Multiplexer is installing generator for source: 1
+2026-08-12 15:18:58.546 Df IlliniCover[18492:3c0ff3] [com.apple.TextInputUI:CandidateGeneration] -[TUIKeyboardCandidateMultiplexer installGeneratorForSource:]_block_invoke: Multiplexer is installing generator for source: 3
+2026-08-12 15:18:58.546 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardUI] Creating a new RTI client
+2026-08-12 15:18:58.547 Df IlliniCover[18492:3c0fb9] [com.apple.BoardServices:XPCErrors] [C:3] Alloc com.apple.inputservice.input-ui-host
+2026-08-12 15:18:58.547 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11db4b480] activating connection: mach=false listener=false peer=false name=(anonymous)
+2026-08-12 15:18:58.548 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardUI] creating new AutofillUI connection
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11db4b5c0] activating connection: mach=true listener=false peer=false name=com.apple.rti-screencontinuity
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11db4b5c0] failed to do a bootstrap look-up: xpc_error=[3: No such process]
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11db4b5c0] invalidated after a failed init
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0ff3] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _configureConnection:withMachName:]_block_invoke_2  Client connection to service was invalidated: <NSXPCConnection: 0x11da09ea0> connection to service named com.apple.rti-screencontinuity
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient beginAllowingRemoteTextInput:]  Begin allowing remote text input: 27D99100-9718-4F73-9464-C1CDE41AAFE3
+2026-08-12 15:18:58.549 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _modifyTextEditingAllowedForReason:notify:animated:modifyAllowancesBlock:completion:]  Text editing allowed did change (editingAllowedAfter = YES)
+2026-08-12 15:18:58.558 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11db4b840] activating connection: mach=true listener=false peer=false name=com.apple.pasteboard.pasted
+2026-08-12 15:18:58.581 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _beginSessionWithID:forServices:force:]  Begin text input session. sessionID = 27D99100-9718-4F73-9464-C1CDE41AAFE3, options = <RTISessionOptions: 0x11db5c860; shouldResign = NO; animated = YES; offscreenDirection = 0; enhancedWindowingModeEnabled = NO
+2026-08-12 15:18:58.610 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] Reloading input views for key-window scene responder: <(null): 0x0; > force:N
+2026-08-12 15:18:58.610 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _reloadInputViewsForKeyWindowSceneResponder: 0 force: 0, fromBecomeFirstResponder: 0 (automaticKeyboard: 0, reloadIdentifier: 309831B7-FF44-4831-8A16-FD99A756EB39)
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder: <(null): 0x0; >, automaticKeyboard: 0, force: 0
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found custom inputView: <(null): 0x0>, customInputViewController: <(null): 0x0>
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, found inputAccessoryView: <(null): 0x0>
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, responderRequiresKeyboard 0 (automaticKeyboardEnabled: 0, activeInstance: <UIKeyboardAutomatic: 0x11da02800; frame = {{0, 0}, {0, 0}}; alpha = 1.000000; isHidden = 0; tAMIC = 0>, self.isOnScreen: 0, requiresKBWhenFirstResponder: 0)
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, useKeyboard 0 (allowsSystemInputView: 1, !inputView <(null): 0x0>, responderRequiresKeyboard 0)
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, configuring _responderWithoutAutomaticAppearanceEnabled: <(null): 0x0> (_automaticAppearEnabled: 1)
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder, needsIVPlaceholder: 0, needsIAVPlaceholder: 0, needsInputSetWithPlaceholder: 0
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] _inputViewsForResponder returning: <<UIInputViewSet: 0x11db40cc0>; (empty)>
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.BackBoard:Keyboard] currently observing: YES
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.BackBoard:Keyboard] currently observing: NO
+2026-08-12 15:18:58.611 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputSessionChange] -_teardownExistingDelegate:<UITextField: 0x106214000> forSetDelegate:(nil) force:NO delayEndInputSession:NO
+2026-08-12 15:18:58.616 Df IlliniCover[18492:3c0ff4] [com.apple.network:path] nw_path_evaluator_start [8F7ACA2C-2D73-48FB-B39D-BC59CFB9DAE0 <NULL> generic, multipath service: handover, attribution: developer]
+	path: satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown
+2026-08-12 15:18:58.616 Df IlliniCover[18492:3c0ff4] [com.apple.xpc:connection] [0x11db85180] activating connection: mach=true listener=false peer=false name=com.apple.SystemConfiguration.NetworkInformation_sim
+2026-08-12 15:18:58.617 Df IlliniCover[18492:3c0ff4] [com.apple.network:path] nw_path_evaluator_cancel [8F7ACA2C-2D73-48FB-B39D-BC59CFB9DAE0] cancel
+2026-08-12 15:18:58.618 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient endRemoteTextInputSessionWithID:options:completion:]  Ending text input session. sessionID = 27D99100-9718-4F73-9464-C1CDE41AAFE3, options = <RTISessionOptions: 0x11db5da20; shouldResign = YES; animated = YES; offscreenDirection = 0; enhancedWindowingModeEnabled = NO
+2026-08-12 15:18:58.618 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _endSessionWithID:forServices:options:completion:]  End input session: 27D99100-9718-4F73-9464-C1CDE41AAFE3
+2026-08-12 15:18:58.618 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient endAllowingRemoteTextInput:completion:]  End allowing remote text input: 27D99100-9718-4F73-9464-C1CDE41AAFE3
+2026-08-12 15:18:58.619 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:InputSessionChange] -[RTIInputSystemClient _modifyTextEditingAllowedForReason:notify:animated:modifyAllowancesBlock:completion:]  Text editing allowed did change (editingAllowedAfter = NO)
+2026-08-12 15:18:58.619 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:SmartReply] Handling responseContextDidChange - existing: (null), new: (null)
+2026-08-12 15:18:58.622 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x106267000>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.622 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.623 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {390, 325}} visible: 1; notifyRemote: 1; isMinimized: NO
+2026-08-12 15:18:58.624 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 2 -> 2, <_UIKeyboardWindowScene: 0x11db16a80> (22C874F6-73D5-403E-88F2-EB6C57AC6C64)
+2026-08-12 15:18:58.624 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InterfaceStyle] Should send trait collection or coordinate space update, interface style 2 -> 2, <_UIKeyboardWindowScene: 0x11db16a80> (22C874F6-73D5-403E-88F2-EB6C57AC6C64)
+2026-08-12 15:18:58.624 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:HomeAffordanceObservation] Initializing: <_UIHomeAffordanceSceneNotifierProxy: 0x10626b360>; with scene: <_UIKeyboardWindowScene: 0x11db16a80>
+2026-08-12 15:18:58.626 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change from input view set: (null)
+2026-08-12 15:18:58.626 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change to input view set: (null)
+2026-08-12 15:18:58.628 Df IlliniCover[18492:3c0fb9] [com.apple.FrontBoard:SceneExtension] Realizing settings extension <_UIApplicationSceneDisplaySettings> on FBSSceneSettings
+2026-08-12 15:18:58.629 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change from input view set: (null)
+2026-08-12 15:18:58.629 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x11db40f00>; (empty)>
+2026-08-12 15:18:58.707 Df IlliniCover[18492:3c0ff7] [com.apple.network:path] nw_path_evaluator_start [42AD1EDD-8D1C-43B0-8DBA-3809C17BA348 <NULL> generic, multipath service: handover, attribution: developer]
+	path: satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown
+2026-08-12 15:18:58.713 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UITrackingElementPlacementInitialPosition>
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.runningboard:connection] Creating side-channel connection to com.apple.runningboard
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x11f03cb40] activating connection: mach=true listener=false peer=false name=com.apple.runningboard
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.runningboard:process] Hit the server for a process handle 2f660e50000483c that resolved to: [app<com.illinicover.app((null))>:18492]
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:Y
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:18:58.717 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x11f028600>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x11db90500 -> <CAFenceHandle:0x10952d2d0 name=2 fence=756000000da usable=YES>>; position {{0, 519}, {390, 325}}; animated YES; on screen YES; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x11db90500 -> <CAFenceHandle:0x10952d2d0 name=2 fence=756000000da usable=YES>>; position {{0, 519}, {390, 325}} (with IAV same); floating 0; on screen YES;  intersectable YES; snapshot YES>
+2026-08-12 15:18:58.718 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:1691186015 windowState:Enabled level:0.0
+    focusContext:<contextID:576951798 sceneID:com.illinicover.app-default>
+2026-08-12 15:18:58.718 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIKeyboardExtended] Requesting scene for autofill UI
+2026-08-12 15:18:58.718 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardVisualMode] Show keyboard with visual mode windowed (0)
+2026-08-12 15:18:58.718 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Setting input views: <<UIInputViewSet: 0x11db41080>; keyboard = [uninitialized]; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.728 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.728 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.728 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Moving from placement: <UITrackingElementPlacementInitialPosition> to placement: <UIInputViewSetPlacementOnScreen> (currentPlacement: <UITrackingElementPlacementInitialPosition>)
+2026-08-12 15:18:58.728 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change from input view set: <<UIInputViewSet: 0x11db40f00>; (empty)>
+2026-08-12 15:18:58.728 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.732 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:DynamicKeyplaneView] Setting dynamic keyplane: Dynamic-QWERTY-British-Small_Small-Letters-Small-Display
+2026-08-12 15:18:58.766 A  IlliniCover[18492:3c0ff7] (RunningBoardServices) didChangeInheritances
+2026-08-12 15:18:58.773 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.773 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.774 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.780 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.780 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.780 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.781 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.781 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.781 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.781 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 0 0); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 0 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.781 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.795 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] moveFromPlacement, updated placements from: <UITrackingElementPlacementInitialPosition>, to: <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.795 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.796 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.797 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {390, 308}} visible: 1; notifyRemote: 0; isMinimized: NO
+2026-08-12 15:18:58.797 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:Y
+2026-08-12 15:18:58.797 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:18:58.798 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x11f028480>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x11db91630 -> <CAFenceHandle:0x10952e370 name=4 fence=756000000da usable=YES>>; position {{0, 536}, {390, 308}}; animated YES; on screen YES; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x11db91630 -> <CAFenceHandle:0x10952e370 name=4 fence=756000000da usable=YES>>; position {{0, 536}, {390, 308}} (with IAV same); floating 0; on screen YES;  intersectable YES; snapshot YES>
+2026-08-12 15:18:58.800 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Tracking provider: moveFromPlacement: <UITrackingElementPlacementInitialPosition> toPlacement: <UIInputViewSetPlacementOnScreen> update to: {{0, 536}, {390, 308}}
+2026-08-12 15:18:58.800 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] KeyboardTrackingCoordinator: Creating tracking provider for <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.800 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardSceneDelegate] KeyboardTrackingCoordinator: Creating tracking coordinator for <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.801 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x11da6bac0 state=<TUIKeyboardState: 0x11db5f6e0 State: onscreen with input view; is docked>; frame={{0, 536}, {390, 308}}; animation=<TUIKeyboardAnimationInfo: 0x11f112040, duration: 0.38, from local keyboard, is not rotating, should animate, type: 0, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 308}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:18:58.801 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 308} [previous size: {390, 0}]
+2026-08-12 15:18:58.801 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Setting tracking element input views: <<UIInputViewSet: 0x11db41140>; keyboard = [uninitialized]; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.801 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41140>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.802 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.802 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Moving from placement: <UITrackingElementPlacementInitialPosition> to placement: <UIInputViewSetPlacementOnScreen> (currentPlacement: <UITrackingElementPlacementInitialPosition>)
+2026-08-12 15:18:58.802 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Change from input view set: (null)
+2026-08-12 15:18:58.802 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Change to input view set: <<UIInputViewSet: 0x11db41140>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.802 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboardPlaceholderView refreshPlaceholder]  refreshPlaceholder: size={390, 308} [previous size={390, 0}]
+2026-08-12 15:18:58.803 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41140>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; usesKeyClicks = NO;  > windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.803 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.810 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification willShow with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 308}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db40cc0>; (empty)> windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards prepareToMoveKeyboard:withIAV:isIAVRelevant:showing:notifyRemote:forScene:] position: {{0, 0}, {0, 0}} visible: 0; notifyRemote: 1; isMinimized: NO
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] prepareToMoveKeyboard: set currentKeyboard:N
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX signalKeyboardChanged
+2026-08-12 15:18:58.811 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboards signalToProxyKeyboardChanged:onCompletion:]  Signaling keyboard changed <<<_UIKeyboardChangedInformation: 0x11f028600>; appId (null) bundleId (null) animation fence <BKSAnimationFenceHandle:0x11db91850 -> <CAFenceHandle:0x10952c3f0 name=5 fence=756000000da usable=YES>>; position {{0, 0}, {0, 0}}; animated YES; on screen NO; tracking NO; resizing NO; local NO, dock state: Unknown, hasValidNotif: NO>; source canvas com.apple.frontboard.systemappservices/FBSceneManager:sceneID%3Acom.illinicover.app-default; source display Main; source bundle com.illinicover.app; host bundle (null); animation fence <BKSAnimationFenceHandle:0x11db91850 -> <CAFenceHandle:0x10952c3f0 name=5 fence=756000000da usable=YES>>; position {{0, 0}, {0, 0}} (with IAV same); floating 0; on screen NO;  intersectable YES; snapshot YES>
+2026-08-12 15:18:58.812 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardVisualMode] Show keyboard with visual mode windowed (0)
+2026-08-12 15:18:58.812 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Setting input views: <<UIInputViewSet: 0x11db41b00>; (empty)>
+2026-08-12 15:18:58.812 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.812 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  > windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet, returning -> <UIInputViewSetPlacementOnScreen>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41b00>; (empty)> windowScene: <_UIKeyboardWindowScene: 0x11db16a80; role: _UIScreenBasedSceneSession; persistentIdentifier: 22C874F6-73D5-403E-88F2-EB6C57AC6C64; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Moving from placement: <UIInputViewSetPlacementOnScreen> to placement: <UIInputViewSetPlacementOffScreenDown> (currentPlacement: <UIInputViewSetPlacementOnScreen>)
+2026-08-12 15:18:58.813 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Merging transitions: <UIInputViewPlacementTransition: 0x11f045310> into <UIInputViewPlacementTransition: 0x11f0ff200>
+2026-08-12 15:18:58.814 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change from input view set: <<UIInputViewSet: 0x11db41080>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; assistant = <TUISystemInputAssistantView: 0x1095e8600; frame = (0 0; 390 0); hidden = YES; >; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.814 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Change to input view set: <<UIInputViewSet: 0x11db41b00>; (empty)>
+2026-08-12 15:18:58.820 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Tracking provider: viewDidLayoutSubviews update to {{0, 844}, {390, 0}}
+2026-08-12 15:18:58.820 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x11da6bac0 state=<TUIKeyboardState: 0x11db11d00 State: onscreen with input view; is docked>; frame={{0, 844}, {390, 0}}; animation=<TUIKeyboardAnimationInfo: 0x11f15f940, duration: 0.38, from local keyboard, is not rotating, should not animate, type: 0, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:18:58.820 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 0} [previous size: {390, 308}]
+2026-08-12 15:18:58.821 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] moveFromPlacement, updated placements from: <UITrackingElementPlacementInitialPosition>, to: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:18:58.821 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] chainPlacementsIfNecessaryFrom, from: <UITrackingElementPlacementInitialPosition>, to: <UIInputViewSetPlacementOffScreenDown> transition: <UIInputViewPlacementTransition: 0x11f0ff200>
+2026-08-12 15:18:58.821 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:18:58.822 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:InputWindowController] Tracking provider: moveFromPlacement: <UITrackingElementPlacementInitialPosition> toPlacement: <UIInputViewSetPlacementOffScreenDown> update to: {{0, 844}, {390, 0}}
+2026-08-12 15:18:58.822 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x11da6bac0 state=<TUIKeyboardState: 0x11db11cc0 State: offscreen; is docked>; frame={{0, 844}, {390, 0}}; animation=<TUIKeyboardAnimationInfo: 0x11f15f9c0, duration: 0.38, from local keyboard, is not rotating, should not animate, type: 0, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:Dictation] -[UIDictationController setIgnoreFinalizePhrases:] Setting ignoreFinalizePhrases flag 1
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification didHide with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Setting tracking element input views: <<UIInputViewSet: 0x11db41bc0>; (empty)>
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardArbiterClientLog] -[_UIRemoteKeyboardPlaceholderView refreshPlaceholder]  refreshPlaceholder: size={390, 0} [previous size={390, 308}]
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Placeholder height changed from 308.0 to 0.0
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41bc0>; (empty)> windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Moving from placement: <UIInputViewSetPlacementOnScreen> to placement: <UIInputViewSetPlacementOffScreenDown> (currentPlacement: <UIInputViewSetPlacementOnScreen>)
+2026-08-12 15:18:58.823 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Merging transitions: <UITrackingElementPlacementTransition: 0x10952e370> into <UITrackingElementPlacementTransition: 0x10952c3f0>
+2026-08-12 15:18:58.824 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification didShow with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = "0.3833";
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 690}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 536}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:18:58.843 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] updatePlacementWithPlacement: <UIInputViewSetPlacementOffScreenDown>
+2026-08-12 15:18:58.843 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Tracking provider: moveFromPlacement: <UITrackingElementPlacementInitialPosition> toPlacement: <UIInputViewSetPlacementOffScreenDown> update to {{0, 844}, {390, 0}}
+2026-08-12 15:18:58.843 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Updating tracking clients for start <TUIKeyboardTrackingCoordinator:0x11da6bac0 state=<TUIKeyboardState: 0x11db10780 State: offscreen; is docked>; frame={{0, 844}, {390, 0}}; animation=<TUIKeyboardAnimationInfo: 0x11f174540, duration: 0.00, from local keyboard, is not rotating, should not animate, type: 0, notificationInfo: {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 998}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+}notificationsDebug: >>
+2026-08-12 15:18:58.843 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification willHide with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 998}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:18:58.844 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX setWindowContextID:1691186015 windowState:Disabled level:0.0
+    focusContext:<contextID:576951798 sceneID:com.illinicover.app-default>
+2026-08-12 15:18:58.844 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Change from input view set: <<UIInputViewSet: 0x11db41140>; keyboard = <UIKeyboardAutomatic: 0x11da02800; frame = (0 0; 390 233); opaque = NO; layer = <CALayer: 0x11da1c270>>%; usesKeyClicks = NO;  >
+2026-08-12 15:18:58.844 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:TrackingElementWindowController] Change to input view set: <<UIInputViewSet: 0x11db41bc0>; (empty)>
+2026-08-12 15:18:58.847 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIPeripheralHost] endPlacementForInputViewSet: <<UIInputViewSet: 0x11db41bc0>; (empty)> windowScene: <UIWindowScene: 0x10946c000; role: UIWindowSceneSessionRoleApplication; persistentIdentifier: 2050C5AC-6A26-42BC-8E8F-FBAE5EDC0388; activationState: UISceneActivationStateForegroundActive>
+2026-08-12 15:18:58.848 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:Dictation] -[UIDictationController setIgnoreFinalizePhrases:] Setting ignoreFinalizePhrases flag 1
+2026-08-12 15:18:58.848 Df IlliniCover[18492:3c0fb9] [com.apple.TextInputUI:KeyboardTrackingCoordinator] Posted notification didHide with {
+    UIKeyboardAnimationCurveUserInfoKey = 7;
+    UIKeyboardAnimationDurationUserInfoKey = 0;
+    UIKeyboardBoundsUserInfoKey = "NSRect: {{0, 0}, {390, 0}}";
+    UIKeyboardCenterBeginUserInfoKey = "NSPoint: {195, 998}";
+    UIKeyboardCenterEndUserInfoKey = "NSPoint: {195, 844}";
+    UIKeyboardFrameBeginUserInfoKey = "NSRect: {{0, 844}, {390, 308}}";
+    UIKeyboardFrameEndUserInfoKey = "NSRect: {{0, 844}, {390, 0}}";
+    UIKeyboardIsLocalUserInfoKey = 1;
+} (null)
+2026-08-12 15:18:58.848 Df IlliniCover[18492:3c0fb9] [com.apple.RemoteTextInput:RTILog] -[RTIInputSystemClient remoteTextInputSessionWithID:textSuggestionsChanged:]  Text input session suggestions changed. sessionID = (null)
+2026-08-12 15:18:58.850 A  IlliniCover[18492:3c0fb9] (UIKitCore) send control actions
+2026-08-12 15:18:58.887 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x1095d0000] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-08-12 15:18:58.890 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x1095d0140] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-08-12 15:18:58.891 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x1095d0780] activating connection: mach=true listener=false peer=false name=com.apple.metal.simulator
+2026-08-12 15:18:58.894 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardLayoutGuide] _moveGuideOffscreenAtEdge: 4
+2026-08-12 15:18:58.894 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardLayoutGuide] changeOffsetConstants: offset is changing to {0, 0} [previous offset: {-1, -1}]
+2026-08-12 15:18:58.899 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:KeyboardLayoutGuide] changeSizingConstants: size is changing [not transitioning] to {390, 0} [previous size: {1, 0}]
+2026-08-12 15:18:58.962 A  IlliniCover[18492:3c0ff4] (RunningBoardServices) didChangeInheritances
+2026-08-12 15:18:58.963 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] RX keyboardArbiterClientHandle:Y
+2026-08-12 15:18:58.968 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] RX keyboardArbiterClientHandle:Y
+2026-08-12 15:18:58.969 Df IlliniCover[18492:3c0fb9] [com.apple.xpc:connection] [0x1061df840] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:18:59.079 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:18:59.079 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:18:59.079 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:18:59.079 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 18492 for query
+2026-08-12 15:18:59.079 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x11db611d0> {pid=18492} {uid=[ID:4 hash:0x106200400]}
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:18:59.080 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:18:59.086 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11f3f61f0> {pid=18492} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.01s
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 18492
+)} (error: (null))
+2026-08-12 15:18:59.087 Df IlliniCover[18492:3c0ff7] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x11da1c7e0> (error: (null))
+2026-08-12 15:18:59.135 A  IlliniCover[18492:3c0ff0] (CoreLocation) CL: CLInternalGetAuthorizationStatus
+2026-08-12 15:18:59.135 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"CLInternalGetAuthorizationStatus", "event":activity}
+2026-08-12 15:18:59.140 Df IlliniCover[18492:3c0ff0] [com.apple.xpc:connection] [0x11da6bc00] activating connection: mach=true listener=false peer=false name=com.apple.locationd.synchronous
+2026-08-12 15:18:59.156 A  IlliniCover[18492:3c0ff0] (CoreLocation) CL: CLLocationManager
+2026-08-12 15:18:59.157 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"CLLocationManager", "event":activity, "_cmd":initWithEffectiveBundleIdentifier:bundlePath:websiteIdentifier:delegate:silo:, "self":"0x11db903c0", "identifier":(null), "bundlePath":(null)}
+2026-08-12 15:18:59.159 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"client allocated", "client":"0x120511500"}
+2026-08-12 15:18:59.161 A  IlliniCover[18492:3c0ff0] (CoreLocation) CL: _CLClientCreateConnection
+2026-08-12 15:18:59.161 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"_CLClientCreateConnection", "event":activity, "client":"0x120511500"}
+2026-08-12 15:18:59.163 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:18:59.164 A  IlliniCover[18492:3c0fee] (LocationSupport) CL: Sending cached messages to daemon
+2026-08-12 15:18:59.165 Df IlliniCover[18492:3c0fee] [com.apple.LocationSupport:Connection] {"msg":"Sending cached messages to daemon", "event":activity}
+2026-08-12 15:18:59.166 Df IlliniCover[18492:3c0fee] [com.apple.xpc:connection] [0x11da68140] activating connection: mach=true listener=false peer=false name=com.apple.locationd.registration
+2026-08-12 15:18:59.167 A  IlliniCover[18492:3c0ff0] (LocationSupport) CL: CLConnectionClient::sendMessage(cache)
+2026-08-12 15:18:59.168 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Initializing AlternativeServices Storage singleton
+2026-08-12 15:18:59.169 Df IlliniCover[18492:3c0ff4] [com.apple.FileURL:default] kExcludedFromBackupXattrName set on path: /Users/lu/Library/Developer/CoreSimulator/Devices/644F64CD-23BA-4D3C-915E-6B2069961477/data/Containers/Data/Application/CF968DD7-918A-4335-BA18-D14F0BECC12E/Library/HTTPStorages/com.illinicover.app
+2026-08-12 15:18:59.169 A  IlliniCover[18492:3c0fee] (LocationSupport) CL: CLConnection::sendMessage
+2026-08-12 15:18:59.169 A  IlliniCover[18492:3c0ff0] (LocationSupport) CL: CLConnectionClient::sendMessage(cache)
+2026-08-12 15:18:59.170 A  IlliniCover[18492:3c0ff0] (CoreLocation) CL: CLInternalGetPrecisionPermission
+2026-08-12 15:18:59.170 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"CLInternalGetPrecisionPermission", "event":activity}
+2026-08-12 15:18:59.170 A  IlliniCover[18492:3c0fee] (LocationSupport) CL: CLConnection::sendMessage
+2026-08-12 15:18:59.172 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> resuming, timeouts(0.0, 604800.0) qos(0x19) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:18:59.181 A  IlliniCover[18492:3c0ff0] (CoreLocation) CL: CLLocationManager
+2026-08-12 15:18:59.182 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"CLLocationManager", "event":activity, "_cmd":dealloc, "self":"0x11db903c0"}
+2026-08-12 15:18:59.183 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"invalidating client", "client":"0x120511500"}
+2026-08-12 15:18:59.192 Df IlliniCover[18492:3c0ff0] [com.apple.locationd.Core:Client] {"msg":"invalidating client", "client":"0x120511500"}
+2026-08-12 15:18:59.192 Df IlliniCover[18492:3c0ff6] [com.apple.xpc:connection] [0x11da68140] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:18:59.209 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIFocus] RCTScrollViewComponentView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-08-12 15:18:59.214 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Garbage collection for alternative services
+2026-08-12 15:18:59.367 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Connection 0: creating secure tcp or quic connection
+2026-08-12 15:18:59.377 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> waiting for setup of Connection 2
+2026-08-12 15:18:59.377 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Connection 2: enabling TLS
+2026-08-12 15:18:59.377 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Connection 2: starting, TC(0x0)
+2026-08-12 15:18:59.380 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2 36F55760-ED64-4365-B101-6439AC92D20F Hostname#fb31e905:443 quic-connection, url: https://kfjwrhviuhsqrcwfxmne.supabase.co/functions/v1/get-bars, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{863739DF-3B43-46E2-A0A1-61B6C7FAFDA9}{(null)}{Y}{2}{0x0} (private), proc: D65E3B26-71A5-3DAD-A8B4-60173E19864C, delegated upid: 0] start
+2026-08-12 15:18:59.381 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2 Hostname#fb31e905:443 initial parent-flow ((null))] event: path:start @0.000s
+2026-08-12 15:18:59.384 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2 Hostname#fb31e905:443 waiting parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.002s, uuid: 7F4C8404-275A-4F0F-BCDA-C7CBC36FAC3C
+2026-08-12 15:18:59.384 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2 Hostname#fb31e905:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.003s
+2026-08-12 15:18:59.384 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state preparing
+2026-08-12 15:18:59.385 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2 Hostname#fb31e905:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_child @0.004s
+2026-08-12 15:18:59.385 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1 Hostname#fb31e905:443 initial path ((null))] event: path:start @0.004s
+2026-08-12 15:18:59.386 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1 Hostname#fb31e905:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.004s, uuid: 7F4C8404-275A-4F0F-BCDA-C7CBC36FAC3C
+2026-08-12 15:18:59.386 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1 Hostname#fb31e905:443 in_progress transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: transform:start @0.004s
+2026-08-12 15:18:59.386 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 initial path ((null))] event: path:start @0.004s
+2026-08-12 15:18:59.387 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.005s, uuid: 1F1C1529-B215-4107-9886-6637D751C1FB
+2026-08-12 15:18:59.387 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:start_dns @0.005s
+2026-08-12 15:18:59.388 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> setting up Connection 2
+2026-08-12 15:18:59.409 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#fb31e905:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#aa4e06c6:443
+2026-08-12 15:18:59.410 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_endpoint_resolver_update [C2.1.1 Hostname#fb31e905:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Adding endpoint handler for IPv4#9f28ff98:443
+2026-08-12 15:18:59.410 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 in_progress resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: resolver:receive_dns @0.028s
+2026-08-12 15:18:59.410 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 initial path ((null))] event: path:start @0.028s
+2026-08-12 15:18:59.410 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 waiting path (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.028s, uuid: B7901DC3-35C0-478C-8355-DA706C2CEA71
+2026-08-12 15:18:59.418 Df IlliniCover[18492:3c0ff4] [com.apple.network:quic] quic_conn_initialize_inner [C2.1.1.1:2] [-3ffbf277baf6846e] created QUIC connection (spin bit enabled)
+2026-08-12 15:18:59.420 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.038s
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:quic] quic_crypto_new_flow [C2.1.1.1:2] [-3ffbf277baf6846e] TLS stream is: [C3]
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C3 C1D56E2F-D1D6-49B9-AAF2-95D8C9ADA1F5 IPv4#aa4e06c6:443 quic-connection, url: https://kfjwrhviuhsqrcwfxmne.supabase.co/functions/v1/get-bars, tls, definite, attribution: developer, context: com.apple.CFNetwork.NSURLSession.{863739DF-3B43-46E2-A0A1-61B6C7FAFDA9}{(null)}{Y}{2}{0x0} (private), proc: D65E3B26-71A5-3DAD-A8B4-60173E19864C, delegated upid: 0] start
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C3 IPv4#aa4e06c6:443 initial socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:start @0.000s
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C3 IPv4#aa4e06c6:443 waiting socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:satisfied @0.000s, uuid: B7901DC3-35C0-478C-8355-DA706C2CEA71
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C3 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:start_connect @0.000s
+2026-08-12 15:18:59.423 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C3] reporting state preparing
+2026-08-12 15:18:59.424 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_flow_connected [C3 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Transport protocol connected (quic-connection)
+2026-08-12 15:18:59.424 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] [C3 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_transport @0.001s
+2026-08-12 15:18:59.424 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_session_apply_protocol_options_for_transport_block_invoke_2(2367) [C3:1][0x1204f5960] TLS configured [server(0) min_version(0x0304) max_version(0x0304) name(redacted) tickets(false) false_start(false) enforce_ev(false) enforce_ats(false) ats_non_pfs_ciphersuite_allowed(false) cc_mode_enforced(false) ech(false) pqtls(true), pake(false) skip_ats_trust(false)]
+2026-08-12 15:18:59.425 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2806) [C3:1][0x1204f5960] Client handshake started
+2026-08-12 15:18:59.426 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS client enter_early_data
+2026-08-12 15:18:59.426 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS client read_server_hello
+2026-08-12 15:18:59.428 Df IlliniCover[18492:3c0ff4] [com.apple.network:connection] nw_socket_handle_socket_event [C2.1.1.1:2] Socket received CONNECTED event
+2026-08-12 15:18:59.438 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_hello_retry_request
+2026-08-12 15:18:59.438 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_server_hello
+2026-08-12 15:18:59.439 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_encrypted_extensions
+2026-08-12 15:18:59.439 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_certificate_request
+2026-08-12 15:18:59.439 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_server_certificate
+2026-08-12 15:18:59.439 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_server_certificate_verify
+2026-08-12 15:18:59.439 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async(2249) [C3:1][0x1204f5960] Performing external trust evaluation
+2026-08-12 15:18:59.439 A  IlliniCover[18492:3c0ff4] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.440 A  IlliniCover[18492:3c0ff4] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.440 A  IlliniCover[18492:3c0ff4] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.440 Df IlliniCover[18492:3c0ff4] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external(2234) [C3:1][0x1204f5960] Asyncing for external verify block
+2026-08-12 15:18:59.440 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Connection 2: asked to evaluate TLS Trust
+2026-08-12 15:18:59.441 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> auth completion disp=1 cred=0x0
+2026-08-12 15:18:59.441 Df IlliniCover[18492:3c0ff4] [com.apple.securityd:trust] (Trust 0x120596040) No pending evals, starting
+2026-08-12 15:18:59.441 A  IlliniCover[18492:3c0ff4] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-08-12 15:18:59.442 Df IlliniCover[18492:3c0ff4] [com.apple.xpc:connection] [0x11da4a440] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-08-12 15:18:59.442 Df IlliniCover[18492:3c0ff4] [com.apple.securityd:trust] (Trust 0x120596040) Completed async eval kickoff
+2026-08-12 15:18:59.447 Df IlliniCover[18492:3c0ff4] [com.apple.securityd:trust] (Trust 0x120596040) trustd returned 4
+2026-08-12 15:18:59.447 Df IlliniCover[18492:3c0ff4] [com.apple.CFNetwork:Default] System Trust Evaluation yielded status(0)
+2026-08-12 15:18:59.447 Df IlliniCover[18492:3c0ff4] [com.apple.securityd:trust] (Trust 0x120595d40) No pending evals, starting
+2026-08-12 15:18:59.447 A  IlliniCover[18492:3c0ff4] (Security) SecTrustEvaluateIfNecessaryFastAsync
+2026-08-12 15:18:59.448 Df IlliniCover[18492:3c0ff4] [com.apple.xpc:connection] [0x11da4b700] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-08-12 15:18:59.448 Df IlliniCover[18492:3c0ff4] [com.apple.securityd:trust] (Trust 0x120595d40) Completed async eval kickoff
+2026-08-12 15:18:59.448 Df IlliniCover[18492:3c0ff4] [com.apple.xpc:connection] [0x11da4a440] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:18:59.450 Df IlliniCover[18492:3c0fee] [com.apple.securityd:trust] (Trust 0x120595d40) trustd returned 4
+2026-08-12 15:18:59.450 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Connection 2: TLS Trust result 0
+2026-08-12 15:18:59.450 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_evaluate_trust_async_external_block_invoke_3(2148) [C3:1][0x1204f5960] Returning from external verify block with result: true
+2026-08-12 15:18:59.450 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(2430) [C3:1][0x1204f5960] Certificate verification result: OK
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client read_server_finished
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client send_end_of_early_data
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client send_client_encrypted_extensions
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client send_client_certificate
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client complete_second_flight
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.451 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS 1.3 client done
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:_UIVisualStyleRegistry] Note: no default visual style class registered as fallback for stylable class UIActivityIndicatorView
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:_UIVisualStyleRegistry] Note: no default visual style class registered as fallback for stylable class UIActivityIndicatorView
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS client finish_client_handshake
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2823) [C3:1][0x1204f5960] Client handshake state: TLS client done
+2026-08-12 15:18:59.451 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_info_handler(2812) [C3:1][0x1204f5960] Client handshake done
+2026-08-12 15:18:59.452 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.452 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.452 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C3:1][0x1204f5960] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_256_GCM_SHA384) group(0x11ec) signature_alg(0x0403) alpn(h3) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(0) sct_received(0) connect_time(27ms) flight_time(13ms) rtt(12ms) write_stalls(0) read_stalls(5) pake(0x0000)]
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_flow_connected [C3 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (tls)
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C3 IPv4#aa4e06c6:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_connect @0.028s
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C3] reporting state ready
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.xpc:connection] [0x11da4b700] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:18:59.452 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_pmtud_restart [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] PMTUD enabled, max PMTU: 1500, header size: 28, current PMTU 1228
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_crypto_tls_ready_inner [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] QUIC connection established in 31.604 ms, RTT 9.232 ms
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Transport protocol connected (quic-connection)
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_transport @0.071s
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_flow_connected [C2.1.1.1 IPv4#aa4e06c6:443 in_progress socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (CFNetworkConnection-3156478592)
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.071s
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 ready resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.071s
+2026-08-12 15:18:59.453 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1 Hostname#fb31e905:443 ready transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:child_finish_connect @0.071s
+2026-08-12 15:18:59.454 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_flow_connected [C2 IPv4#aa4e06c6:443 in_progress parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (endpoint_flow)
+2026-08-12 15:18:59.454 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2 IPv4#aa4e06c6:443 ready parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: flow:finish_connect @0.072s
+2026-08-12 15:18:59.454 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_connection_report_state_with_handler_on_nw_queue [C2] reporting state ready
+2026-08-12 15:18:59.455 E  IlliniCover[18492:3c0fee] [com.apple.network:] nw_protocol_instance_set_output_handler Not calling remove_input_handler on 0x1205d0e00:socket
+2026-08-12 15:18:59.455 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_migration_path_event_block_invoke [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] path 211b1a1319ee0a1b over en0 received event established
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_migration_evaluate_primary [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] promoted path 0x120513480 over en0 to primary
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:] nw_protocol_instance_report_ready [C2.1.1.1:2] Calling notify with interface en0 for flow_registration 5C0B510B-66B2-40A4-88E4-97B858EE42B7
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1.1.1 IPv4#aa4e06c6:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:migrated @0.074s, uuid: B7901DC3-35C0-478C-8355-DA706C2CEA71
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1.1 Hostname#fb31e905:443 ready resolver (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:migrated @0.074s, uuid: 1F1C1529-B215-4107-9886-6637D751C1FB
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2.1 Hostname#fb31e905:443 ready transform (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:migrated @0.074s, uuid: 7F4C8404-275A-4F0F-BCDA-C7CBC36FAC3C
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2 IPv4#aa4e06c6:443 ready parent-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] event: path:migrated @0.074s, uuid: 7F4C8404-275A-4F0F-BCDA-C7CBC36FAC3C
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_migration_evaluate [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] evaluating path migration
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_migration_evaluate_block_invoke [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] path 211b1a1319ee0a1b state validated (0), ifname en0, primary? 1, initial? 1, fallback? 0, preferred? 0 lossy? 0
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_migration_evaluate [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] current path is usable, no strong fallback or we are probing
+2026-08-12 15:18:59.456 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Connection 2: connected successfully
+2026-08-12 15:18:59.457 E  IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_connection_copy_connected_local_endpoint_block_invoke [C2] Connection has no local endpoint
+2026-08-12 15:18:59.457 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Connection 2: TLS handshake complete
+2026-08-12 15:18:59.457 E  IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_connection_copy_connected_local_endpoint_block_invoke [C2] Connection has no local endpoint
+2026-08-12 15:18:59.457 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Connection 2: ready C(N) E(N)
+2026-08-12 15:18:59.459 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] [C2] event: client:connection_reused @0.077s
+2026-08-12 15:18:59.459 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> now using Connection 2
+2026-08-12 15:18:59.461 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.461 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.461 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.462 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_new_session_handler(1771) [C3:1][0x1204f5960] Asyncing for session update block
+2026-08-12 15:18:59.462 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.462 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyAttributes
+2026-08-12 15:18:59.462 A  IlliniCover[18492:3c0fee] (Security) SecKeyCopyPublicBytes
+2026-08-12 15:18:59.462 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_new_session_handler(1771) [C3:1][0x1204f5960] Asyncing for session update block
+2026-08-12 15:18:59.462 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] nw_protocol_boringssl_signal_connected(895) [C3:1][0x1204f5960] TLS connected [server(0) version(0x0304) ciphersuite(TLS_AES_256_GCM_SHA384) group(0x11ec) signature_alg(0x0403) alpn(h3) resumed(0) offered_ticket(0) in_early_data(0) early_data_accepted(0) false_started(0) ocsp_received(0) sct_received(0) connect_time(27ms) flight_time(13ms) rtt(12ms) write_stalls(0) read_stalls(5) pake(0x0000)]
+2026-08-12 15:18:59.463 Df IlliniCover[18492:3c0fee] [com.apple.network:connection] nw_flow_connected [C3 IPv4#aa4e06c6:443 ready socket-flow (satisfied (Path is satisfied), interface: en0[802.11], uses wifi, LQM: unknown)] Output protocol connected (tls)
+2026-08-12 15:18:59.463 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_stream_create_inbound [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] creating inbound stream 3
+2026-08-12 15:18:59.463 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_stream_create_inbound [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] creating inbound stream 7
+2026-08-12 15:18:59.463 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_stream_create_inbound [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] creating inbound stream 11
+2026-08-12 15:18:59.464 Df IlliniCover[18492:3c0fee] [com.apple.network:quic] quic_stream_create_inbound [C2.1.1.1:2] [-016ee2d4c5c01b94226c70d42ec0171f46978437] creating inbound stream 15
+2026-08-12 15:18:59.464 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> now using Connection 2
+2026-08-12 15:18:59.465 Df IlliniCover[18492:3c0fee] [com.apple.cfnetwork:h3stream] 0x1206dc8d8 ID=0 Task <15399789-C954-4709-B050-95DA8233C967>.<2> sent request, body N 0
+2026-08-12 15:18:59.465 Df IlliniCover[18492:3c0fee] [com.apple.cfnetwork:h3stream] 0x1206de158 ID=4 Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> sent request, body N 0
+2026-08-12 15:18:59.465 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_new_session_handler_block_invoke(1774) [C3:1][0x1204f5960] Returning from session update block
+2026-08-12 15:18:59.465 Df IlliniCover[18492:3c0fee] [com.apple.network:boringssl] boringssl_context_new_session_handler_block_invoke(1774) [C3:1][0x1204f5960] Returning from session update block
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff0] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 18492 for query
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:18:59.596 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x1210918f0> {pid=18492} {uid=[ID:4 hash:0x106200400]}
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:18:59.716 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:18:59.721 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x1206d8930> {pid=18492} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:18:59.721 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:18:59.721 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.01s
+2026-08-12 15:18:59.721 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:18:59.722 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:18:59.722 Df IlliniCover[18492:3c0fb9] [com.apple.locationd.Core:Client] {"msg":"client about to be destroyed", "client":"0x120511500"}
+2026-08-12 15:18:59.722 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:18:59.723 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 18492
+)} (error: (null))
+2026-08-12 15:18:59.723 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x120777570> (error: (null))
+2026-08-12 15:18:59.795 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:18:59.798 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:18:59.893 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:18:59.893 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:18:59.941 A  IlliniCover[18492:3c0fb9] (CoreFoundation) Updating Key-Value Observers Of Preferences
+2026-08-12 15:19:00.743 Df IlliniCover[18492:3c0ff0] [com.apple.cfnetwork:h3stream] 0x1206dc8d8 ID=0 Task <15399789-C954-4709-B050-95DA8233C967>.<2> received response, status 200 content K
+2026-08-12 15:19:00.743 A  IlliniCover[18492:3c0ff0] (Security) SecTrustEvaluateIfNecessary
+2026-08-12 15:19:00.743 Df IlliniCover[18492:3c0ff0] [com.apple.xpc:connection] [0x11da48c80] activating connection: mach=true listener=false peer=false name=com.apple.trustd
+2026-08-12 15:19:00.746 Df IlliniCover[18492:3c0ff0] [com.apple.xpc:connection] [0x11da48c80] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:19:00.746 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> response ended
+2026-08-12 15:19:00.746 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> done using Connection 2
+2026-08-12 15:19:00.746 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Summary] Task <15399789-C954-4709-B050-95DA8233C967>.<2> summary for task success {transaction_duration_ms=1581, response_status=200, connection=2, protocol="h3", domain_lookup_duration_ms=23, connect_duration_ms=34, secure_connection_duration_ms=31, private_relay=false, request_start_ms=294, request_duration_ms=5, response_start_ms=1576, response_duration_ms=4, request_bytes=368, request_throughput_kbps=562, response_bytes=2615, response_throughput_kbps=4593, cache_hit=true}
+2026-08-12 15:19:00.747 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Task <15399789-C954-4709-B050-95DA8233C967>.<2> finished successfully
+2026-08-12 15:19:01.409 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> resuming, timeouts(15.0, 604800.0) qos(0x15) voucher((null)) activity(00000000-0000-0000-0000-000000000000)
+2026-08-12 15:19:01.414 Df IlliniCover[18492:3c0ff0] [com.apple.network:connection] [C1] event: client:connection_reused @3.279s
+2026-08-12 15:19:01.414 Df IlliniCover[18492:3c0ff0] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is false
+2026-08-12 15:19:01.415 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> now using Connection 1
+2026-08-12 15:19:01.415 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> sent request, body S 4814
+2026-08-12 15:19:01.453 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> received response, status 200 content K
+2026-08-12 15:19:01.454 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> done using Connection 1
+2026-08-12 15:19:01.454 Df IlliniCover[18492:3c0ff6] [com.apple.network:connection] [C1] event: client:connection_idle @3.319s
+2026-08-12 15:19:01.455 Df IlliniCover[18492:3c0ff6] [com.apple.network:connection] nw_protocol_socket_notify [C1.1.1.1:3] nw_protocol_notification_type_connection_idle is true
+2026-08-12 15:19:01.455 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> response ended
+2026-08-12 15:19:01.455 Df IlliniCover[18492:3c0ff6] [com.apple.CFNetwork:Summary] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> summary for task success {transaction_duration_ms=41, response_status=200, connection=1, reused=1, reused_after_ms=2957, request_start_ms=1, request_duration_ms=0, response_start_ms=40, response_duration_ms=1, request_bytes=4873, request_throughput_kbps=142804, response_bytes=98, response_throughput_kbps=462, cache_hit=false}
+2026-08-12 15:19:01.455 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <83B77782-D3EE-4055-894D-1CA47C76E180>.<3> finished successfully
+2026-08-12 15:19:02.260 Df IlliniCover[18492:3c0fb9] [com.apple.KeyboardArbiter:Client] TX focusApplication (peekAppEvent) stealKB:Y scene:com.illinicover.app-default
+2026-08-12 15:19:02.261 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.261 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:19:02.261 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x106200400>; contextId: 0x226395F6
+2026-08-12 15:19:02.272 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.277 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.286 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.293 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.305 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.322 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.338 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.355 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.356 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 1; ignoreInteractionEvents: 0, systemGestureStateChange: 0
+2026-08-12 15:19:02.356 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to windows: 1
+2026-08-12 15:19:02.356 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Sending UIEvent type: 0; subtype: 0; to window: <UIWindow: 0x106200400>; contextId: 0x226395F6
+2026-08-12 15:19:02.356 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.356 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.356 A  IlliniCover[18492:3c0fb9] (UIKitCore) send control actions
+2026-08-12 15:19:02.418 Df IlliniCover[18492:3c0fb9] [com.apple.UIKit:EventDispatch] Evaluating dispatch of UIEvent: 0x10619cc00; type: 0; subtype: 0; backing type: 11; shouldSend: 0; ignoreInteractionEvents: 0, systemGestureStateChange: 1
+2026-08-12 15:19:02.421 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.421 A  IlliniCover[18492:3c0fb9] (UIKitCore) send gesture actions
+2026-08-12 15:19:02.525 Df IlliniCover[18492:3c0ff0] [com.apple.cfnetwork:h3stream] 0x1206de158 ID=4 Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> received response, status 200 content K
+2026-08-12 15:19:02.526 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> response ended
+2026-08-12 15:19:02.526 Df IlliniCover[18492:3c0ff0] [com.apple.network:connection] [C2] event: client:connection_idle @3.144s
+2026-08-12 15:19:02.526 Df IlliniCover[18492:3c0ff0] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> done using Connection 2
+2026-08-12 15:19:02.526 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Summary] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> summary for task success {transaction_duration_ms=3351, response_status=200, connection=2, reused=1, reused_after_ms=0, request_start_ms=289, request_duration_ms=0, response_start_ms=3350, response_duration_ms=1, request_bytes=393, request_throughput_kbps=6326, response_bytes=2233, response_throughput_kbps=15372, cache_hit=true}
+2026-08-12 15:19:02.529 Df IlliniCover[18492:3c0fee] [com.apple.CFNetwork:Default] Task <33EABB3D-46F5-43EA-A063-25A4C087C814>.<3> finished successfully
+2026-08-12 15:19:02.574 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:Assert] button text attributes only respected for UIControlStateNormal, UIControlStateHighlighted, UIControlStateDisabled and UIControlStateFocused. state = 4 is interpreted as UIControlStateHighlighted.
+2026-08-12 15:19:02.576 E  IlliniCover[18492:3c0fb9] [com.apple.UIKit:UIFocus] RCTScrollViewComponentView implements focusItemsInRect: - caching for linear focus movement is limited as long as this view is on screen.
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 18492 for query
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:19:04.699 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:19:04.700 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x120555ce0> {pid=18492} {uid=[ID:4 hash:0x106200400]}
+2026-08-12 15:19:04.700 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:19:04.700 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:19:04.700 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:19:04.792 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x122032760> {pid=18492} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:19:04.793 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:19:04.793 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.09s
+2026-08-12 15:19:04.793 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:19:04.793 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:19:04.795 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:19:04.795 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:19:04.795 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 18492
+)} (error: (null))
+2026-08-12 15:19:04.796 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x1211ae2b0> (error: (null))
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0fed] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 18492 for query
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x12316b210> {pid=18492} {uid=[ID:4 hash:0x106200400]}
+2026-08-12 15:19:05.468 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:19:05.469 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:19:05.469 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:19:05.543 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x1207b1aa0> {pid=18492} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:19:05.543 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:19:05.543 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.07s
+2026-08-12 15:19:05.543 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:19:05.543 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:19:05.546 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:19:05.546 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:19:05.546 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 18492
+)} (error: (null))
+2026-08-12 15:19:05.547 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x122203f30> (error: (null))
+2026-08-12 15:19:06.003 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Received request to fetch matches for query:
+2026-08-12 15:19:06.003 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Evaluating query:
+2026-08-12 15:19:06.003 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting root element snapshot
+2026-08-12 15:19:06.003 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Getting snapshot for App element pid: 18492 for query
+2026-08-12 15:19:06.003 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query requires iOS snapshot attributes .
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: about to CFRunLoopPerform
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting with 30.00s responsiveness timeout
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: inside CFRunLoopPerform
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[MT]: MT responded in time (won the race to the busy flag)
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] XCTPerformOnMainRunLoop[not MT]: waiting 60.00s for work to complete
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got main window <AXUIElementRef 0x12223b1b0> {pid=18492} {uid=[ID:4 hash:0x106200400]}
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with attributes XC_kAXXCAttributeElementType, XC_kAXXCAttributeElementBaseType, XC_kAXXCAttributeParent, XC_kAXXCAttributeIdentifier, XC_kAXXCAttributeAutomationType, XC_kAXXCAttributeTraits
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Capturing hierarchy with parameters {
+    attributes =     (
+        5003,
+        5004,
+        5002,
+        5019,
+        5058,
+        2004
+    );
+    maxArrayCount = 2147483647;
+    maxChildren = 2147483647;
+    maxDepth = 2147483647;
+    snapshotKeyHonorModalViews = 0;
+    traverseFromParentsToChildren = 1;
+}
+2026-08-12 15:19:06.004 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Snapshot attributes 5003, 5004, 5002, 5019, 5058, 2004
+2026-08-12 15:19:06.063 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got snapshot for <AXUIElementRef 0x11ce02850> {pid=18492} {uid=[ID:1 hash:0x0]}
+2026-08-12 15:19:06.064 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Got app orientation 0
+2026-08-12 15:19:06.064 Df IlliniCover[18492:3c0fb9] [com.apple.dt.xctest:Default] Captured accessibility snapshot data in 0.06s
+2026-08-12 15:19:06.064 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Found main window: Window
+2026-08-12 15:19:06.064 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Preferring automation type 48 instead of legacy element type OTHER derived from class/trait: UILabel:UILabel 8590000128
+2026-08-12 15:19:06.065 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] App orientation is 0 (not portrait) and UITextEffectsWindow window Window is not main window
+2026-08-12 15:19:06.065 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Leaving frame unchanged for Window: either already correct or we can't detect it.
+2026-08-12 15:19:06.065 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Query  found matching snapshots: {(
+    Application, pid: 18492
+)} (error: (null))
+2026-08-12 15:19:06.065 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Replying to query  with results: <XCTElementQueryResults: 0x12125de30> (error: (null))
+2026-08-12 15:19:07.338 Df IlliniCover[18492:3c0ff6] [com.apple.xpc:connection] [0x106170f00] invalidated because the client process (pid 18442) either cancelled the connection or exited
+2026-08-12 15:19:07.338 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Connection from client with pid 18442 was invalidated.
+2026-08-12 15:19:07.341 Df IlliniCover[18492:3c0ff6] [com.apple.dt.automationmode:Default] Handling posted change notification (com.apple.dt.automationmode.state-changed)
+2026-08-12 15:19:07.341 Df IlliniCover[18492:3c0ff6] [com.apple.dt.automationmode:Default] XAM shared observer connecting to com.apple.dt.automationmode.reader
+2026-08-12 15:19:07.341 Df IlliniCover[18492:3c0ff6] [com.apple.xpc:connection] [0x12101dcc0] activating connection: mach=true listener=false peer=false name=com.apple.dt.automationmode.reader
+2026-08-12 15:19:07.346 Df IlliniCover[18492:3c0ff6] [com.apple.xpc:connection] [0x12101dcc0] invalidated because the current process cancelled the connection by calling xpc_connection_cancel()
+2026-08-12 15:19:07.346 Df IlliniCover[18492:3c0ff6] [com.apple.dt.automationmode:Default] Comparing previous enabled state (1) to current enabled state (0)
+2026-08-12 15:19:07.346 Df IlliniCover[18492:3c0ff6] [com.apple.dt.xctest:Default] Automation Mode has been disabled, existing connections will be invalidated.
+2026-08-12 15:19:08.484 Df IlliniCover[18492:3c0fed] [com.apple.launchservices:db] NotifyToken::RegisterDispatch(com.apple.LaunchServices.database) fired for session key LSSessionKey(system: 0 uid: 501)
