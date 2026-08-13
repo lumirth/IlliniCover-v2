@@ -3,6 +3,11 @@
 Status: selected for the initial v2 deal baseline, with low confidence and
 prospective evaluation required.
 
+Production status: superseded by `deal_recurrence_v2` on 2026-08-13 because
+the checked launch corpus is frozen at 2026-04-07. Once the production service
+date moved beyond 90 days from that corpus, the global freshness cutoff made
+all four venue slates empty. The historical v1 receipt remains immutable.
+
 Machine-readable authority:
 [`data/deals/historical-deals-v1/model-selection-receipt.json`](../../data/deals/historical-deals-v1/model-selection-receipt.json).
 
@@ -75,6 +80,21 @@ an old offer. The selected candidate has the best precision among candidates
 that pass the recall gate. The same-phase and 3-of-4 candidates are more
 precise but fail that gate. The 90-day cap trades 0.001193 F1 against the
 unbounded 2-of-3 model for higher precision and explicit staleness control.
+
+## Production correction: deal_recurrence_v2
+
+The v2 release selects the already-evaluated unbounded `2 of last 3`
+candidate. It keeps the same venue, weekday, offer-identity, support, variant,
+rank, and same-night evidence-overlay rules, but removes the global age kill
+switch. This is a clean immutable release rather than a mutation of v1. Its
+machine receipt is
+[`model-production-receipt-v2.json`](../../data/deals/historical-deals-v1/model-production-receipt-v2.json).
+
+This does not claim an old offer is currently verified. Predictions retain
+their immutable source dates and low-confidence status; current reports remain
+free and can confirm, correct, or deny them. The correction prevents a frozen
+bootstrap corpus from silently disabling the entire feature while prospective
+evidence accumulates.
 
 ## Required cautions
 
