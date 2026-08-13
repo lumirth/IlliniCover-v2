@@ -1,0 +1,2893 @@
+{
+  "components": {
+    "schemas": {
+      "AccountDeletionRequestSchema": {
+        "properties": {
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId"
+        ],
+        "title": "AccountDeletionRequestSchema",
+        "type": "object"
+      },
+      "AccountSchema": {
+        "properties": {
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "email": {
+            "title": "Email",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "email",
+          "displayName"
+        ],
+        "title": "AccountSchema",
+        "type": "object"
+      },
+      "CoverBoardSchema": {
+        "properties": {
+          "generatedAt": {
+            "format": "date-time",
+            "title": "Generatedat",
+            "type": "string"
+          },
+          "serverRevision": {
+            "title": "Serverrevision",
+            "type": "string"
+          },
+          "serviceDate": {
+            "format": "date",
+            "title": "Servicedate",
+            "type": "string"
+          },
+          "venues": {
+            "items": {
+              "$ref": "#/components/schemas/CoverVenueCardSchema"
+            },
+            "title": "Venues",
+            "type": "array"
+          }
+        },
+        "required": [
+          "serviceDate",
+          "generatedAt",
+          "serverRevision",
+          "venues"
+        ],
+        "title": "CoverBoardSchema",
+        "type": "object"
+      },
+      "CoverHistorySchema": {
+        "properties": {
+          "accessTier": {
+            "enum": [
+              "limited",
+              "extended"
+            ],
+            "title": "Accesstier",
+            "type": "string"
+          },
+          "hasMore": {
+            "description": "True when additional admitted reports inside the applied history window were omitted by the tier's result cap.",
+            "title": "Hasmore",
+            "type": "boolean"
+          },
+          "reports": {
+            "items": {
+              "$ref": "#/components/schemas/RecentReportSchema"
+            },
+            "title": "Reports",
+            "type": "array"
+          },
+          "serviceDate": {
+            "format": "date",
+            "title": "Servicedate",
+            "type": "string"
+          },
+          "venue": {
+            "$ref": "#/components/schemas/VenueSummarySchema"
+          },
+          "windowStart": {
+            "format": "date-time",
+            "title": "Windowstart",
+            "type": "string"
+          }
+        },
+        "required": [
+          "venue",
+          "serviceDate",
+          "accessTier",
+          "windowStart",
+          "hasMore",
+          "reports"
+        ],
+        "title": "CoverHistorySchema",
+        "type": "object"
+      },
+      "CoverInputSchema": {
+        "properties": {
+          "displayedDecisionId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Displayeddecisionid",
+            "type": "string"
+          },
+          "interaction": {
+            "enum": [
+              "confirm",
+              "correct",
+              "direct",
+              "quick_confirm",
+              "manual"
+            ],
+            "title": "Interaction",
+            "type": "string"
+          },
+          "priceCents": {
+            "maximum": 7000,
+            "minimum": 0,
+            "multipleOf": 500,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "pricePrefilled": {
+            "default": false,
+            "title": "Priceprefilled",
+            "type": "boolean"
+          },
+          "priceTouched": {
+            "default": false,
+            "title": "Pricetouched",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "priceCents",
+          "interaction"
+        ],
+        "title": "CoverInputSchema",
+        "type": "object"
+      },
+      "CoverPriceSchema": {
+        "properties": {
+          "amountCents": {
+            "nullable": true,
+            "title": "Amountcents",
+            "type": "integer"
+          },
+          "highCents": {
+            "nullable": true,
+            "title": "Highcents",
+            "type": "integer"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "lowCents": {
+            "nullable": true,
+            "title": "Lowcents",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "title": "CoverPriceSchema",
+        "type": "object"
+      },
+      "CoverStateSchema": {
+        "properties": {
+          "decisionId": {
+            "format": "uuid",
+            "title": "Decisionid",
+            "type": "string"
+          },
+          "freshnessSeconds": {
+            "title": "Freshnessseconds",
+            "type": "integer"
+          },
+          "price": {
+            "$ref": "#/components/schemas/CoverPriceSchema"
+          },
+          "source": {
+            "title": "Source",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "price",
+          "source",
+          "freshnessSeconds",
+          "decisionId",
+          "status"
+        ],
+        "title": "CoverStateSchema",
+        "type": "object"
+      },
+      "CoverSubmissionSchema": {
+        "properties": {
+          "clientPlatform": {
+            "default": "ios",
+            "maxLength": 24,
+            "title": "Clientplatform",
+            "type": "string"
+          },
+          "clientVersion": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Clientversion",
+            "type": "string"
+          },
+          "cover": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CoverInputSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "entryPoint": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Entrypoint",
+            "type": "string"
+          },
+          "location": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LocationInputSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "observedAt": {
+            "format": "date-time",
+            "title": "Observedat",
+            "type": "string"
+          },
+          "submissionId": {
+            "format": "uuid",
+            "title": "Submissionid",
+            "type": "string"
+          },
+          "vantagePoint": {
+            "default": "unknown",
+            "enum": [
+              "outside",
+              "inside",
+              "unknown"
+            ],
+            "title": "Vantagepoint",
+            "type": "string"
+          },
+          "venueId": {
+            "format": "uuid",
+            "title": "Venueid",
+            "type": "string"
+          },
+          "vibes": {
+            "items": {
+              "$ref": "#/components/schemas/VibeInputSchema"
+            },
+            "maxItems": 3,
+            "title": "Vibes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "submissionId",
+          "venueId",
+          "observedAt"
+        ],
+        "title": "CoverSubmissionSchema",
+        "type": "object"
+      },
+      "CoverVenueCardSchema": {
+        "properties": {
+          "cover": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CoverStateSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "latestActivityAt": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Latestactivityat",
+            "type": "string"
+          },
+          "recentReportCount": {
+            "title": "Recentreportcount",
+            "type": "integer"
+          },
+          "venue": {
+            "$ref": "#/components/schemas/VenueSummarySchema"
+          },
+          "vibes": {
+            "$ref": "#/components/schemas/VibeSummarySchema"
+          }
+        },
+        "required": [
+          "venue",
+          "cover",
+          "recentReportCount",
+          "latestActivityAt",
+          "vibes"
+        ],
+        "title": "CoverVenueCardSchema",
+        "type": "object"
+      },
+      "CurrentInstallationSchema": {
+        "properties": {
+          "actorId": {
+            "format": "uuid",
+            "title": "Actorid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actorId"
+        ],
+        "title": "CurrentInstallationSchema",
+        "type": "object"
+      },
+      "DealEvidenceInputSchema": {
+        "properties": {
+          "action": {
+            "enum": [
+              "ADD_MISSING",
+              "CONFIRM_PRESENT",
+              "DENY_PRESENT",
+              "CORRECT"
+            ],
+            "title": "Action",
+            "type": "string"
+          },
+          "clientPlatform": {
+            "default": "ios",
+            "maxLength": 24,
+            "title": "Clientplatform",
+            "type": "string"
+          },
+          "clientVersion": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Clientversion",
+            "type": "string"
+          },
+          "entryPoint": {
+            "default": "",
+            "maxLength": 40,
+            "title": "Entrypoint",
+            "type": "string"
+          },
+          "location": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/LocationInputSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "observedAt": {
+            "format": "date-time",
+            "title": "Observedat",
+            "type": "string"
+          },
+          "serviceDateLocal": {
+            "format": "date",
+            "title": "Servicedatelocal",
+            "type": "string"
+          },
+          "submissionId": {
+            "format": "uuid",
+            "title": "Submissionid",
+            "type": "string"
+          },
+          "submittedDealShape": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/DealShapeSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "supersedesEventId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Supersedeseventid",
+            "type": "string"
+          },
+          "targetDealId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Targetdealid",
+            "type": "string"
+          },
+          "targetLocalDatetime": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Targetlocaldatetime",
+            "type": "string"
+          },
+          "targetPredictionId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Targetpredictionid",
+            "type": "string"
+          },
+          "vantagePoint": {
+            "default": "unknown",
+            "enum": [
+              "outside",
+              "inside",
+              "unknown"
+            ],
+            "title": "Vantagepoint",
+            "type": "string"
+          },
+          "venueId": {
+            "format": "uuid",
+            "title": "Venueid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "submissionId",
+          "venueId",
+          "observedAt",
+          "action",
+          "serviceDateLocal"
+        ],
+        "title": "DealEvidenceInputSchema",
+        "type": "object"
+      },
+      "DealEvidenceReceiptSchema": {
+        "properties": {
+          "acceptedAt": {
+            "format": "date-time",
+            "title": "Acceptedat",
+            "type": "string"
+          },
+          "duplicate": {
+            "title": "Duplicate",
+            "type": "boolean"
+          },
+          "eventId": {
+            "format": "uuid",
+            "title": "Eventid",
+            "type": "string"
+          },
+          "submissionId": {
+            "format": "uuid",
+            "title": "Submissionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "submissionId",
+          "eventId",
+          "acceptedAt",
+          "duplicate"
+        ],
+        "title": "DealEvidenceReceiptSchema",
+        "type": "object"
+      },
+      "DealSchema": {
+        "properties": {
+          "canonicalFamilyId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Canonicalfamilyid",
+            "type": "string"
+          },
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "discountPercent": {
+            "nullable": true,
+            "title": "Discountpercent",
+            "type": "number"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "latestActivityAt": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Latestactivityat",
+            "type": "string"
+          },
+          "latestEvidenceEventId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Latestevidenceeventid",
+            "type": "string"
+          },
+          "predictionId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Predictionid",
+            "type": "string"
+          },
+          "priceCents": {
+            "nullable": true,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "priceHighCents": {
+            "nullable": true,
+            "title": "Pricehighcents",
+            "type": "integer"
+          },
+          "priceKind": {
+            "title": "Pricekind",
+            "type": "string"
+          },
+          "priceLowCents": {
+            "nullable": true,
+            "title": "Pricelowcents",
+            "type": "integer"
+          },
+          "servingFormat": {
+            "title": "Servingformat",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "timingDescription": {
+            "nullable": true,
+            "title": "Timingdescription",
+            "type": "string"
+          },
+          "timingKnown": {
+            "title": "Timingknown",
+            "type": "boolean"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "whileSuppliesLast": {
+            "title": "Whilesupplieslast",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "canonicalFamilyId",
+          "latestEvidenceEventId",
+          "displayName",
+          "category",
+          "priceKind",
+          "priceCents",
+          "priceLowCents",
+          "priceHighCents",
+          "discountPercent",
+          "unit",
+          "servingFormat",
+          "timingDescription",
+          "timingKnown",
+          "whileSuppliesLast",
+          "status",
+          "predictionId"
+        ],
+        "title": "DealSchema",
+        "type": "object"
+      },
+      "DealShapeSchema": {
+        "properties": {
+          "canonicalFamilyId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Canonicalfamilyid",
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "drink",
+              "food"
+            ],
+            "title": "Category",
+            "type": "string"
+          },
+          "discountPercent": {
+            "exclusiveMinimum": true,
+            "maximum": 100,
+            "minimum": 0,
+            "nullable": true,
+            "title": "Discountpercent",
+            "type": "number"
+          },
+          "displayName": {
+            "maxLength": 180,
+            "minLength": 1,
+            "title": "Displayname",
+            "type": "string"
+          },
+          "priceCents": {
+            "maximum": 10000,
+            "minimum": 0,
+            "nullable": true,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "priceHighCents": {
+            "maximum": 10000,
+            "minimum": 0,
+            "nullable": true,
+            "title": "Pricehighcents",
+            "type": "integer"
+          },
+          "priceKind": {
+            "enum": [
+              "absolute",
+              "single",
+              "range",
+              "relative",
+              "percent_off",
+              "unknown"
+            ],
+            "title": "Pricekind",
+            "type": "string"
+          },
+          "priceLowCents": {
+            "maximum": 10000,
+            "minimum": 0,
+            "nullable": true,
+            "title": "Pricelowcents",
+            "type": "integer"
+          },
+          "servingFormat": {
+            "default": "",
+            "maxLength": 120,
+            "title": "Servingformat",
+            "type": "string"
+          },
+          "timingDescription": {
+            "default": "",
+            "maxLength": 160,
+            "title": "Timingdescription",
+            "type": "string"
+          },
+          "timingKnown": {
+            "default": false,
+            "title": "Timingknown",
+            "type": "boolean"
+          },
+          "unit": {
+            "default": "",
+            "maxLength": 80,
+            "title": "Unit",
+            "type": "string"
+          },
+          "whileSuppliesLast": {
+            "default": false,
+            "title": "Whilesupplieslast",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "displayName",
+          "category",
+          "priceKind"
+        ],
+        "title": "DealShapeSchema",
+        "type": "object"
+      },
+      "DealSlateSchema": {
+        "properties": {
+          "generatedAt": {
+            "format": "date-time",
+            "title": "Generatedat",
+            "type": "string"
+          },
+          "serviceDate": {
+            "format": "date",
+            "title": "Servicedate",
+            "type": "string"
+          },
+          "venues": {
+            "items": {
+              "$ref": "#/components/schemas/VenueDealsSchema"
+            },
+            "title": "Venues",
+            "type": "array"
+          }
+        },
+        "required": [
+          "serviceDate",
+          "generatedAt",
+          "venues"
+        ],
+        "title": "DealSlateSchema",
+        "type": "object"
+      },
+      "DealSuggestionSchema": {
+        "properties": {
+          "canonicalFamilyId": {
+            "format": "uuid",
+            "title": "Canonicalfamilyid",
+            "type": "string"
+          },
+          "canonicalName": {
+            "title": "Canonicalname",
+            "type": "string"
+          },
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "discountPercent": {
+            "nullable": true,
+            "title": "Discountpercent",
+            "type": "number"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "lastSeenServiceDateLocal": {
+            "format": "date",
+            "title": "Lastseenservicedatelocal",
+            "type": "string"
+          },
+          "matchedSource": {
+            "enum": [
+              "canonical",
+              "alias",
+              "historical_alias",
+              "display_name",
+              "unit"
+            ],
+            "nullable": true,
+            "title": "Matchedsource",
+            "type": "string"
+          },
+          "matchedText": {
+            "nullable": true,
+            "title": "Matchedtext",
+            "type": "string"
+          },
+          "priceCents": {
+            "nullable": true,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "priceHighCents": {
+            "nullable": true,
+            "title": "Pricehighcents",
+            "type": "integer"
+          },
+          "priceKind": {
+            "title": "Pricekind",
+            "type": "string"
+          },
+          "priceLowCents": {
+            "nullable": true,
+            "title": "Pricelowcents",
+            "type": "integer"
+          },
+          "servingFormat": {
+            "title": "Servingformat",
+            "type": "string"
+          },
+          "sourceScope": {
+            "title": "Sourcescope",
+            "type": "string"
+          },
+          "timingDescription": {
+            "nullable": true,
+            "title": "Timingdescription",
+            "type": "string"
+          },
+          "timingKnown": {
+            "title": "Timingknown",
+            "type": "boolean"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "whileSuppliesLast": {
+            "title": "Whilesupplieslast",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "canonicalFamilyId",
+          "canonicalName",
+          "category",
+          "displayName",
+          "priceKind",
+          "priceCents",
+          "discountPercent",
+          "unit",
+          "servingFormat",
+          "timingDescription",
+          "timingKnown",
+          "whileSuppliesLast",
+          "sourceScope",
+          "lastSeenServiceDateLocal"
+        ],
+        "title": "DealSuggestionSchema",
+        "type": "object"
+      },
+      "DealSuggestionsSchema": {
+        "properties": {
+          "suggestions": {
+            "items": {
+              "$ref": "#/components/schemas/DealSuggestionSchema"
+            },
+            "title": "Suggestions",
+            "type": "array"
+          }
+        },
+        "required": [
+          "suggestions"
+        ],
+        "title": "DealSuggestionsSchema",
+        "type": "object"
+      },
+      "DeletedSchema": {
+        "properties": {
+          "completedAt": {
+            "format": "date-time",
+            "title": "Completedat",
+            "type": "string"
+          },
+          "deleted": {
+            "title": "Deleted",
+            "type": "boolean"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "deleted",
+          "completedAt"
+        ],
+        "title": "DeletedSchema",
+        "type": "object"
+      },
+      "EntitlementSchema": {
+        "properties": {
+          "expiresAt": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Expiresat",
+            "type": "string"
+          },
+          "identifier": {
+            "title": "Identifier",
+            "type": "string"
+          },
+          "isActive": {
+            "title": "Isactive",
+            "type": "boolean"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Updatedat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "identifier",
+          "isActive",
+          "expiresAt",
+          "updatedAt"
+        ],
+        "title": "EntitlementSchema",
+        "type": "object"
+      },
+      "EntitlementsSchema": {
+        "properties": {
+          "entitlements": {
+            "items": {
+              "$ref": "#/components/schemas/EntitlementSchema"
+            },
+            "title": "Entitlements",
+            "type": "array"
+          }
+        },
+        "required": [
+          "entitlements"
+        ],
+        "title": "EntitlementsSchema",
+        "type": "object"
+      },
+      "ErrorSchema": {
+        "properties": {
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "message": {
+            "title": "Message",
+            "type": "string"
+          },
+          "requestId": {
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message",
+          "requestId"
+        ],
+        "title": "ErrorSchema",
+        "type": "object"
+      },
+      "HandbookListSchema": {
+        "properties": {
+          "pages": {
+            "items": {
+              "$ref": "#/components/schemas/HandbookPageSummarySchema"
+            },
+            "title": "Pages",
+            "type": "array"
+          }
+        },
+        "required": [
+          "pages"
+        ],
+        "title": "HandbookListSchema",
+        "type": "object"
+      },
+      "HandbookPageSchema": {
+        "properties": {
+          "bodyMarkdown": {
+            "title": "Bodymarkdown",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "publishedAt": {
+            "format": "date-time",
+            "nullable": true,
+            "title": "Publishedat",
+            "type": "string"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "title": "Updatedat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "title",
+          "summary",
+          "updatedAt",
+          "bodyMarkdown",
+          "publishedAt"
+        ],
+        "title": "HandbookPageSchema",
+        "type": "object"
+      },
+      "HandbookPageSummarySchema": {
+        "properties": {
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          },
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "title": {
+            "title": "Title",
+            "type": "string"
+          },
+          "updatedAt": {
+            "format": "date-time",
+            "title": "Updatedat",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "title",
+          "summary",
+          "updatedAt"
+        ],
+        "title": "HandbookPageSummarySchema",
+        "type": "object"
+      },
+      "InstallationIssuedSchema": {
+        "properties": {
+          "actorId": {
+            "format": "uuid",
+            "title": "Actorid",
+            "type": "string"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          },
+          "token": {
+            "title": "Token",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "actorId",
+          "token"
+        ],
+        "title": "InstallationIssuedSchema",
+        "type": "object"
+      },
+      "InstallationRequestSchema": {
+        "properties": {
+          "installationToken": {
+            "maxLength": 200,
+            "minLength": 54,
+            "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
+            "title": "Installationtoken",
+            "type": "string"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "installationToken"
+        ],
+        "title": "InstallationRequestSchema",
+        "type": "object"
+      },
+      "LinkInstallationSchema": {
+        "properties": {
+          "installationToken": {
+            "maxLength": 200,
+            "minLength": 54,
+            "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
+            "title": "Installationtoken",
+            "type": "string"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "installationToken"
+        ],
+        "title": "LinkInstallationSchema",
+        "type": "object"
+      },
+      "LinkedInstallationSchema": {
+        "properties": {
+          "accountId": {
+            "format": "uuid",
+            "title": "Accountid",
+            "type": "string"
+          },
+          "actorId": {
+            "format": "uuid",
+            "title": "Actorid",
+            "type": "string"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "actorId",
+          "accountId"
+        ],
+        "title": "LinkedInstallationSchema",
+        "type": "object"
+      },
+      "LocationInputSchema": {
+        "properties": {
+          "accuracyMeters": {
+            "minimum": 0,
+            "title": "Accuracymeters",
+            "type": "number"
+          },
+          "latitude": {
+            "maximum": 90,
+            "minimum": -90,
+            "title": "Latitude",
+            "type": "number"
+          },
+          "longitude": {
+            "maximum": 180,
+            "minimum": -180,
+            "title": "Longitude",
+            "type": "number"
+          },
+          "permission": {
+            "default": "when_in_use",
+            "title": "Permission",
+            "type": "string"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude",
+          "accuracyMeters"
+        ],
+        "title": "LocationInputSchema",
+        "type": "object"
+      },
+      "RecentReportSchema": {
+        "properties": {
+          "broadContext": {
+            "nullable": true,
+            "title": "Broadcontext",
+            "type": "string"
+          },
+          "interaction": {
+            "title": "Interaction",
+            "type": "string"
+          },
+          "observedAt": {
+            "format": "date-time",
+            "title": "Observedat",
+            "type": "string"
+          },
+          "priceCents": {
+            "nullable": true,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "receivedAt": {
+            "format": "date-time",
+            "title": "Receivedat",
+            "type": "string"
+          },
+          "submissionId": {
+            "format": "uuid",
+            "title": "Submissionid",
+            "type": "string"
+          },
+          "vibes": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Vibes",
+            "type": "array"
+          }
+        },
+        "required": [
+          "submissionId",
+          "observedAt",
+          "receivedAt",
+          "priceCents",
+          "interaction",
+          "broadContext",
+          "vibes"
+        ],
+        "title": "RecentReportSchema",
+        "type": "object"
+      },
+      "RevenueCatEnvelopeSchema": {
+        "properties": {
+          "apiVersion": {
+            "nullable": true,
+            "title": "Apiversion",
+            "type": "string"
+          },
+          "event": {
+            "$ref": "#/components/schemas/RevenueCatEventSchema"
+          }
+        },
+        "required": [
+          "event"
+        ],
+        "title": "RevenueCatEnvelopeSchema",
+        "type": "object"
+      },
+      "RevenueCatEventSchema": {
+        "properties": {
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Aliases",
+            "type": "array"
+          },
+          "appUserId": {
+            "default": "",
+            "maxLength": 160,
+            "title": "Appuserid",
+            "type": "string"
+          },
+          "entitlementIds": {
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "title": "Entitlementids",
+            "type": "array"
+          },
+          "environment": {
+            "maxLength": 24,
+            "nullable": true,
+            "title": "Environment",
+            "type": "string"
+          },
+          "eventTimestampMs": {
+            "nullable": true,
+            "title": "Eventtimestampms",
+            "type": "integer"
+          },
+          "expirationAtMs": {
+            "nullable": true,
+            "title": "Expirationatms",
+            "type": "integer"
+          },
+          "id": {
+            "maxLength": 160,
+            "minLength": 1,
+            "title": "Id",
+            "type": "string"
+          },
+          "originalAppUserId": {
+            "default": "",
+            "maxLength": 160,
+            "title": "Originalappuserid",
+            "type": "string"
+          },
+          "transferredFrom": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Transferredfrom",
+            "type": "array"
+          },
+          "transferredTo": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Transferredto",
+            "type": "array"
+          },
+          "type": {
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type"
+        ],
+        "title": "RevenueCatEventSchema",
+        "type": "object"
+      },
+      "RotateInstallationSchema": {
+        "properties": {
+          "replacementInstallationToken": {
+            "maxLength": 200,
+            "minLength": 54,
+            "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
+            "title": "Replacementinstallationtoken",
+            "type": "string"
+          },
+          "requestId": {
+            "format": "uuid",
+            "title": "Requestid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "requestId",
+          "replacementInstallationToken"
+        ],
+        "title": "RotateInstallationSchema",
+        "type": "object"
+      },
+      "StatusSchema": {
+        "properties": {
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "StatusSchema",
+        "type": "object"
+      },
+      "SubmissionReceiptSchema": {
+        "properties": {
+          "acceptedAt": {
+            "format": "date-time",
+            "title": "Acceptedat",
+            "type": "string"
+          },
+          "cover": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CoverStateSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "duplicate": {
+            "title": "Duplicate",
+            "type": "boolean"
+          },
+          "submissionId": {
+            "format": "uuid",
+            "title": "Submissionid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "submissionId",
+          "acceptedAt",
+          "duplicate",
+          "cover"
+        ],
+        "title": "SubmissionReceiptSchema",
+        "type": "object"
+      },
+      "TimeMachineSchema": {
+        "properties": {
+          "cover": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CoverStateSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "knowledgeCutoff": {
+            "format": "date-time",
+            "title": "Knowledgecutoff",
+            "type": "string"
+          },
+          "mode": {
+            "enum": [
+              "past",
+              "current",
+              "future"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "targetTime": {
+            "format": "date-time",
+            "title": "Targettime",
+            "type": "string"
+          },
+          "venue": {
+            "$ref": "#/components/schemas/VenueSummarySchema"
+          }
+        },
+        "required": [
+          "venue",
+          "mode",
+          "targetTime",
+          "knowledgeCutoff",
+          "cover"
+        ],
+        "title": "TimeMachineSchema",
+        "type": "object"
+      },
+      "VenueCoverDetailSchema": {
+        "properties": {
+          "cover": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CoverStateSchema"
+              }
+            ],
+            "nullable": true
+          },
+          "deals": {
+            "items": {
+              "$ref": "#/components/schemas/VenueDealSummarySchema"
+            },
+            "title": "Deals",
+            "type": "array"
+          },
+          "recentReports": {
+            "items": {
+              "$ref": "#/components/schemas/RecentReportSchema"
+            },
+            "title": "Recentreports",
+            "type": "array"
+          },
+          "venue": {
+            "$ref": "#/components/schemas/VenueSummarySchema"
+          },
+          "vibes": {
+            "$ref": "#/components/schemas/VibeSummarySchema"
+          }
+        },
+        "required": [
+          "venue",
+          "cover",
+          "recentReports",
+          "vibes",
+          "deals"
+        ],
+        "title": "VenueCoverDetailSchema",
+        "type": "object"
+      },
+      "VenueDealSummarySchema": {
+        "properties": {
+          "category": {
+            "title": "Category",
+            "type": "string"
+          },
+          "discountPercent": {
+            "nullable": true,
+            "title": "Discountpercent",
+            "type": "number"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "predictionId": {
+            "format": "uuid",
+            "nullable": true,
+            "title": "Predictionid",
+            "type": "string"
+          },
+          "priceCents": {
+            "nullable": true,
+            "title": "Pricecents",
+            "type": "integer"
+          },
+          "priceHighCents": {
+            "nullable": true,
+            "title": "Pricehighcents",
+            "type": "integer"
+          },
+          "priceKind": {
+            "title": "Pricekind",
+            "type": "string"
+          },
+          "priceLowCents": {
+            "nullable": true,
+            "title": "Pricelowcents",
+            "type": "integer"
+          },
+          "servingFormat": {
+            "title": "Servingformat",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          },
+          "timingDescription": {
+            "nullable": true,
+            "title": "Timingdescription",
+            "type": "string"
+          },
+          "timingKnown": {
+            "title": "Timingknown",
+            "type": "boolean"
+          },
+          "unit": {
+            "title": "Unit",
+            "type": "string"
+          },
+          "whileSuppliesLast": {
+            "title": "Whilesupplieslast",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "displayName",
+          "category",
+          "priceKind",
+          "priceCents",
+          "priceLowCents",
+          "priceHighCents",
+          "discountPercent",
+          "unit",
+          "servingFormat",
+          "timingDescription",
+          "timingKnown",
+          "whileSuppliesLast",
+          "status",
+          "predictionId"
+        ],
+        "title": "VenueDealSummarySchema",
+        "type": "object"
+      },
+      "VenueDealsSchema": {
+        "properties": {
+          "deals": {
+            "items": {
+              "$ref": "#/components/schemas/DealSchema"
+            },
+            "title": "Deals",
+            "type": "array"
+          },
+          "venue": {
+            "$ref": "#/components/schemas/VenueSummarySchema"
+          }
+        },
+        "required": [
+          "venue",
+          "deals"
+        ],
+        "title": "VenueDealsSchema",
+        "type": "object"
+      },
+      "VenueSummarySchema": {
+        "properties": {
+          "address": {
+            "title": "Address",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "openedYear": {
+            "nullable": true,
+            "title": "Openedyear",
+            "type": "integer"
+          },
+          "slug": {
+            "title": "Slug",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "name",
+          "address",
+          "openedYear"
+        ],
+        "title": "VenueSummarySchema",
+        "type": "object"
+      },
+      "VibeInputSchema": {
+        "properties": {
+          "dimension": {
+            "enum": [
+              "line_length",
+              "line_speed",
+              "crowd_level"
+            ],
+            "title": "Dimension",
+            "type": "string"
+          },
+          "value": {
+            "title": "Value",
+            "type": "string"
+          }
+        },
+        "required": [
+          "dimension",
+          "value"
+        ],
+        "title": "VibeInputSchema",
+        "type": "object"
+      },
+      "VibeSummarySchema": {
+        "properties": {
+          "crowdLevel": {
+            "nullable": true,
+            "title": "Crowdlevel",
+            "type": "string"
+          },
+          "lineLength": {
+            "nullable": true,
+            "title": "Linelength",
+            "type": "string"
+          },
+          "lineSpeed": {
+            "nullable": true,
+            "title": "Linespeed",
+            "type": "string"
+          }
+        },
+        "title": "VibeSummarySchema",
+        "type": "object"
+      },
+      "WebhookReceiptSchema": {
+        "properties": {
+          "duplicate": {
+            "title": "Duplicate",
+            "type": "boolean"
+          },
+          "received": {
+            "title": "Received",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "received",
+          "duplicate"
+        ],
+        "title": "WebhookReceiptSchema",
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "InstallationTokenAuth": {
+        "in": "header",
+        "name": "X-Installation-Token",
+        "type": "apiKey"
+      },
+      "SessionTokenAuth": {
+        "in": "header",
+        "name": "X-Session-Token",
+        "type": "apiKey"
+      }
+    }
+  },
+  "info": {
+    "description": "Product-shaped API for the native IlliniCover clients.",
+    "title": "IlliniCover API",
+    "version": "2.0.0"
+  },
+  "openapi": "3.0.3",
+  "paths": {
+    "/api/v2/account-deletions/{request_id}": {
+      "get": {
+        "operationId": "getAccountDeletionStatus",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedSchema"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Get Account Deletion Status",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/billing/revenuecat-webhook": {
+      "post": {
+        "operationId": "receiveRevenueCatWebhook",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RevenueCatEnvelopeSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WebhookReceiptSchema"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          }
+        },
+        "summary": "Receive Revenuecat Webhook",
+        "tags": [
+          "Billing"
+        ]
+      }
+    },
+    "/api/v2/cover": {
+      "get": {
+        "operationId": "getCoverBoard",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoverBoardSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Cover Board",
+        "tags": [
+          "Cover"
+        ]
+      }
+    },
+    "/api/v2/cover-submissions": {
+      "post": {
+        "operationId": "createCoverSubmission",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Session-Token",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "X-Session-Token",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CoverSubmissionSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmissionReceiptSchema"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "InstallationTokenAuth": []
+          }
+        ],
+        "summary": "Create Cover Submission",
+        "tags": [
+          "Reporting"
+        ]
+      }
+    },
+    "/api/v2/deal-evidence": {
+      "post": {
+        "operationId": "createDealEvidence",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Session-Token",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "X-Session-Token",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DealEvidenceInputSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DealEvidenceReceiptSchema"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "InstallationTokenAuth": []
+          }
+        ],
+        "summary": "Create Deal Evidence",
+        "tags": [
+          "Deals"
+        ]
+      }
+    },
+    "/api/v2/deal-suggestions": {
+      "get": {
+        "operationId": "searchDealSuggestions",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "maxLength": 100,
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "category",
+            "required": false,
+            "schema": {
+              "maxLength": 40,
+              "nullable": true,
+              "title": "Category",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "venue",
+            "required": false,
+            "schema": {
+              "maxLength": 80,
+              "nullable": true,
+              "title": "Venue",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 6,
+              "maximum": 20,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DealSuggestionsSchema"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Search Deal Suggestions",
+        "tags": [
+          "Deals"
+        ]
+      }
+    },
+    "/api/v2/deals": {
+      "get": {
+        "operationId": "getDealSlate",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DealSlateSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Deal Slate",
+        "tags": [
+          "Deals"
+        ]
+      }
+    },
+    "/api/v2/handbook": {
+      "get": {
+        "operationId": "getHandbook",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HandbookListSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Handbook",
+        "tags": [
+          "Handbook"
+        ]
+      }
+    },
+    "/api/v2/handbook/{slug}": {
+      "get": {
+        "operationId": "getHandbookPage",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slug",
+            "required": true,
+            "schema": {
+              "title": "Slug",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HandbookPageSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Get Handbook Page",
+        "tags": [
+          "Handbook"
+        ]
+      }
+    },
+    "/api/v2/installations": {
+      "post": {
+        "operationId": "createInstallation",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstallationRequestSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstallationIssuedSchema"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          }
+        },
+        "summary": "Create Installation Endpoint",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/installations/current": {
+      "get": {
+        "description": "Validate one installation credential without mutating actor state.",
+        "operationId": "getCurrentInstallation",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentInstallationSchema"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "InstallationTokenAuth": []
+          }
+        ],
+        "summary": "Get Current Installation",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/installations/rotate": {
+      "post": {
+        "operationId": "rotateInstallation",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "X-Installation-Token",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "X-Installation-Token",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RotateInstallationSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstallationIssuedSchema"
+                }
+              }
+            },
+            "description": "Created"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          }
+        },
+        "summary": "Rotate Current Installation",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/me": {
+      "delete": {
+        "operationId": "deleteCurrentAccount",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountDeletionRequestSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletedSchema"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          }
+        },
+        "security": [
+          {
+            "SessionTokenAuth": []
+          }
+        ],
+        "summary": "Delete Me",
+        "tags": [
+          "Identity"
+        ]
+      },
+      "get": {
+        "operationId": "getCurrentAccount",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSchema"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "SessionTokenAuth": []
+          }
+        ],
+        "summary": "Get Me",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/me/entitlements": {
+      "get": {
+        "operationId": "getCurrentEntitlements",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EntitlementsSchema"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "SessionTokenAuth": []
+          }
+        ],
+        "summary": "Get Current Entitlements",
+        "tags": [
+          "Billing"
+        ]
+      }
+    },
+    "/api/v2/me/link-installation": {
+      "post": {
+        "operationId": "linkCurrentInstallation",
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkInstallationSchema"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkedInstallationSchema"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          }
+        },
+        "security": [
+          {
+            "SessionTokenAuth": []
+          }
+        ],
+        "summary": "Link Current Installation",
+        "tags": [
+          "Identity"
+        ]
+      }
+    },
+    "/api/v2/status": {
+      "get": {
+        "operationId": "getStatus",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StatusSchema"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "summary": "Status",
+        "tags": [
+          "Operations"
+        ]
+      }
+    },
+    "/api/v2/venues/{venue}/cover": {
+      "get": {
+        "operationId": "getVenueCover",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "venue",
+            "required": true,
+            "schema": {
+              "title": "Venue",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenueCoverDetailSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Get Venue Cover",
+        "tags": [
+          "Cover"
+        ]
+      }
+    },
+    "/api/v2/venues/{venue}/cover/history": {
+      "get": {
+        "operationId": "getVenueCoverHistory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "venue",
+            "required": true,
+            "schema": {
+              "title": "Venue",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "X-Session-Token",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "X-Session-Token",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CoverHistorySchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Get Venue Cover History",
+        "tags": [
+          "Cover"
+        ]
+      }
+    },
+    "/api/v2/venues/{venue}/cover/time-machine": {
+      "get": {
+        "operationId": "getVenueCoverTimeMachine",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "venue",
+            "required": true,
+            "schema": {
+              "title": "Venue",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "target_time",
+            "required": true,
+            "schema": {
+              "format": "date-time",
+              "title": "Target Time",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TimeMachineSchema"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          }
+        },
+        "security": [
+          {
+            "SessionTokenAuth": []
+          }
+        ],
+        "summary": "Get Venue Time Machine",
+        "tags": [
+          "Cover"
+        ]
+      }
+    },
+    "/api/v2/venues/{venue}/deals": {
+      "get": {
+        "operationId": "getVenueDeals",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "venue",
+            "required": true,
+            "schema": {
+              "title": "Venue",
+              "type": "string"
+            }
+          },
+          {
+            "in": "header",
+            "name": "If-None-Match",
+            "required": false,
+            "schema": {
+              "nullable": true,
+              "title": "If-None-Match",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VenueDealsSchema"
+                }
+              }
+            },
+            "description": "OK",
+            "headers": {
+              "ETag": {
+                "description": "Opaque validator for a later If-None-Match request.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "The representation still matches If-None-Match.",
+            "headers": {
+              "ETag": {
+                "description": "The current representation validator.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Not Found"
+          }
+        },
+        "summary": "Get Venue Deals",
+        "tags": [
+          "Deals"
+        ]
+      }
+    }
+  },
+  "servers": []
+}

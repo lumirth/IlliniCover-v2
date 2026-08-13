@@ -1,0 +1,20 @@
+[
+  {
+    "name": "delete-artifacts-older-than-seven-days",
+    "action": {"type": "Delete"},
+    "condition": {"olderThan": "604800s", "tagState": "any"}
+  },
+  {
+    "name": "keep-two-most-recent-versions",
+    "action": {"type": "Keep"},
+    "mostRecentVersions": {"keepCount": 2}
+  },
+  {
+    "name": "keep-serving-and-rollback-images",
+    "action": {"type": "Keep"},
+    "condition": {
+      "tagState": "tagged",
+      "tagPrefixes": ["production-serving", "production-rollback", "preview-serving"]
+    }
+  }
+]

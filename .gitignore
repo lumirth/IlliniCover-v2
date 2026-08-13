@@ -1,0 +1,40 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+gha-creds-*.json
+mise.local.toml
+.python-version
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Django runtime
+server/staticfiles/
+server/media/
+server/db.sqlite3
+
+# Xcode and SwiftPM
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.build/
+ios/Packages/
+*.xcresult
+*.p8
+*.p12
+*.pfx
+*.mobileprovision
+
+# Local receipts and secrets
+.local/
+.artifacts/
+artifacts/private/
+*.xcconfig.local

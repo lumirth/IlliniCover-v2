@@ -1,0 +1,149 @@
+element_num,depth,attributes,parent_num
+0,0,"bounds=[0,0][0,0]",
+1,1,"accessibilityText=IlliniCover; bounds=[0,0][390,844]; enabled=true; enabled=true",0
+2,2,"bounds=[0,0][390,844]; enabled=true; enabled=true",1
+3,3,"bounds=[0,0][390,844]; enabled=true; enabled=true",2
+4,4,"bounds=[0,0][390,844]; enabled=true; enabled=true",3
+7,5,"accessibilityText=dismiss popup; resource-id=PopoverDismissRegion; bounds=[-390,-844][780,1688]; enabled=true; enabled=true",4
+6,3,"bounds=[0,0][390,844]; enabled=true; enabled=true",2
+7,4,"accessibilityText=dismiss popup; resource-id=PopoverDismissRegion; bounds=[-390,-844][780,1688]; enabled=true; enabled=true",6
+8,4,"bounds=[8,291][382,836]; enabled=true; enabled=true",6
+9,5,"accessibilityText=Sheet Grabber; value=Half screen; text=Half screen; bounds=[158,286][231,310]; enabled=true; enabled=true",8
+10,5,"bounds=[8,291][382,836]; enabled=true; enabled=true",8
+11,6,"bounds=[8,291][382,836]; enabled=true; enabled=true",10
+12,7,"bounds=[8,291][382,836]; enabled=true; enabled=true",11
+13,8,"bounds=[8,291][382,836]; enabled=true; enabled=true",12
+14,9,"bounds=[8,291][382,836]; enabled=true; enabled=true",13
+15,10,"resource-id=Adjust · KAMS; bounds=[8,306][382,358]; enabled=true; enabled=true",14
+16,11,"accessibilityText=Cancel; bounds=[27,310][100,345]; enabled=true; enabled=true",15
+17,12,"bounds=[27,310][100,345]; enabled=true; enabled=true",16
+18,13,"accessibilityText=Cancel; bounds=[27,310][100,345]; enabled=true; enabled=true",17
+19,11,"accessibilityText=Adjust · KAMS; bounds=[140,317][249,337]; enabled=true; enabled=true",15
+20,11,"accessibilityText=Submit; resource-id=cover-report-submit; bounds=[285,310][362,345]; enabled=true; enabled=true",15
+21,12,"bounds=[285,310][362,345]; enabled=true; enabled=true",20
+22,13,"accessibilityText=Submit; resource-id=cover-report-submit; bounds=[285,310][362,345]",21
+23,10,"bounds=[8,291][382,836]; enabled=true; enabled=true",14
+24,11,"bounds=[8,291][382,836]; enabled=true; enabled=true",23
+25,12,"bounds=[8,291][382,836]; enabled=true; enabled=true",24
+26,13,"bounds=[8,291][382,836]; enabled=true; enabled=true",25
+27,14,"bounds=[8,291][382,836]; enabled=true; enabled=true",26
+28,15,"bounds=[-7,-730][397,716]; enabled=true; enabled=true",27
+29,15,"bounds=[8,291][382,836]; enabled=true; enabled=true",27
+30,16,"bounds=[8,291][382,410]; enabled=true; enabled=true",29
+134,15,"bounds=[8,291][382,836]; enabled=true; enabled=true",27
+32,15,"bounds=[23,358][366,397]; enabled=true; enabled=true",27
+33,16,"bounds=[23,358][366,397]; enabled=true; enabled=true",32
+34,16,"bounds=[23,358][366,397]; enabled=true; enabled=true",32
+35,17,"bounds=[23,358][366,397]; enabled=true; enabled=true",34
+36,18,"bounds=[23,358][366,397]; enabled=true; enabled=true",35
+37,19,"accessibilityText=Cover Price; bounds=[23,358][366,397]; enabled=true; enabled=true",36
+38,15,"bounds=[23,397][366,476]; enabled=true; enabled=true",27
+39,16,"bounds=[23,397][366,476]; enabled=true; enabled=true",38
+40,17,"bounds=[23,397][366,476]; enabled=true; enabled=true",39
+41,18,"bounds=[23,397][366,476]; enabled=true; enabled=true",40
+42,16,"bounds=[23,397][366,476]; enabled=true; enabled=true",38
+43,17,"bounds=[23,397][366,476]; enabled=true; enabled=true",42
+44,18,"bounds=[23,397][366,476]; enabled=true; enabled=true",43
+45,19,"accessibilityText=Decrease cover by five dollars; resource-id=minus.circle.fill; bounds=[40,423][67,450]; enabled=true; enabled=true",44
+46,19,"accessibilityText=Cover price, $20; bounds=[153,411][236,462]; enabled=true; enabled=true",44
+47,19,"accessibilityText=Increase cover by five dollars; resource-id=plus.circle.fill; bounds=[322,423][349,450]; enabled=true; enabled=true",44
+48,15,"bounds=[23,476][366,538]; enabled=true; enabled=true",27
+49,16,"bounds=[23,476][366,538]; enabled=true; enabled=true",48
+50,17,"bounds=[23,476][366,538]; enabled=true; enabled=true",49
+51,18,"bounds=[23,476][366,538]; enabled=true; enabled=true",50
+52,16,"bounds=[23,476][366,538]; enabled=true; enabled=true",48
+53,17,"bounds=[23,476][366,538]; enabled=true; enabled=true",52
+54,18,"bounds=[23,476][366,538]; enabled=true; enabled=true",53
+55,19,"accessibilityText=$0; bounds=[89,490][132,523]; enabled=true; enabled=true",54
+56,19,"accessibilityText=$5; bounds=[140,490][182,523]; enabled=true; enabled=true",54
+57,19,"accessibilityText=$10; bounds=[190,490][240,523]; enabled=true; enabled=true",54
+58,19,"accessibilityText=$20; bounds=[248,490][300,523]; enabled=true; enabled=true",54
+59,15,"bounds=[153,475][351,476]; enabled=true; enabled=true",27
+60,16,"bounds=[153,475][351,476]; enabled=true; enabled=true",59
+61,15,"bounds=[23,538][366,587]; enabled=true; enabled=true",27
+62,16,"bounds=[23,538][366,587]; enabled=true; enabled=true",61
+63,17,"bounds=[23,538][366,587]; enabled=true; enabled=true",62
+64,18,"bounds=[23,538][366,587]; enabled=true; enabled=true",63
+65,16,"bounds=[23,538][366,587]; enabled=true; enabled=true",61
+66,17,"bounds=[23,538][366,587]; enabled=true; enabled=true",65
+67,18,"bounds=[23,538][366,587]; enabled=true; enabled=true",66
+68,19,"hintText=Enter price; bounds=[38,552][351,573]; enabled=true; enabled=true",67
+69,15,"bounds=[100,537][351,538]; enabled=true; enabled=true",27
+70,16,"bounds=[100,537][351,538]; enabled=true; enabled=true",69
+71,15,"bounds=[23,587][366,637]; enabled=true; enabled=true",27
+72,16,"bounds=[23,587][366,637]; enabled=true; enabled=true",71
+73,17,"bounds=[23,587][366,637]; enabled=true; enabled=true",72
+74,18,"bounds=[23,587][366,637]; enabled=true; enabled=true",73
+75,16,"bounds=[23,587][366,637]; enabled=true; enabled=true",71
+76,17,"bounds=[23,587][366,637]; enabled=true; enabled=true",75
+77,18,"bounds=[23,587][366,637]; enabled=true; enabled=true",76
+78,19,"accessibilityText=Entered prices are rounded to the nearest $5.; bounds=[23,587][366,637]; enabled=true; enabled=true",77
+79,15,"bounds=[38,586][351,587]; enabled=true; enabled=true",27
+80,16,"bounds=[38,586][351,587]; enabled=true; enabled=true",79
+81,15,"bounds=[23,637][366,687]; enabled=true; enabled=true",27
+82,16,"bounds=[23,637][366,687]; enabled=true; enabled=true",81
+83,17,"bounds=[23,637][366,687]; enabled=true; enabled=true",82
+84,18,"bounds=[23,637][366,687]; enabled=true; enabled=true",83
+85,16,"bounds=[23,637][366,687]; enabled=true; enabled=true",81
+86,17,"bounds=[23,637][366,687]; enabled=true; enabled=true",85
+87,18,"bounds=[23,637][366,687]; enabled=true; enabled=true",86
+88,19,"accessibilityText=Clear / Don’t Know; bounds=[23,637][366,687]; enabled=true; enabled=true",87
+89,15,"bounds=[38,636][351,637]; enabled=true; enabled=true",27
+90,16,"bounds=[38,636][351,637]; enabled=true; enabled=true",89
+91,15,"bounds=[23,687][366,716]; enabled=true; enabled=true",27
+92,16,"bounds=[23,687][366,716]; enabled=true; enabled=true",91
+93,16,"bounds=[23,687][366,716]; enabled=true; enabled=true",91
+94,17,"bounds=[23,687][366,716]; enabled=true; enabled=true",93
+95,18,"bounds=[23,687][366,716]; enabled=true; enabled=true",94
+96,19,"accessibilityText=Touch a price to include it in this report.; bounds=[23,687][366,716]; enabled=true; enabled=true",95
+97,15,"bounds=[-7,716][397,830]; enabled=true; enabled=true",27
+98,15,"bounds=[23,716][366,754]; enabled=true; enabled=true",27
+99,16,"bounds=[23,716][366,754]; enabled=true; enabled=true",98
+100,16,"bounds=[23,716][366,754]; enabled=true; enabled=true",98
+101,17,"bounds=[23,716][366,754]; enabled=true; enabled=true",100
+102,18,"bounds=[23,716][366,754]; enabled=true; enabled=true",101
+103,19,"accessibilityText=Where are you?; bounds=[23,716][366,754]; enabled=true; enabled=true",102
+104,15,"bounds=[23,754][366,813]; enabled=true; enabled=true",27
+105,16,"bounds=[23,754][366,813]; enabled=true; enabled=true",104
+106,17,"bounds=[23,754][366,813]; enabled=true; enabled=true",105
+107,18,"bounds=[23,754][366,813]; enabled=true; enabled=true",106
+108,16,"bounds=[23,754][366,813]; enabled=true; enabled=true",104
+109,17,"bounds=[23,754][366,813]; enabled=true; enabled=true",108
+110,18,"bounds=[23,754][366,813]; enabled=true; enabled=true",109
+111,19,"bounds=[38,769][351,798]; enabled=true; enabled=true",110
+112,20,"accessibilityText=Outside; bounds=[38,769][142,799]; enabled=true; enabled=true",111
+113,20,"accessibilityText=Inside; bounds=[142,769][246,799]; enabled=true; enabled=true",111
+114,20,"accessibilityText=Unknown; bounds=[246,769][351,799]; enabled=true; selected=true; enabled=true; selected=true",111
+115,15,"bounds=[23,830][366,868]; enabled=true; enabled=true",27
+116,16,"bounds=[23,830][366,868]; enabled=true; enabled=true",115
+117,16,"bounds=[23,830][366,868]; enabled=true; enabled=true",115
+118,17,"bounds=[23,830][366,868]; enabled=true; enabled=true",117
+119,18,"bounds=[23,830][366,868]; enabled=true; enabled=true",118
+120,19,"accessibilityText=Optional conditions; bounds=[23,830][366,868]; enabled=true; enabled=true",119
+123,15,"accessibilityText=Vertical scroll bar, 2 pages; value=0%; text=0%; bounds=[350,358][379,794]; enabled=true; enabled=true",27
+124,16,"bounds=[376,793][379,800]; enabled=true; enabled=true",123
+123,15,"accessibilityText=Vertical scroll bar, 2 pages; value=0%; text=0%; bounds=[350,358][379,794]; enabled=true; enabled=true",27
+124,16,"bounds=[376,793][379,800]; enabled=true; enabled=true",123
+133,10,"bounds=[8,291][382,836]; enabled=true; enabled=true",14
+134,11,"bounds=[8,291][382,836]; enabled=true; enabled=true",133
+127,5,"bounds=[8,291][382,836]; enabled=true; enabled=true",8
+128,6,"bounds=[8,291][382,836]; enabled=true; enabled=true",127
+129,7,"bounds=[8,291][382,836]; enabled=true; enabled=true",128
+130,8,"bounds=[8,291][382,836]; enabled=true; enabled=true",129
+133,9,"bounds=[8,291][382,836]; enabled=true; enabled=true",130
+134,10,"bounds=[8,291][382,836]; enabled=true; enabled=true",133
+133,8,"bounds=[8,291][382,836]; enabled=true; enabled=true",129
+134,9,"bounds=[8,291][382,836]; enabled=true; enabled=true",133
+135,2,"bounds=[0,0][390,844]; enabled=true; enabled=true",1
+136,3,"bounds=[0,0][390,844]; enabled=true; enabled=true",135
+137,4,"bounds=[0,0][390,844]; enabled=true; enabled=true",136
+138,1,"bounds=[0,0][0,0]",0
+139,2,"bounds=[0,0][390,47]; enabled=true; enabled=true",138
+140,2,"bounds=[0,0][390,47]; enabled=true; enabled=true",138
+141,3,"bounds=[0,0][390,47]; enabled=true; enabled=true",140
+142,4,"bounds=[0,0][390,47]; enabled=true; enabled=true",141
+143,5,"accessibilityText=9:51 AM; bounds=[36,8][68,27]; enabled=true; enabled=true",142
+144,5,"accessibilityText=Cellular; value=No signal; text=No signal; bounds=[302,19][319,30]; enabled=true; enabled=true",142
+145,5,"value=SSID, 3 of 3 Wi-Fi bars; text=SSID, 3 of 3 Wi-Fi bars; resource-id=3 of 3 Wi-Fi bars; bounds=[324,18][341,30]; enabled=true; enabled=true",142
+146,5,"accessibilityText=100% battery power; value=Not charging; text=Not charging; bounds=[346,18][371,30]; enabled=true; enabled=true",142
+147,5,"accessibilityText=Return to IlliniCover; resource-id=breadcrumb; bounds=[12,30][77,44]; enabled=true; enabled=true",142

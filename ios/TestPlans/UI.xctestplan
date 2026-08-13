@@ -1,0 +1,40 @@
+{
+  "configurations" : [
+    {
+      "id" : "9EBD9A60-5571-4795-859F-4BB65D037238",
+      "name" : "Fixture UI",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IlliniCover.xcodeproj",
+      "identifier" : "5AA465DCD0C4BDE04A8C18BF",
+      "name" : "IlliniCover"
+    },
+    "uiTestingScreenshotsLifetime" : "keepAlways"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:IlliniCover.xcodeproj",
+        "identifier" : "03DD77D2D1D73BB44C0082CE",
+        "name" : "IlliniCoverTests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "IlliniCoverUITests/testLiveAcceptanceGeneratedClientSmoke"
+      ],
+      "target" : {
+        "containerPath" : "container:IlliniCover.xcodeproj",
+        "identifier" : "559F9598625176BFC5EC335A",
+        "name" : "IlliniCoverUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

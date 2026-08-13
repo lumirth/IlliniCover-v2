@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "25805F51-4105-4070-9CCB-65C1CF04AE11",
+      "name" : "Fast",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IlliniCover.xcodeproj",
+      "identifier" : "5AA465DCD0C4BDE04A8C18BF",
+      "name" : "IlliniCover"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:IlliniCover.xcodeproj",
+        "identifier" : "03DD77D2D1D73BB44C0082CE",
+        "name" : "IlliniCoverTests"
+      }
+    }
+  ],
+  "version" : 1
+}

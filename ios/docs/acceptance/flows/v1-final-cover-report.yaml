@@ -1,0 +1,7 @@
+appId: com.illinicover.app
+---
+- launchApp
+- tapOn: "Bars"
+- tapOn: "Report a different cover price at KAMS"
+- assertVisible: "Adjust"
+- assertVisible: "Submit"

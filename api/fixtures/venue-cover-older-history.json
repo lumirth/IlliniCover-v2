@@ -1,0 +1,24 @@
+{
+  "accessTier": "limited",
+  "hasMore": false,
+  "reports": [
+    {
+      "broadContext": "Inside",
+      "interaction": "direct",
+      "observedAt": "2026-08-11T02:15:00Z",
+      "priceCents": 1500,
+      "receivedAt": "2026-08-11T02:15:05Z",
+      "submissionId": "3576e7c2-c87d-5959-beda-24d336ddfe2b",
+      "vibes": []
+    }
+  ],
+  "serviceDate": "2026-08-12",
+  "venue": {
+    "address": "604 East Green Street",
+    "id": "368c4703-a8fb-51ec-baf2-12ef4274af75",
+    "name": "Murphy's Pub",
+    "openedYear": 1969,
+    "slug": "unavailable"
+  },
+  "windowStart": "2026-08-06T05:00:00-05:00"
+}

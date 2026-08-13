@@ -1,0 +1,8 @@
+Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
+ > Flow bars-quick-wrong-receipt
+Launch app "com.illinicover.app"... COMPLETED
+Tap on "Bars"... COMPLETED
+Long press on "Report a different cover price at KAMS"... COMPLETED
+Tap on "Quick report $20"... COMPLETED
+Assert that "Thank you for submitting a report!" is visible... COMPLETED
+Assert that "Quick report $20" is not visible... COMPLETED

@@ -1,0 +1,11 @@
+appId: com.illinicover.app.v2
+---
+- launchApp:
+    arguments:
+      "-uiTesting": true
+      "-skipOnboarding": true
+      "-signedIn": true
+- tapOn: "Report a different cover price at KAMS"
+- assertVisible: "Adjust · KAMS"
+- assertVisible: "Enter price"
+- assertVisible: "Submit"

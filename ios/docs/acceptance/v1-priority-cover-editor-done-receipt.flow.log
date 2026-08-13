@@ -1,0 +1,10 @@
+Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
+ > Flow cover-editor-done
+Launch app "com.illinicover.app"... COMPLETED
+Tap on "Bars"... COMPLETED
+Tap on "Report a different cover price at KAMS"... COMPLETED
+Tap on "Enter cover price manually"... COMPLETED
+Erase text... COMPLETED
+Input text 12.5... COMPLETED
+Tap on "Done"... COMPLETED
+Assert that "Reporting cover price of $15" is visible... COMPLETED
