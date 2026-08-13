@@ -106,7 +106,7 @@ def test_add_missing_deal_evidence_preserves_shape_and_is_idempotent():
         "venueId": str(venue.id),
         "observedAt": timezone.now().isoformat(),
         "action": "ADD_MISSING",
-        "serviceDateLocal": timezone.localdate().isoformat(),
+        "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
         "submittedDealShape": {
             "displayName": "$5 wells",
             "category": "drink",
@@ -176,7 +176,7 @@ def test_slate_uses_materialized_authoritative_predictions_with_prediction_ident
         release=release,
         venue=venue,
         deal_definition=deal,
-        service_date_local=timezone.localdate(),
+        service_date_local=service_date_for(timezone.now()),
         support_nights=2,
         comparable_nights=3,
         latest_evidence_date=timezone.localdate(),
@@ -579,7 +579,7 @@ def test_deal_suggestions_search_canonical_registry_and_keep_full_shape():
         price_kind="single",
         price_cents=500,
         unit="draft vessel",
-        service_date_local=timezone.localdate(),
+        service_date_local=service_date_for(timezone.now()),
         timing_kind="unknown",
         source_post_key="post-1",
         source_payload_hash="a" * 64,
@@ -593,7 +593,9 @@ def test_deal_suggestions_search_canonical_registry_and_keep_full_shape():
     assert suggestion["displayName"] == "Wells"
     assert suggestion["priceCents"] == 500
     assert suggestion["sourceScope"] == "global"
-    assert suggestion["lastSeenServiceDateLocal"] == timezone.localdate().isoformat()
+    assert suggestion["lastSeenServiceDateLocal"] == service_date_for(
+        timezone.now()
+    ).isoformat()
     assert suggestion["matchedSource"] == "canonical"
     assert suggestion["matchedText"] == "Wells"
 
@@ -707,7 +709,7 @@ def test_deal_suggestion_with_venue_ranks_local_shape_before_global_shapes():
             category="drink",
             price_kind="single",
             price_cents=price,
-            service_date_local=timezone.localdate(),
+            service_date_local=service_date_for(timezone.now()),
             timing_kind="unknown",
             source_post_key=key,
             source_payload_hash="a" * 64,
@@ -724,7 +726,8 @@ def test_deal_suggestion_with_venue_ranks_local_shape_before_global_shapes():
         (300, "global"),
     ]
     assert all(
-        row["lastSeenServiceDateLocal"] == timezone.localdate().isoformat() for row in suggestions
+        row["lastSeenServiceDateLocal"] == service_date_for(timezone.now()).isoformat()
+        for row in suggestions
     )
 
 
@@ -782,7 +785,7 @@ def test_deal_evidence_rejects_prediction_from_another_venue():
         release=release,
         venue=kams,
         deal_definition=definition,
-        service_date_local=timezone.localdate(),
+        service_date_local=service_date_for(timezone.now()),
         support_nights=2,
         comparable_nights=3,
         latest_evidence_date=timezone.localdate(),
@@ -799,7 +802,7 @@ def test_deal_evidence_rejects_prediction_from_another_venue():
             "observedAt": timezone.now().isoformat(),
             "action": "CONFIRM_PRESENT",
             "targetPredictionId": str(prediction.id),
-            "serviceDateLocal": timezone.localdate().isoformat(),
+            "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
         },
         content_type="application/json",
         headers={"X-Installation-Token": token},
@@ -822,7 +825,7 @@ def test_canonical_deal_requires_independent_add_then_confirm_and_two_denials():
             "venueId": str(venue.id),
             "observedAt": timezone.now().isoformat(),
             "action": "ADD_MISSING",
-            "serviceDateLocal": timezone.localdate().isoformat(),
+            "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
             "submittedDealShape": {
                 "canonicalFamilyId": str(family.id),
                 "displayName": "$5 wells",
@@ -850,7 +853,7 @@ def test_canonical_deal_requires_independent_add_then_confirm_and_two_denials():
             "observedAt": timezone.now().isoformat(),
             "action": "CONFIRM_PRESENT",
             "targetDealId": event_id,
-            "serviceDateLocal": timezone.localdate().isoformat(),
+            "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
         },
         content_type="application/json",
         headers={"X-Installation-Token": second_token},
@@ -876,7 +879,7 @@ def test_canonical_deal_requires_independent_add_then_confirm_and_two_denials():
             "action": "CORRECT",
             "targetDealId": event_id,
             "supersedesEventId": event_id,
-            "serviceDateLocal": timezone.localdate().isoformat(),
+            "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
             "submittedDealShape": {
                 "canonicalFamilyId": str(family.id),
                 "displayName": "$6 wells",
@@ -906,7 +909,7 @@ def test_canonical_deal_requires_independent_add_then_confirm_and_two_denials():
             "observedAt": timezone.now().isoformat(),
             "action": "CONFIRM_PRESENT",
             "targetDealId": correction_id,
-            "serviceDateLocal": timezone.localdate().isoformat(),
+            "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
         },
         content_type="application/json",
         headers={"X-Installation-Token": correction_confirm_token},
@@ -929,7 +932,7 @@ def test_canonical_deal_requires_independent_add_then_confirm_and_two_denials():
                 "observedAt": timezone.now().isoformat(),
                 "action": "DENY_PRESENT",
                 "targetDealId": correction_id,
-                "serviceDateLocal": timezone.localdate().isoformat(),
+                "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
             },
             content_type="application/json",
             headers={"X-Installation-Token": token},
@@ -967,7 +970,7 @@ def test_deal_correction_lineage_cannot_cross_venues():
         release=release,
         venue=first_venue,
         deal_definition=deal,
-        service_date_local=timezone.localdate(),
+        service_date_local=service_date_for(timezone.now()),
         support_nights=2,
         comparable_nights=3,
         latest_evidence_date=timezone.localdate(),
@@ -979,7 +982,7 @@ def test_deal_correction_lineage_cannot_cross_venues():
         "observedAt": timezone.now().isoformat(),
         "action": "CONFIRM_PRESENT",
         "targetPredictionId": str(prediction.id),
-        "serviceDateLocal": timezone.localdate().isoformat(),
+        "serviceDateLocal": service_date_for(timezone.now()).isoformat(),
     }
     original = client.post(
         "/api/v2/deal-evidence",
@@ -1652,7 +1655,7 @@ def test_materialization_fails_closed_without_resurrecting_a_retired_deal_releas
         retired_at=retirement,
     )
     current = DealPredictionRelease.objects.create(
-        predictor_version="deal_recurrence_v2",
+        predictor_version="deal_recurrence_v3",
         code_revision="current-code",
         training_data_revision="current-training-revision",
         parameters={"release": "current"},
@@ -1663,7 +1666,7 @@ def test_materialization_fails_closed_without_resurrecting_a_retired_deal_releas
 
     with pytest.raises(
         DealPredictionLifecycleError,
-        match="No materializer is available for deal predictor 'deal_recurrence_v2'",
+        match="No materializer is available for deal predictor 'deal_recurrence_v3'",
     ):
         materialize_predictions(service_date_for(timezone.now()))
 
@@ -1733,6 +1736,111 @@ def test_predictor_materializes_deterministic_positive_ranks_as_immutable_artifa
     predictions[0].rank = 3
     with pytest.raises(ValidationError, match="immutable"):
         predictions[0].save()
+
+
+@pytest.mark.django_db
+def test_selected_release_serves_frozen_corpus_deals_beyond_90_days():
+    """A frozen launch corpus must not make the entire public slate disappear."""
+
+    from deals.predictor import (
+        build_selected_prediction_release,
+        materialize_predictions,
+        promote_prediction_release,
+    )
+
+    venue = Venue.objects.create(slug="kams", name="KAMS")
+    DatasetRelease.objects.create(
+        name="historical-deals-v1",
+        content_hash="a0c9222cb5a268001657adc679c13c36232aa1bbc10856144c8e68aa91e7e6dd",
+        schema_version="1",
+        importer_version="test",
+    )
+    family = DealFamily.objects.create(canonical_name="Wells", category="drink")
+    target = service_date_for(timezone.now())
+    for offset in (140, 147, 154):
+        HistoricalDealFact.objects.create(
+            source_record_key=f"frozen-corpus-{offset}",
+            source_dataset="historical-deals-v1",
+            venue=venue,
+            family=family,
+            display_name="Wells",
+            category="drink",
+            price_kind="single",
+            price_cents=500,
+            service_date_local=target - timedelta(days=offset),
+            timing_kind="unknown",
+            source_post_key=f"frozen-corpus-post-{offset}",
+            source_payload_hash="d" * 64,
+        )
+
+    release = promote_prediction_release(build_selected_prediction_release())
+    selected, created = materialize_predictions(target)
+    response = Client().get("/api/v2/deals")
+
+    assert selected == release
+    assert created == 1
+    assert response.status_code == 200
+    venue_body = next(
+        row for row in response.json()["venues"] if row["venue"]["slug"] == "kams"
+    )
+    assert venue_body["deals"][0]["displayName"] == "Wells"
+
+
+@pytest.mark.django_db
+def test_promotion_command_retires_v1_and_materializes_v2():
+    training_revision = "a0c9222cb5a268001657adc679c13c36232aa1bbc10856144c8e68aa91e7e6dd"
+    DatasetRelease.objects.create(
+        name="historical-deals-v1",
+        content_hash=training_revision,
+        schema_version="1",
+        importer_version="test",
+    )
+    prior = DealPredictionRelease.objects.create(
+        predictor_version="deal_recurrence_v1",
+        code_revision="prior",
+        training_data_revision=training_revision,
+        parameters={
+            "implementation": "deal_recurrence_v1",
+            "source_dataset": "historical-deals-v1",
+            "history_window": 3,
+            "minimum_night_support": 2,
+            "maximum_history_age_days": 90,
+        },
+        evaluation_metrics={"status": "accepted"},
+        is_authoritative=True,
+        promoted_at=timezone.now() - timedelta(days=1),
+    )
+    venue = Venue.objects.create(slug="kams", name="KAMS")
+    family = DealFamily.objects.create(canonical_name="Wells", category="drink")
+    target = service_date_for(timezone.now())
+    for offset in (140, 147):
+        HistoricalDealFact.objects.create(
+            source_record_key=f"promotion-{offset}",
+            source_dataset="historical-deals-v1",
+            venue=venue,
+            family=family,
+            display_name="Wells",
+            category="drink",
+            price_kind="single",
+            price_cents=500,
+            service_date_local=target - timedelta(days=offset),
+            timing_kind="unknown",
+            source_post_key=f"promotion-post-{offset}",
+            source_payload_hash="e" * 64,
+        )
+
+    call_command("promote_deal_recurrence", service_date=target, verbosity=0)
+
+    prior.refresh_from_db()
+    current = DealPredictionRelease.objects.get(is_authoritative=True)
+    assert prior.is_authoritative is False
+    assert prior.retired_at is not None
+    assert current.predictor_version == "deal_recurrence_v2"
+    assert DealPrediction.objects.filter(
+        release=current,
+        service_date_local=target,
+        deal_definition__family=family,
+    ).exists()
 
 
 @pytest.mark.django_db

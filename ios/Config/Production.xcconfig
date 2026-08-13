@@ -1,3 +1,7 @@
+// Optional ignored machine-local values for direct Xcode device builds.
+// Xcode Cloud injects the same build-setting names through its environment.
+#include? "Production.xcconfig.local"
+
 PRODUCT_BUNDLE_IDENTIFIER = com.illinicover.app
 PRODUCT_NAME = IlliniCover
 INFOPLIST_FILE = Config/Info-Production.plist

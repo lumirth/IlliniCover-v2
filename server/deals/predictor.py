@@ -18,14 +18,15 @@ from deals.models import (
     HistoricalDealFact,
 )
 
-PREDICTOR_VERSION = "deal_recurrence_v1"
+PREDICTOR_VERSION = "deal_recurrence_v2"
+SUPPORTED_IMPLEMENTATIONS = {"deal_recurrence_v1", PREDICTOR_VERSION}
 SOURCE_DATASET = "historical-deals-v1"
 RECEIPT_PATH = (
     Path(settings.REPOSITORY_DIR)
     / "data"
     / "deals"
     / "historical-deals-v1"
-    / "model-selection-receipt.json"
+    / "model-production-receipt-v2.json"
 )
 DEFINITION_NAMESPACE = uuid.UUID("688ba1c2-2837-42ba-ae40-921e9e49184f")
 
@@ -204,7 +205,7 @@ def materialize_predictions(service_date: date) -> tuple[DealPredictionRelease, 
             "The current deal prediction release cannot already be retired"
         )
     implementation = release.parameters.get("implementation", release.predictor_version)
-    if implementation != PREDICTOR_VERSION:
+    if implementation not in SUPPORTED_IMPLEMENTATIONS:
         raise DealPredictionLifecycleError(
             f"No materializer is available for deal predictor {implementation!r}"
         )
@@ -223,7 +224,8 @@ def materialize_predictions(service_date: date) -> tuple[DealPredictionRelease, 
     created = 0
     history_window = int(contract["history_window"])
     minimum_support = int(contract["minimum_night_support"])
-    maximum_age = int(contract["maximum_history_age_days"])
+    maximum_age_value = contract.get("maximum_history_age_days")
+    maximum_age = int(maximum_age_value) if maximum_age_value is not None else None
     for venue in Venue.objects.filter(is_active=True):
         comparable_dates = list(
             HistoricalDealFact.objects.filter(
@@ -236,7 +238,10 @@ def materialize_predictions(service_date: date) -> tuple[DealPredictionRelease, 
             .values_list("service_date_local", flat=True)
             .distinct()[:history_window]
         )
-        if not comparable_dates or (service_date - comparable_dates[0]).days > maximum_age:
+        if not comparable_dates or (
+            maximum_age is not None
+            and (service_date - comparable_dates[0]).days > maximum_age
+        ):
             continue
         by_offer_identity: dict[tuple, list[HistoricalDealFact]] = defaultdict(list)
         facts = HistoricalDealFact.objects.filter(
