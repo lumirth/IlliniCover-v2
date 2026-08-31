@@ -1,6 +1,0 @@
-appId: com.illinicover.app
----
-- launchApp
-- tapOn: "Deals"
-- tapOn: "Add deal for KAMS"
-- assertVisible: "Add Deal"

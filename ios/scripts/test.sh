@@ -1,9 +1,9 @@
 #!/bin/sh
 set -eu
 
-script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-ios_dir=$(CDPATH= cd -- "$script_dir/.." && pwd)
-repo_root=$(CDPATH= cd -- "$ios_dir/.." && pwd)
+script_dir=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+ios_dir=$(CDPATH='' cd -- "$script_dir/.." && pwd)
+repo_root=$(CDPATH='' cd -- "$ios_dir/.." && pwd)
 : "${ILLINICOVER_SIMULATOR_UDID:?Set ILLINICOVER_SIMULATOR_UDID to the dedicated simulator UDID}"
 scheme=${ILLINICOVER_IOS_SCHEME:-IlliniCover Local}
 plan=${ILLINICOVER_TEST_PLAN:-Fast}

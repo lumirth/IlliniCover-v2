@@ -4,7 +4,6 @@ from config.network import keyed_client_identity
 from django.db import transaction
 from django.http import HttpResponseForbidden
 
-from identity.services import deactivate_installation_attribution
 from identity.tokens import revoke_session_token
 
 
@@ -21,10 +20,6 @@ class IlliniCoverAccountAdapter(DefaultAccountAdapter):
 
     @transaction.atomic
     def logout(self, request) -> None:
-        account = request.user if request.user.is_authenticated else None
-        raw_installation_token = request.headers.get("X-Installation-Token", "")
-        if account is not None and raw_installation_token:
-            deactivate_installation_attribution(account, raw_installation_token)
         raw_token = request.headers.get("X-Session-Token", "")
         if raw_token:
             revoke_session_token(raw_token)

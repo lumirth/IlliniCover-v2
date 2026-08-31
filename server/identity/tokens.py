@@ -8,16 +8,14 @@ from django.conf import settings
 from django.contrib.auth import SESSION_KEY
 from django.contrib.sessions.backends.base import SessionBase
 from django.http import HttpRequest
-from django.utils import timezone
-
-from identity.models import Account, SessionTokenVerifier
+from product.models import Account, SessionTokenVerifier
 
 SESSION_TOKEN_PREFIX = "ic_session_"
 
 
 def session_verifier(raw_token: str) -> str:
     return hmac.new(
-        settings.SESSION_TOKEN_PEPPER.encode(), raw_token.encode(), hashlib.sha256
+        settings.SECRET_KEY.encode(), f"session\0{raw_token}".encode(), hashlib.sha256
     ).hexdigest()
 
 
@@ -32,9 +30,7 @@ def issue_session_token(session: SessionBase) -> str:
     session_key = session.session_key
     if not session_key:
         raise RuntimeError("Django did not persist the session")
-    SessionTokenVerifier.objects.filter(session_key=session_key, revoked_at__isnull=True).update(
-        revoked_at=timezone.now()
-    )
+    SessionTokenVerifier.objects.filter(session_key=session_key).delete()
     raw_token = SESSION_TOKEN_PREFIX + secrets.token_urlsafe(32)
     account = Account.objects.filter(pk=account_id).first() if account_id else None
     SessionTokenVerifier.objects.create(
@@ -45,30 +41,22 @@ def issue_session_token(session: SessionBase) -> str:
 
 def lookup_session_token(raw_token: str) -> SessionBase | None:
     candidate = session_verifier(raw_token)
-    record = SessionTokenVerifier.objects.filter(
-        verifier=candidate, revoked_at__isnull=True
-    ).first()
+    record = SessionTokenVerifier.objects.filter(verifier=candidate).first()
     if record is None or not record.matches(candidate):
         return None
     store = sessionkit.session_store(record.session_key)
     if not sessionkit.session_store().exists(record.session_key):
-        record.revoked_at = timezone.now()
-        record.save(update_fields=["revoked_at"])
+        record.delete()
         return None
-    record.last_used_at = timezone.now()
-    record.save(update_fields=["last_used_at"])
     return store
 
 
 def revoke_session_token(raw_token: str) -> bool:
     candidate = session_verifier(raw_token)
-    record = SessionTokenVerifier.objects.filter(
-        verifier=candidate, revoked_at__isnull=True
-    ).first()
+    record = SessionTokenVerifier.objects.filter(verifier=candidate).first()
     if record is None or not record.matches(candidate):
         return False
-    record.revoked_at = timezone.now()
-    record.save(update_fields=["revoked_at"])
+    record.delete()
     return True
 
 

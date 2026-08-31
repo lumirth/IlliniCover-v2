@@ -12,10 +12,6 @@ IC_API_BASE_URL = https:/$()/illinicover-api-1068900473446.us-east5.run.app
 // A production launch fails closed while this is blank or a Test Store key.
 IC_REVENUECAT_API_KEY = $(ILLINICOVER_REVENUECAT_APPLE_KEY)
 IC_ENVIRONMENT = production
-// Xcode Cloud or an explicit release invocation must inject the immutable
-// Exact deployed 40-character lowercase Git commit SHA. AppConfiguration
-// rejects a missing, synthetic source-context hash, or placeholder revision.
-IC_CODE_REVISION = $(ILLINICOVER_CODE_REVISION)
 // Optional public integration values are injected by the release workflow.
 // Blank keeps monitoring/support mail disabled without inventing a destination.
 IC_SENTRY_DSN = $(ILLINICOVER_SENTRY_DSN)

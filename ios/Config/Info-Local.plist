@@ -33,8 +33,6 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ICAPIBaseURL</key>
 	<string>$(IC_API_BASE_URL)</string>
-	<key>ICCodeRevision</key>
-	<string>$(IC_CODE_REVISION)</string>
 	<key>ICEnvironment</key>
 	<string>$(IC_ENVIRONMENT)</string>
 	<key>ICPrivacyPolicyURL</key>

@@ -1,8 +1,0 @@
-Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
- > Flow cover-editor-active
-Launch app "com.illinicover.app"... COMPLETED
-Tap on "Bars"... COMPLETED
-Tap on "Report a different cover price at KAMS"... COMPLETED
-Tap on "Enter cover price manually"... COMPLETED
-Assert that "Entered prices are rounded to the nearest $5." is visible... COMPLETED
-Assert that "Done" is visible... COMPLETED

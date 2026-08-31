@@ -1,7 +1,7 @@
-from django.conf import settings
 from django.db import connection
 from django.db.migrations.executor import MigrationExecutor
 from django.http import JsonResponse
+from product.models import HistoricalDealFact, Submission, Venue
 
 
 def live(request):
@@ -9,21 +9,18 @@ def live(request):
 
 
 def ready(request):
-    if getattr(settings, "DEPLOYMENT_ENVIRONMENT", "") in {"production", "preview"}:
-        required_integrations = (
-            settings.EMAIL_HOST,
-            settings.EMAIL_HOST_USER,
-            settings.EMAIL_HOST_PASSWORD,
-            settings.REVENUECAT_WEBHOOK_AUTHORIZATION,
-            settings.REVENUECAT_WEBHOOK_SIGNING_SECRET,
-            settings.REVENUECAT_SECRET_API_KEY,
-        )
-        if not all(value.strip() for value in required_integrations):
-            return JsonResponse({"status": "not_ready"}, status=503)
     with connection.cursor() as cursor:
         cursor.execute("SELECT 1")
-        cursor.fetchone()
-    executor = MigrationExecutor(connection)
-    if executor.migration_plan(executor.loader.graph.leaf_nodes()):
-        return JsonResponse({"status": "not_ready"}, status=503)
-    return JsonResponse({"status": "ready"})
+    pending = MigrationExecutor(connection).migration_plan(
+        MigrationExecutor(connection).loader.graph.leaf_nodes()
+    )
+    ready_to_serve = (
+        not pending
+        and Venue.objects.filter(is_active=True).exists()
+        and Submission.objects.filter(source_record_key__isnull=False).exists()
+        and HistoricalDealFact.objects.exists()
+    )
+    return JsonResponse(
+        {"status": "ready" if ready_to_serve else "not_ready"},
+        status=200 if ready_to_serve else 503,
+    )

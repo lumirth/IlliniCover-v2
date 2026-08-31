@@ -18,7 +18,7 @@ final class LocationClient: NSObject, @preconcurrency CLLocationManagerDelegate 
         manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
     }
 
-    func requestAuthorization() async -> CLAuthorizationStatus {
+    private func requestAuthorization() async -> CLAuthorizationStatus {
         let current = manager.authorizationStatus
         guard current == .notDetermined else { return current }
         return await withTaskCancellationHandler {
@@ -66,7 +66,7 @@ final class LocationClient: NSObject, @preconcurrency CLLocationManagerDelegate 
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations.last.flatMap(Self.submissionLocation)
+        let location = locations.last.flatMap { Self.submissionLocation(from: $0) }
         finishLocation(with: location)
     }
 
@@ -90,15 +90,18 @@ final class LocationClient: NSObject, @preconcurrency CLLocationManagerDelegate 
         continuation?.resume(returning: location)
     }
 
-    static func submissionLocation(from location: CLLocation) -> SubmissionLocation? {
+    static func submissionLocation(from location: CLLocation, now: Date = .now) -> SubmissionLocation? {
+        let age = now.timeIntervalSince(location.timestamp)
         guard location.horizontalAccuracy.isFinite,
               location.horizontalAccuracy >= 0,
+              (-5...60).contains(age),
               CLLocationCoordinate2DIsValid(location.coordinate)
         else { return nil }
         return SubmissionLocation(
+            accuracyMeters: location.horizontalAccuracy,
             latitude: location.coordinate.latitude,
             longitude: location.coordinate.longitude,
-            accuracyMeters: location.horizontalAccuracy
+            permission: "when_in_use"
         )
     }
 }

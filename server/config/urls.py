@@ -15,8 +15,8 @@ urlpatterns = [
     path("health/live", live, name="health-live"),
     path("health/ready", ready, name="health-ready"),
     path("privacy", privacy_policy, name="privacy-policy"),
-    path("api/v2/", api.urls),
-    path("_allauth/", include("identity.headless_urls")),
+    path("api/", api.urls),
+    path("_allauth/", include("allauth.headless.urls")),
     path("admin-auth/login/", account_views.login, name="account_login"),
     path("admin-auth/logout/", account_views.logout, name="account_logout"),
     path(

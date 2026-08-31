@@ -9,7 +9,6 @@ python = "3.14.7"
 uv = "0.9.3"
 gcloud = "580.0.0"
 actionlint = "1.7.12"
-xcodegen = "2.46.0"
 
 [settings]
 experimental = true
@@ -31,8 +30,8 @@ description = "Recreate, migrate, and seed only the local PostgreSQL volume"
 run = "scripts/local/reset-database.sh"
 
 [tasks."lint:server"]
-description = "Lint server, scripts, and data tests"
-run = "uv run ruff check server scripts tests"
+description = "Lint server and deployment Python"
+run = "uv run ruff check server ops"
 
 [tasks."typecheck:server"]
 description = "Run the Django-aware server type check"
@@ -42,29 +41,9 @@ run = "uv run mypy"
 description = "Run server tests against disposable local PostgreSQL"
 run = "scripts/local/test-server.sh"
 
-[tasks."check:migrations"]
-description = "Check for missing migrations and classify migration risk"
-run = "scripts/ci/migrations.sh"
-
 [tasks."api:export"]
 description = "Regenerate the checked-in OpenAPI contract"
 run = "uv run python server/manage.py export_client_openapi --settings=config.settings.test --output api/openapi.json"
-
-[tasks."fixtures:export"]
-description = "Regenerate the checked-in canonical API fixtures"
-run = "scripts/ci/fixtures.sh --write"
-
-[tasks."model:evaluate"]
-description = "Run the complete historical cover evaluation and write a receipt"
-run = "uv run python scripts/data/evaluate_cover_release.py --code-revision=${CODE_REVISION:-local-evaluation} --output=.artifacts/model/evaluation.json"
-
-[tasks.preview]
-description = "Dispatch the optional shared-preview workflow for the current branch"
-run = "scripts/local/dispatch-preview.sh"
-
-[tasks.doctor]
-description = "Diagnose local tools and PostgreSQL without touching providers"
-run = "scripts/local/doctor.sh"
 
 [tasks."ios:build"]
 description = "Build the selected local iOS scheme"

@@ -1,16 +1,17 @@
+from collections import defaultdict
+
 from config.network import client_address
 from config.schemas import ErrorSchema
-from covers.api import CACHEABLE_OPENAPI, conditional_response, find_venue
-from covers.services import generation_time, serialize_venue, service_date_for
+from covers.api import find_venue
+from covers.services import current_time, serialize_venue, service_date_for
 from django.db.models import Q
-from django.http import HttpResponse
+from identity.attribution import AccountActorMismatch
 from identity.auth import installation_auth, session_auth
 from ninja import Header, Query, Router, Status
+from product.models import HistoricalDealFact, Venue
 from submissions.rate_limits import SubmissionRateLimited
 from submissions.services import IdempotencyConflict, InvalidInstallationActor, UnknownVenue
-from venues.models import Venue
 
-from deals.models import DealDefinition, DealPrediction, DealPredictionRelease, HistoricalDealFact
 from deals.names import public_deal_name
 from deals.schemas import (
     DealEvidenceInputSchema,
@@ -19,9 +20,8 @@ from deals.schemas import (
     DealSuggestionsSchema,
     VenueDealsSchema,
 )
-from deals.search import normalize_deal_search_text
 from deals.services import (
-    InvalidCorrectionLineage,
+    InvalidDealFamily,
     InvalidDealTarget,
     InvalidServiceDate,
     accept_deal_evidence,
@@ -32,64 +32,53 @@ from deals.services import (
 router = Router(tags=["Deals"])
 
 
-def venue_deals(venue: Venue, service_date=None) -> dict:
-    if service_date is None:
-        service_date = service_date_for(generation_time())
-    release = DealPredictionRelease.objects.filter(is_authoritative=True).first()
-    predictions = (
-        DealPrediction.objects.none()
-        if release is None
-        else DealPrediction.objects.filter(
-            release=release,
-            venue=venue,
-            service_date_local=service_date,
-            deal_definition__is_active=True,
-        )
-        .select_related("deal_definition")
-        .order_by("rank", "deal_definition__display_name", "id")
+def _fact_key(fact):
+    return (
+        fact.family_id,
+        fact.display_name,
+        fact.price_kind,
+        fact.price_cents,
+        fact.discount_percent,
+        fact.unit,
+        fact.timing_description,
+        fact.while_supplies_last,
     )
-    serialized = [
-        serialize_deal(prediction.deal_definition, prediction=prediction)
-        for prediction in predictions
-    ]
-    if release is None:
-        serialized = [
-            serialize_deal(deal)
-            for deal in DealDefinition.objects.filter(venue=venue, is_active=True).order_by(
-                "display_name", "id"
-            )
-        ]
-    serialized = resolve_deal_evidence(venue, service_date, serialized)
+
+
+def venue_deals(venue: Venue, service_date=None):
+    service_date = service_date or service_date_for(current_time())
+    groups = defaultdict(list)
+    for fact in HistoricalDealFact.objects.filter(venue=venue).select_related("family"):
+        if fact.service_date_local.weekday() == service_date.weekday():
+            groups[_fact_key(fact)].append(fact)
+    ranked = sorted(
+        groups.values(),
+        key=lambda rows: (
+            len({row.service_date_local for row in rows}),
+            max(row.service_date_local for row in rows),
+        ),
+        reverse=True,
+    )
+    deals = [
+        serialize_deal(max(rows, key=lambda row: row.service_date_local))
+        for rows in ranked
+        if len({row.service_date_local for row in rows}) >= 2
+    ][:12]
     return {
         "venue": serialize_venue(venue),
-        "deals": serialized,
+        "deals": resolve_deal_evidence(venue, service_date, deals),
     }
 
 
-@router.get(
-    "/deals",
-    response={200: DealSlateSchema, 304: None},
-    operation_id="getDealSlate",
-    by_alias=True,
-    openapi_extra=CACHEABLE_OPENAPI,
-)
-def get_deal_slate(
-    request, response: HttpResponse, if_none_match: str | None = Header(None, alias="If-None-Match")
-):
-    now = generation_time()
-    generated_at = now
-    body = {
-        "service_date": service_date_for(now),
-        "generated_at": generated_at,
-        "venues": [
-            venue_deals(venue, service_date_for(now))
-            for venue in Venue.objects.filter(is_active=True)
-        ],
+@router.get("/deals", response=DealSlateSchema, operation_id="getDealSlate", by_alias=True)
+def get_deal_slate(request):
+    now = current_time()
+    day = service_date_for(now)
+    return {
+        "service_date": day,
+        "generated_at": now,
+        "venues": [venue_deals(venue, day) for venue in Venue.objects.filter(is_active=True)],
     }
-    not_modified = conditional_response(response, body, if_none_match)
-    if not_modified:
-        return not_modified
-    return body
 
 
 @router.get(
@@ -105,196 +94,68 @@ def search_deal_suggestions(
     venue: str | None = Query(None, max_length=80),
     limit: int = Query(6, ge=1, le=20),
 ):
-    query = q.strip()
-    normalized_query = normalize_deal_search_text(query)
-    facts = HistoricalDealFact.objects.filter(
-        family__isnull=False,
-        venue__is_active=True,
-    ).select_related("family", "venue")
-    if query:
-        search_filter = (
-            Q(family__canonical_name__icontains=query)
-            | Q(family__aliases__alias__icontains=query)
-            | Q(display_name__icontains=query)
-            | Q(unit__icontains=query)
-        )
-        if normalized_query:
-            search_filter |= Q(private_search_text__contains=normalized_query)
-        facts = facts.filter(search_filter)
+    selected = find_venue(venue) if venue else None
+    if venue and selected is None:
+        return {"suggestions": []}
+    facts = HistoricalDealFact.objects.filter(venue__is_active=True).select_related(
+        "family", "venue"
+    )
     if category:
-        facts = facts.filter(category=category)
-    selected = None
-    if venue:
-        selected = find_venue(venue)
-        if selected is None:
-            return {"suggestions": []}
-
-    # One canonical family can contain several intentionally distinct concrete
-    # offers (for example $3 wells and $5 wells, or bottle and pitcher shapes).
-    # Search and limit concrete variants rather than collapsing a family to its
-    # latest fact. Repeated historical occurrences of the same shape collapse to
-    # the latest representative while retaining their frequency for ranking.
-    variants: dict[tuple, list[HistoricalDealFact]] = {}
-    for fact in facts.distinct().order_by("family_id", "service_date_local", "source_record_key"):
-        variants.setdefault(_suggestion_variant_key(fact), []).append(fact)
-
-    ranked = []
-    for rows in variants.values():
-        is_venue_shape = selected is not None and any(row.venue_id == selected.id for row in rows)
-        fact = max(
-            rows,
-            key=lambda row: (
-                selected is not None and row.venue_id == selected.id,
-                row.service_date_local,
-                row.source_record_key,
-            ),
+        facts = facts.filter(family__category=category)
+    query = q.strip()
+    if query:
+        facts = facts.filter(
+            Q(display_name__icontains=query)
+            | Q(unit__icontains=query)
+            | Q(family__canonical_name__icontains=query)
         )
-        family = fact.family
-        if family is None:
+    rows = sorted(
+        facts.distinct(),
+        key=lambda fact: (fact.venue_id == getattr(selected, "pk", None), fact.service_date_local),
+        reverse=True,
+    )
+    suggestions, seen = [], set()
+    for fact in rows:
+        key = _fact_key(fact)
+        if key in seen:
             continue
-        matched_source, matched_text = _suggestion_match(family, fact, query, normalized_query)
-        match_rank = {
-            "canonical": 0,
-            "alias": 1,
-            "historical_alias": 2,
-            "display_name": 3,
-            "unit": 4,
-            None: 5,
-        }[matched_source]
-        last_seen = max(row.service_date_local for row in rows)
-        ranked.append(
-            (
-                match_rank,
-                0 if is_venue_shape else 1,
-                -last_seen.toordinal(),
-                -len(rows),
-                family.canonical_name.casefold(),
-                fact.display_name.casefold(),
-                fact.source_record_key,
-                fact,
-                matched_source,
-                matched_text,
-                is_venue_shape,
-                last_seen,
-            )
-        )
-
-    suggestions = []
-    for (
-        *_rank,
-        fact,
-        matched_source,
-        matched_text,
-        is_venue_shape,
-        last_seen,
-    ) in sorted(ranked)[:limit]:
-        family = fact.family
-        if family is None:
-            continue
-        timing_description, timing_known = _suggestion_timing(fact)
+        seen.add(key)
         suggestions.append(
             {
                 "canonical_family_id": fact.family_id,
-                "canonical_name": family.canonical_name,
-                "category": fact.category,
+                "category": fact.family.category,
                 "display_name": public_deal_name(
                     fact.display_name,
                     price_kind=fact.price_kind,
                     price_cents=fact.price_cents,
-                    discount_percent=fact.relative_percent,
+                    discount_percent=fact.discount_percent,
                 ),
                 "price_kind": fact.price_kind,
                 "price_cents": fact.price_cents,
-                "price_low_cents": None,
-                "price_high_cents": None,
-                "discount_percent": (
-                    float(fact.relative_percent) if fact.relative_percent is not None else None
-                ),
+                "discount_percent": float(fact.discount_percent)
+                if fact.discount_percent is not None
+                else None,
                 "unit": fact.unit,
                 "serving_format": "",
-                "timing_description": timing_description if timing_known else None,
-                "timing_known": timing_known,
+                "timing_description": fact.timing_description or None,
+                "timing_known": bool(fact.timing_description),
                 "while_supplies_last": fact.while_supplies_last,
-                "source_scope": "venue" if is_venue_shape else "global",
-                "last_seen_service_date_local": last_seen,
-                "matched_source": matched_source,
-                "matched_text": matched_text,
+                "source_scope": "venue" if selected and fact.venue_id == selected.pk else "global",
+                "last_seen_service_date_local": fact.service_date_local,
             }
         )
+        if len(suggestions) == limit:
+            break
     return {"suggestions": suggestions}
-
-
-def _suggestion_variant_key(fact: HistoricalDealFact) -> tuple:
-    return (
-        fact.family_id,
-        fact.display_name,
-        fact.category,
-        fact.price_kind,
-        fact.price_cents,
-        str(fact.relative_percent) if fact.relative_percent is not None else None,
-        fact.unit,
-        fact.timing_kind,
-        fact.timing_start_local,
-        fact.timing_end_local,
-        fact.timing_time_local,
-        fact.while_supplies_last,
-    )
-
-
-def _suggestion_match(
-    family, fact, query: str, normalized_query: str
-) -> tuple[str | None, str | None]:
-    if not query:
-        return None, None
-    folded_query = query.casefold()
-    if folded_query in family.canonical_name.casefold():
-        return "canonical", family.canonical_name
-    alias = next(
-        (
-            candidate.alias
-            for candidate in family.aliases.order_by("alias", "id")
-            if folded_query in candidate.alias.casefold()
-        ),
-        None,
-    )
-    if alias is not None:
-        return "alias", alias
-    if normalized_query and normalized_query in fact.private_search_text:
-        return "historical_alias", None
-    if folded_query in fact.display_name.casefold():
-        return (
-            "display_name",
-            public_deal_name(
-                fact.display_name,
-                price_kind=fact.price_kind,
-                price_cents=fact.price_cents,
-                discount_percent=fact.relative_percent,
-            ),
-        )
-    if folded_query in fact.unit.casefold():
-        return "unit", fact.unit
-    return None, None
-
-
-def _suggestion_timing(fact) -> tuple[str, bool]:
-    from deals.predictor import _timing
-
-    return _timing(fact)
 
 
 @router.get(
     "/venues/{venue}/deals",
-    response={200: VenueDealsSchema, 304: None, 404: ErrorSchema},
+    response={200: VenueDealsSchema, 404: ErrorSchema},
     operation_id="getVenueDeals",
     by_alias=True,
-    openapi_extra=CACHEABLE_OPENAPI,
 )
-def get_venue_deals(
-    request,
-    venue: str,
-    response: HttpResponse,
-    if_none_match: str | None = Header(None, alias="If-None-Match"),
-):
+def get_venue_deals(request, venue: str):
     selected = find_venue(venue)
     if selected is None:
         return Status(
@@ -305,11 +166,7 @@ def get_venue_deals(
                 "request_id": request.request_id,
             },
         )
-    body = venue_deals(selected, service_date_for(generation_time()))
-    not_modified = conditional_response(response, body, if_none_match)
-    if not_modified:
-        return not_modified
-    return body
+    return venue_deals(selected)
 
 
 @router.post(
@@ -317,6 +174,7 @@ def get_venue_deals(
     auth=installation_auth,
     response={
         201: DealEvidenceReceiptSchema,
+        401: ErrorSchema,
         409: ErrorSchema,
         422: ErrorSchema,
         429: ErrorSchema,
@@ -329,53 +187,47 @@ def create_deal_evidence(
     payload: DealEvidenceInputSchema,
     x_session_token: str | None = Header(None, alias="X-Session-Token"),
 ):
-    session_account = (
-        session_auth.authenticate(request, x_session_token) if x_session_token else None
-    )
+    account = session_auth.authenticate(request, x_session_token) if x_session_token else None
     try:
         receipt = accept_deal_evidence(
-            request.auth,
-            payload,
-            remote_address=client_address(request),
-            session_account=session_account,
+            request.auth, payload, remote_address=client_address(request), session_account=account
         )
     except IdempotencyConflict:
-        return Status(
+        code, message, status = (
+            "idempotency_conflict",
+            "That submission ID has different content.",
             409,
-            {
-                "code": "idempotency_conflict",
-                "message": "That submission ID was already used for different content.",
-                "request_id": request.request_id,
-            },
         )
     except SubmissionRateLimited:
-        return Status(
-            429,
-            {
-                "code": "rate_limited",
-                "message": "Too many reports were submitted.",
-                "request_id": request.request_id,
-            },
-        )
+        code, message, status = "rate_limited", "Too many reports were submitted.", 429
     except UnknownVenue:
-        code, message = "unknown_venue", "The venue is not active or does not exist."
+        code, message, status = "unknown_venue", "The venue does not exist.", 422
     except InvalidInstallationActor:
-        code, message = (
-            "invalid_installation_token",
-            "The installation credential is invalid or expired.",
-        )
+        code, message, status = "invalid_installation_token", "The credential is invalid.", 401
     except InvalidDealTarget:
-        code, message = "invalid_deal_target", "The target deal does not belong to this venue."
-    except InvalidCorrectionLineage:
-        code, message = "invalid_evidence_lineage", "The superseded evidence event does not exist."
+        code, message, status = (
+            "invalid_deal_target",
+            "The target does not belong to this venue.",
+            422,
+        )
+    except InvalidDealFamily:
+        code, message, status = (
+            "invalid_deal_family",
+            "The selected deal family is not reviewed.",
+            422,
+        )
+    except AccountActorMismatch:
+        code, message, status = (
+            "installation_account_mismatch",
+            "This installation belongs to another account.",
+            409,
+        )
     except InvalidServiceDate:
-        code, message = (
+        code, message, status = (
             "invalid_service_date",
-            "The service date must match the observed Chicago service night.",
+            "The service date does not match the observation.",
+            422,
         )
     else:
         return Status(201, receipt)
-    return Status(
-        422,
-        {"code": code, "message": message, "request_id": request.request_id},
-    )
+    return Status(status, {"code": code, "message": message, "request_id": request.request_id})

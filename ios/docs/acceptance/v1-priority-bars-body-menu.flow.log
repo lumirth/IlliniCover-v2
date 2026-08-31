@@ -1,8 +1,0 @@
-Running on IlliniCover iPhone 16e - iOS 26.5 - 644F64CD-23BA-4D3C-915E-6B2069961477
- > Flow bars-body-menu
-Launch app "com.illinicover.app"... COMPLETED
-Tap on "Bars"... COMPLETED
-Long press on "KAMS. Cover is 10 dollars. Estimate. Based on past reports. Historical estimate. Open details."... COMPLETED
-Assert that "Open details" is visible... COMPLETED
-Assert that "Report right price" is visible... COMPLETED
-Assert that "Report wrong price" is visible... COMPLETED

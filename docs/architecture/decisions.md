@@ -1,43 +1,35 @@
 # Architecture decisions
 
-This ledger records choices required to make the reference specification
-executable. Entries are replaceable only through evidence and an explicit new
-decision.
+The product specification owns behavior. These decisions describe the smallest
+current implementation and may be replaced while the product remains pre-alpha.
 
-## ADR-001 — Clean-room sibling repository
+## Pre-alpha reset
 
-- **Status:** Accepted
-- **Decision:** Build v2 at `illinicover-v2` with its own Git history. Preserve
-  the supplied specification verbatim. Import reviewed datasets with manifests
-  and hashes. Do not copy v1 application or backend implementation.
-- **Reason:** The specification explicitly rejects v1's runtime architecture
-  while treating its observed behavior and datasets as evidence.
+The current schema, API, local cache, and canonical datasets replace their earlier
+forms outright. There are no compatibility aliases, historical migration chains, or
+dual-read/write periods. Git retains anything we later discover was useful.
 
-## ADR-002 — Privacy split around immutable observations
+## Privacy boundary
 
-- **Status:** Accepted
-- **Decision:** Immutable submissions and observation values reference a
-  separately erasable private-context record. Exact location, raw network
-  metadata, credentials, and account linkages can be deleted or deidentified
-  without rewriting the observation itself.
-- **Reason:** This satisfies both evidence immutability and account/privacy
-  deletion requirements.
+Observation values are durable. Credentials, account links, exact location, and
+network context are separately erasable. Privacy deletion must be a direct indexed
+operation, not a scan through logs, sessions, or serialized provider payloads.
 
-## ADR-003 — Idempotency scopes
+## Idempotency
 
-- **Status:** Accepted
-- **Decision:** Every client-originated domain write uses a client UUID.
-  Provider-originated writes use the provider's stable event identifier, and
-  authentication protocol writes use allauth's protocol semantics and explicit
-  rate/attempt controls.
-- **Reason:** Provider webhooks and authentication exchanges cannot carry a
-  client-generated submission UUID, but still require replay safety.
+Client writes use a client UUID and database uniqueness. Provider events use the
+provider event identifier. Authentication uses allauth's protocol. The application
+does not create generic operation receipts or payload fingerprints around those
+native guarantees.
 
-## ADR-004 — Deferred product choices
+## Model authority
 
-- **Status:** Accepted
-- **Decision:** Android, advanced CMS, queues, automated social extraction,
-  Sign in with Apple, and speculative context features are not v2 beta scope.
-  Exact cover and deal models, horizons, thresholds, and free-history limits
-  must be selected from checked-in evaluation receipts rather than guessed.
-- **Reason:** These are explicitly deferred by the specification.
+The deployed application revision contains the single cover and deal model behavior.
+Candidates are evaluated offline. Deployment and rollback use the platform's normal
+application revision mechanism; there is no runtime model-release control plane.
+
+## Deferred systems
+
+Android, advanced CMS, queues, social extraction, speculative context sources, and
+generalized evidence or synchronization frameworks do not exist until a shipped
+feature requires them.

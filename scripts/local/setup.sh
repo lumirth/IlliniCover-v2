@@ -12,6 +12,6 @@ fi
 uv sync --frozen
 scripts/local/compose.sh up --detach --wait postgres
 scripts/local/manage.sh migrate --noinput
-scripts/local/manage.sh bootstrap_beta
+scripts/local/manage.sh bootstrap
 
 echo "Local PostgreSQL is healthy, migrated, and deterministically seeded."

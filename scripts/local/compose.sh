@@ -2,7 +2,7 @@
 set -euo pipefail
 
 repository="$(cd "$(dirname "$0")/../.." && pwd)"
-project_name="illinicover-v2-local"
+project_name="illinicover-local"
 compose_file="${repository}/compose.yaml"
 
 exec docker compose \

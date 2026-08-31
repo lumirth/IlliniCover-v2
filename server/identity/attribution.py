@@ -1,22 +1,10 @@
-import uuid
+class AccountActorMismatch(Exception):
+    pass
 
-from identity.models import Account, ActorAccountLink, InstallationActor
 
-
-def submission_account_id(
-    actor: InstallationActor,
-    session_account: Account | None,
-) -> uuid.UUID | None:
-    """Return per-request account authority for one installation submission."""
-
-    if session_account is None:
-        return None
-    return (
-        ActorAccountLink.objects.filter(
-            actor=actor,
-            account=session_account,
-            is_attribution_active=True,
-        )
-        .values_list("account_id", flat=True)
-        .first()
-    )
+def submission_account_id(actor, session_account):
+    if session_account is not None:
+        if actor.account_id not in {None, session_account.pk}:
+            raise AccountActorMismatch
+        return session_account.pk
+    return actor.account_id

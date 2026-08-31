@@ -33,6 +33,7 @@ def keyed_client_identity(request) -> str:
     """Return a non-reversible per-deployment key for allauth rate limiting."""
 
     address = client_address(request) or "unavailable"
-    pepper = settings.NETWORK_METADATA_PEPPER
-    digest = hmac.new(pepper.encode(), address.encode(), hashlib.sha256).hexdigest()
+    digest = hmac.new(
+        settings.SECRET_KEY.encode(), f"allauth-network\0{address}".encode(), hashlib.sha256
+    ).hexdigest()
     return f"ic_network_{digest}"

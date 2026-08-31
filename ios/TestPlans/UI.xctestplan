@@ -2,7 +2,7 @@
   "configurations" : [
     {
       "id" : "9EBD9A60-5571-4795-859F-4BB65D037238",
-      "name" : "Fixture UI",
+      "name" : "Local UI",
       "options" : {
 
       }
@@ -26,8 +26,8 @@
       }
     },
     {
-      "skippedTests" : [
-        "IlliniCoverUITests/testLiveAcceptanceGeneratedClientSmoke"
+      "selectedTests" : [
+        "IlliniCoverUITests/testPrimaryNavigationIsAccessible"
       ],
       "target" : {
         "containerPath" : "container:IlliniCover.xcodeproj",

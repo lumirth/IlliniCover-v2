@@ -8,63 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		05A8F48BD52A805FFACA1EBD /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3418196342752F0CE1912C /* AppDatabase.swift */; };
-		0FCA7ADD8E319EA9B1DD2462 /* PrivacyManifestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA484BD868ECADE0D4A94861 /* PrivacyManifestTests.swift */; };
 		167E82E073F689909B436FD4 /* HandbookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF9C8350354708F0EE6322C /* HandbookViews.swift */; };
 		167F7309476FF12753FF2ACA /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB215E9B6D9E6224B337C8F7 /* AppEnvironment.swift */; };
 		18D95ADD841BE83199DADE53 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC22B22D7F7376519BC3696 /* SupportView.swift */; };
 		1CC3E3AC72E59D6F9C11C154 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A94FB344A724C46A55CA9F2A /* Theme.swift */; };
-		2303BF4C5175BDD9F9DB380F /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = 576CD0E82DCED147377E1C1D /* OpenAPIURLSession */; };
-		2411CD350C3DC210E3FFA631 /* CredentialStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33F986913412961384D371A /* CredentialStoreTests.swift */; };
-		24B26DC115D2CCC793705EA5 /* WireProvenanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5695073839C3BDEB728BDBF5 /* WireProvenanceTests.swift */; };
+		2303BF4C5175BDD9F9DB380F /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 0A484966DBD3FEBC98FC84D4 /* Sentry */; };
 		27C8D8014A16AC541B5EE059 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F360C0C05FEF9F20A9AFB29B /* PremiumView.swift */; };
-		2BDCEEF3F1F8F3ADA9583F5F /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DCC89C3BD9C73D97B69B7 /* DatabaseTests.swift */; };
 		2DD5830F540EA197913AAF86 /* CoverBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65ACE0EE71E574F7B2EE5C65 /* CoverBoardView.swift */; };
 		335A7FA20EC0A345B6290226 /* ErrorMonitoring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A397079A7CBB2C33464161F /* ErrorMonitoring.swift */; };
 		36C7DEAF43C69C935218A308 /* DealComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E7A1795A5CD91F6FDB1F84 /* DealComposerView.swift */; };
-		3731BE6D400DE9643A3FFB32 /* LocationClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E276183766250E1333108C /* LocationClientTests.swift */; };
 		393EADA8827008319C740AFC /* CoverReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85843CF8BF77482206FA5162 /* CoverReportView.swift */; };
-		3FA8AAEF1D20DBB5DD70F772 /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 1ADC43D1D57F5AB03369E25F /* openapi-generator-config.yaml */; };
-		410F36B7913122F250CBB5D3 /* ServiceNightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992335BC4A6E93AE17A4C2AD /* ServiceNightTests.swift */; };
-		42A5F33AD04E7B44E6AB5FCE /* EstimateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE11308331BA32141535AD17 /* EstimateDetailView.swift */; };
 		4389AAB8C4E51F274CF27570 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DCD5D7C7CA997AE5C04721 /* AppSettings.swift */; };
-		4503D766D91C8676AA6AE152 /* VenueSharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47D89A4027612C44FF132F6 /* VenueSharing.swift */; };
-		516EC0F220CB781FD46EDAC3 /* PrivacyLifecycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C2BB988C9EDB3BA872A78 /* PrivacyLifecycleTests.swift */; };
-		52AFD8BE63ECCA67A1A0A254 /* HandbookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A77EF9B1BFF844D9CC506 /* HandbookTests.swift */; };
 		55B386CE6C08706D8FC4EB62 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 16EBF8E73E5F4885680B3516 /* GRDB */; };
-		583926F859155C165CDD6D15 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = FC0004F236A9D2775E524BD8 /* RevenueCat */; };
 		5B544069BB0F3EB67C8BCEF3 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F1872EBAB66823DE06571 /* AccountView.swift */; };
-		5B832473881B11C817DA7138 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 0A484966DBD3FEBC98FC84D4 /* Sentry */; };
 		6796492DD3EA287B8D201699 /* OutboxProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A32F71E85BCD477FFF9C78B /* OutboxProcessor.swift */; };
-		6B17FF8519B05EFDCB1AAFAA /* CanonicalFixtureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DC9615381BEC9BBEFCF192 /* CanonicalFixtureTests.swift */; };
-		6DA08741E996F368EC0B92DE /* CoverBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DABEE9E9A4DC412DCFB42F /* CoverBoardModel.swift */; };
 		6F58C705D773D3552D9F4FBE /* BillingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C4E6C1A621CDEF03E588F /* BillingModel.swift */; };
-		714EDC21C4F305AF73AE5370 /* AppConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AD26A2DD14B114DA454D39 /* AppConfigurationTests.swift */; };
 		729180B27225E0995086706B /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA24289E94127A992877BC8E /* AppConfiguration.swift */; };
 		77B030EC56EEC9113BEAD91C /* IlliniCoverApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95756768B48C312A9DF37C42 /* IlliniCoverApp.swift */; };
-		7A7BE579362AFBCA51E25F7C /* DomainModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7EE4B1EBA0AD333189D967 /* DomainModelTests.swift */; };
 		7B8ADE490CFEB7A045C6661D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E022CF2ACEA442DDC8FA50D5 /* Models.swift */; };
 		7DF21F97F520BB6B6F283001 /* LocationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD37409BE3C5AFD041161EF /* LocationClient.swift */; };
 		83C1E70D251EC6B8214374E7 /* VenueDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4D01D0005C79CBA5644A80 /* VenueDetailView.swift */; };
 		8A5F7C3CB3B32AFAF5882976 /* SignInFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F32667FA40C2F4F755013DF /* SignInFlow.swift */; };
 		8EB994030D2AE21EF9F5104F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BF142966BA2DF81F10EBD /* SettingsView.swift */; };
-		8FD7AA7F3F31AA7B035D8F92 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B984422D41F1DDB6AD60A142 /* Client.swift */; };
 		958BA08E86D6701AB2B2F30F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 599C019F97A52AEBB6658C9E /* PrivacyInfo.xcprivacy */; };
-		A537DE9C3A6FD6D51135BEE0 /* AllauthChallengeTokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D04053E59E0453DFD27755E /* AllauthChallengeTokenTests.swift */; };
 		A764903787CB1285838D4037 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70EB198B4008B94EEB59396C /* Assets.xcassets */; };
 		AA4F01CFDE2CA8576CD35EA2 /* IlliniCoverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB0743EFC546A069438A5 /* IlliniCoverUITests.swift */; };
-		B962E6E81E910127CEB4B53A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1985AC6565CD122143B64D2C /* Router.swift */; };
-		BF5BC88286ED4C0EEF534954 /* fixtures in Resources */ = {isa = PBXBuildFile; fileRef = CB273C6B70373EADA1347860 /* fixtures */; };
-		C3D9CD51E4D95A5BA5D842C2 /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 9D84FA226FD7A63661D3E087 /* OpenAPIRuntime */; };
+		C3D9CD51E4D95A5BA5D842C2 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = FC0004F236A9D2775E524BD8 /* RevenueCat */; };
 		C54E365BD4660A85962CE308 /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE50ABB824A6A0A82583D7 /* OnboardingFlow.swift */; };
 		C7B1C795DF340E6C20E15E5F /* DealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628B448436502D4109973C01 /* DealsView.swift */; };
-		CF52B8C3071282E8AD942373 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFCA0257E8ABD577127F255 /* Types.swift */; };
 		D28B87048DA00EDA20F0DA59 /* AppAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F69AE71DF471858CC0ADA38 /* AppAPI.swift */; };
-		D5F522A5BD4B6EA0A7EF981E /* ErrorMonitoringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05B11E7E27D71D889CA95CC /* ErrorMonitoringTests.swift */; };
-		D9387CD3795235954227C280 /* PreviewAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9E281B557F2429443581FA /* PreviewAPIClient.swift */; };
 		DC96DB5DEEEB54EA3FFBEBB8 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023C4ED1F82B090AC3B34A1F /* Haptics.swift */; };
-		E14BADAEF70AB763CEA10D78 /* GeneratedClientContractTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC7CF045B854A7119B6F966 /* GeneratedClientContractTests.swift */; };
 		EA56A864348F8A394E4D54C1 /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EC4599FFB1BD24511C37EF /* CredentialStore.swift */; };
-		F46D5795880E5219F46E7D1E /* CanonicalFixtureTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3ABAAC42E0BE9E075CDC1E /* CanonicalFixtureTransport.swift */; };
+		ED773DA027727ABB7A23168D /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DAD9A7B147EDC4F353FE693 /* CoreTests.swift */; };
 		F91F30A26F1C45960A4F9FC1 /* TimeMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8036E842BE354E8D58AD3B55 /* TimeMachineView.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,62 +65,38 @@
 		03DCD5D7C7CA997AE5C04721 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		042BF142966BA2DF81F10EBD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		06041285E5A13E726D086192 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
-		173A77EF9B1BFF844D9CC506 /* HandbookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTests.swift; sourceTree = "<group>"; };
 		179F1872EBAB66823DE06571 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
-		1985AC6565CD122143B64D2C /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		1ADC43D1D57F5AB03369E25F /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
-		1E7EE4B1EBA0AD333189D967 /* DomainModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModelTests.swift; sourceTree = "<group>"; };
 		1F32667FA40C2F4F755013DF /* SignInFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInFlow.swift; sourceTree = "<group>"; };
 		28EE50ABB824A6A0A82583D7 /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
 		2F69AE71DF471858CC0ADA38 /* AppAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPI.swift; sourceTree = "<group>"; };
 		36E7A1795A5CD91F6FDB1F84 /* DealComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealComposerView.swift; sourceTree = "<group>"; };
-		3D551C7CF5CF7CEEC41312F4 /* IlliniCover.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IlliniCover.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		46E276183766250E1333108C /* LocationClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClientTests.swift; sourceTree = "<group>"; };
-		49DABEE9E9A4DC412DCFB42F /* CoverBoardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverBoardModel.swift; sourceTree = "<group>"; };
-		4E9E281B557F2429443581FA /* PreviewAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewAPIClient.swift; sourceTree = "<group>"; };
+		3D551C7CF5CF7CEEC41312F4 /* IlliniCover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IlliniCover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54EC4599FFB1BD24511C37EF /* CredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStore.swift; sourceTree = "<group>"; };
-		5695073839C3BDEB728BDBF5 /* WireProvenanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireProvenanceTests.swift; sourceTree = "<group>"; };
-		599C019F97A52AEBB6658C9E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		5A7C2BB988C9EDB3BA872A78 /* PrivacyLifecycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyLifecycleTests.swift; sourceTree = "<group>"; };
-		5D3ABAAC42E0BE9E075CDC1E /* CanonicalFixtureTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanonicalFixtureTransport.swift; sourceTree = "<group>"; };
+		599C019F97A52AEBB6658C9E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5DD37409BE3C5AFD041161EF /* LocationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClient.swift; sourceTree = "<group>"; };
 		5E3C4E6C1A621CDEF03E588F /* BillingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingModel.swift; sourceTree = "<group>"; };
 		5F3418196342752F0CE1912C /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		628B448436502D4109973C01 /* DealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsView.swift; sourceTree = "<group>"; };
 		65ACE0EE71E574F7B2EE5C65 /* CoverBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverBoardView.swift; sourceTree = "<group>"; };
-		663DCC89C3BD9C73D97B69B7 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 		6F6FB0743EFC546A069438A5 /* IlliniCoverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IlliniCoverUITests.swift; sourceTree = "<group>"; };
-		6FC7CF045B854A7119B6F966 /* GeneratedClientContractTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedClientContractTests.swift; sourceTree = "<group>"; };
 		70EB198B4008B94EEB59396C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A397079A7CBB2C33464161F /* ErrorMonitoring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMonitoring.swift; sourceTree = "<group>"; };
-		7D04053E59E0453DFD27755E /* AllauthChallengeTokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllauthChallengeTokenTests.swift; sourceTree = "<group>"; };
 		8036E842BE354E8D58AD3B55 /* TimeMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMachineView.swift; sourceTree = "<group>"; };
 		85843CF8BF77482206FA5162 /* CoverReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverReportView.swift; sourceTree = "<group>"; };
 		8B82535AB5FF71CFB3E5D679 /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 		8CF9C8350354708F0EE6322C /* HandbookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViews.swift; sourceTree = "<group>"; };
-		90DC9615381BEC9BBEFCF192 /* CanonicalFixtureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanonicalFixtureTests.swift; sourceTree = "<group>"; };
+		8DAD9A7B147EDC4F353FE693 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		95756768B48C312A9DF37C42 /* IlliniCoverApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IlliniCoverApp.swift; sourceTree = "<group>"; };
-		992335BC4A6E93AE17A4C2AD /* ServiceNightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNightTests.swift; sourceTree = "<group>"; };
-		99AD26A2DD14B114DA454D39 /* AppConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigurationTests.swift; sourceTree = "<group>"; };
 		9A03F936B568EDD36A3FA6DF /* IlliniCoverTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = IlliniCoverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A32F71E85BCD477FFF9C78B /* OutboxProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboxProcessor.swift; sourceTree = "<group>"; };
 		9ADFB00A21E97F728A8EA4C0 /* IlliniCoverUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = IlliniCoverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC22B22D7F7376519BC3696 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
-		A33F986913412961384D371A /* CredentialStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStoreTests.swift; sourceTree = "<group>"; };
 		A94FB344A724C46A55CA9F2A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		B05B11E7E27D71D889CA95CC /* ErrorMonitoringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMonitoringTests.swift; sourceTree = "<group>"; };
-		B984422D41F1DDB6AD60A142 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
-		BE11308331BA32141535AD17 /* EstimateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateDetailView.swift; sourceTree = "<group>"; };
-		CA484BD868ECADE0D4A94861 /* PrivacyManifestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyManifestTests.swift; sourceTree = "<group>"; };
 		CA4D01D0005C79CBA5644A80 /* VenueDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueDetailView.swift; sourceTree = "<group>"; };
-		CB273C6B70373EADA1347860 /* fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fixtures; path = ../api/fixtures; sourceTree = SOURCE_ROOT; };
-		DBFCA0257E8ABD577127F255 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		E022CF2ACEA442DDC8FA50D5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		EA24289E94127A992877BC8E /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		F360C0C05FEF9F20A9AFB29B /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
-		F47D89A4027612C44FF132F6 /* VenueSharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueSharing.swift; sourceTree = "<group>"; };
 		FB215E9B6D9E6224B337C8F7 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		FC55BAC3889C051C4DE06B34 /* Preview.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Preview.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +105,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B386CE6C08706D8FC4EB62 /* GRDB in Frameworks */,
-				C3D9CD51E4D95A5BA5D842C2 /* OpenAPIRuntime in Frameworks */,
-				2303BF4C5175BDD9F9DB380F /* OpenAPIURLSession in Frameworks */,
-				583926F859155C165CDD6D15 /* RevenueCat in Frameworks */,
-				5B832473881B11C817DA7138 /* Sentry in Frameworks */,
+				C3D9CD51E4D95A5BA5D842C2 /* RevenueCat in Frameworks */,
+				2303BF4C5175BDD9F9DB380F /* Sentry in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,22 +122,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		0A39196AF22A19C71033E012 /* illinicover-v2 */ = {
-			isa = PBXGroup;
-			children = (
-				6433A5E5B4EF497AB623F38A /* api */,
-			);
-			name = "illinicover-v2";
-			path = ..;
-			sourceTree = "<group>";
-		};
 		100EB6FC302D023B92A6F1F1 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				2F69AE71DF471858CC0ADA38 /* AppAPI.swift */,
 				E022CF2ACEA442DDC8FA50D5 /* Models.swift */,
-				1ADC43D1D57F5AB03369E25F /* openapi-generator-config.yaml */,
-				628689F6331A0BDDAEAD6F6D /* Generated */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -229,15 +167,6 @@
 			path = Reporting;
 			sourceTree = "<group>";
 		};
-		496C2E33810A3A008703819C /* PreviewSupport */ = {
-			isa = PBXGroup;
-			children = (
-				5D3ABAAC42E0BE9E075CDC1E /* CanonicalFixtureTransport.swift */,
-				4E9E281B557F2429443581FA /* PreviewAPIClient.swift */,
-			);
-			path = PreviewSupport;
-			sourceTree = "<group>";
-		};
 		4C1B9A242DAAFE12D07ACF74 /* IlliniCover */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,7 +180,6 @@
 				2DBBA1641CECC08556EDBD21 /* DesignSystem */,
 				C4A9DF6067C25DAD6EDA5DFF /* Handbook */,
 				CFD436DDF9089900042209D4 /* Location */,
-				496C2E33810A3A008703819C /* PreviewSupport */,
 				38101C0BC4092368A5E3DACF /* Reporting */,
 				00C9C26C6A60EAD97D1C6274 /* Resources */,
 				DE2E867DF45A1109F68F8FC6 /* TimeMachine */,
@@ -267,26 +195,8 @@
 				03DCD5D7C7CA997AE5C04721 /* AppSettings.swift */,
 				7A397079A7CBB2C33464161F /* ErrorMonitoring.swift */,
 				95756768B48C312A9DF37C42 /* IlliniCoverApp.swift */,
-				1985AC6565CD122143B64D2C /* Router.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		628689F6331A0BDDAEAD6F6D /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				B984422D41F1DDB6AD60A142 /* Client.swift */,
-				DBFCA0257E8ABD577127F255 /* Types.swift */,
-			);
-			path = Generated;
-			sourceTree = "<group>";
-		};
-		6433A5E5B4EF497AB623F38A /* api */ = {
-			isa = PBXGroup;
-			children = (
-				CB273C6B70373EADA1347860 /* fixtures */,
-			);
-			path = api;
 			sourceTree = "<group>";
 		};
 		79279E1A6AA2659FF76752AB = {
@@ -294,7 +204,6 @@
 			children = (
 				AD28EF4D30F22046CB4B33B8 /* Config */,
 				4C1B9A242DAAFE12D07ACF74 /* IlliniCover */,
-				0A39196AF22A19C71033E012 /* illinicover-v2 */,
 				DEB7938711BE97E8A09F9363 /* IlliniCoverTests */,
 				9611460B473ED60CF5CB0870 /* IlliniCoverUITests */,
 				F681C5A7B9E7917DA185FBF9 /* Products */,
@@ -325,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				8B82535AB5FF71CFB3E5D679 /* Local.xcconfig */,
-				FC55BAC3889C051C4DE06B34 /* Preview.xcconfig */,
 				06041285E5A13E726D086192 /* Production.xcconfig */,
 			);
 			path = Config;
@@ -367,20 +275,7 @@
 		DEB7938711BE97E8A09F9363 /* IlliniCoverTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D04053E59E0453DFD27755E /* AllauthChallengeTokenTests.swift */,
-				99AD26A2DD14B114DA454D39 /* AppConfigurationTests.swift */,
-				90DC9615381BEC9BBEFCF192 /* CanonicalFixtureTests.swift */,
-				A33F986913412961384D371A /* CredentialStoreTests.swift */,
-				663DCC89C3BD9C73D97B69B7 /* DatabaseTests.swift */,
-				1E7EE4B1EBA0AD333189D967 /* DomainModelTests.swift */,
-				B05B11E7E27D71D889CA95CC /* ErrorMonitoringTests.swift */,
-				6FC7CF045B854A7119B6F966 /* GeneratedClientContractTests.swift */,
-				173A77EF9B1BFF844D9CC506 /* HandbookTests.swift */,
-				46E276183766250E1333108C /* LocationClientTests.swift */,
-				5A7C2BB988C9EDB3BA872A78 /* PrivacyLifecycleTests.swift */,
-				CA484BD868ECADE0D4A94861 /* PrivacyManifestTests.swift */,
-				992335BC4A6E93AE17A4C2AD /* ServiceNightTests.swift */,
-				5695073839C3BDEB728BDBF5 /* WireProvenanceTests.swift */,
+				8DAD9A7B147EDC4F353FE693 /* CoreTests.swift */,
 			);
 			path = IlliniCoverTests;
 			sourceTree = "<group>";
@@ -388,11 +283,8 @@
 		F27DC0154C851D956F5D45BE /* Cover */ = {
 			isa = PBXGroup;
 			children = (
-				49DABEE9E9A4DC412DCFB42F /* CoverBoardModel.swift */,
 				65ACE0EE71E574F7B2EE5C65 /* CoverBoardView.swift */,
-				BE11308331BA32141535AD17 /* EstimateDetailView.swift */,
 				CA4D01D0005C79CBA5644A80 /* VenueDetailView.swift */,
-				F47D89A4027612C44FF132F6 /* VenueSharing.swift */,
 			);
 			path = Cover;
 			sourceTree = "<group>";
@@ -462,8 +354,6 @@
 			name = IlliniCover;
 			packageProductDependencies = (
 				16EBF8E73E5F4885680B3516 /* GRDB */,
-				9D84FA226FD7A63661D3E087 /* OpenAPIRuntime */,
-				576CD0E82DCED147377E1C1D /* OpenAPIURLSession */,
 				FC0004F236A9D2775E524BD8 /* RevenueCat */,
 				0A484966DBD3FEBC98FC84D4 /* Sentry */,
 			);
@@ -506,9 +396,6 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				845D78ED16D933FE18912BD2 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
-				612053FF0E0C8F726330AFE8 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
-				ADFE32B6412964C5986CDDB3 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
-				E5C486F0DE95E6B24541AA17 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
 				0852C86FD2963EC49EE81FE9 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 				D5FBF3800813910E1512318B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 			);
@@ -531,8 +418,6 @@
 			files = (
 				A764903787CB1285838D4037 /* Assets.xcassets in Resources */,
 				958BA08E86D6701AB2B2F30F /* PrivacyInfo.xcprivacy in Resources */,
-				BF5BC88286ED4C0EEF534954 /* fixtures in Resources */,
-				3FA8AAEF1D20DBB5DD70F772 /* openapi-generator-config.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,16 +458,12 @@
 				167F7309476FF12753FF2ACA /* AppEnvironment.swift in Sources */,
 				4389AAB8C4E51F274CF27570 /* AppSettings.swift in Sources */,
 				6F58C705D773D3552D9F4FBE /* BillingModel.swift in Sources */,
-				F46D5795880E5219F46E7D1E /* CanonicalFixtureTransport.swift in Sources */,
-				8FD7AA7F3F31AA7B035D8F92 /* Client.swift in Sources */,
-				6DA08741E996F368EC0B92DE /* CoverBoardModel.swift in Sources */,
 				2DD5830F540EA197913AAF86 /* CoverBoardView.swift in Sources */,
 				393EADA8827008319C740AFC /* CoverReportView.swift in Sources */,
 				EA56A864348F8A394E4D54C1 /* CredentialStore.swift in Sources */,
 				36C7DEAF43C69C935218A308 /* DealComposerView.swift in Sources */,
 				C7B1C795DF340E6C20E15E5F /* DealsView.swift in Sources */,
 				335A7FA20EC0A345B6290226 /* ErrorMonitoring.swift in Sources */,
-				42A5F33AD04E7B44E6AB5FCE /* EstimateDetailView.swift in Sources */,
 				167E82E073F689909B436FD4 /* HandbookViews.swift in Sources */,
 				DC96DB5DEEEB54EA3FFBEBB8 /* Haptics.swift in Sources */,
 				77B030EC56EEC9113BEAD91C /* IlliniCoverApp.swift in Sources */,
@@ -591,16 +472,12 @@
 				C54E365BD4660A85962CE308 /* OnboardingFlow.swift in Sources */,
 				6796492DD3EA287B8D201699 /* OutboxProcessor.swift in Sources */,
 				27C8D8014A16AC541B5EE059 /* PremiumView.swift in Sources */,
-				D9387CD3795235954227C280 /* PreviewAPIClient.swift in Sources */,
-				B962E6E81E910127CEB4B53A /* Router.swift in Sources */,
 				8EB994030D2AE21EF9F5104F /* SettingsView.swift in Sources */,
 				8A5F7C3CB3B32AFAF5882976 /* SignInFlow.swift in Sources */,
 				18D95ADD841BE83199DADE53 /* SupportView.swift in Sources */,
 				1CC3E3AC72E59D6F9C11C154 /* Theme.swift in Sources */,
 				F91F30A26F1C45960A4F9FC1 /* TimeMachineView.swift in Sources */,
-				CF52B8C3071282E8AD942373 /* Types.swift in Sources */,
 				83C1E70D251EC6B8214374E7 /* VenueDetailView.swift in Sources */,
-				4503D766D91C8676AA6AE152 /* VenueSharing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,20 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A537DE9C3A6FD6D51135BEE0 /* AllauthChallengeTokenTests.swift in Sources */,
-				714EDC21C4F305AF73AE5370 /* AppConfigurationTests.swift in Sources */,
-				6B17FF8519B05EFDCB1AAFAA /* CanonicalFixtureTests.swift in Sources */,
-				2411CD350C3DC210E3FFA631 /* CredentialStoreTests.swift in Sources */,
-				2BDCEEF3F1F8F3ADA9583F5F /* DatabaseTests.swift in Sources */,
-				7A7BE579362AFBCA51E25F7C /* DomainModelTests.swift in Sources */,
-				D5F522A5BD4B6EA0A7EF981E /* ErrorMonitoringTests.swift in Sources */,
-				E14BADAEF70AB763CEA10D78 /* GeneratedClientContractTests.swift in Sources */,
-				52AFD8BE63ECCA67A1A0A254 /* HandbookTests.swift in Sources */,
-				3731BE6D400DE9643A3FFB32 /* LocationClientTests.swift in Sources */,
-				516EC0F220CB781FD46EDAC3 /* PrivacyLifecycleTests.swift in Sources */,
-				0FCA7ADD8E319EA9B1DD2462 /* PrivacyManifestTests.swift in Sources */,
-				410F36B7913122F250CBB5D3 /* ServiceNightTests.swift in Sources */,
-				24B26DC115D2CCC793705EA5 /* WireProvenanceTests.swift in Sources */,
+				ED773DA027727ABB7A23168D /* CoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,23 +529,6 @@
 				TEST_TARGET_NAME = IlliniCover;
 			};
 			name = Local;
-		};
-		0FCD27D07BCAD9BD39EEF08D /* Preview */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.illinicover.app.dev.tests;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IlliniCover.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IlliniCover";
-			};
-			name = Preview;
 		};
 		3F1EBD6B7CF4A86D78A9A7E5 /* Local */ = {
 			isa = XCBuildConfiguration;
@@ -788,22 +635,6 @@
 			};
 			name = Production;
 		};
-		A047E9C1E61DEAC9306770A9 /* Preview */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC55BAC3889C051C4DE06B34 /* Preview.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Preview;
-		};
 		B88B746DD0B9E17D27A8677F /* Local */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B82535AB5FF71CFB3E5D679 /* Local.xcconfig */;
@@ -836,77 +667,6 @@
 			};
 			name = Production;
 		};
-		CD22EB078B740A83F7993C4E /* Preview */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = Y74N5FFSEJ;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"$(inherited)",
-					"DEBUG=1",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 2.0.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Preview;
-		};
 		CF16B25D7B2E94F726C3C124 /* Local */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -923,23 +683,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IlliniCover.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IlliniCover";
 			};
 			name = Local;
-		};
-		FE685C1AC4947016C61C7B84 /* Preview */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.illinicover.app.dev.uitests;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IlliniCover;
-			};
-			name = Preview;
 		};
 		FFC834C2F782204CBC55A29C /* Production */ = {
 			isa = XCBuildConfiguration;
@@ -1012,7 +755,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				035F7B3230E0C69C9EACA4AF /* Local */,
-				FE685C1AC4947016C61C7B84 /* Preview */,
 				583CAA48DE380B327DDD904C /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1022,7 +764,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF16B25D7B2E94F726C3C124 /* Local */,
-				0FCD27D07BCAD9BD39EEF08D /* Preview */,
 				638EDDE4861490655F99E235 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1032,7 +773,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B88B746DD0B9E17D27A8677F /* Local */,
-				A047E9C1E61DEAC9306770A9 /* Preview */,
 				C0D719B347473140574A3365 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1042,7 +782,6 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F1EBD6B7CF4A86D78A9A7E5 /* Local */,
-				CD22EB078B740A83F7993C4E /* Preview */,
 				FFC834C2F782204CBC55A29C /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1059,14 +798,6 @@
 				version = 5.83.1;
 			};
 		};
-		612053FF0E0C8F726330AFE8 /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-openapi-generator.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.13.0;
-			};
-		};
 		845D78ED16D933FE18912BD2 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/groue/GRDB.swift.git";
@@ -1075,28 +806,12 @@
 				version = 7.11.1;
 			};
 		};
-		ADFE32B6412964C5986CDDB3 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-openapi-runtime.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.12.0;
-			};
-		};
 		D5FBF3800813910E1512318B /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa.git";
 			requirement = {
 				kind = exactVersion;
 				version = 8.58.4;
-			};
-		};
-		E5C486F0DE95E6B24541AA17 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-openapi-urlsession.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.3.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1111,16 +826,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 845D78ED16D933FE18912BD2 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
-		};
-		576CD0E82DCED147377E1C1D /* OpenAPIURLSession */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E5C486F0DE95E6B24541AA17 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
-			productName = OpenAPIURLSession;
-		};
-		9D84FA226FD7A63661D3E087 /* OpenAPIRuntime */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ADFE32B6412964C5986CDDB3 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
-			productName = OpenAPIRuntime;
 		};
 		FC0004F236A9D2775E524BD8 /* RevenueCat */ = {
 			isa = XCSwiftPackageProductDependency;

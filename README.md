@@ -1,31 +1,52 @@
-# IlliniCover v2
+# IlliniCover
 
-IlliniCover v2 is a native, cover-first iOS application backed by one
-Django/PostgreSQL service. It is a clean rebuild beside the pre-alpha v1 app.
-The old repository is used only as evidence for intentional product behavior,
-visual appearance, historical datasets, and evaluation fixtures.
+IlliniCover is a native SwiftUI app backed by one Django/PostgreSQL service.
+The server owns cover and deal interpretation; the client owns presentation,
+local cache, and an offline submission outbox.
 
-The governing product and technical requirements are in
-[`docs/product/specification.md`](docs/product/specification.md). The server is
-the sole owner of evidence assessment, cover and deal resolution, prediction,
-same-night nowcasting, and Time Machine reconstruction.
+The authority order is:
 
-The product's data handling and erasure contract is published in
+1. [`docs/product/specification.md`](docs/product/specification.md) for product behavior;
+2. [`docs/architecture/decisions.md`](docs/architecture/decisions.md) for implementation choices the specification leaves open; and
+3. tests for executable invariants.
+
+The public data-handling contract is
 [`docs/privacy-policy.md`](docs/privacy-policy.md).
 
-## Repository shape
+## Repository
 
 ```text
-ios/       Native SwiftUI application, GRDB cache/outbox, generated API client
-server/    Django, Django Ninja, allauth headless, Admin, jobs, and models
-api/       Checked-in generated OpenAPI contract
-data/      Versioned source datasets and manifests
-docs/      Product, architecture, model receipts, and runbooks
-ops/       Container and deployment configuration
+ios/      Checked-in Xcode project and native client
+server/   Django application, migrations, and tests
+api/      Checked-in OpenAPI contract
+data/     Canonical venue, cover, and deal JSONL
+ops/      Container and immutable Cloud Run deployment
+scripts/  Local and CI entrypoints
+docs/     Product, architecture, operations, and acceptance
 ```
 
-## Local development
+## Start locally
 
-The checked-in setup is being built in vertical slices. See
-[`docs/implementation/traceability.md`](docs/implementation/traceability.md)
-for the current implementation and verification ledger.
+```bash
+mise install
+mise run setup
+mise run up
+```
+
+`setup` installs the locked dependencies, starts loopback PostgreSQL, applies
+migrations, and idempotently loads the canonical data. `up` serves Django at
+`http://127.0.0.1:8000`.
+
+In another terminal, set `ILLINICOVER_SIMULATOR_UDID` to a dedicated Simulator
+and run:
+
+```bash
+mise run ios:boot
+mise run ios:build
+ILLINICOVER_TEST_PLAN=Integration mise run ios:test
+```
+
+See [`docs/operations/README.md`](docs/operations/README.md) for CI, deployment,
+secrets, rollback, restore, and RevenueCat recovery. See
+[`docs/runbooks/runtime-acceptance.md`](docs/runbooks/runtime-acceptance.md) for
+the release evidence contract.
