@@ -11,8 +11,8 @@ if CODE_REVISION in {"", "development"}:  # noqa: F405
     raise ImproperlyConfigured("CODE_REVISION must identify an immutable production revision")
 
 DEPLOYMENT_ENVIRONMENT = os.environ.get("DEPLOYMENT_ENVIRONMENT", "")
-if DEPLOYMENT_ENVIRONMENT not in {"production", "preview"}:
-    raise ImproperlyConfigured("DEPLOYMENT_ENVIRONMENT must be production or preview")
+if DEPLOYMENT_ENVIRONMENT != "production":
+    raise ImproperlyConfigured("DEPLOYMENT_ENVIRONMENT must be production")
 SENTRY_ENVIRONMENT = DEPLOYMENT_ENVIRONMENT
 
 DATABASE_MODE = os.environ.get("DATABASE_MODE", "pooled")

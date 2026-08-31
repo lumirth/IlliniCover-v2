@@ -8,10 +8,10 @@ from pydantic import Field, model_validator
 
 
 class LocationInputSchema(CamelSchema):
-    latitude: float = Field(ge=-90, le=90)
-    longitude: float = Field(ge=-180, le=180)
-    accuracy_meters: float = Field(ge=0)
-    permission: str = "when_in_use"
+    latitude: float = Field(ge=-90, le=90, allow_inf_nan=False)
+    longitude: float = Field(ge=-180, le=180, allow_inf_nan=False)
+    accuracy_meters: float = Field(ge=0, le=999_999.99, allow_inf_nan=False)
+    permission: Literal["when_in_use"] = "when_in_use"
 
 
 class CoverInputSchema(CamelSchema):
@@ -21,17 +21,13 @@ class CoverInputSchema(CamelSchema):
     # raw legacy observations remain intact.
     price_cents: int = Field(ge=0, le=7_000, multiple_of=500)
     interaction: Literal["confirm", "correct", "direct", "quick_confirm", "manual"]
-    displayed_decision_id: uuid.UUID | None = None
     price_prefilled: bool = False
     price_touched: bool = False
-
-    @model_validator(mode="after")
-    def displayed_decision_is_present_when_required(self):
-        if (
-            self.price_prefilled or self.interaction in {"confirm", "correct", "quick_confirm"}
-        ) and self.displayed_decision_id is None:
-            raise ValueError("prefilled and confirmation reports require displayedDecisionId")
-        return self
+    displayed_source: str | None = None
+    displayed_price_kind: str | None = None
+    displayed_amount_cents: int | None = None
+    displayed_low_cents: int | None = None
+    displayed_high_cents: int | None = None
 
 
 class VibeInputSchema(CamelSchema):
@@ -59,7 +55,6 @@ class CoverSubmissionSchema(CamelSchema):
     cover: CoverInputSchema | None = None
     vibes: list[VibeInputSchema] = Field(default_factory=list, max_length=3)
     client_platform: str = Field(default="ios", max_length=24)
-    client_version: str = Field(default="", max_length=40)
     entry_point: str = Field(default="", max_length=40)
 
     @model_validator(mode="after")

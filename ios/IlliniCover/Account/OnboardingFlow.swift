@@ -1,4 +1,3 @@
-import CoreLocation
 import SwiftUI
 
 private enum OnboardingStep {
@@ -91,7 +90,6 @@ struct LocationOnboardingView: View {
     @Environment(AppEnvironment.self) private var environment
     @Environment(\.dismiss) private var dismiss
     let isPresentedModally: Bool
-    @State private var isWorking = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -102,21 +100,12 @@ struct LocationOnboardingView: View {
             Text("Location adds context")
                 .font(.largeTitle.bold())
                 .multilineTextAlignment(.center)
-            Text("When you choose to include location with a report, IlliniCover checks it once. The app never tracks you continuously.")
+            Text("When you send a report with location enabled, IlliniCover will ask then and check once. The app never tracks you continuously.")
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
             Spacer()
-            Button(isWorking ? "Working…" : "Allow Location Access") {
-                guard !isWorking else { return }
-                isWorking = true
-                Task {
-                    let status = await environment.location.requestAuthorization()
-                    environment.settings.includeLocation = status == .authorizedAlways || status == .authorizedWhenInUse
-                    finish()
-                }
-            }
+            Button("Include Location with Reports") { environment.settings.includeLocation = true; finish() }
             .buttonStyle(PrimaryActionStyle())
-            .disabled(isWorking)
             Button("Not Now") { finish() }
                 .frame(minHeight: 44)
         }

@@ -8,13 +8,5 @@
     "name": "keep-two-most-recent-versions",
     "action": {"type": "Keep"},
     "mostRecentVersions": {"keepCount": 2}
-  },
-  {
-    "name": "keep-serving-and-rollback-images",
-    "action": {"type": "Keep"},
-    "condition": {
-      "tagState": "tagged",
-      "tagPrefixes": ["production-serving", "production-rollback", "preview-serving"]
-    }
   }
 ]

@@ -13,10 +13,9 @@ class StatusSchema(Schema):
 
 
 api = NinjaAPI(
-    version="2.0.0",
-    title="IlliniCover API",
+    title="IlliniCover",
     description="Product-shaped API for the native IlliniCover clients.",
-    urls_namespace="api-v2",
+    urls_namespace="api",
     docs_url="/docs",
 )
 

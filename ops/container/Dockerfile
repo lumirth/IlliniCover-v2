@@ -14,19 +14,16 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 COPY --from=uv /uv /uvx /bin/
 COPY pyproject.toml uv.lock ./
-RUN uv sync --frozen --no-dev --no-install-project
+RUN uv sync --frozen --no-dev
 
 COPY server ./server
 COPY api ./api
 COPY data ./data
 COPY docs/privacy-policy.md ./docs/privacy-policy.md
-COPY docs/model/cover-historical-v1-evaluation.json \
-    ./data/cover/recovered-cover-v1/model-selection-receipt.json
 
 RUN test -n "${CODE_REVISION}"
-RUN DJANGO_SETTINGS_MODULE=config.settings.development \
-    uv run python server/manage.py collectstatic --noinput
-RUN uv sync --frozen --no-dev
+RUN DJANGO_SETTINGS_MODULE=config.settings.test \
+    python server/manage.py collectstatic --noinput
 
 RUN addgroup --system illinicover \
     && adduser --system --ingroup illinicover --home /app illinicover \

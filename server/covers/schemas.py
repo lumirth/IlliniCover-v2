@@ -9,6 +9,7 @@ from venues.schemas import VenueSummarySchema
 
 class VenueDealSummarySchema(CamelSchema):
     id: uuid.UUID
+    canonical_family_id: uuid.UUID
     display_name: str
     category: str
     price_kind: str
@@ -22,7 +23,6 @@ class VenueDealSummarySchema(CamelSchema):
     timing_known: bool
     while_supplies_last: bool
     status: str
-    prediction_id: uuid.UUID | None
 
 
 class CoverPriceSchema(CamelSchema):
@@ -35,9 +35,11 @@ class CoverPriceSchema(CamelSchema):
 class CoverStateSchema(CamelSchema):
     price: CoverPriceSchema
     source: str
-    freshness_seconds: int
-    decision_id: uuid.UUID
+    freshness_seconds: int | None
     status: str
+    computed_at: datetime
+    target_time: datetime
+    knowledge_cutoff: datetime
 
 
 class VibeSummarySchema(CamelSchema):
@@ -62,7 +64,6 @@ class CoverBoardSchema(CamelSchema):
 
 
 class RecentReportSchema(CamelSchema):
-    submission_id: uuid.UUID
     observed_at: datetime
     received_at: datetime
     price_cents: int | None

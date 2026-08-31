@@ -15,9 +15,9 @@ class DealShapeSchema(CamelSchema):
     category: Literal["drink", "food"]
     canonical_family_id: uuid.UUID | None = None
     price_kind: Literal["absolute", "single", "range", "relative", "percent_off", "unknown"]
-    price_cents: int | None = Field(default=None, ge=0, le=10_000)
-    price_low_cents: int | None = Field(default=None, ge=0, le=10_000)
-    price_high_cents: int | None = Field(default=None, ge=0, le=10_000)
+    price_cents: int | None = Field(default=None, ge=0, le=25_000)
+    price_low_cents: int | None = Field(default=None, ge=0, le=25_000)
+    price_high_cents: int | None = Field(default=None, ge=0, le=25_000)
     discount_percent: float | None = Field(default=None, gt=0, le=100)
     unit: str = Field(default="", max_length=80)
     serving_format: str = Field(default="", max_length=120)
@@ -65,8 +65,6 @@ class DealShapeSchema(CamelSchema):
         ):
             raise ValueError("unknown price cannot include a price value")
         has_description = bool(self.timing_description)
-        if self.timing_known and not (has_description or self.while_supplies_last):
-            raise ValueError("known timing requires a description or while-supplies-last")
         if not self.timing_known and (has_description or self.while_supplies_last):
             raise ValueError("unknown timing cannot include timing claims")
         self.display_name = public_deal_name(
@@ -88,45 +86,33 @@ class DealEvidenceInputSchema(CamelSchema):
     observed_at: datetime
     action: Literal["ADD_MISSING", "CONFIRM_PRESENT", "DENY_PRESENT", "CORRECT"]
     target_deal_id: uuid.UUID | None = None
-    target_prediction_id: uuid.UUID | None = None
     submitted_deal_shape: DealShapeSchema | None = None
     service_date_local: date
-    target_local_datetime: datetime | None = None
-    supersedes_event_id: uuid.UUID | None = None
     vantage_point: Literal["outside", "inside", "unknown"] = "unknown"
     location: LocationInputSchema | None = None
     client_platform: str = Field(default="ios", max_length=24)
-    client_version: str = Field(default="", max_length=40)
     entry_point: str = Field(default="", max_length=40)
 
     @model_validator(mode="after")
     def action_has_required_evidence(self):
         if self.observed_at.tzinfo is None:
             raise ValueError("observedAt must include a timezone")
-        if self.action in {"ADD_MISSING", "CORRECT"} and self.submitted_deal_shape is None:
-            raise ValueError("add and correct require a submitted deal shape")
-        if self.supersedes_event_id is not None and self.action != "CORRECT":
-            raise ValueError("only a correction can reference supersedesEventId")
-        if self.action in {"CONFIRM_PRESENT", "DENY_PRESENT", "CORRECT"} and not (
-            self.target_deal_id or self.target_prediction_id
-        ):
-            raise ValueError("confirm, deny, and correct require a target")
-        if self.target_local_datetime is not None and self.target_local_datetime.tzinfo is None:
-            raise ValueError("targetLocalDatetime must include a timezone")
+        if bool(self.submitted_deal_shape) != (self.action in {"ADD_MISSING", "CORRECT"}):
+            raise ValueError("only add and correct require a submitted deal shape")
+        if bool(self.target_deal_id) != (self.action != "ADD_MISSING"):
+            raise ValueError("only add has no target deal")
         return self
 
 
 class DealEvidenceReceiptSchema(CamelSchema):
     submission_id: uuid.UUID
-    event_id: uuid.UUID
     accepted_at: datetime
     duplicate: bool
 
 
 class DealSchema(CamelSchema):
     id: uuid.UUID
-    canonical_family_id: uuid.UUID | None
-    latest_evidence_event_id: uuid.UUID | None
+    canonical_family_id: uuid.UUID
     display_name: str
     category: str
     price_kind: str
@@ -140,7 +126,6 @@ class DealSchema(CamelSchema):
     timing_known: bool
     while_supplies_last: bool
     status: str
-    prediction_id: uuid.UUID | None
     latest_activity_at: datetime | None = None
 
 
@@ -157,7 +142,6 @@ class DealSlateSchema(CamelSchema):
 
 class DealSuggestionSchema(CamelSchema):
     canonical_family_id: uuid.UUID
-    canonical_name: str
     category: str
     display_name: str
     price_kind: str
@@ -172,10 +156,6 @@ class DealSuggestionSchema(CamelSchema):
     while_supplies_last: bool
     source_scope: str
     last_seen_service_date_local: date
-    matched_source: Literal[
-        "canonical", "alias", "historical_alias", "display_name", "unit"
-    ] | None = None
-    matched_text: str | None = None
 
 
 class DealSuggestionsSchema(CamelSchema):

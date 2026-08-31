@@ -23,16 +23,7 @@ INSTALLED_APPS = [
     "allauth.headless",
     "allauth.mfa",
     "ninja",
-    "identity",
-    "venues",
-    "submissions",
-    "covers",
-    "vibes",
-    "deals",
-    "context",
-    "handbook",
-    "billing",
-    "operations",
+    "product",
 ]
 
 MIDDLEWARE = [
@@ -69,14 +60,9 @@ TEMPLATES = [
     }
 ]
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": REPOSITORY_DIR / ".local" / "development.sqlite3",
-    }
-}
+DATABASES: dict[str, object] = {}
 
-AUTH_USER_MODEL = "identity.Account"
+AUTH_USER_MODEL = "product.Account"
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
@@ -97,21 +83,11 @@ STORAGES = {
     },
 }
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-JOB_RUN_STALE_AFTER_SECONDS = int(os.environ.get("JOB_RUN_STALE_AFTER_SECONDS", "7200"))
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
 SESSION_COOKIE_HTTPONLY = True
 SESSION_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_SECURE = True
-SESSION_TOKEN_PEPPER = secret_value(
-    "SESSION_TOKEN_PEPPER", bundle_name="SESSION_TOKEN_HMAC_KEY", default=SECRET_KEY
-)
-INSTALLATION_TOKEN_PEPPER = secret_value(
-    "INSTALLATION_TOKEN_PEPPER", bundle_name="INSTALLATION_TOKEN_HMAC_KEY", default=SECRET_KEY
-)
-NETWORK_METADATA_PEPPER = secret_value(
-    "NETWORK_METADATA_PEPPER", bundle_name="NETWORK_METADATA_HMAC_KEY", default=SECRET_KEY
-)
 REVENUECAT_WEBHOOK_AUTHORIZATION = secret_value(
     "REVENUECAT_WEBHOOK_AUTHORIZATION", bundle_name="REVENUECAT_WEBHOOK_AUTH_SECRET"
 )
@@ -125,7 +101,6 @@ REVENUECAT_PROJECT_ID = secret_value("REVENUECAT_PROJECT_ID", default="proj72780
 REVENUECAT_PREMIUM_ENTITLEMENT_RESOURCE_ID = secret_value(
     "REVENUECAT_PREMIUM_ENTITLEMENT_RESOURCE_ID", default="entlb2319dd271"
 )
-REVENUECAT_PREMIUM_ENTITLEMENT = "premium"
 REVENUECAT_WEBHOOK_TOLERANCE_SECONDS = 300
 CODE_REVISION = os.environ.get("CODE_REVISION", "development")
 DEPLOYMENT_ENVIRONMENT = os.environ.get("DEPLOYMENT_ENVIRONMENT", "local")
@@ -147,7 +122,6 @@ ACCOUNT_LOGIN_BY_CODE_ENABLED = True
 ACCOUNT_LOGIN_BY_CODE_SUPPORTS_RESEND = 2
 ACCOUNT_LOGIN_BY_CODE_TIMEOUT = 300
 PENDING_EMAIL_AUTH_SESSION_TTL_SECONDS = 300
-ABANDONED_SIGNUP_RETENTION_SECONDS = 86_400
 ACCOUNT_RATE_LIMITS = {"confirm_email": "3/m/key,20/m/ip"}
 ACCOUNT_PREVENT_ENUMERATION = True
 ACCOUNT_UNIQUE_EMAIL = True
@@ -194,11 +168,6 @@ INSTALLATION_ISSUANCE_RATE_LIMIT = (
     int(os.environ.get("INSTALLATION_ISSUANCE_NETWORK_LIMIT", "8")),
     int(os.environ.get("INSTALLATION_ISSUANCE_WINDOW_SECONDS", "3600")),
 )
-ACCOUNT_DELETION_RECEIPT_RETENTION_DAYS = int(
-    os.environ.get("ACCOUNT_DELETION_RECEIPT_RETENTION_DAYS", "30")
-)
-DEAL_PUBLIC_CORROBORATION_ACTORS = int(os.environ.get("DEAL_PUBLIC_CORROBORATION_ACTORS", "2"))
-
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",

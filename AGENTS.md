@@ -1,4 +1,4 @@
-# IlliniCover v2 agent guide
+# IlliniCover agent guide
 
 The product specification in `docs/product/specification.md` owns required
 behavior. `docs/architecture/decisions.md` owns implementation decisions that
@@ -13,7 +13,7 @@ the specification deliberately leaves open. Tests own executable invariants.
 - Clients never connect to PostgreSQL and never reproduce server domain logic.
 - Cover and deals share infrastructure and actor context, not interpretation.
 - Preserve observations and provenance. A derived decision is never evidence.
-- Historical datasets are versioned imports, never schema migrations.
+- Historical datasets are canonical imports, never schema migrations.
 
 ## Workflow
 

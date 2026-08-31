@@ -1,404 +1,48 @@
-import hashlib
-import json
-from datetime import datetime, timedelta
+import math
+from collections import defaultdict
+from datetime import datetime, time, timedelta
+from statistics import median
 from zoneinfo import ZoneInfo
 
-from config.geo import distance_m
-from context.models import AdvertisedAdmission, SourceFetch
 from django.conf import settings
-from django.db.models import Max, Prefetch, Q
+from django.db.models import Max, Q
 from django.utils import timezone
-from submissions.models import Submission, SubmissionPrivateContext
-from venues.models import Venue
-from vibes.models import VibeObservation
-
-from covers.modeling import (
-    AdmissionClass,
-    AdvertisedAdmissionInput,
-    HistoricalModel,
-    HistoricalModelConfig,
-    HistoricalObservation,
-    LocationContext,
-    ObservationInput,
-    assess_observation,
-    compute_nowcast,
-    cover_at,
-    resolve_cover,
-)
-from covers.models import CoverDecision, CoverModelRelease, CoverObservation
+from product.models import AdvertisedAdmission, Submission, Venue
 
 CHICAGO = ZoneInfo("America/Chicago")
-SERVICE_NIGHT_CUTOFF_HOUR = 5
-FREE_HISTORY_SERVICE_NIGHTS = 7
-PREMIUM_HISTORY_SERVICE_NIGHTS = 90
-FREE_HISTORY_REPORT_LIMIT = 50
-PREMIUM_HISTORY_REPORT_LIMIT = 250
+UTC = ZoneInfo("UTC")
+FREE_HISTORY_NIGHTS, PREMIUM_HISTORY_NIGHTS = 7, 90
+FREE_HISTORY_LIMIT, PREMIUM_HISTORY_LIMIT = 50, 250
 
 
-def current_time() -> datetime:
-    if getattr(settings, "VISUAL_ACCEPTANCE", False):
-        fixed = getattr(settings, "VISUAL_ACCEPTANCE_NOW", None)
-        if fixed is not None:
-            return fixed
+def current_time():
     return timezone.now()
 
 
-def generation_time(moment: datetime | None = None) -> datetime:
-    if moment is None:
-        moment = current_time()
+def generation_time(moment=None):
+    moment = moment or current_time()
     return moment.replace(second=(moment.second // 15) * 15, microsecond=0)
 
 
-def authoritative_release_at(knowledge_cutoff: datetime) -> CoverModelRelease | None:
-    """Return the release that was actually available by the stated cutoff."""
-
-    return (
-        CoverModelRelease.objects.filter(
-            Q(
-                promoted_at__lte=knowledge_cutoff,
-            )
-            & (Q(retired_at__isnull=True) | Q(retired_at__gt=knowledge_cutoff))
-            | Q(
-                promoted_at__isnull=True,
-                created_at__lte=knowledge_cutoff,
-                is_authoritative=True,
-            )
-            | Q(
-                promoted_at__isnull=True,
-                created_at__lte=knowledge_cutoff,
-                retired_at__gt=knowledge_cutoff,
-                model_kind="historical",
-            )
-        )
-        .order_by("-promoted_at", "-created_at")
-        .first()
-    )
-
-
-def service_date_for(moment: datetime):
+def service_date_for(moment):
     local = moment.astimezone(CHICAGO)
-    if local.hour < SERVICE_NIGHT_CUTOFF_HOUR:
-        local -= timedelta(days=1)
-    return local.date()
+    return (local - timedelta(days=local.hour < 5)).date()
 
 
-def service_night_bounds(moment: datetime) -> tuple[datetime, datetime]:
-    service_date = service_date_for(moment)
-    start = datetime.combine(service_date, datetime.min.time(), tzinfo=CHICAGO) + timedelta(
-        hours=SERVICE_NIGHT_CUTOFF_HOUR
-    )
-    return start, start + timedelta(days=1)
+def service_night_bounds(moment):
+    day = service_date_for(moment)
+    start = datetime.combine(day, time(5), tzinfo=CHICAGO)
+    return start, datetime.combine(day + timedelta(days=1), time(5), tzinfo=CHICAGO)
 
 
-def decision_for_observation(observation: CoverObservation) -> CoverDecision | None:
-    submission = observation.submission
-    age_seconds = (submission.received_at_server - submission.observed_at_client).total_seconds()
-    if (
-        submission.time_quality != Submission.TimeQuality.PLAUSIBLE
-        or age_seconds > settings.COVER_LIVE_HORIZON_SECONDS
-    ):
-        return None
-    resolution = resolve_at(
-        observation.submission.venue,
-        observation.submission.received_at_server,
-        observation.submission.received_at_server,
-    )
-    if resolution.source in {"unavailable", "historical"}:
-        return None
-    return persist_resolution(
-        submission.venue,
-        submission.received_at_server,
-        submission.received_at_server,
-        resolution,
-        evidence_revision=f"submission:{submission.id}:{resolution.receipt_sha256()[:16]}",
-    )
+def service_minute(moment):
+    start, _ = service_night_bounds(moment)
+    return (moment.astimezone(UTC) - start.astimezone(UTC)).total_seconds() / 60
 
 
-def _model_inputs(knowledge_cutoff: datetime) -> tuple[HistoricalModel, list[ObservationInput]]:
-    historical_rows: list[HistoricalObservation] = []
-    live_rows: list[ObservationInput] = []
-    observations = (
-        CoverObservation.objects.filter(submission__received_at_server__lte=knowledge_cutoff)
-        .select_related("submission", "submission__private_context", "submission__venue")
-        .order_by("submission__received_at_server", "submission_id")
-    )
-    for observation in observations:
-        submission = observation.submission
-        if submission.source_kind == "dataset_import":
-            historical_rows.append(
-                HistoricalObservation(
-                    observation_id=str(submission.id),
-                    venue_id=str(submission.venue_id),
-                    observed_at=submission.observed_at_client,
-                    available_at=submission.received_at_server,
-                    service_date=service_date_for(submission.observed_at_client),
-                    price_cents=observation.reported_price_cents,
-                )
-            )
-            continue
-        live_rows.append(observation_input(observation))
-    release = authoritative_release_at(knowledge_cutoff)
-    if release and release.parameters_or_artifact.get("artifact_schema"):
-        model = HistoricalModel.from_artifact(release.parameters_or_artifact)
-    else:
-        model = HistoricalModel.fit(
-            historical_rows,
-            HistoricalModelConfig(release_id="cover_historical_v1"),
-        )
-    return model, live_rows
-
-
-def observation_input(observation: CoverObservation) -> ObservationInput:
-    """Rehydrate the immutable evidence assessment input for serving or training."""
-
-    submission = observation.submission
-    try:
-        context = submission.private_context
-    except SubmissionPrivateContext.DoesNotExist:
-        context = None
-    snapshot = observation.admission_snapshot
-    installation_age_days = snapshot.get("installationAgeDays")
-    if context is not None and context.actor is not None:
-        installation_age_days = max(
-            0.0,
-            (submission.received_at_server - context.actor.created_at).total_seconds() / 86_400,
-        )
-    return ObservationInput(
-        observation_id=str(submission.id),
-        venue_id=str(submission.venue_id),
-        actor_independence_key=str(observation.independence_group_key),
-        observed_at=submission.observed_at_client,
-        received_at=submission.received_at_server,
-        price_cents=observation.reported_price_cents,
-        interaction_kind=observation.interaction_kind,
-        displayed_source=observation.displayed_source or None,
-        displayed_price_cents=observation.displayed_price_cents,
-        price_prefilled=observation.price_prefilled,
-        price_touched=observation.price_touched,
-        time_quality=(
-            "good"
-            if submission.time_quality == Submission.TimeQuality.PLAUSIBLE
-            else submission.time_quality
-        ),
-        location=_location_context(submission.venue, context, observation),
-        installation_age_days=installation_age_days,
-        prior_corroborations=int(snapshot.get("priorCorroborations", 0)),
-        signed_in=(context is not None and context.account_id is not None)
-        or bool(snapshot.get("signedIn", False)),
-        hard_abuse=bool(snapshot.get("hardAbuse", False)),
-        impossible_movement=bool(snapshot.get("impossibleMovement", False)),
-        rapid_spam=bool(snapshot.get("rapidSpam", False)),
-        linked_account_stuffing=bool(snapshot.get("linkedAccountStuffing", False)),
-        known_automation=bool(snapshot.get("knownAutomation", False)),
-        severe_clock_manipulation=bool(snapshot.get("severeClockManipulation", False)),
-    )
-
-
-def _location_context(
-    venue: Venue,
-    context: SubmissionPrivateContext | None,
-    observation: CoverObservation | None = None,
-):
-    if (
-        context is None
-        or context.latitude is None
-        or context.longitude is None
-        or context.location_accuracy_m is None
-        or venue.latitude is None
-        or venue.longitude is None
-    ):
-        snapshot = observation.admission_snapshot if observation is not None else {}
-        distance = snapshot.get("distanceToVenueM")
-        accuracy = snapshot.get("locationAccuracyM")
-        if distance is None or accuracy is None:
-            return None
-        return LocationContext(distance_to_venue_m=float(distance), accuracy_m=float(accuracy))
-    return LocationContext(
-        distance_to_venue_m=distance_m(
-            context.latitude,
-            context.longitude,
-            venue.latitude,
-            venue.longitude,
-        ),
-        accuracy_m=float(context.location_accuracy_m),
-    )
-
-
-def resolve_at(venue: Venue, target_time: datetime, knowledge_cutoff: datetime):
-    model, live_rows = _model_inputs(knowledge_cutoff)
-    prediction = model.predict(str(venue.id), target_time, knowledge_cutoff)
-    nowcast = compute_nowcast(
-        target_venue_id=str(venue.id),
-        target_time=target_time,
-        knowledge_cutoff=knowledge_cutoff,
-        observations=live_rows,
-        historical_lookup=model.predict,
-    )
-    return resolve_cover(
-        venue_id=str(venue.id),
-        target_time=target_time,
-        knowledge_cutoff=knowledge_cutoff,
-        observations=live_rows,
-        advertised_admissions=_advertised_admission_inputs(venue, target_time, knowledge_cutoff),
-        historical_prediction=prediction,
-        nowcast=nowcast,
-        live_horizon_seconds=settings.COVER_LIVE_HORIZON_SECONDS,
-    )
-
-
-def _advertised_admission_inputs(
-    venue: Venue, target_time: datetime, knowledge_cutoff: datetime | None = None
-) -> tuple[AdvertisedAdmissionInput, ...]:
-    """Translate only current validated universal facts into resolver inputs."""
-
-    knowledge_cutoff = knowledge_cutoff or target_time
-    facts = (
-        AdvertisedAdmission.objects.filter(
-            venue=venue,
-            is_unconditional=True,
-            qualification="",
-            starts_at__lte=target_time,
-            source_fetch__fetched_at__lte=knowledge_cutoff,
-        )
-        .filter(Q(ends_at__isnull=True) | Q(ends_at__gt=target_time))
-        .select_related("source_fetch")
-    )
-    return tuple(
-        AdvertisedAdmissionInput(
-            admission_id=str(fact.id),
-            venue_id=str(fact.venue_id),
-            price_cents=fact.price_cents,
-            available_at=fact.source_fetch.fetched_at,
-            starts_at=fact.starts_at,
-            ends_at=fact.ends_at,
-            is_unconditional=fact.is_unconditional,
-            qualification=fact.qualification,
-        )
-        for fact in facts.order_by("price_cents", "id")
-    )
-
-
-def reconstruct_at(venue: Venue, target_time: datetime, knowledge_cutoff: datetime):
-    model, live_rows = _model_inputs(knowledge_cutoff)
-    return cover_at(
-        venue_id=str(venue.id),
-        target_time=target_time,
-        knowledge_cutoff=knowledge_cutoff,
-        observations=live_rows,
-        advertised_admissions=_advertised_admission_inputs(venue, target_time, knowledge_cutoff),
-        historical_model=model,
-        live_horizon_seconds=settings.COVER_LIVE_HORIZON_SECONDS,
-    )
-
-
-def persist_resolution(
-    venue: Venue,
-    target_time: datetime,
-    knowledge_cutoff: datetime,
-    resolution,
-    *,
-    evidence_revision: str | None = None,
-    served_state_key: str | None = None,
-) -> CoverDecision:
-    release = authoritative_release_at(knowledge_cutoff)
-    revision = evidence_revision or f"resolution:{resolution.receipt_sha256()}"
-    values = {
-        "venue": venue,
-        "target_time": target_time,
-        "knowledge_cutoff": knowledge_cutoff,
-        "result_price_kind": resolution.price_kind,
-        "result_price_cents": resolution.amount_cents,
-        "result_low_cents": resolution.low_cents,
-        "result_high_cents": resolution.high_cents,
-        "source": resolution.source,
-        "status": resolution.status,
-        "model_release": release,
-        "evidence_revision": revision,
-        "resolver_version": "cover_resolver_v1",
-        "same_night_adjustment_summary": {
-            "support": round(resolution.support, 6),
-            "evidenceIds": list(resolution.evidence_ids),
-            "reasons": list(resolution.reasons),
-            "freshnessSeconds": resolution.freshness_seconds,
-            "receiptSha256": resolution.receipt_sha256(),
-            "venueAdjustmentCents": resolution.venue_adjustment_cents,
-        },
-        "campus_adjustment_summary": {
-            "campusAdjustmentCents": resolution.campus_adjustment_cents,
-        },
-    }
-    if served_state_key is not None:
-        exact = CoverDecision.objects.filter(
-            venue=venue,
-            target_time=target_time,
-            knowledge_cutoff=knowledge_cutoff,
-            evidence_revision=revision,
-        ).first()
-        if exact is not None:
-            return exact
-        decision, _created = CoverDecision.objects.get_or_create(
-            served_state_key=served_state_key,
-            defaults=values,
-        )
-        return decision
-    decision, _created = CoverDecision.objects.get_or_create(
-        venue=venue,
-        target_time=target_time,
-        knowledge_cutoff=knowledge_cutoff,
-        evidence_revision=revision,
-        defaults={
-            key: value
-            for key, value in values.items()
-            if key not in {"venue", "target_time", "knowledge_cutoff", "evidence_revision"}
-        },
-    )
-    return decision
-
-
-def serve_resolution(venue: Venue, target_time: datetime, knowledge_cutoff: datetime):
-    resolution = resolve_at(venue, target_time, knowledge_cutoff)
-    return persist_resolution(
-        venue,
-        target_time,
-        knowledge_cutoff,
-        resolution,
-        served_state_key=served_resolution_state_key(venue, target_time, resolution),
-    )
-
-
-def served_resolution_state_key(venue: Venue, target_time: datetime, resolution) -> str:
-    """Identify one reusable served state without making elapsed time a write cadence."""
-
-    summary = resolution.receipt_summary()
-    stable_state = {
-        "schema": "cover_served_state_v1",
-        "venueId": str(venue.id),
-        "serviceDate": service_date_for(target_time).isoformat(),
-        "priceKind": summary["price_kind"],
-        "amountCents": summary["amount_cents"],
-        "lowCents": summary["low_cents"],
-        "highCents": summary["high_cents"],
-        "source": summary["source"],
-        "status": summary["status"],
-        "reasons": summary["reasons"],
-        "evidenceIds": summary["evidence_ids"],
-        "modelRelease": summary["model_release"],
-        "venueAdjustmentCents": summary["venue_adjustment_cents"],
-        "campusAdjustmentCents": summary["campus_adjustment_cents"],
-    }
-    encoded = json.dumps(stable_state, sort_keys=True, separators=(",", ":"))
-    return hashlib.sha256(encoded.encode()).hexdigest()
-
-
-def decision_for_submission(submission: Submission) -> CoverDecision | None:
-    return CoverDecision.objects.filter(
-        evidence_revision__startswith=f"submission:{submission.id}:"
-    ).first()
-
-
-def serialize_venue(venue: Venue) -> dict:
+def serialize_venue(venue):
     return {
-        "id": venue.id,
+        "id": venue.pk,
         "slug": venue.slug,
         "name": venue.name,
         "address": venue.address,
@@ -406,294 +50,424 @@ def serialize_venue(venue: Venue) -> dict:
     }
 
 
-def serialize_decision(decision: CoverDecision | None, now: datetime) -> dict | None:
+def _reduced(report):
+    return report.trust.get("rapidSpam") or report.trust.get("locationSignal") == "far"
+
+
+def _trusted(query):
+    return [
+        report
+        for report in query
+        if report.time_quality in {"plausible", "stale_interaction"}
+        and not report.trust.get("impossibleMovement")
+    ]
+
+
+def _admitted(query, *, bucket_minutes=None):
+    latest = {}
+    for report in _trusted(query.order_by("observed_at_client", "received_at_server")):
+        group = report.independence_group
+        bucket = (
+            int(service_minute(report.observed_at_client) // bucket_minutes)
+            if bucket_minutes
+            else None
+        )
+        key = (report.venue_id, service_date_for(report.observed_at_client), group, bucket)
+        latest[key] = report
+    return list(latest.values())
+
+
+def _is_historical_echo(report):
+    echo = report.cover_echo
+    if not (
+        echo.get("pricePrefilled")
+        and not echo.get("priceTouched")
+        and echo.get("displayedSource") == "historical"
+    ):
+        return False
+    price = report.cover_price_cents
+    if echo.get("displayedPriceKind") == "single":
+        return price == echo.get("displayedAmountCents")
+    low, high = echo.get("displayedLowCents"), echo.get("displayedHighCents")
+    return isinstance(low, int) and isinstance(high, int) and low <= price <= high
+
+
+def _corroborated(reports):
+    ordinary = {
+        (row.venue_id, service_date_for(row.observed_at_client), row.cover_price_cents)
+        for row in reports
+        if not _is_historical_echo(row)
+    }
+    echoes = defaultdict(set)
+    for row in reports:
+        if _is_historical_echo(row) and row.independence_group:
+            key = (row.venue_id, service_date_for(row.observed_at_client), row.cover_price_cents)
+            echoes[key].add(row.independence_group)
+    return [
+        row
+        for row in reports
+        if not _is_historical_echo(row)
+        or (
+            row.venue_id,
+            service_date_for(row.observed_at_client),
+            row.cover_price_cents,
+        )
+        in ordinary
+        or len(
+            echoes[
+                (row.venue_id, service_date_for(row.observed_at_client), row.cover_price_cents)
+            ]
+        )
+        >= 2
+    ]
+
+
+def _snap(value):
+    return max(0, int(round(value / 500)) * 500)
+
+
+def _prices(reports):
+    return [report.cover_price_cents for report in reports if report.cover_price_cents is not None]
+
+
+def _historical_reports(venue, target, cutoff, *, campus=False):
+    target_day = service_date_for(target)
+    completed_before = datetime.combine(service_date_for(cutoff), time(5), tzinfo=CHICAGO)
+    query = Submission.objects.filter(
+        kind=Submission.Kind.OBSERVATIONS,
+        cover_price_cents__isnull=False,
+        observed_at_client__lt=completed_before,
+        observed_at_client__lte=cutoff,
+        received_at_server__lte=cutoff,
+    )
+    if not campus:
+        query = query.filter(venue=venue)
+    minute = service_minute(target)
+    return [
+        row
+        for row in _corroborated(_admitted(query, bucket_minutes=30))
+        if not _reduced(row)
+        and service_date_for(row.observed_at_client) != target_day
+        and service_date_for(row.observed_at_client).weekday()
+        == target_day.weekday()
+        and abs(service_minute(row.observed_at_client) - minute) <= 120
+    ]
+
+
+def _same_night_reports(venue, target, cutoff):
+    start, end = service_night_bounds(target)
+    query = Submission.objects.filter(
+        venue=venue,
+        kind=Submission.Kind.OBSERVATIONS,
+        cover_price_cents__isnull=False,
+        observed_at_client__gte=start,
+        observed_at_client__lt=end,
+        observed_at_client__lte=min(end, cutoff),
+        received_at_server__lte=cutoff,
+    )
+    minute = service_minute(target)
+    return [
+        row
+        for row in _corroborated(_admitted(query, bucket_minutes=30))
+        if not _reduced(row) and abs(service_minute(row.observed_at_client) - minute) <= 120
+    ]
+
+
+def _historical(venue, target, cutoff, *, adjust=True):
+    rows = _historical_reports(venue, target, cutoff)
+    if not rows:
+        rows = _historical_reports(venue, target, cutoff, campus=True)
+    prices = sorted(_prices(rows))
+    if not prices:
+        return ("unavailable", None, None, None, "unavailable", "unavailable", None)
+    point = _snap(median(prices))
+    original = point
+    source_time = max(row.observed_at_client for row in rows)
+    if adjust:
+        own = _same_night_reports(venue, target, cutoff)
+        if own:
+            raw = median(_prices(own)) - point
+            point = _snap(point + max(-1_000, min(1_000, raw * len(own) / (len(own) + 1.5))))
+            source_time = max(source_time, max(row.observed_at_client for row in own))
+        else:
+            residuals = []
+            activity: list[datetime] = []
+            for other in Venue.objects.filter(is_active=True).exclude(pk=venue.pk):
+                current = _same_night_reports(other, target, cutoff)
+                baseline = _historical(other, target, cutoff, adjust=False)
+                if current and baseline[1] is not None:
+                    residuals.append(median(_prices(current)) - baseline[1])
+                    activity.extend(row.observed_at_client for row in current)
+            if len(residuals) >= 2:
+                point = _snap(point + max(-500, min(500, median(residuals) / 2)))
+                source_time = max(source_time, max(activity))
+    if len(prices) >= 4:
+        low, high = _snap(prices[len(prices) // 4]), _snap(prices[(len(prices) * 3) // 4])
+        low, high = _snap(low + point - original), _snap(high + point - original)
+        if low != high:
+            return ("range", None, low, high, "historical", "historical", source_time)
+    return ("single", point, None, None, "historical", "historical", source_time)
+
+
+def _live_reports(venue, target, cutoff):
+    if target > cutoff:
+        return []
+    start, end = service_night_bounds(target)
+    retrospective = cutoff - target > timedelta(
+        seconds=settings.TIME_MACHINE_CURRENT_TOLERANCE_SECONDS
+    )
+    lower = (
+        start
+        if retrospective
+        else max(start, target - timedelta(seconds=settings.COVER_LIVE_HORIZON_SECONDS))
+    )
+    upper = min(end, cutoff) if retrospective else target
+    query = Submission.objects.filter(
+        venue=venue,
+        kind=Submission.Kind.OBSERVATIONS,
+        cover_price_cents__isnull=False,
+        observed_at_client__gte=lower,
+        observed_at_client__lte=upper,
+        received_at_server__lte=cutoff,
+    )
+    return _corroborated(_admitted(query, bucket_minutes=30) if retrospective else _admitted(query))
+
+
+def _resolve_live(reports, target, *, retrospective=False):
+    if not reports:
+        return None
+    support: defaultdict[int, float] = defaultdict(float)
+    for row in reports:
+        distance = abs((target - row.observed_at_client).total_seconds())
+        support[row.cover_price_cents] += (0.6 if _reduced(row) else 1) * math.exp(
+            -math.log(2) * distance / 1_800
+        )
+    ranked = sorted(support.items(), key=lambda item: (-item[1], item[0]))
+    leading, weight = ranked[0]
+    material = [
+        price
+        for price, candidate in ranked[1:]
+        if candidate >= weight * 0.6 and abs(price - leading) >= 500
+    ]
+    selected = {leading, *material}
+    evidence = [row for row in reports if row.cover_price_cents in selected]
+    evidence_time = max(row.observed_at_client for row in evidence)
+    if material:
+        return (
+            "range",
+            None,
+            min(selected),
+            max(selected),
+            "historical" if retrospective else "mixed",
+            "reconstructed_mixed" if retrospective else "live_mixed",
+            evidence_time,
+        )
+    status = "unusual" if all(_reduced(row) for row in evidence) else (
+        "reconstructed" if retrospective else "live"
+    )
+    return (
+        "single",
+        leading,
+        None,
+        None,
+        "historical" if retrospective else "live",
+        status,
+        evidence_time,
+    )
+
+
+def _apply_advertised(venue, target, cutoff, decision):
+    ads = list(
+        AdvertisedAdmission.objects.filter(
+            venue=venue, starts_at__lte=target, published_at__lte=cutoff, qualification=""
+        )
+        .filter(Q(ends_at__isnull=True) | Q(ends_at__gt=target))
+        .order_by("published_at")
+    )
+    if not ads:
+        return decision
+    kind, amount, low, high, source, status, evidence_time = decision
+    advertised = {row.price_cents for row in ads}
+    advertised_time = max(row.published_at for row in ads)
+    if (source == "unavailable" or (source == "historical" and status == "historical")) and len(
+        advertised
+    ) == 1:
+        return (
+            "single",
+            advertised.pop(),
+            None,
+            None,
+            "advertised",
+            "advertised",
+            advertised_time,
+        )
+    resolved = {amount} if kind == "single" and amount is not None else {low, high}
+    prices = advertised | {value for value in resolved if value is not None}
+    if len(prices) == 1:
+        return decision
+    return (
+        "range",
+        None,
+        min(prices),
+        max(prices),
+        "mixed",
+        "advertised_conflict",
+        max(value for value in (evidence_time, advertised_time) if value is not None),
+    )
+
+
+def resolve_at(venue, target, cutoff):
+    retrospective = cutoff - target > timedelta(
+        seconds=settings.TIME_MACHINE_CURRENT_TOLERANCE_SECONDS
+    )
+    live = _resolve_live(
+        _live_reports(venue, target, cutoff), target, retrospective=retrospective
+    )
+    return _apply_advertised(venue, target, cutoff, live or _historical(venue, target, cutoff))
+
+
+def serve_resolution(venue, target, cutoff):
+    return resolve_at(venue, target.replace(microsecond=0), cutoff.replace(microsecond=0))
+
+
+def serialize_decision(decision, target, cutoff=None):
     if decision is None:
         return None
-    price = {
-        "kind": decision.result_price_kind,
-        "amount_cents": decision.result_price_cents,
-        "low_cents": decision.result_low_cents,
-        "high_cents": decision.result_high_cents,
-    }
-    stored_freshness = decision.same_night_adjustment_summary.get("freshnessSeconds")
-    if stored_freshness is None:
-        freshness_seconds = 0
-    else:
-        freshness_seconds = int(stored_freshness) + max(
-            0, int((now - decision.knowledge_cutoff).total_seconds())
-        )
+    cutoff = cutoff or target
+    kind, price, low, high, source, status, evidence_time = decision
     return {
-        "price": price,
-        "source": decision.source,
-        "freshness_seconds": freshness_seconds,
-        "decision_id": decision.id,
-        "status": decision.status,
+        "price": {"kind": kind, "amount_cents": price, "low_cents": low, "high_cents": high},
+        "source": source,
+        "freshness_seconds": (
+            max(0, int((cutoff - evidence_time).total_seconds())) if evidence_time else None
+        ),
+        "status": status,
+        "computed_at": cutoff,
+        "target_time": target,
+        "knowledge_cutoff": cutoff,
     }
 
 
-def current_decision(venue: Venue, now: datetime) -> CoverDecision | None:
-    horizon_start = now - timedelta(seconds=settings.COVER_LIVE_HORIZON_SECONDS)
-    return venue.cover_decisions.filter(
-        target_time__gte=horizon_start,
-        target_time__lte=now,
-        evidence_revision__startswith="submission:",
-    ).first()
+def decision_for_submission(submission):
+    if submission.cover_price_cents is None:
+        return None
+    moment = submission.received_at_server.replace(microsecond=0)
+    return serve_resolution(submission.venue, moment, moment)
 
 
-def current_vibes(venue: Venue, *, now: datetime | None = None) -> dict[str, str | None]:
-    now = now or timezone.now()
-    values: dict[str, str | None] = {
-        "line_length": None,
-        "line_speed": None,
-        "crowd_level": None,
-    }
-    observations = (
-        VibeObservation.objects.filter(
-            submission__venue=venue,
-            submission__time_quality=Submission.TimeQuality.PLAUSIBLE,
-            submission__observed_at_client__lte=now,
-        )
-        .select_related(
-            "submission",
-            "submission__private_context",
-            "submission__cover_observation",
-            "submission__venue",
-        )
-        .order_by("-submission__observed_at_client")
-    )
-    for observation in observations:
-        try:
-            private_context = observation.submission.private_context
-        except SubmissionPrivateContext.DoesNotExist:
-            private_context = None
-        if private_context is not None:
-            snapshot = private_context.evidence_snapshot
-            if snapshot.get("impossibleMovement", False) or snapshot.get("rapidSpam", False):
-                continue
-        cover_observation = getattr(observation.submission, "cover_observation", None)
-        if cover_observation is not None:
-            assessment = assess_observation(
-                observation_input(cover_observation), knowledge_cutoff=now
-            )
-            if assessment.admission in {AdmissionClass.EXCLUDED, AdmissionClass.REJECTED}:
-                continue
-        age_seconds = (now - observation.submission.observed_at_client).total_seconds()
-        if (
-            values[observation.dimension] is None
-            and age_seconds <= settings.VIBE_FRESHNESS_SECONDS[observation.dimension]
-        ):
-            values[observation.dimension] = observation.value
-        if all(value is not None for value in values.values()):
-            break
-    return values
-
-
-def recent_reports(
-    venue: Venue,
-    *,
-    moment: datetime | None = None,
-    limit: int = 50,
-    window_start: datetime | None = None,
-) -> list[dict]:
-    moment = moment or timezone.now()
+def _public_reports(venue, moment, window_start=None):
     start, end = service_night_bounds(moment)
-    start = window_start or start
-    submissions = (
-        Submission.objects.filter(
-            venue=venue,
-            kind=Submission.Kind.OBSERVATIONS,
-            observed_at_client__gte=start,
-            observed_at_client__lt=end,
-            observed_at_client__lte=moment,
-        )
-        .filter(Q(cover_observation__isnull=False) | Q(vibe_observations__isnull=False))
-        .select_related(
-            "private_context",
-            "private_context__actor",
-            "cover_observation",
-            "venue",
-        )
-        .prefetch_related(Prefetch("vibe_observations"))
-        .distinct()
-        .order_by("-observed_at_client", "-received_at_server")
+    query = Submission.objects.filter(
+        venue=venue,
+        kind=Submission.Kind.OBSERVATIONS,
+        observed_at_client__gte=window_start or start,
+        observed_at_client__lt=end,
+        observed_at_client__lte=moment,
+        received_at_server__lte=moment,
     )
-    reports = []
-    for submission in submissions:
-        try:
-            observation = submission.cover_observation
-        except CoverObservation.DoesNotExist:
-            observation = None
-        if observation is not None:
-            assessment = assess_observation(observation_input(observation), knowledge_cutoff=moment)
-            if assessment.admission in {AdmissionClass.EXCLUDED, AdmissionClass.REJECTED}:
-                continue
-        else:
-            if submission.time_quality != Submission.TimeQuality.PLAUSIBLE:
-                continue
-            try:
-                snapshot = submission.private_context.evidence_snapshot
-            except SubmissionPrivateContext.DoesNotExist:
-                snapshot = {}
-            if snapshot.get("impossibleMovement", False) or snapshot.get("rapidSpam", False):
-                continue
-        broad_context = {
-            Submission.VantagePoint.OUTSIDE.value: "Outside",
-            Submission.VantagePoint.INSIDE.value: "Inside",
-        }.get(submission.vantage_point)
-        reports.append(
+    return sorted(
+        (row for row in _admitted(query) if not _reduced(row)),
+        key=lambda row: row.observed_at_client,
+        reverse=True,
+    )
+
+
+def current_vibes(venue, *, now=None):
+    now = now or current_time()
+    result = {"line_length": None, "line_speed": None, "crowd_level": None}
+    start, end = service_night_bounds(now)
+    query = Submission.objects.filter(
+        venue=venue,
+        kind=Submission.Kind.OBSERVATIONS,
+        observed_at_client__gte=start,
+        observed_at_client__lt=end,
+        observed_at_client__lte=now,
+        received_at_server__lte=now,
+    )
+    reports = sorted(
+        (row for row in _trusted(query) if not _reduced(row)),
+        key=lambda row: row.observed_at_client,
+        reverse=True,
+    )
+    for report in reports:
+        age = (now - report.observed_at_client).total_seconds()
+        for vibe in report.vibes:
+            dimension = vibe["dimension"]
+            if result[dimension] is None and age <= settings.VIBE_FRESHNESS_SECONDS[dimension]:
+                result[dimension] = vibe["value"]
+        if all(result.values()):
+            break
+    return result
+
+
+def recent_reports(venue, *, moment=None, limit=50, window_start=None):
+    rows = []
+    for report in _public_reports(venue, moment or current_time(), window_start):
+        rows.append(
             {
-                "submission_id": submission.id,
-                "observed_at": submission.observed_at_client,
-                "received_at": submission.received_at_server,
-                "price_cents": (
-                    observation.reported_price_cents if observation is not None else None
+                "observed_at": report.observed_at_client,
+                "received_at": report.received_at_server,
+                "price_cents": report.cover_price_cents,
+                "interaction": report.cover_interaction or "vibes",
+                "broad_context": {"outside": "Outside", "inside": "Inside"}.get(
+                    report.vantage_point
                 ),
-                "interaction": observation.interaction_kind if observation is not None else "vibes",
-                "broad_context": broad_context,
-                "vibes": [
-                    f"{vibe.dimension}:{vibe.value}" for vibe in submission.vibe_observations.all()
-                ],
+                "vibes": [f"{vibe['dimension']}:{vibe['value']}" for vibe in report.vibes],
             }
         )
-        if len(reports) >= limit:
+        if len(rows) == limit:
             break
-    return reports
+    return rows
 
 
-def report_history(venue: Venue, *, moment: datetime, premium: bool) -> dict:
-    """Return the bounded public report timeline for the caller's access tier.
-
-    The current service night counts as the first night. Report contents remain
-    admission-filtered and privacy-minimized by ``recent_reports``; premium
-    changes only how far back the public timeline reaches and its result cap.
-    """
-
-    current_start, _ = service_night_bounds(moment)
-    service_nights = PREMIUM_HISTORY_SERVICE_NIGHTS if premium else FREE_HISTORY_SERVICE_NIGHTS
-    report_limit = PREMIUM_HISTORY_REPORT_LIMIT if premium else FREE_HISTORY_REPORT_LIMIT
-    window_start = current_start - timedelta(days=service_nights - 1)
-    reports = recent_reports(
-        venue,
-        moment=moment,
-        limit=report_limit + 1,
-        window_start=window_start,
+def report_history(venue, *, moment, premium):
+    start, _ = service_night_bounds(moment)
+    nights = PREMIUM_HISTORY_NIGHTS if premium else FREE_HISTORY_NIGHTS
+    limit = PREMIUM_HISTORY_LIMIT if premium else FREE_HISTORY_LIMIT
+    rows = recent_reports(
+        venue, moment=moment, limit=limit + 1, window_start=start - timedelta(days=nights - 1)
     )
     return {
         "access_tier": "extended" if premium else "limited",
-        "window_start": window_start,
-        "has_more": len(reports) > report_limit,
-        "reports": reports[:report_limit],
+        "window_start": start - timedelta(days=nights - 1),
+        "has_more": len(rows) > limit,
+        "reports": rows[:limit],
     }
 
 
-def public_cover_observations(venue: Venue, *, moment: datetime) -> list[CoverObservation]:
-    """Return the one admission-filtered source for public timeline and count."""
-
-    start, end = service_night_bounds(moment)
-    observations = (
-        CoverObservation.objects.filter(
-            submission__venue=venue,
-            submission__observed_at_client__gte=start,
-            submission__observed_at_client__lt=end,
-            submission__observed_at_client__lte=moment,
-        )
-        .select_related(
-            "submission",
-            "submission__private_context",
-            "submission__private_context__actor",
-            "submission__venue",
-        )
-        .prefetch_related(Prefetch("submission__vibe_observations"))
-        .order_by("-submission__observed_at_client")
-    )
-    admitted = []
-    for observation in observations:
-        assessment = assess_observation(observation_input(observation), knowledge_cutoff=moment)
-        if assessment.admission in {AdmissionClass.EXCLUDED, AdmissionClass.REJECTED}:
-            continue
-        admitted.append(observation)
-    return admitted
+def current_generation_cutoff(now):
+    bucket = generation_time(now)
+    latest_report = Submission.objects.filter(
+        received_at_server__gt=bucket, received_at_server__lte=now
+    ).aggregate(value=Max("received_at_server"))["value"]
+    latest_ad = AdvertisedAdmission.objects.filter(
+        published_at__gt=bucket, published_at__lte=now
+    ).aggregate(value=Max("published_at"))["value"]
+    return max(value for value in (bucket, latest_report, latest_ad) if value is not None)
 
 
-def latest_public_activity_at(venue: Venue, *, moment: datetime) -> datetime | None:
-    """Return the latest admitted public cover or vibe activity for v1-parity sorting."""
-
-    latest = None
-    for report in recent_reports(venue, moment=moment):
-        observed_at = report["observed_at"]
-        if latest is None or observed_at > latest:
-            latest = observed_at
-    advertised = (
-        AdvertisedAdmission.objects.filter(
-            venue=venue,
-            is_unconditional=True,
-            qualification="",
-            starts_at__lte=moment,
-            source_fetch__fetched_at__lte=moment,
-        )
-        .filter(Q(ends_at__isnull=True) | Q(ends_at__gt=moment))
-        .aggregate(latest=Max("source_fetch__fetched_at"))["latest"]
-    )
-    if advertised is not None and (latest is None or advertised > latest):
-        latest = advertised
-    model_release = authoritative_release_at(moment)
-    model_updated = (
-        model_release.promoted_at or model_release.created_at if model_release is not None else None
-    )
-    if model_updated is not None and (latest is None or model_updated > latest):
-        latest = model_updated
-    return latest
-
-
-def cover_board(*, now: datetime | None = None) -> dict:
+def cover_board(*, now=None):
     now = now or current_time()
-    generated_at = current_generation_cutoff(now)
-    venues = list(Venue.objects.filter(is_active=True))
+    cutoff = current_generation_cutoff(now)
     cards = []
-    for venue in venues:
-        decision = serve_resolution(venue, generated_at, generated_at)
-        report_count = len(public_cover_observations(venue, moment=now))
+    for venue in Venue.objects.filter(is_active=True):
+        reports = _public_reports(venue, now)
         cards.append(
             {
                 "venue": serialize_venue(venue),
-                "cover": serialize_decision(decision, generated_at),
-                "recent_report_count": report_count,
-                "latest_activity_at": latest_public_activity_at(venue, moment=now),
+                "cover": serialize_decision(
+                    serve_resolution(venue, cutoff, cutoff), cutoff, cutoff
+                ),
+                "recent_report_count": len(
+                    [row for row in reports if row.cover_price_cents is not None]
+                ),
+                "latest_activity_at": reports[0].observed_at_client if reports else None,
                 "vibes": current_vibes(venue, now=now),
             }
         )
     return {
         "service_date": service_date_for(now),
-        "generated_at": generated_at,
-        "server_revision": getattr(settings, "CODE_REVISION", "development"),
+        "generated_at": cutoff,
+        "server_revision": settings.CODE_REVISION,
         "venues": cards,
     }
-
-
-def current_generation_cutoff(now: datetime) -> datetime:
-    """Keep a representation stable for 15s unless a relevant input arrives."""
-
-    bucket = generation_time(now)
-    latest_observation = Submission.objects.filter(
-        kind=Submission.Kind.OBSERVATIONS,
-        received_at_server__gt=bucket,
-        received_at_server__lte=now,
-    ).aggregate(latest=Max("received_at_server"))["latest"]
-    latest_source_fetch = SourceFetch.objects.filter(
-        advertised_admissions__isnull=False,
-        created_at__lte=now,
-    ).aggregate(latest=Max("created_at"))["latest"]
-    model_release = authoritative_release_at(now)
-    latest_model_release = (
-        model_release.promoted_at or model_release.created_at if model_release is not None else None
-    )
-    return max(
-        candidate
-        for candidate in (
-            bucket,
-            latest_observation,
-            latest_source_fetch,
-            latest_model_release,
-        )
-        if candidate is not None
-    )

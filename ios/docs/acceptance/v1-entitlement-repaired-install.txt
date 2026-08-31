@@ -1,4 +1,0 @@
-before_data=/Users/lu/Library/Developer/CoreSimulator/Devices/644F64CD-23BA-4D3C-915E-6B2069961477/data/Containers/Data/Application/07FA0DC6-304B-48A1-88BA-5EF2D339A1BA
-repaired_app=/Users/lu/Desktop/cover-app/illinicover-v2/.local/v1-entitlement-repair.nnsOdW/IlliniCover.app
-simulator=644F64CD-23BA-4D3C-915E-6B2069961477
-install_started=2026-08-12T19:38:06Z

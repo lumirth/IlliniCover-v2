@@ -1,20 +1,6 @@
 {
   "components": {
     "schemas": {
-      "AccountDeletionRequestSchema": {
-        "properties": {
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
-          }
-        },
-        "required": [
-          "requestId"
-        ],
-        "title": "AccountDeletionRequestSchema",
-        "type": "object"
-      },
       "AccountSchema": {
         "properties": {
           "displayName": {
@@ -121,11 +107,60 @@
       },
       "CoverInputSchema": {
         "properties": {
-          "displayedDecisionId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Displayeddecisionid",
-            "type": "string"
+          "displayedAmountCents": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Displayedamountcents"
+          },
+          "displayedHighCents": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Displayedhighcents"
+          },
+          "displayedLowCents": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Displayedlowcents"
+          },
+          "displayedPriceKind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Displayedpricekind"
+          },
+          "displayedSource": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Displayedsource"
           },
           "interaction": {
             "enum": [
@@ -166,23 +201,41 @@
       "CoverPriceSchema": {
         "properties": {
           "amountCents": {
-            "nullable": true,
-            "title": "Amountcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Amountcents"
           },
           "highCents": {
-            "nullable": true,
-            "title": "Highcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Highcents"
           },
           "kind": {
             "title": "Kind",
             "type": "string"
           },
           "lowCents": {
-            "nullable": true,
-            "title": "Lowcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lowcents"
           }
         },
         "required": [
@@ -193,14 +246,26 @@
       },
       "CoverStateSchema": {
         "properties": {
-          "decisionId": {
-            "format": "uuid",
-            "title": "Decisionid",
+          "computedAt": {
+            "format": "date-time",
+            "title": "Computedat",
             "type": "string"
           },
           "freshnessSeconds": {
-            "title": "Freshnessseconds",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Freshnessseconds"
+          },
+          "knowledgeCutoff": {
+            "format": "date-time",
+            "title": "Knowledgecutoff",
+            "type": "string"
           },
           "price": {
             "$ref": "#/components/schemas/CoverPriceSchema"
@@ -212,14 +277,21 @@
           "status": {
             "title": "Status",
             "type": "string"
+          },
+          "targetTime": {
+            "format": "date-time",
+            "title": "Targettime",
+            "type": "string"
           }
         },
         "required": [
           "price",
           "source",
           "freshnessSeconds",
-          "decisionId",
-          "status"
+          "status",
+          "computedAt",
+          "targetTime",
+          "knowledgeCutoff"
         ],
         "title": "CoverStateSchema",
         "type": "object"
@@ -232,19 +304,15 @@
             "title": "Clientplatform",
             "type": "string"
           },
-          "clientVersion": {
-            "default": "",
-            "maxLength": 40,
-            "title": "Clientversion",
-            "type": "string"
-          },
           "cover": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/CoverInputSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "entryPoint": {
             "default": "",
@@ -253,12 +321,14 @@
             "type": "string"
           },
           "location": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/LocationInputSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "observedAt": {
             "format": "date-time",
@@ -305,18 +375,26 @@
       "CoverVenueCardSchema": {
         "properties": {
           "cover": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/CoverStateSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "latestActivityAt": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Latestactivityat",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latestactivityat"
           },
           "recentReportCount": {
             "title": "Recentreportcount",
@@ -339,20 +417,6 @@
         "title": "CoverVenueCardSchema",
         "type": "object"
       },
-      "CurrentInstallationSchema": {
-        "properties": {
-          "actorId": {
-            "format": "uuid",
-            "title": "Actorid",
-            "type": "string"
-          }
-        },
-        "required": [
-          "actorId"
-        ],
-        "title": "CurrentInstallationSchema",
-        "type": "object"
-      },
       "DealEvidenceInputSchema": {
         "properties": {
           "action": {
@@ -371,12 +435,6 @@
             "title": "Clientplatform",
             "type": "string"
           },
-          "clientVersion": {
-            "default": "",
-            "maxLength": 40,
-            "title": "Clientversion",
-            "type": "string"
-          },
           "entryPoint": {
             "default": "",
             "maxLength": 40,
@@ -384,12 +442,14 @@
             "type": "string"
           },
           "location": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/LocationInputSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "observedAt": {
             "format": "date-time",
@@ -407,36 +467,26 @@
             "type": "string"
           },
           "submittedDealShape": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/DealShapeSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
-          },
-          "supersedesEventId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Supersedeseventid",
-            "type": "string"
+            ]
           },
           "targetDealId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Targetdealid",
-            "type": "string"
-          },
-          "targetLocalDatetime": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Targetlocaldatetime",
-            "type": "string"
-          },
-          "targetPredictionId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Targetpredictionid",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Targetdealid"
           },
           "vantagePoint": {
             "default": "unknown",
@@ -475,11 +525,6 @@
             "title": "Duplicate",
             "type": "boolean"
           },
-          "eventId": {
-            "format": "uuid",
-            "title": "Eventid",
-            "type": "string"
-          },
           "submissionId": {
             "format": "uuid",
             "title": "Submissionid",
@@ -488,7 +533,6 @@
         },
         "required": [
           "submissionId",
-          "eventId",
           "acceptedAt",
           "duplicate"
         ],
@@ -499,7 +543,6 @@
         "properties": {
           "canonicalFamilyId": {
             "format": "uuid",
-            "nullable": true,
             "title": "Canonicalfamilyid",
             "type": "string"
           },
@@ -508,9 +551,15 @@
             "type": "string"
           },
           "discountPercent": {
-            "nullable": true,
-            "title": "Discountpercent",
-            "type": "number"
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Discountpercent"
           },
           "displayName": {
             "title": "Displayname",
@@ -522,41 +571,53 @@
             "type": "string"
           },
           "latestActivityAt": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Latestactivityat",
-            "type": "string"
-          },
-          "latestEvidenceEventId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Latestevidenceeventid",
-            "type": "string"
-          },
-          "predictionId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Predictionid",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latestactivityat"
           },
           "priceCents": {
-            "nullable": true,
-            "title": "Pricecents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricecents"
           },
           "priceHighCents": {
-            "nullable": true,
-            "title": "Pricehighcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricehighcents"
           },
           "priceKind": {
             "title": "Pricekind",
             "type": "string"
           },
           "priceLowCents": {
-            "nullable": true,
-            "title": "Pricelowcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricelowcents"
           },
           "servingFormat": {
             "title": "Servingformat",
@@ -567,9 +628,15 @@
             "type": "string"
           },
           "timingDescription": {
-            "nullable": true,
-            "title": "Timingdescription",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timingdescription"
           },
           "timingKnown": {
             "title": "Timingknown",
@@ -587,7 +654,6 @@
         "required": [
           "id",
           "canonicalFamilyId",
-          "latestEvidenceEventId",
           "displayName",
           "category",
           "priceKind",
@@ -600,8 +666,7 @@
           "timingDescription",
           "timingKnown",
           "whileSuppliesLast",
-          "status",
-          "predictionId"
+          "status"
         ],
         "title": "DealSchema",
         "type": "object"
@@ -609,10 +674,16 @@
       "DealShapeSchema": {
         "properties": {
           "canonicalFamilyId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Canonicalfamilyid",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Canonicalfamilyid"
           },
           "category": {
             "enum": [
@@ -623,12 +694,17 @@
             "type": "string"
           },
           "discountPercent": {
-            "exclusiveMinimum": true,
-            "maximum": 100,
-            "minimum": 0,
-            "nullable": true,
-            "title": "Discountpercent",
-            "type": "number"
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0,
+                "maximum": 100,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Discountpercent"
           },
           "displayName": {
             "maxLength": 180,
@@ -637,18 +713,30 @@
             "type": "string"
           },
           "priceCents": {
-            "maximum": 10000,
-            "minimum": 0,
-            "nullable": true,
-            "title": "Pricecents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "maximum": 25000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricecents"
           },
           "priceHighCents": {
-            "maximum": 10000,
-            "minimum": 0,
-            "nullable": true,
-            "title": "Pricehighcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "maximum": 25000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricehighcents"
           },
           "priceKind": {
             "enum": [
@@ -663,11 +751,17 @@
             "type": "string"
           },
           "priceLowCents": {
-            "maximum": 10000,
-            "minimum": 0,
-            "nullable": true,
-            "title": "Pricelowcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "maximum": 25000,
+                "minimum": 0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricelowcents"
           },
           "servingFormat": {
             "default": "",
@@ -741,18 +835,20 @@
             "title": "Canonicalfamilyid",
             "type": "string"
           },
-          "canonicalName": {
-            "title": "Canonicalname",
-            "type": "string"
-          },
           "category": {
             "title": "Category",
             "type": "string"
           },
           "discountPercent": {
-            "nullable": true,
-            "title": "Discountpercent",
-            "type": "number"
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Discountpercent"
           },
           "displayName": {
             "title": "Displayname",
@@ -763,41 +859,42 @@
             "title": "Lastseenservicedatelocal",
             "type": "string"
           },
-          "matchedSource": {
-            "enum": [
-              "canonical",
-              "alias",
-              "historical_alias",
-              "display_name",
-              "unit"
-            ],
-            "nullable": true,
-            "title": "Matchedsource",
-            "type": "string"
-          },
-          "matchedText": {
-            "nullable": true,
-            "title": "Matchedtext",
-            "type": "string"
-          },
           "priceCents": {
-            "nullable": true,
-            "title": "Pricecents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricecents"
           },
           "priceHighCents": {
-            "nullable": true,
-            "title": "Pricehighcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricehighcents"
           },
           "priceKind": {
             "title": "Pricekind",
             "type": "string"
           },
           "priceLowCents": {
-            "nullable": true,
-            "title": "Pricelowcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricelowcents"
           },
           "servingFormat": {
             "title": "Servingformat",
@@ -808,9 +905,15 @@
             "type": "string"
           },
           "timingDescription": {
-            "nullable": true,
-            "title": "Timingdescription",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timingdescription"
           },
           "timingKnown": {
             "title": "Timingknown",
@@ -827,7 +930,6 @@
         },
         "required": [
           "canonicalFamilyId",
-          "canonicalName",
           "category",
           "displayName",
           "priceKind",
@@ -860,40 +962,22 @@
         "title": "DealSuggestionsSchema",
         "type": "object"
       },
-      "DeletedSchema": {
-        "properties": {
-          "completedAt": {
-            "format": "date-time",
-            "title": "Completedat",
-            "type": "string"
-          },
-          "deleted": {
-            "title": "Deleted",
-            "type": "boolean"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
-          }
-        },
-        "required": [
-          "requestId",
-          "deleted",
-          "completedAt"
-        ],
-        "title": "DeletedSchema",
-        "type": "object"
-      },
       "EntitlementSchema": {
         "properties": {
           "expiresAt": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Expiresat",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expiresat"
           },
           "identifier": {
+            "const": "premium",
             "title": "Identifier",
             "type": "string"
           },
@@ -902,10 +986,16 @@
             "type": "boolean"
           },
           "updatedAt": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Updatedat",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updatedat"
           }
         },
         "required": [
@@ -984,10 +1074,16 @@
             "type": "string"
           },
           "publishedAt": {
-            "format": "date-time",
-            "nullable": true,
-            "title": "Publishedat",
-            "type": "string"
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publishedat"
           },
           "slug": {
             "title": "Slug",
@@ -1060,21 +1156,10 @@
             "format": "uuid",
             "title": "Actorid",
             "type": "string"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
-          },
-          "token": {
-            "title": "Token",
-            "type": "string"
           }
         },
         "required": [
-          "requestId",
-          "actorId",
-          "token"
+          "actorId"
         ],
         "title": "InstallationIssuedSchema",
         "type": "object"
@@ -1087,15 +1172,9 @@
             "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
             "title": "Installationtoken",
             "type": "string"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
           }
         },
         "required": [
-          "requestId",
           "installationToken"
         ],
         "title": "InstallationRequestSchema",
@@ -1109,15 +1188,9 @@
             "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
             "title": "Installationtoken",
             "type": "string"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
           }
         },
         "required": [
-          "requestId",
           "installationToken"
         ],
         "title": "LinkInstallationSchema",
@@ -1134,15 +1207,9 @@
             "format": "uuid",
             "title": "Actorid",
             "type": "string"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
           }
         },
         "required": [
-          "requestId",
           "actorId",
           "accountId"
         ],
@@ -1152,6 +1219,7 @@
       "LocationInputSchema": {
         "properties": {
           "accuracyMeters": {
+            "maximum": 999999.99,
             "minimum": 0,
             "title": "Accuracymeters",
             "type": "number"
@@ -1169,6 +1237,7 @@
             "type": "number"
           },
           "permission": {
+            "const": "when_in_use",
             "default": "when_in_use",
             "title": "Permission",
             "type": "string"
@@ -1185,9 +1254,15 @@
       "RecentReportSchema": {
         "properties": {
           "broadContext": {
-            "nullable": true,
-            "title": "Broadcontext",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Broadcontext"
           },
           "interaction": {
             "title": "Interaction",
@@ -1199,18 +1274,19 @@
             "type": "string"
           },
           "priceCents": {
-            "nullable": true,
-            "title": "Pricecents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricecents"
           },
           "receivedAt": {
             "format": "date-time",
             "title": "Receivedat",
-            "type": "string"
-          },
-          "submissionId": {
-            "format": "uuid",
-            "title": "Submissionid",
             "type": "string"
           },
           "vibes": {
@@ -1222,7 +1298,6 @@
           }
         },
         "required": [
-          "submissionId",
           "observedAt",
           "receivedAt",
           "priceCents",
@@ -1235,11 +1310,6 @@
       },
       "RevenueCatEnvelopeSchema": {
         "properties": {
-          "apiVersion": {
-            "nullable": true,
-            "title": "Apiversion",
-            "type": "string"
-          },
           "event": {
             "$ref": "#/components/schemas/RevenueCatEventSchema"
           }
@@ -1264,30 +1334,6 @@
             "maxLength": 160,
             "title": "Appuserid",
             "type": "string"
-          },
-          "entitlementIds": {
-            "items": {
-              "type": "string"
-            },
-            "nullable": true,
-            "title": "Entitlementids",
-            "type": "array"
-          },
-          "environment": {
-            "maxLength": 24,
-            "nullable": true,
-            "title": "Environment",
-            "type": "string"
-          },
-          "eventTimestampMs": {
-            "nullable": true,
-            "title": "Eventtimestampms",
-            "type": "integer"
-          },
-          "expirationAtMs": {
-            "nullable": true,
-            "title": "Expirationatms",
-            "type": "integer"
           },
           "id": {
             "maxLength": 160,
@@ -1337,15 +1383,9 @@
             "pattern": "^ic_install_[A-Za-z0-9_-]{43,189}$",
             "title": "Replacementinstallationtoken",
             "type": "string"
-          },
-          "requestId": {
-            "format": "uuid",
-            "title": "Requestid",
-            "type": "string"
           }
         },
         "required": [
-          "requestId",
           "replacementInstallationToken"
         ],
         "title": "RotateInstallationSchema",
@@ -1372,12 +1412,14 @@
             "type": "string"
           },
           "cover": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/CoverStateSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "duplicate": {
             "title": "Duplicate",
@@ -1401,12 +1443,14 @@
       "TimeMachineSchema": {
         "properties": {
           "cover": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/CoverStateSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "knowledgeCutoff": {
             "format": "date-time",
@@ -1444,12 +1488,14 @@
       "VenueCoverDetailSchema": {
         "properties": {
           "cover": {
-            "allOf": [
+            "anyOf": [
               {
                 "$ref": "#/components/schemas/CoverStateSchema"
+              },
+              {
+                "type": "null"
               }
-            ],
-            "nullable": true
+            ]
           },
           "deals": {
             "items": {
@@ -1484,14 +1530,25 @@
       },
       "VenueDealSummarySchema": {
         "properties": {
+          "canonicalFamilyId": {
+            "format": "uuid",
+            "title": "Canonicalfamilyid",
+            "type": "string"
+          },
           "category": {
             "title": "Category",
             "type": "string"
           },
           "discountPercent": {
-            "nullable": true,
-            "title": "Discountpercent",
-            "type": "number"
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Discountpercent"
           },
           "displayName": {
             "title": "Displayname",
@@ -1502,30 +1559,42 @@
             "title": "Id",
             "type": "string"
           },
-          "predictionId": {
-            "format": "uuid",
-            "nullable": true,
-            "title": "Predictionid",
-            "type": "string"
-          },
           "priceCents": {
-            "nullable": true,
-            "title": "Pricecents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricecents"
           },
           "priceHighCents": {
-            "nullable": true,
-            "title": "Pricehighcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricehighcents"
           },
           "priceKind": {
             "title": "Pricekind",
             "type": "string"
           },
           "priceLowCents": {
-            "nullable": true,
-            "title": "Pricelowcents",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pricelowcents"
           },
           "servingFormat": {
             "title": "Servingformat",
@@ -1536,9 +1605,15 @@
             "type": "string"
           },
           "timingDescription": {
-            "nullable": true,
-            "title": "Timingdescription",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timingdescription"
           },
           "timingKnown": {
             "title": "Timingknown",
@@ -1555,6 +1630,7 @@
         },
         "required": [
           "id",
+          "canonicalFamilyId",
           "displayName",
           "category",
           "priceKind",
@@ -1567,8 +1643,7 @@
           "timingDescription",
           "timingKnown",
           "whileSuppliesLast",
-          "status",
-          "predictionId"
+          "status"
         ],
         "title": "VenueDealSummarySchema",
         "type": "object"
@@ -1609,9 +1684,15 @@
             "type": "string"
           },
           "openedYear": {
-            "nullable": true,
-            "title": "Openedyear",
-            "type": "integer"
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Openedyear"
           },
           "slug": {
             "title": "Slug",
@@ -1654,19 +1735,37 @@
       "VibeSummarySchema": {
         "properties": {
           "crowdLevel": {
-            "nullable": true,
-            "title": "Crowdlevel",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Crowdlevel"
           },
           "lineLength": {
-            "nullable": true,
-            "title": "Linelength",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Linelength"
           },
           "lineSpeed": {
-            "nullable": true,
-            "title": "Linespeed",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Linespeed"
           }
         },
         "title": "VibeSummarySchema",
@@ -1706,55 +1805,12 @@
   },
   "info": {
     "description": "Product-shaped API for the native IlliniCover clients.",
-    "title": "IlliniCover API",
-    "version": "2.0.0"
+    "title": "IlliniCover",
+    "version": "1.0.0"
   },
-  "openapi": "3.0.3",
+  "openapi": "3.1.0",
   "paths": {
-    "/api/v2/account-deletions/{request_id}": {
-      "get": {
-        "operationId": "getAccountDeletionStatus",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "request_id",
-            "required": true,
-            "schema": {
-              "format": "uuid",
-              "title": "Request Id",
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeletedSchema"
-                }
-              }
-            },
-            "description": "OK"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorSchema"
-                }
-              }
-            },
-            "description": "Not Found"
-          }
-        },
-        "summary": "Get Account Deletion Status",
-        "tags": [
-          "Identity"
-        ]
-      }
-    },
-    "/api/v2/billing/revenuecat-webhook": {
+    "/api/billing/revenuecat-webhook": {
       "post": {
         "operationId": "receiveRevenueCatWebhook",
         "parameters": [],
@@ -1788,6 +1844,16 @@
               }
             },
             "description": "Unauthorized"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Service Unavailable"
           }
         },
         "summary": "Receive Revenuecat Webhook",
@@ -1796,21 +1862,10 @@
         ]
       }
     },
-    "/api/v2/cover": {
+    "/api/cover": {
       "get": {
         "operationId": "getCoverBoard",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
-              "type": "string"
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -1820,26 +1875,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "summary": "Get Cover Board",
@@ -1848,7 +1884,7 @@
         ]
       }
     },
-    "/api/v2/cover-submissions": {
+    "/api/cover-submissions": {
       "post": {
         "operationId": "createCoverSubmission",
         "parameters": [
@@ -1857,9 +1893,15 @@
             "name": "X-Session-Token",
             "required": false,
             "schema": {
-              "nullable": true,
-              "title": "X-Session-Token",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Session-Token"
             }
           }
         ],
@@ -1883,6 +1925,16 @@
               }
             },
             "description": "Created"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           },
           "409": {
             "content": {
@@ -1926,7 +1978,7 @@
         ]
       }
     },
-    "/api/v2/deal-evidence": {
+    "/api/deal-evidence": {
       "post": {
         "operationId": "createDealEvidence",
         "parameters": [
@@ -1935,9 +1987,15 @@
             "name": "X-Session-Token",
             "required": false,
             "schema": {
-              "nullable": true,
-              "title": "X-Session-Token",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Session-Token"
             }
           }
         ],
@@ -1961,6 +2019,16 @@
               }
             },
             "description": "Created"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           },
           "409": {
             "content": {
@@ -2004,7 +2072,7 @@
         ]
       }
     },
-    "/api/v2/deal-suggestions": {
+    "/api/deal-suggestions": {
       "get": {
         "operationId": "searchDealSuggestions",
         "parameters": [
@@ -2024,10 +2092,16 @@
             "name": "category",
             "required": false,
             "schema": {
-              "maxLength": 40,
-              "nullable": true,
-              "title": "Category",
-              "type": "string"
+              "anyOf": [
+                {
+                  "maxLength": 40,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Category"
             }
           },
           {
@@ -2035,10 +2109,16 @@
             "name": "venue",
             "required": false,
             "schema": {
-              "maxLength": 80,
-              "nullable": true,
-              "title": "Venue",
-              "type": "string"
+              "anyOf": [
+                {
+                  "maxLength": 80,
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue"
             }
           },
           {
@@ -2072,21 +2152,10 @@
         ]
       }
     },
-    "/api/v2/deals": {
+    "/api/deals": {
       "get": {
         "operationId": "getDealSlate",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
-              "type": "string"
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -2096,26 +2165,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "summary": "Get Deal Slate",
@@ -2124,21 +2174,10 @@
         ]
       }
     },
-    "/api/v2/handbook": {
+    "/api/handbook": {
       "get": {
         "operationId": "getHandbook",
-        "parameters": [
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
-              "type": "string"
-            }
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "content": {
@@ -2148,26 +2187,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "summary": "Get Handbook",
@@ -2176,7 +2196,7 @@
         ]
       }
     },
-    "/api/v2/handbook/{slug}": {
+    "/api/handbook/{slug}": {
       "get": {
         "operationId": "getHandbookPage",
         "parameters": [
@@ -2186,16 +2206,6 @@
             "required": true,
             "schema": {
               "title": "Slug",
-              "type": "string"
-            }
-          },
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
               "type": "string"
             }
           }
@@ -2209,26 +2219,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           },
           "404": {
             "content": {
@@ -2247,7 +2238,7 @@
         ]
       }
     },
-    "/api/v2/installations": {
+    "/api/installations": {
       "post": {
         "operationId": "createInstallation",
         "parameters": [],
@@ -2299,35 +2290,7 @@
         ]
       }
     },
-    "/api/v2/installations/current": {
-      "get": {
-        "description": "Validate one installation credential without mutating actor state.",
-        "operationId": "getCurrentInstallation",
-        "parameters": [],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CurrentInstallationSchema"
-                }
-              }
-            },
-            "description": "OK"
-          }
-        },
-        "security": [
-          {
-            "InstallationTokenAuth": []
-          }
-        ],
-        "summary": "Get Current Installation",
-        "tags": [
-          "Identity"
-        ]
-      }
-    },
-    "/api/v2/installations/rotate": {
+    "/api/installations/rotate": {
       "post": {
         "operationId": "rotateInstallation",
         "parameters": [
@@ -2336,9 +2299,15 @@
             "name": "X-Installation-Token",
             "required": false,
             "schema": {
-              "nullable": true,
-              "title": "X-Installation-Token",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Installation-Token"
             }
           }
         ],
@@ -2400,32 +2369,15 @@
         ]
       }
     },
-    "/api/v2/me": {
+    "/api/me": {
       "delete": {
         "operationId": "deleteCurrentAccount",
         "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AccountDeletionRequestSchema"
-              }
-            }
-          },
-          "required": true
-        },
         "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeletedSchema"
-                }
-              }
-            },
-            "description": "OK"
+          "204": {
+            "description": "No Content"
           },
-          "409": {
+          "401": {
             "content": {
               "application/json": {
                 "schema": {
@@ -2433,7 +2385,7 @@
                 }
               }
             },
-            "description": "Conflict"
+            "description": "Unauthorized"
           }
         },
         "security": [
@@ -2459,6 +2411,16 @@
               }
             },
             "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           }
         },
         "security": [
@@ -2472,7 +2434,7 @@
         ]
       }
     },
-    "/api/v2/me/entitlements": {
+    "/api/me/entitlements": {
       "get": {
         "operationId": "getCurrentEntitlements",
         "parameters": [],
@@ -2486,6 +2448,16 @@
               }
             },
             "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           }
         },
         "security": [
@@ -2499,7 +2471,7 @@
         ]
       }
     },
-    "/api/v2/me/link-installation": {
+    "/api/me/link-installation": {
       "post": {
         "operationId": "linkCurrentInstallation",
         "parameters": [],
@@ -2523,6 +2495,16 @@
               }
             },
             "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           },
           "409": {
             "content": {
@@ -2556,7 +2538,7 @@
         ]
       }
     },
-    "/api/v2/status": {
+    "/api/status": {
       "get": {
         "operationId": "getStatus",
         "parameters": [],
@@ -2578,7 +2560,7 @@
         ]
       }
     },
-    "/api/v2/venues/{venue}/cover": {
+    "/api/venues/{venue}/cover": {
       "get": {
         "operationId": "getVenueCover",
         "parameters": [
@@ -2588,16 +2570,6 @@
             "required": true,
             "schema": {
               "title": "Venue",
-              "type": "string"
-            }
-          },
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
               "type": "string"
             }
           }
@@ -2611,26 +2583,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           },
           "404": {
             "content": {
@@ -2649,7 +2602,7 @@
         ]
       }
     },
-    "/api/v2/venues/{venue}/cover/history": {
+    "/api/venues/{venue}/cover/history": {
       "get": {
         "operationId": "getVenueCoverHistory",
         "parameters": [
@@ -2664,22 +2617,18 @@
           },
           {
             "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
-              "type": "string"
-            }
-          },
-          {
-            "in": "header",
             "name": "X-Session-Token",
             "required": false,
             "schema": {
-              "nullable": true,
-              "title": "X-Session-Token",
-              "type": "string"
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Session-Token"
             }
           }
         ],
@@ -2692,26 +2641,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           },
           "404": {
             "content": {
@@ -2730,7 +2660,7 @@
         ]
       }
     },
-    "/api/v2/venues/{venue}/cover/time-machine": {
+    "/api/venues/{venue}/cover/time-machine": {
       "get": {
         "operationId": "getVenueCoverTimeMachine",
         "parameters": [
@@ -2745,11 +2675,11 @@
           },
           {
             "in": "query",
-            "name": "target_time",
+            "name": "targetTime",
             "required": true,
             "schema": {
               "format": "date-time",
-              "title": "Target Time",
+              "title": "Targettime",
               "type": "string"
             }
           }
@@ -2764,6 +2694,16 @@
               }
             },
             "description": "OK"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorSchema"
+                }
+              }
+            },
+            "description": "Unauthorized"
           },
           "403": {
             "content": {
@@ -2817,7 +2757,7 @@
         ]
       }
     },
-    "/api/v2/venues/{venue}/deals": {
+    "/api/venues/{venue}/deals": {
       "get": {
         "operationId": "getVenueDeals",
         "parameters": [
@@ -2827,16 +2767,6 @@
             "required": true,
             "schema": {
               "title": "Venue",
-              "type": "string"
-            }
-          },
-          {
-            "in": "header",
-            "name": "If-None-Match",
-            "required": false,
-            "schema": {
-              "nullable": true,
-              "title": "If-None-Match",
               "type": "string"
             }
           }
@@ -2850,26 +2780,7 @@
                 }
               }
             },
-            "description": "OK",
-            "headers": {
-              "ETag": {
-                "description": "Opaque validator for a later If-None-Match request.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "304": {
-            "description": "The representation still matches If-None-Match.",
-            "headers": {
-              "ETag": {
-                "description": "The current representation validator.",
-                "schema": {
-                  "type": "string"
-                }
-              }
-            }
+            "description": "OK"
           },
           "404": {
             "content": {

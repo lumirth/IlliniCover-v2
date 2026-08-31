@@ -1,3 +1,0 @@
-getpwuid_r did not find a match for uid 501
-Filtering the log data using "process == "IlliniCover""
-Child process terminated with signal 15: Terminated

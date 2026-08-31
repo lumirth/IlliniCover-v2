@@ -10,8 +10,8 @@ enum ErrorMonitoring {
         guard let dsn = configuration.sentryDSN else { return }
         SentrySDK.start { options in
             options.dsn = dsn
-            options.environment = configuration.environment
-            options.releaseName = configuration.releaseIdentifier
+            options.environment = configuration.deployment.rawValue
+            options.releaseName = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
 
             // Crash/error correlation only. Do not collect request URLs,
             // bodies, headers, breadcrumbs, screenshots, user identity, or

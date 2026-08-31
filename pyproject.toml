@@ -1,7 +1,7 @@
 [project]
-name = "illinicover-v2"
+name = "illinicover"
 version = "0.1.0"
-description = "IlliniCover v2 Django monolith"
+description = "IlliniCover Django monolith"
 requires-python = "==3.14.*"
 dependencies = [
   "django==5.2.17",
@@ -18,9 +18,11 @@ dev = [
   "django-stubs[compatible-mypy]==6.0.7",
   "pytest==9.0.2",
   "pytest-django==4.11.1",
-  "pyyaml==6.0.3",
   "ruff==0.15.7",
 ]
+
+[tool.uv]
+package = false
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "config.settings.test"
@@ -33,7 +35,7 @@ addopts = "-ra"
 plugins = ["mypy_django_plugin.main"]
 python_version = "3.14"
 mypy_path = ["server"]
-files = ["server", "scripts"]
+files = ["server", "ops/deployment/verify-cloud-run.py"]
 exclude = ["server/.*/migrations/", "server/.*/tests/"]
 check_untyped_defs = true
 no_implicit_optional = true
@@ -59,10 +61,3 @@ select = ["E", "F", "I", "UP", "B", "DJ"]
 "server/config/settings/*.py" = ["F403", "F405"]
 "server/**/tests/*.py" = ["S101"]
 "server/**/models.py" = ["DJ008"]
-
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["server"]

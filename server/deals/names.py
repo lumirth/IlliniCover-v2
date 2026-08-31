@@ -40,9 +40,7 @@ def public_deal_name(
         high_text = dollar.group("high")
         high = _cents(high_text) if high_text is not None else None
         repeats_single = (
-            price_kind in {"absolute", "single"}
-            and high is None
-            and low == price_cents
+            price_kind in {"absolute", "single"} and high is None and low == price_cents
         )
         repeats_range = (
             price_kind == "range"
@@ -58,7 +56,7 @@ def public_deal_name(
         try:
             structured = Decimal(str(discount_percent))
             named = Decimal(percent.group("percent"))
-        except (InvalidOperation, TypeError):
+        except InvalidOperation, TypeError:
             pass
         else:
             if named == structured:

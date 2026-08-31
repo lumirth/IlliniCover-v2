@@ -1,7 +1,0 @@
-appId: com.illinicover.app
----
-- launchApp
-- tapOn: "Deals"
-- assertVisible: "White Claw"
-- assertVisible: "Michelob Ultra"
-- assertVisible: "Bombs"
