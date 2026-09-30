@@ -1,44 +1,17 @@
-# Versioned data releases
+# Bootstrap inputs
 
-This directory contains immutable source artifacts and deterministic derived
-release products. Historical datasets are imported separately from database
-migrations, as required by the product specification.
+- `venues.jsonl` contains the four product venues.
+- `covers.jsonl` contains private normalized historical cover observations.
+- `deals.jsonl` contains private normalized historical deal facts.
 
-Release layout:
+`python server/manage.py bootstrap` loads these files into a fresh database.
+Only the venue catalog is distributed with the source. Historical inputs and
+their original provenance are retained locally or in authorized private storage,
+not Git. A fresh checkout needs these two inputs supplied privately before
+bootstrap, corpus evaluation or a deployment build. Do not substitute invented
+observations or publish the datasets to make those commands pass.
 
-- `cover/recovered-cover-v1/` preserves the Firestore export and contains a
-  normalized, import-oriented JSONL release.
-- `deals/historical-deals-v1/` preserves the deterministic historical
-  Instagram extraction and its model-selection analysis receipt.
-- `deals/deal-identities-v1/` preserves the reviewed canonical identity
-  registry used by that analysis.
-- `venues/venues-v1/` is the standalone canonical venue and alias release.
-- `context/` explains why no moving external context snapshot is imported.
-
-Every release has a manifest with byte counts, SHA-256 hashes, provenance, and
-use restrictions. The raw source files are deliberately kept alongside their
-derived products so a later importer can reprocess them without rewriting a
-schema migration.
-
-## Rebuild
-
-Run from the repository root:
-
-```bash
-python3 scripts/data/build_cover_release.py
-python3 scripts/data/analyze_deal_recurrence.py
-python3 -m unittest discover -s tests/data -p 'test_*.py'
-```
-
-The builders use only the Python standard library. Re-running them with the
-checked-in source artifacts must reproduce the checked-in derived bytes.
-
-## Handling boundary
-
-These artifacts are an authorized internal migration/evaluation package, not
-a declaration that third-party source material is licensed for public
-redistribution. Source post identifiers, handles, extracted names, and
-Firestore document keys are provenance identifiers and may be pseudonymous.
-Keep raw releases server-side and out of public APIs, telemetry, and client
-bundles. Publish only the minimum factual fields needed by the product after a
-separate rights and privacy review.
+Rows retain the source identifiers and product values needed to understand their
+provenance in private storage. They are internal evidence, not a declaration that third-party source
+material is licensed for redistribution. Do not expose source handles, post keys,
+Firestore keys, or private provenance through public APIs or telemetry.

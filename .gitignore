@@ -38,3 +38,8 @@ ios/Packages/
 .artifacts/
 artifacts/private/
 *.xcconfig.local
+
+# Private historical observations, imports and provenance are not source code.
+/data/**
+!/data/README.md
+!/data/venues.jsonl
