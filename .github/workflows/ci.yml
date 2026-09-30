@@ -27,7 +27,7 @@ jobs:
       ops: ${{ steps.paths.outputs.ops }}
       ios: ${{ steps.paths.outputs.ios }}
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           fetch-depth: 0
       - id: paths
@@ -69,10 +69,10 @@ jobs:
       DESTRUCTIVE_MIGRATION_PR_BODY: ${{ github.event.pull_request.body }}
       MIGRATION_BASE_SHA: ${{ github.event.pull_request.base.sha }}
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           fetch-depth: 0
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv
@@ -138,7 +138,7 @@ jobs:
             --github-summary "$GITHUB_STEP_SUMMARY"
       - name: Retain backend failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: backend-failure-${{ github.run_id }}
           path: .artifacts/ci/backend
@@ -170,8 +170,8 @@ jobs:
       DJANGO_SETTINGS_MODULE: config.settings.ci
       PUBLIC_API_ORIGIN: http://127.0.0.1:8000
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv
@@ -186,7 +186,7 @@ jobs:
             2>&1 | tee .artifacts/ci/migrations/compatibility.log
       - name: Retain migration failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: migration-failure-${{ github.run_id }}
           path: .artifacts/ci/migrations
@@ -199,8 +199,8 @@ jobs:
     if: needs.classify.outputs.contract == 'true'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv
@@ -212,7 +212,7 @@ jobs:
           scripts/ci/contract.sh 2>&1 | tee .artifacts/ci/contract/openapi.diff
       - name: Retain contract failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: contract-failure-${{ github.run_id }}
           path: .artifacts/ci/contract
@@ -225,8 +225,8 @@ jobs:
     if: needs.classify.outputs.fixtures == 'true'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv
@@ -238,7 +238,7 @@ jobs:
           scripts/ci/fixtures.sh --check 2>&1 | tee .artifacts/ci/fixtures/fixtures.diff
       - name: Retain fixture failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: fixtures-failure-${{ github.run_id }}
           path: .artifacts/ci/fixtures
@@ -251,8 +251,8 @@ jobs:
     if: needs.classify.outputs.data == 'true'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv
@@ -264,7 +264,7 @@ jobs:
           scripts/ci/data.sh 2>&1 | tee .artifacts/ci/data/data.log
       - name: Retain data failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: data-failure-${{ github.run_id }}
           path: .artifacts/ci/data
@@ -277,8 +277,8 @@ jobs:
     if: needs.classify.outputs.ops == 'true'
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
-      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3.6.3
         with:
           version: 2026.8.5
           install_args: python uv actionlint
@@ -290,7 +290,7 @@ jobs:
           scripts/ci/ops.sh 2>&1 | tee .artifacts/ci/ops/ops.log
       - name: Retain operations failure receipt
         if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: ops-failure-${{ github.run_id }}
           path: .artifacts/ci/ops
